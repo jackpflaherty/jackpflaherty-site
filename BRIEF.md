@@ -18,7 +18,7 @@ You are converting draft pages from a FlexiFunnels export into Astro pages in th
   - jack-p-flaherty-speaker-reel-poster.jpg (1280x720), the-decision-switch-book-stack.jpg (673x775, white background), the-decision-switch-book-stack-brown.jpg (1600x900).
   - podcast-chats-with-jason.jpg, podcast-evergreen-business-growth.jpg, podcast-humor-in-the-c-suite.jpg, podcast-lifeology-radio.jpg, podcast-mentors-collective.jpg, podcast-profit-with-law.jpg, podcast-sinjun-ai-projects.jpg, podcast-thrive-radio.jpg (800x450 each).
   Every img gets alt text (under 125 characters, include "Jack P. Flaherty" when he is in the picture), width, height, and loading="lazy" except the hero.
-- Site data: `src/data/site.json` (calendly, vimeo, amazon, assessment, phone, email, position line). Import it and use the values rather than hard-coding URLs.
+- Site data: `src/data/site.json` (calendly, reel (YouTube), amazon, assessment, phone, email, position line). Import it and use the values rather than hard-coding URLs.
 
 ## Rules (from the client's writing standard; non-negotiable)
 - No em dashes or en dashes anywhere. Replace with a comma, a colon, a full stop, or "to" for ranges ("0 to 100"). No semicolons. No arrow characters ("→"). No "·" separators (use a comma or a full stop).
