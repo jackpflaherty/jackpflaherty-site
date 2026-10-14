@@ -53,8 +53,8 @@ const page = {
           <li>Is this the same way we did the last one, or a new way every time?</li>
           <li>Where does its data come from, and would we stand behind it?</li>
         </ol>
+        <p class="close">That is the whole method. It fits on one page, and a board can ask about it in four questions.</p>
       </div>
-      <p style="margin-top:1.6rem">That is the whole method. It fits on one page, and a board can ask about it in four questions.</p>
     </div>
   </section>
 
@@ -96,8 +96,10 @@ const page = {
 
 <style>
   .hero-img { width: 100%; height: auto; aspect-ratio: auto; object-fit: unset; }
-  .questions { margin-top: 2rem; max-width: 58rem; }
+  .questions { margin-top: 2rem; padding-left: 2.5rem; }
   .questions h3 { margin-bottom: .6rem; }
   .questions ol { margin: 0; padding-left: 1.4rem; }
-  .questions li { margin: 0 0 .5rem; }
+  .questions li { margin: 0 0 .5rem; white-space: nowrap; }
+  .questions .close { margin: 1.4rem 0 0; max-width: none; white-space: nowrap; }
+  @media (max-width: 860px) { .questions { padding-left: 1rem; } .questions li, .questions .close { white-space: normal; } }
 </style>
