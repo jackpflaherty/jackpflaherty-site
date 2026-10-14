@@ -1,6 +1,6 @@
 :root{
   --latte:#FFF9EF; --linen:#EFE4D2; --sand:#E3D5BE;
-  --ink:#2A1A0E; --brown:#593C28; --cobalt:#2E5BFF; --cobalt-deep:#1F43C9; --sienna:#B65434;
+  --ink:#2A1A0E; --brown:#593C28; --cobalt:#2E5BFF; --cobalt-deep:#1F43C9; --sienna:#B65434; --orange:#D14E27; --orange-bright:#F5884F;
   --font-head:'Open Sans',system-ui,sans-serif; --font-body:'Lato',system-ui,sans-serif;
   --measure:38rem; --wrap:74rem; --gutter:clamp(1rem,4vw,2rem);
   --r:10px;
@@ -23,7 +23,7 @@ p{margin:0 0 1.1em}
 section{padding:clamp(2.5rem,5vw,4rem) 0}
 section.tight{padding:clamp(1.5rem,3vw,2.25rem) 0}
 .lede{font-size:1.3rem;line-height:1.5;color:var(--brown);max-width:40rem}
-.kicker{font-family:var(--font-head);font-weight:700;color:var(--sienna);font-size:.95rem;margin:0 0 .6rem}
+.kicker{font-family:var(--font-head);font-weight:700;color:var(--orange);font-size:1.05rem;letter-spacing:.01em;margin:0 0 .6rem}
 .btn{display:inline-block;background:var(--cobalt);color:#fff;font-family:var(--font-head);font-weight:700;font-size:1rem;padding:.9rem 1.6rem;border-radius:var(--r);text-decoration:none;border:2px solid var(--cobalt);line-height:1.2}
 .btn:hover{background:var(--cobalt-deep);border-color:var(--cobalt-deep)}
 .btn.alt{background:transparent;color:var(--cobalt)}
@@ -34,7 +34,7 @@ section.tight{padding:clamp(1.5rem,3vw,2.25rem) 0}
 .dark{background:var(--ink);color:var(--latte)}
 .dark h1,.dark h2,.dark h3,.dark p,.dark li{color:var(--latte)}
 .dark a:not(.btn){color:#9DB4FF}
-.dark .kicker{color:#E3A990}
+.dark .kicker{color:var(--orange-bright)}
 .grid{display:grid;gap:1.4rem}
 .grid.c2{grid-template-columns:repeat(2,1fr)} .grid.c3{grid-template-columns:repeat(3,1fr)} .grid.c4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:900px){.grid.c3,.grid.c4{grid-template-columns:repeat(2,1fr)}}
@@ -121,7 +121,7 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
 .hero .txt{max-width:36rem}
 .hero h1{color:var(--latte)}
 .hero p{color:var(--latte);font-size:1.3rem;line-height:1.45}
-.hero .kicker{color:#E3A990}
+.hero .kicker{color:var(--orange-bright);font-size:1.15rem}
 @media (max-width:767px){
   .hero{min-height:0;display:block}
   .hero:after{display:none}
