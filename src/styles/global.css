@@ -132,12 +132,12 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
 .hero.short{min-height:min(60vh,520px)}
 /* reel row */
 .reel{display:flex;align-items:center;gap:1.8rem}
-.reel .vid{flex:0 0 20%;max-width:20%}
+.reel .vid{flex:0 0 24%;max-width:24%}
 .reel .box{position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:var(--ink)}
 .reel iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.reel h3{margin:0 0 .3rem}
-.reel p{margin:0;color:var(--brown)}
-@media (max-width:640px){.reel{gap:1rem}.reel .vid{flex-basis:38%;max-width:38%}}
+.reel h3{margin:0 0 .35rem;font-size:1.56rem}
+.reel p{margin:0;color:var(--brown);font-size:1.35rem}
+@media (max-width:640px){.reel{gap:1rem}.reel .vid{flex-basis:46%;max-width:46%}.reel h3{font-size:1.3rem}.reel p{font-size:1.1rem}}
 .video-wide{position:relative;padding-top:56.25%;border-radius:var(--r);overflow:hidden;background:var(--ink);max-width:960px;margin:0 auto}
 .video-wide iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .quote{background:#fff;border:1px solid var(--linen);border-left:4px solid var(--sienna);border-radius:var(--r);padding:1.3rem 1.4rem}
