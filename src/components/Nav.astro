@@ -33,9 +33,14 @@ import site from '../data/site.json';
   burger?.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', String(o)); });
   nav?.querySelectorAll('[data-dd]').forEach(li => {
     const btn = li.querySelector('[data-dd-btn]');
-    btn?.addEventListener('click', (e) => { e.stopPropagation(); const o = li.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
-    li.addEventListener('mouseenter', () => { if (window.innerWidth > 960) li.classList.add('open'); });
-    li.addEventListener('mouseleave', () => { if (window.innerWidth > 960) li.classList.remove('open'); });
+    btn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // On desktop the menu is already open from hover: a click keeps it open instead of closing it.
+      if (li.dataset.hover && li.classList.contains('open')) { btn.setAttribute('aria-expanded', 'true'); return; }
+      const o = li.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o));
+    });
+    li.addEventListener('mouseenter', () => { if (window.innerWidth > 960) { li.dataset.hover = '1'; li.classList.add('open'); btn?.setAttribute('aria-expanded', 'true'); } });
+    li.addEventListener('mouseleave', () => { delete li.dataset.hover; if (window.innerWidth > 960) { li.classList.remove('open'); btn?.setAttribute('aria-expanded', 'false'); } });
   });
   document.addEventListener('click', () => nav?.querySelectorAll('[data-dd].open').forEach(li => li.classList.remove('open')));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') nav?.querySelectorAll('.open').forEach(el => el.classList.remove('open')); });

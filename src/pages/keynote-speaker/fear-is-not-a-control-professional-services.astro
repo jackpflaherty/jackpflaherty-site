@@ -173,7 +173,7 @@ const page = {
   </section>
 
   <section id="faq">
-    <div class="wrap narrow faqwrap">
+    <div class="wrap faqwrap">
       <Faq items={faqs} heading="Questions partners and planners ask" />
       <p class="lede faqlead">Short answers. The discovery call covers the rest.</p>
     </div>
@@ -196,6 +196,7 @@ const page = {
   .faqwrap { display: flex; flex-direction: column; }
   .faqwrap :global(.faq) { display: contents; }
   .faqwrap :global(.faq h2) { order: -2; }
+  .faqwrap :global(details) { max-width: 58rem; width: 100%; }
   .faqlead { order: -1; margin-bottom: 1.4rem; }
   .pull { max-width: 48rem; font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0; }
   .stats .card { padding: 1.3rem; }
