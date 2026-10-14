@@ -20,11 +20,14 @@ async function handleInquiry(request, env) {
   data.received_at = new Date().toISOString();
   data.user_agent = request.headers.get('user-agent') || '';
   data.ip_country = request.headers.get('cf-ipcountry') || '';
+  let intake = 'unconfigured';
   if (env.MAKE_WEBHOOK_URL) {
     try {
-      await fetch(env.MAKE_WEBHOOK_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
-    } catch (e) { /* never block the visitor on a webhook failure */ }
+      const r = await fetch(env.MAKE_WEBHOOK_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) });
+      intake = r.ok ? 'sent' : 'failed:' + r.status;
+    } catch (e) { intake = 'error'; /* never block the visitor on a webhook failure */ }
   }
-  const dest = data.source === 'newsletter' ? '/thank-you-jack-flaherty?from=newsletter' : '/thank-you-jack-flaherty';
-  return Response.redirect(new URL(dest, request.url), 303);
+  const dest = new URL(data.source === 'newsletter' ? '/thank-you-jack-flaherty?from=newsletter' : '/thank-you-jack-flaherty', request.url);
+  if (request.headers.get('x-qa') === '1') dest.searchParams.set('intake', intake); // QA only: never shown to visitors
+  return Response.redirect(dest, 303);
 }
