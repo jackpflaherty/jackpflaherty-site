@@ -1,4 +1,5 @@
 ---
+import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
 import Assessment from '../../components/Assessment.astro';
 import site from '../../data/site.json';
@@ -17,7 +18,7 @@ const book = {
 
   <section>
     <div class="wrap split">
-      <img class="stack" src="/images/the-decision-switch-book-stack-latte.jpg" alt="Stacked copies of The Decision Switch by Jack P. Flaherty" width="1627" height="1408" loading="lazy" />
+      <Pic src="the-decision-switch-book-stack-latte.jpg" class="stack" alt="Stacked copies of The Decision Switch by Jack P. Flaherty" />
       <div>
         <h1>The Decision Switch</h1>
         <p class="lede">Decision-making is a process, not an event. The Decision Switch is Jack P. Flaherty's book on how leaders make the call under pressure and stand behind it.</p>

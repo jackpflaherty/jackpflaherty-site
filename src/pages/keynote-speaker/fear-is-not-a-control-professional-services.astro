@@ -1,4 +1,5 @@
 ---
+import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
 import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
@@ -23,7 +24,7 @@ const page = {
 ---
 <Base title="Fear Is Not A Control: Keynote Speaker for Professional Services Firms | Jack P. Flaherty"
   description="Keynote for partners in accounting, advisory and law firms by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes."
-  path="/keynote-speaker/fear-is-not-a-control-professional-services" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, faqSchema(faqs)]}>
+  path="/keynote-speaker/fear-is-not-a-control-professional-services" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
 
   <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering the Fear Is Not A Control keynote on a dark stage" pos="72% 50%">
     <h1>Fear Is Not A Control</h1>
@@ -107,7 +108,7 @@ const page = {
           <p>Across 25 years in risk and advisory, 15 of them at the Big Four, Jack noticed one pattern: the leaders who struggled most were not the least talented. They were the least equipped to make a call and stand behind it under pressure. Most of them were waiting for a control that did not exist, and fear filled the gap.</p>
           <p>That observation became a method. The method became one keynote, built for two rooms, and the same questions he asks a board when a new system is about to go live.</p>
         </div>
-        <img src="/images/jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion with colleagues in an office" width="1600" height="1083" loading="lazy" />
+        <Pic src="jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion with colleagues in an office" />
       </div>
       <div class="grid c4 stats" style="margin-top:2.5rem">
         <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where technology decisions carry the highest cost.</p></div>

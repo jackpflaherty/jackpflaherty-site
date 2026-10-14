@@ -3,8 +3,16 @@ import '../styles/global.css';
 import site from '../data/site.json';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; }
-const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website' } = Astro.props;
+import manifest from '../data/images.json';
+interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; hero?: string; heroMobile?: string; }
+const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website', hero, heroMobile } = Astro.props;
+// Preload the hero photo (WebP srcset) so the browser fetches it before it parses the body.
+const srcsetFor = (p: string) => {
+  const n = p.replace(/^\/images\//, ''); const m = (manifest as Record<string, { widths: number[] }>)[n];
+  return m ? m.widths.map(w => `/images/r/${n.replace(/\.(jpe?g|png)$/i, '')}-${w}.webp ${w}w`).join(', ') : '';
+};
+const heroSet = hero ? srcsetFor(hero) : '';
+const heroMobileSet = heroMobile ? srcsetFor(heroMobile) : '';
 const canonical = site.url + (path === '/' ? '/' : path);
 const person = {
   '@context': 'https://schema.org', '@type': 'Person', '@id': site.url + '/#person',
@@ -36,9 +44,10 @@ const all = [person, ...schema];
   <meta property="og:site_name" content="Jack P. Flaherty" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/images/favicon-48.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Lato:wght@400;700&display=swap" />
+  {heroSet && <link rel="preload" as="image" type="image/webp" imagesrcset={heroSet} imagesizes="100vw" media={heroMobileSet ? '(min-width: 768px)' : undefined} />}
+  {heroMobileSet && <link rel="preload" as="image" type="image/webp" imagesrcset={heroMobileSet} imagesizes="100vw" media="(max-width: 767px)" />}
+  <link rel="preload" href="/fonts/open-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   {all.map(s => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
 <body>

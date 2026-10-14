@@ -1,4 +1,5 @@
 ---
+import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
 const contact = {
@@ -33,7 +34,7 @@ const contact = {
           <li><a href={site.phoneHref}>{site.phone}</a></li>
         </ul>
       </div>
-      <img class="portrait" src="/images/jack-p-flaherty-portrait-pier.jpg" alt="Jack P. Flaherty, keynote speaker, outdoor portrait on a pier" width="1200" height="1499" loading="lazy" />
+      <Pic src="jack-p-flaherty-portrait-pier.jpg" class="portrait" alt="Jack P. Flaherty, keynote speaker, outdoor portrait on a pier" />
     </div>
   </section>
 

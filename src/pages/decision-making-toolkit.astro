@@ -1,4 +1,5 @@
 ---
+import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
 import Assessment from '../components/Assessment.astro';
@@ -19,13 +20,13 @@ import Assessment from '../components/Assessment.astro';
         </div>
         <a class="btn" href={site.assessment} target="_blank" rel="noopener">Take the assessment</a>
       </div>
-      <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
+      <Pic src="jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" />
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap split top">
-      <img src="/images/jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop at a table" width="1600" height="1199" loading="lazy" />
+      <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop at a table" />
       <div>
         <h2>Most leaders do not have a decision problem. They have a structure problem.</h2>
         <p>After 25 years in risk and advisory, 15 of them at the Big Four, watching capable teams stall at the exact moment it counted, Jack built a method to move leaders from analysis to action without skipping the steps that protect them.</p>

@@ -1,11 +1,24 @@
 ---
+import manifest from '../data/images.json';
 interface Props { image: string; mobileImage?: string; alt: string; pos?: string; posMobile?: string; short?: boolean; }
 const { image, mobileImage, alt, pos = '60% 50%', posMobile = '70% 40%', short = false } = Astro.props;
+type M = { w: number; h: number; widths: number[] };
+const man = manifest as Record<string, M>;
+const name = (p: string) => p.replace(/^\/images\//, '');
+const set = (p: string) => {
+  const m = man[name(p)]; if (!m) throw new Error(`Hero: no manifest entry for ${p}. Run node tools/img.mjs.`);
+  const base = name(p).replace(/\.(jpe?g|png)$/i, '');
+  return { m, srcset: m.widths.map(w => `/images/r/${base}-${w}.webp ${w}w`).join(', ') };
+};
+const d = set(image);
+const mob = mobileImage ? set(mobileImage) : null;
 ---
 <section class={'hero' + (short ? ' short' : '')} style={`--pos:${pos};--pos-m:${posMobile}`}>
   <picture>
-    {mobileImage && <source media="(max-width: 767px)" srcset={mobileImage} />}
-    <img class="bg" src={image} alt={alt} fetchpriority="high" />
+    {mob && <source media="(max-width: 767px)" type="image/webp" srcset={mob.srcset} sizes="100vw" />}
+    {mob && <source media="(max-width: 767px)" srcset={mobileImage} />}
+    <source type="image/webp" srcset={d.srcset} sizes="100vw" />
+    <img class="bg" src={image} alt={alt} width={d.m.w} height={d.m.h} fetchpriority="high" decoding="async" />
   </picture>
   <div class="wrap"><div class="txt"><slot /></div></div>
 </section>

@@ -1,4 +1,5 @@
 ---
+import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
 import Faq from '../../components/Faq.astro';
 import Cta from '../../components/Cta.astro';
@@ -20,7 +21,7 @@ const page = {
 ---
 <Base title="AI and Emerging Technology Keynote Speaker | Jack P. Flaherty"
   description="AI and emerging technology, decided like a new hire. A job description, a manager, a probation period, a review. Keynote and board sessions by Jack P. Flaherty."
-  path="/industries/ai-emerging-technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]}>
+  path="/industries/ai-emerging-technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-teaching-whiteboard.jpg">
 
   <section>
     <div class="wrap split top">
@@ -31,7 +32,7 @@ const page = {
         <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
         <p>Fear is not a control either. Banning a tool does not stop the work from happening. It moves the work somewhere you cannot see it.</p>
       </div>
-      <img class="hero-img" src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="eager" />
+      <Pic src="jack-p-flaherty-teaching-whiteboard.jpg" class="hero-img" alt="Jack P. Flaherty teaching at a whiteboard" loading="eager" fetchpriority="high" />
     </div>
   </section>
 

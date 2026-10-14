@@ -1,0 +1,15 @@
+---
+// Responsive photo: WebP srcset from public/images/r with the original JPG as fallback.
+// src is the filename in public/images (e.g. "jack-p-flaherty-keynote-stage.jpg").
+import manifest from '../data/images.json';
+interface Props { src: string; alt: string; sizes?: string; loading?: 'lazy' | 'eager'; fetchpriority?: 'high' | 'low' | 'auto'; class?: string; width?: string | number; height?: string | number; }
+const { src, alt, sizes = '(max-width: 860px) calc(100vw - 2rem), 560px', loading = 'lazy', fetchpriority, class: cls } = Astro.props;
+const m = (manifest as Record<string, { w: number; h: number; widths: number[] }>)[src];
+if (!m) throw new Error(`Pic: no manifest entry for ${src}. Run node tools/img.mjs.`);
+const base = src.replace(/\.(jpe?g|png)$/i, '');
+const srcset = m.widths.map(w => `/images/r/${base}-${w}.webp ${w}w`).join(', ');
+---
+<picture>
+  <source type="image/webp" srcset={srcset} sizes={sizes} />
+  <img src={'/images/' + src} alt={alt} width={m.w} height={m.h} loading={loading} decoding="async" fetchpriority={fetchpriority} class={cls} />
+</picture>

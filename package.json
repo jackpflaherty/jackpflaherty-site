@@ -5,11 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node tools/img.mjs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^7.3.8",
     "playwright": "^1.49.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

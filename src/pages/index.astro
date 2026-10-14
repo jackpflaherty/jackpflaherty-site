@@ -1,4 +1,5 @@
 ---
+import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Assessment from '../components/Assessment.astro';
@@ -15,7 +16,7 @@ const video = {
 <Base title="Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions"
   description="Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. Keynote speaker, board advisor, author."
   keywords="keynote speaker, technology decisions, board advisor, AI governance keynote, executive decision making, Jack P. Flaherty, Fear Is Not A Control"
-  path="/" schema={[video]}>
+  path="/" schema={[video]} hero="/images/jack-p-flaherty-keynote-speaker-hero.jpg" heroMobile="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg">
 
   <Hero image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="58% 50%">
     <p class="kicker">Keynote speaker and trusted advisor</p>
@@ -33,7 +34,7 @@ const video = {
 
   <section>
     <div class="wrap split">
-      <img src="/images/jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" width="1600" height="900" loading="lazy" />
+      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" />
       <div>
         <h2>The decision nobody owns.</h2>
         <ul class="checks">
@@ -67,7 +68,7 @@ const video = {
           <figcaption><strong>Daren Kemp</strong>, President, EMEA, Korn Ferry</figcaption>
         </figure>
       </div>
-      <img src="/images/jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" width="1600" height="893" loading="lazy" />
+      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" />
     </div>
   </section>
 
@@ -101,13 +102,13 @@ const video = {
       <h2>Two ways to work with Jack.</h2>
       <div class="grid c2">
         <div class="card">
-          <img src="/images/jack-p-flaherty-keynote-stage.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" width="1600" height="900" loading="lazy" />
+          <Pic src="jack-p-flaherty-keynote-stage.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" />
           <h3>Keynote</h3>
           <p>Forty-five to sixty minutes, built for the room, with one first move your people make the week they get home. A half-day workshop can follow the keynote. Ask on the call.</p>
           <p style="margin-top:.8rem"><a href="/keynote-speaker/executive-decision-making-keynote">See the keynotes</a></p>
         </div>
         <div class="card">
-          <img src="/images/jack-p-flaherty-advisory-conversation.jpg" alt="Jack P. Flaherty in an advisory conversation over coffee" width="1600" height="876" loading="lazy" />
+          <Pic src="jack-p-flaherty-advisory-conversation.jpg" alt="Jack P. Flaherty in an advisory conversation over coffee" />
           <h3>Board and executive advisory</h3>
           <p>Confidential counsel from someone who has reported to the audit committee and sat on the other side of the table. Delivered by Jack, not a team.</p>
           <p style="margin-top:.8rem"><a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a></p>
