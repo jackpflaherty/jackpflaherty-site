@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const posts = [
+  { tag: 'Boards', title: 'Go Slow to Go Fast', href: '/blogs/go-slow-to-go-fast', p: 'What an audit chair should ask before the system goes live, and why asking it speeds the rollout up.' },
+  { tag: 'Health systems', title: 'The Tool That Showed Up on the Unit', href: '/blogs/the-tool-that-showed-up-on-the-unit', p: 'Half the team is using it by Friday. The other half is waiting for someone to say it is safe. What to do the week it shows up.' },
+  { tag: 'The method', title: 'Treat New Technology Like a New Hire', href: '/blogs/treat-new-technology-like-a-new-hire', p: 'A job description, a manager, a probation period and a review. The four steps, start to finish.' },
+  { tag: 'The one idea', title: 'Fear Is Not A Control', href: '/blogs/fear-is-not-a-control', p: 'Waiting feels safe. It is the most expensive risk posture a leadership team can take. Three questions that replace it.' },
+  { tag: 'Professional services', title: 'The AI Atrophy', href: '/blogs/the-ai-atrophy', p: 'When the machine does the reps, your people lose the instinct that catches its mistakes. Treat the tool like a new hire.' },
+  { tag: 'Professional services', title: 'Trusted Advisor: Passing the 2 AM Anxiety Test', href: '/blogs/2-am-anxiety-test', p: 'If the call comes at 2 AM, you are the advisor. If it comes at 9 AM, you are the vendor.' },
+  { tag: 'Professional services', title: 'The Silent Epidemic in Accounting and Consulting', href: '/blogs/lost-role-of-trusted-advisors', p: 'Firms are trading relationships for utilisation, and the trusted advisor is disappearing with them.' },
+  { tag: 'Health systems and firms', title: 'The Integration Era', href: '/blogs/the-integration-era', p: 'Six professional languages in one room, and nobody owns the technology decision. The value is in the person who does.' }
+];
+const collection = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage',
+  '@id': site.url + '/insights', url: site.url + '/insights',
+  name: 'Insights on Making Decisions with Technology | Jack P. Flaherty',
+  description: 'Short pieces by Jack P. Flaherty on making decisions with technology, for health-system leaders, professional services partners and the boards they answer to.',
+  author: { '@id': site.url + '/#person' },
+  hasPart: posts.map(p => ({ '@type': 'BlogPosting', headline: p.title, url: site.url + p.href }))
+};
+---
+<Base title="Insights on Making Decisions with Technology | Jack P. Flaherty"
+  description="Short pieces by Jack P. Flaherty on making decisions with technology, for health-system leaders, professional services partners and the boards they answer to."
+  path="/insights" image="/images/jack-p-flaherty-writing-at-desk.jpg" schema={[collection]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <p class="kicker">Jack P. Flaherty</p>
+        <h1>Insights</h1>
+        <p class="lede">Short pieces on making decisions with technology, for health-system leaders, partners and the boards they answer to.</p>
+      </div>
+      <img src="/images/jack-p-flaherty-writing-at-desk.jpg" alt="Jack P. Flaherty writing at a desk" width="1600" height="900" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>Start here</h2>
+      <div class="grid c4">
+        {posts.map(p => (
+          <a class="card post" href={p.href}>
+            <p class="kicker">{p.tag}</p>
+            <h3>{p.title}</h3>
+            <p>{p.p}</p>
+            <span class="more">Read</span>
+          </a>
+        ))}
+      </div>
+      <div class="notice" style="margin-top:2.5rem">
+        <p style="margin:0">Every issue of The Clear Confidence Report goes out by email first. <a href="#nl-email">Get the Report</a> below to receive new pieces the day they publish.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  a.post { text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+  a.post h3 { font-size: 1.15rem; }
+  a.post p { font-size: 1rem; }
+  a.post .more { margin-top: auto; padding-top: .8rem; color: var(--cobalt); font-family: var(--font-head); font-weight: 700; }
+</style>

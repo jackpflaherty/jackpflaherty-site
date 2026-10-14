@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you-jack-flaherty
+Sitemap: https://www.jackpflaherty.com/sitemap.xml

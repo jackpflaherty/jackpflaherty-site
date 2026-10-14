@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/press-media', url: site.url + '/press-media',
+  name: 'Testimonials and Media | Jack P. Flaherty',
+  description: 'What health-system leaders, partners at Deloitte and Baker Tilly, and NCSBN attendees say after hearing Jack P. Flaherty speak, plus podcast and media appearances.',
+  about: { '@id': site.url + '/#person' }
+};
+const health = [
+  { q: 'Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!', n: 'Bill Lazarus', t: 'CTO, UCLA Health' },
+  { q: 'Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today\'s workforce struggles with mental health and making confident decisions.', n: 'Sheila Blackwell', t: 'Healthcare Transformation Leader' },
+  { q: 'Jack\'s personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.', n: 'Kierney Palazzo', t: 'Internal Audit Manager, SCAN Health Plan' },
+  { q: 'Great presenter! Clear and concise. Informative.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' },
+  { q: 'Inspiring. Provides a framework.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' },
+  { q: 'Intriguing. I found the content interesting to help make better informed decisions.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' }
+];
+const partners = [
+  { q: 'What would the world be like if we had a system to make better decisions? Jack delivers a practical framework to keep you on track and lead you to the best outcomes.', n: 'Charles Todd', t: 'Principal, Deloitte' },
+  { q: 'Want to cut through the Gordian knot of a tough situation? Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.', n: 'Jason Emmons', t: 'Partner, Baker Tilly' },
+  { q: 'Jack delivered a much-needed education for our leaders. Jack\'s mission, to help leaders make better choices and lead with confidence, comes through loud and clear.', n: 'Michael Parisi', t: 'Head of Client Acquisition, Schellman' },
+  { q: 'I would recommend Jack to any company looking to gain market share during these turbulent times through increased operational efficiency or flawless execution.', n: 'Ramesh Swamey', t: 'Founder and Principal, Halifax West' }
+];
+const teams = [
+  { q: 'Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.', n: 'Ray Sims', t: 'Global Lead, Training and Education, IBM' },
+  { q: 'Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.', n: 'Shola Richards', t: 'Founder and CEO, Go Together Global' },
+  { q: 'Decision-making is critical to our success and yet it is more complicated than ever before. Too much information. Too many stimuli. Jack delivers a proven framework for you to consistently achieve the best outcomes possible.', n: 'Sara Canady', t: 'Leadership Strategist' }
+];
+const media = [
+  { show: 'Profit with Law', ep: 'Episode 415: Transform Indecision into Confidence', img: 'podcast-profit-with-law.jpg' },
+  { show: 'Accelerate Your Business Growth with Diane Helbig, Evergreen Podcasts', ep: 'Mastering The Decision Switch', img: 'podcast-evergreen-business-growth.jpg' },
+  { show: 'Lifeology Radio with James Miller', ep: 'Seven Principles of Successful Decision-Making', img: 'podcast-lifeology-radio.jpg' },
+  { show: 'Thrive Radio', ep: 'Decision Mastery', img: 'podcast-thrive-radio.jpg' },
+  { show: 'The Sinjun Podcast', ep: 'This Mistake Is Killing AI Projects', img: 'podcast-sinjun-ai-projects.jpg' },
+  { show: 'Chats with Jason', ep: 'Episode 3: Mastering the Art of Better Decision-Making', img: 'podcast-chats-with-jason.jpg' },
+  { show: 'Mentors Collective', ep: 'Boosting Confidence in Quick Decision-Making', img: 'podcast-mentors-collective.jpg' },
+  { show: 'Humor in the C-Suite', ep: '', img: 'podcast-humor-in-the-c-suite.jpg' },
+  { show: 'Pepperdine Graziadio Business School', ep: 'Published article: Unlocking Pathways to Success', img: '' }
+];
+const photos = [
+  { f: 'jack-p-flaherty-portrait-about.jpg', w: 1200, h: 1500, alt: 'Jack P. Flaherty, portrait' },
+  { f: 'jack-p-flaherty-portrait-pier.jpg', w: 1200, h: 1499, alt: 'Jack P. Flaherty, outdoor portrait on a pier' },
+  { f: 'jack-p-flaherty-keynote-stage.jpg', w: 1600, h: 900, alt: 'Jack P. Flaherty delivering a keynote on a dark stage' },
+  { f: 'jack-p-flaherty-keynote-speaker-hero.jpg', w: 2400, h: 1138, alt: 'Jack P. Flaherty, keynote speaker, in a high-rise office at dusk' }
+];
+---
+<Base title="Testimonials and Media | Jack P. Flaherty, Keynote Speaker and Executive Advisor"
+  description="What health-system leaders, partners at Deloitte and Baker Tilly, and NCSBN attendees say after hearing Jack P. Flaherty speak, plus media appearances."
+  path="/press-media" image="/images/jack-p-flaherty-keynote-stage.jpg" schema={[page]}>
+
+  <section>
+    <div class="wrap">
+      <h1>What leaders say after working with Jack P. Flaherty</h1>
+      <p class="lede">Executives, partners and nurse leaders on what changed after the room heard Jack. Every quote is in the speaker's own words.</p>
+
+      <h2 class="group">Health systems and nurse leaders</h2>
+      <div class="grid c3">
+        {health.map(i => <figure class="quote"><blockquote>"{i.q}"</blockquote><figcaption><strong>{i.n}</strong>, {i.t}</figcaption></figure>)}
+      </div>
+
+      <h2 class="group">Partners and professional services</h2>
+      <div class="grid c2">
+        {partners.map(i => <figure class="quote"><blockquote>"{i.q}"</blockquote><figcaption><strong>{i.n}</strong>, {i.t}</figcaption></figure>)}
+      </div>
+
+      <h2 class="group">Leaders and teams</h2>
+      <div class="grid c3">
+        {teams.map(i => <figure class="quote"><blockquote>"{i.q}"</blockquote><figcaption><strong>{i.n}</strong>, {i.t}</figcaption></figure>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="split rev">
+        <div>
+          <h2>Media and interviews</h2>
+          <p>Speaking history includes HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</p>
+        </div>
+        <img src="/images/jack-p-flaherty-interview.jpg" alt="Jack P. Flaherty being interviewed on camera" width="1600" height="862" loading="lazy" />
+      </div>
+      <div class="grid c4" style="margin-top:2.5rem">
+        {media.map(m => (
+          <div class="card">
+            {m.img && <img src={'/images/' + m.img} alt={m.show + ' podcast, with guest Jack P. Flaherty'} width="800" height="450" loading="lazy" />}
+            <h3>{m.show}</h3>
+            {m.ep && <p>{m.ep}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <p class="lede" style="margin-left:auto;margin-right:auto">Bringing Fear Is Not A Control to your leadership team, conference or partner meeting?</p>
+        <div class="btns" style="justify-content:center;margin-top:.6rem"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Press photos</h2>
+      <div class="grid c4 photos">
+        {photos.map(p => (
+          <div class="card">
+            <img src={'/images/' + p.f} alt={p.alt} width={p.w} height={p.h} loading="lazy" />
+            <p><a href={'/images/' + p.f} download={p.f}>Download</a> ({p.w} x {p.h})</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Where does your decision-making actually stand?</h2>
+        <p>Find out in about 3 minutes and get a personalized report.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
+        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .quote { margin: 0; }
+  h2.group { margin-top: 2.5rem; font-size: 1.5rem; }
+  .card h3 { font-size: 1.1rem; }
+  .card p { font-size: 1rem; }
+  .photos .card img { aspect-ratio: 1 / 1; }
+</style>

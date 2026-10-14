@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; }
+const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website' } = Astro.props;
+const canonical = site.url + (path === '/' ? '/' : path);
+const person = {
+  '@context': 'https://schema.org', '@type': 'Person', '@id': site.url + '/#person',
+  name: 'Jack P. Flaherty', alternateName: 'Jack Flaherty', url: site.url,
+  image: site.url + '/images/jack-p-flaherty-portrait-about.jpg',
+  jobTitle: 'Keynote speaker and trusted advisor to boards and executives',
+  description: site.position,
+  telephone: site.phone, email: site.email,
+  address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
+  sameAs: [site.linkedin, site.youtube, site.instagram, site.amazon]
+};
+const all = [person, ...schema];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={site.url + image} />
+  <meta property="og:site_name" content="Jack P. Flaherty" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/images/favicon-48.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Lato:wght@400;700&display=swap" />
+  {all.map(s => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <Nav />
+  <main id="main"><slot /></main>
+  <Footer />
+</body>
+</html>

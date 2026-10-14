@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Who is this for?', a: 'Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. Chief nursing officers, CIOs, CMIOs, quality and risk leaders, and the boards they report to.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each.' },
+  { q: 'Does Jack customise the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where clinical and operational teams apply the new-hire method to a technology decision they are facing now. It is quoted on the discovery call.' },
+  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/healthcare-providers', url: site.url + '/industries/healthcare-providers',
+  name: 'Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty',
+  description: 'Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty"
+  description="Jack P. Flaherty speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control."
+  path="/industries/healthcare-providers" image="/images/jack-p-flaherty-workshop-table.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h1>Keynote speaker for health systems and nurse leaders</h1>
+        <p class="lede">{site.position}</p>
+        <p>A new tool shows up on the unit. Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Nobody owns the decision, so fear makes it. Jack P. Flaherty has spent 25 years in risk and advisory, 15 of them at the Big Four, in the rooms where health-system technology decisions get made, defended and paid for. His keynote gives clinical and executive leaders one method they can repeat on the drive home.</p>
+      </div>
+      <img src="/images/jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop with a leadership team around a table" width="1600" height="1199" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>The keynote</h2>
+      <div class="card">
+        <h3>Fear Is Not A Control: Making the Call on New Technology When Patients Are Waiting</h3>
+        <p>Treat new technology like a new hire. A job description, a manager, a probation period, a review. Built for leadership summits, nursing conferences and health-system association events. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
+        <p><a href="/keynote-speaker/fear-is-not-a-control-healthcare">See the healthcare keynote</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why health systems book Jack</h2>
+      <ul class="checks">
+        <li>Served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.</li>
+        <li>Led a board-mandated cybersecurity programme for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.</li>
+        <li>Principal consultant for California's first statewide health information exchange.</li>
+        <li>Ran PwC's national Healthcare Risk Roundtable, a gathering of C-suite risk executives, twice a year for five years.</li>
+        <li>Has spoken at HIMSS, AHIA, NCSBN and the Nursing World Conference, and led training for the Southern California HIMSS chapter.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>What health-system leaders say</h2>
+      <div class="grid c3">
+        <figure class="quote">
+          <blockquote>"Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!"</blockquote>
+          <figcaption><strong>Bill Lazarus</strong>, CTO, UCLA Health</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Great presenter! Clear and concise. Informative."</blockquote>
+          <figcaption><strong>Attendee</strong>, NCSBN ICRS graduation keynote</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships."</blockquote>
+          <figcaption><strong>Kierney Palazzo</strong>, Internal Audit Manager, SCAN Health Plan</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <Faq items={faqs} heading="Questions meeting planners ask" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Planning a leadership summit, a nursing conference or a board session?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .quote { margin: 0; }
+</style>

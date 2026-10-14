@@ -1,0 +1,8 @@
+---
+interface Props { items: {q: string; a: string}[]; heading?: string; }
+const { items, heading = 'Questions planners ask' } = Astro.props;
+---
+<div class="faq">
+  <h2>{heading}</h2>
+  {items.map(i => <details><summary>{i.q}</summary><p set:html={i.a} /></details>)}
+</div>

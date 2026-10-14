@@ -1,0 +1,31 @@
+---
+import Essay from '../../layouts/Essay.astro';
+const about = ['Trusted advisor', 'Client relationships', 'Professional services firms', 'Technology decision-making'];
+const citation = { '@type': 'Report', name: 'Prescription for Cutting Costs', author: 'Reichheld, F. F.', publisher: 'Bain & Company', url: 'https://media.bain.com/Images/BB_Prescription_cutting_costs.pdf' };
+---
+<Essay title="The Silent Epidemic: The Lost Trusted Advisor in Accounting and Consulting | Jack P. Flaherty"
+  description="Accounting and consulting firms are trading client relationships for utilisation. Jack P. Flaherty on why the trusted advisor is disappearing and what it costs."
+  keywords={about.join(', ')}
+  path="/blogs/lost-role-of-trusted-advisors"
+  kicker="The Clear Confidence Report"
+  headline="The Silent Epidemic in Accounting and Consulting"
+  standfirst="Firms are trading relationships for utilisation, and the trusted advisor is disappearing with them."
+  date="2026-02-26" updated="2026-10-13"
+  about={about} citation={citation}
+  cta={{ text: 'This is the ground the keynote covers for partner groups.', label: 'See Fear Is Not A Control for professional services firms', href: '/keynote-speaker/fear-is-not-a-control-professional-services' }}>
+
+  <p>In accounting and consulting the race for efficiency is blinding firms to their most valuable asset: the client relationship. Partners and managers are more reluctant every year to spend the unbillable hour it takes to build one. Coffee became a cold email. Curiosity became an automated touchpoint. In a market where technical skill is a commodity, that reluctance is not a cultural footnote. It is the ceiling on the firm’s growth.</p>
+  <h2>What a handshake was worth</h2>
+  <p>My father ran a wholesale printing company. He had no degree. He built a life and a comfortable retirement on two things: his word held, and he knew the people behind every account. I swept his shop floor at ten and later made cold calls for him. I watched him build a business on handshakes that meant something.</p>
+  <p>In my own career, from trading derivatives in my twenties to 15 years at the Big Four as a director, I watched the opposite take root. As utilisation targets climbed, the appetite for relationship-building fell. Clients became transactions.</p>
+  <p>When was the last time you called a client just to understand how their world is changing, with no statement of work in your pocket?</p>
+  <h2>Why partners hold back</h2>
+  <p>The hesitation usually comes from fear. Fear of wasting the time. Fear of being asked a question you cannot answer on the spot. Here is what I learned building my own practices: clarity is what makes the time worth it. When you understand a client’s actual fears and ambitions, you can give them something no framework can.</p>
+  <p>The numbers are not subtle. Bain’s research found that raising customer retention by 5 percent lifts profits by 25 to 95 percent.<sup>1</sup> Retention takes trust. Trust takes time. You cannot optimise your way out of a relationship.</p>
+  <h2>The technology version of the same mistake</h2>
+  <p>The same reluctance now shows up around new technology. A client’s team adopts a tool. The partner who knows them well would have heard about it over coffee, months before it landed on an engagement. The partner who manages the account by email finds out when something goes wrong.</p>
+  <p>The trusted advisor is the one in the room when the technology decision is made, asking the questions that make it a decision instead of a drift: what is this tool’s job, who manages it, and when do we review it. Treat it like a new hire. That conversation only happens if the relationship was built first.</p>
+  <h2>Make the hours count</h2>
+  <p>The firms that lead the next decade will not be the ones with the best slide decks. They will be the ones whose people still look a client in the eye, ask the hard question and care about the answer. Stop counting the hours. Start making them count.</p>
+  <p class="meta">1. Reichheld, F. F. Prescription for Cutting Costs. Bain &amp; Company. <a href="https://media.bain.com/Images/BB_Prescription_cutting_costs.pdf" rel="noopener" target="_blank">bain.com (PDF)</a></p>
+</Essay>

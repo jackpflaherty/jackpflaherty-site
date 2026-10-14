@@ -1,0 +1,11 @@
+---
+interface Props { text?: string; primary?: {label: string; href: string}; secondary?: {label: string; href: string}; }
+const { text = 'Tell Jack who is in the room and what decision is in front of them.', primary = {label: 'Book Jack', href: '/book-jack'}, secondary } = Astro.props;
+---
+<div class="cta-band">
+  <p class="lede" style="margin-left:auto;margin-right:auto">{text}</p>
+  <div class="btns" style="justify-content:center;margin-top:.6rem">
+    <a class="btn" href={primary.href}>{primary.label}</a>
+    {secondary && <a class="btn alt" href={secondary.href}>{secondary.label}</a>}
+  </div>
+</div>

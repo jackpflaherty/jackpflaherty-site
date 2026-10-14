@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Thank You | Jack P. Flaherty"
+  description="Thank you. Jack has your details. He reads every inquiry himself and replies within one business day."
+  path="/thank-you-jack-flaherty" noindex={true}>
+
+  <section>
+    <div class="wrap">
+      <h1>Thank you. Jack has your details.</h1>
+      <div class="grid c2" style="margin:1.5rem 0 2.5rem">
+        <div class="card"><ul class="checks">
+          <li>Risk decisions moving forward without documented governance.</li>
+          <li>Digital transformation stalled because the leadership team won't commit.</li>
+          <li>AI being deployed in your organization with no board-level oversight.</li>
+        </ul></div>
+        <div class="card"><ul class="checks">
+          <li>Consciously filter noise and discover critical insights.</li>
+          <li>Lead with clarity &amp; objectivity, not gut instinct alone.</li>
+          <li>Build resilient teams who thrive in a changing world.</li>
+        </ul></div>
+      </div>
+      <div class="narrow">
+        <p class="lede">Jack reads every inquiry himself and replies within one business day, with questions rather than a brochure.</p>
+        <ol>
+          <li>You will hear from Jack within one business day.</li>
+          <li>If the date and the room fit, the next step is a 30-minute discovery call about who is in the room and what decision they are facing.</li>
+          <li>No proposal goes out before that call.</li>
+        </ol>
+        <p>Want to skip ahead? Pick a time now.</p>
+        <div class="btns"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/insights">Read the Insights meanwhile</a></div>
+        <p class="meta" style="margin-top:1.8rem;font-size:1rem">Something urgent? Email <a href={'mailto:' + site.email}>{site.email}</a> directly.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .card ul.checks { margin: 0; }
+  .card ul.checks li:last-child { margin-bottom: 0; }
+</style>

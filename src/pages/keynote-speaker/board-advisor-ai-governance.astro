@@ -1,0 +1,178 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import site from '../../data/site.json';
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/keynote-speaker/board-advisor-ai-governance', url: site.url + '/keynote-speaker/board-advisor-ai-governance',
+  name: 'Board and Executive Advisory on AI and Technology Decisions | Jack P. Flaherty',
+  description: 'Board and executive advisory from Jack P. Flaherty. Most boards believe they have governance over new technology. Few can name who owns the decision.',
+  about: { '@type': 'Thing', name: 'Board oversight of AI and technology decisions' },
+  author: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Board and Executive Advisory on AI and Technology Decisions | Jack P. Flaherty"
+  description="Board and executive advisory from Jack P. Flaherty. Most boards believe they have governance over new technology. Few can name who owns the decision."
+  path="/keynote-speaker/board-advisor-ai-governance" image="/images/jack-p-flaherty-board-advisory-sepia.jpg" schema={[page]}>
+
+  <div class="board-hero">
+    <Hero image="/images/jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive beside an office window" pos="30% 50%" posMobile="30% 40%" short>
+      <h1>Does Your Board Own the Decision, or Just the Consequence?</h1>
+      <p>Board and executive advisory</p>
+      <p>Boards That Get It Right Know Which Decisions Are Theirs</p>
+      <p>Most boards are approving AI strategies, receiving risk updates and asking thoughtful questions. Then going home believing they have exercised appropriate oversight. The gap between belief and reality is where fiduciary exposure lives.</p>
+      <div class="btns"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+    </Hero>
+  </div>
+
+  <section>
+    <div class="wrap narrow">
+      <figure class="quote">
+        <blockquote>"The ripple is always there. The question is whether anyone on your board is assigned to watch for it."</blockquote>
+        <figcaption><strong>Jack P. Flaherty</strong></figcaption>
+      </figure>
+      <p class="lede" style="margin-top:1.6rem">Jack has sat in boardrooms as a Big 4 director, as acting enterprise risk and audit leader for a $10B health system, and as interim COO and risk advisor for fintech and digital-asset companies. The boards that handled new technology well all had one thing in common. They knew, in specific terms, which decisions they were responsible for overseeing. Not which functions reported up through them. Which decisions.</p>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>The gap</h2>
+          <p class="lede" style="color:#E3D5BE">Most boards believe they have governance over new technology. Few can name who owns the decision.</p>
+          <p>Boards are approving AI strategies. Receiving risk updates in quarterly packets. Asking thoughtful questions about data governance and model accuracy. Then going home believing they have exercised appropriate oversight.</p>
+          <p>The gap is not malice. It is not incompetence. It is architecture.</p>
+          <p>Algorithmic systems are already influencing credit scoring, clinical recommendations, hiring decisions and risk classifications at organizations where the board believes it has control. The systems were deployed at the operational level, optimized for efficiency, and by the time they reached the board packet they looked like a technology update, not a fiduciary exposure.</p>
+          <p>The pattern repeats across industries. The sector changes. The failure mode does not.</p>
+        </div>
+        <div class="grid stack">
+          <div class="card">
+            <h3>Healthcare</h3>
+            <p>A regulator made the cybersecurity risk at a $4B health system unavoidable. Jack built the board proposal, hired and managed the vendors, and the urgent gaps closed on a $2.5 million budget within one year. The organisation was fully compliant a year later.</p>
+            <p>The board did not freeze. It gave the decision an owner, a budget, a deadline and a review date.</p>
+          </div>
+          <div class="card">
+            <h3>Fintech and digital assets</h3>
+            <p>Jack served as interim COO and risk advisor for fintech and digital-asset companies where speed had outpaced every governance structure they had. The founders had vision and funding.</p>
+            <p>Nobody had been assigned to watch for the decisions being made without them.</p>
+          </div>
+          <div class="card">
+            <h3>Two settings. Two boards.</h3>
+            <p>One failure mode: no named person, with a named responsibility, assigned to watch for the decisions already being made without them.</p>
+            <p>That is the problem. That is what Jack fixes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>You can't fix what you can't see.</h2>
+        <p>The Clear Confidence Assessment™ shows you your organization's decision architecture in about 3 minutes.</p>
+        <a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a>
+        <p class="meta" style="margin-top:1rem">Free. About 3 minutes. No call required.</p>
+      </div>
+      <ul class="checks">
+        <li>Your Clear Confidence Score, 0 to 100</li>
+        <li>Which of four decision-making tiers you're in</li>
+        <li>Your single biggest gap, named, not guessed</li>
+        <li>A personalized diagnostic report, yours to keep</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Five questions</h2>
+      <p class="lede">Five questions worth putting to your audit committee.</p>
+      <p>If these questions produce confident, specific, documented answers, the governance is working. If they produce silence, a referral to IT, or a promise to follow up, the ripple is already in the water.</p>
+      <div class="grid c2" style="margin-top:1.5rem">
+        <div class="card accent">
+          <p class="kicker">1.</p>
+          <h3>Which decisions in this organization are currently being made, or materially influenced, by an algorithmic system?</h3>
+          <p>Credit scoring, clinical recommendations, hiring decisions and risk classifications are common answers. Most boards cannot name them with specificity.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">2.</p>
+          <h3>Who is responsible for validating that AI output is accurate before it becomes an action?</h3>
+          <p>If the answer is "the vendor" or "the technology team", the board does not own the decision. It owns the consequence.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">3.</p>
+          <h3>When was the last time a human reviewed the model's assumptions against current conditions?</h3>
+          <p>A model optimized for the conditions of three years ago, operating in today's market, is not just outdated. It is active risk.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">4.</p>
+          <h3>If the model drifted today, producing systematically biased outputs, how long before the board would know?</h3>
+          <p>The ripple runs the entire time nobody is assigned to watch for it.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">5.</p>
+          <h3>And who, by name, with a named responsibility, is assigned to watch for that?</h3>
+          <p>This is not an IT question. It is a governance question, and it lands in the boardroom. The absence of a named person with a named responsibility is the gap. Treat new technology like a new hire: a job description, a manager, a probation period, a review. That is what closes it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>Why boards call Jack</h2>
+          <p class="lede" style="color:#E3D5BE">The background boards are looking for.</p>
+          <p>25 years in risk and advisory, 15 of them at the Big Four, and a method a board can run itself. Built from inside the rooms, not from a governance textbook.</p>
+        </div>
+        <figure class="quote">
+          <blockquote>"Most teams leave a strategy session feeling energized. The ones that come back six months later are the ones who left with a shared process, not just a shared poster."</blockquote>
+          <figcaption><strong>Jack P. Flaherty</strong></figcaption>
+        </figure>
+      </div>
+      <div class="grid c4 stats" style="margin-top:2.5rem">
+        <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where technology decisions carry the highest cost.</p></div>
+        <div class="card"><p class="stat"><strong>$10B</strong>Health system where Jack served as acting enterprise risk and audit leader, reporting to the C-suite and audit committee.</p></div>
+        <div class="card"><p class="stat"><strong>$15B</strong>Financial institution where Jack led a data governance implementation.</p></div>
+        <div class="card"><p class="stat"><strong>$2.5M</strong>Board-mandated cybersecurity programme for a $4B health system. Urgent gaps closed within one year.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next step</h2>
+        <p>A 30-minute conversation about which decisions are already being made without your board.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Where does your decision-making actually stand?</h2>
+        <p>Find out in about 3 minutes and get a personalized report.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
+        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .board-hero :global(.hero .wrap) { display: flex; justify-content: flex-end; }
+  .board-hero :global(.hero:after) { background: linear-gradient(270deg, rgba(42,26,14,.86) 0%, rgba(42,26,14,.66) 36%, rgba(42,26,14,.1) 64%, rgba(42,26,14,0) 80%); }
+  .board-hero :global(.hero .txt) { max-width: 38rem; }
+  .board-hero :global(.hero h1) { font-size: clamp(2rem, 4.2vw, 3rem); }
+  .stack { grid-template-columns: 1fr; }
+  .quote { margin: 0; }
+  .stats .card { padding: 1.3rem; }
+  .stat { margin: 0; }
+  .stat strong { display: block; font-family: var(--font-head); font-size: 2.4rem; line-height: 1; color: #E3A990; margin-bottom: .5rem; }
+  .dark .quote blockquote, .dark .quote figcaption, .dark .quote figcaption strong { color: var(--ink); }
+</style>

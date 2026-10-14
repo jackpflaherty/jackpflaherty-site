@@ -1,0 +1,54 @@
+---
+import Base from './Base.astro';
+import Cta from '../components/Cta.astro';
+import site from '../data/site.json';
+interface Link { label: string; href: string; }
+interface Props {
+  title: string; description: string; keywords?: string; path: string;
+  kicker: string; headline: string; standfirst: string;
+  date?: string; updated?: string;
+  cta: { text: string; label: string; href: string; secondary?: Link };
+  about?: string[]; citation?: object;
+}
+const { title, description, keywords = '', path, kicker, headline, standfirst, date, updated, cta, about, citation } = Astro.props;
+const image = '/images/jack-p-flaherty-writing-at-desk.jpg';
+const canonical = site.url + path;
+const monthYear = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const byline = 'By Jack P. Flaherty.' + (date ? (updated ? ` First published ${monthYear(date)}. Updated ${monthYear(updated)}.` : ` ${monthYear(date)}.`) : '');
+const article: Record<string, unknown> = {
+  '@context': 'https://schema.org', '@type': 'BlogPosting',
+  '@id': canonical, mainEntityOfPage: canonical,
+  headline, alternativeHeadline: standfirst, description,
+  image: site.url + image,
+  author: { '@id': site.url + '/#person' },
+  publisher: { '@type': 'Person', '@id': site.url + '/#person' }
+};
+if (date) article.datePublished = date;
+if (updated || date) article.dateModified = updated || date;
+if (about) article.about = about;
+if (citation) article.citation = citation;
+---
+<Base title={title} description={description} keywords={keywords} path={path} image={image} schema={[article]} type="article">
+  <section>
+    <div class="wrap">
+      <div class="narrow">
+        <p class="kicker">{kicker}</p>
+        <h1>{headline}</h1>
+        <p class="lede">{standfirst}</p>
+        <p class="byline">{byline}</p>
+      </div>
+      <article class="prose">
+        <slot />
+      </article>
+      <div class="after">
+        <Cta text={cta.text} primary={{ label: cta.label, href: cta.href }} secondary={cta.secondary} />
+        <p class="meta more"><a href="/insights">More Insights</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .after { margin-top: 3rem; }
+  .more { text-align: center; margin: 1.2rem 0 0; max-width: none; }
+</style>

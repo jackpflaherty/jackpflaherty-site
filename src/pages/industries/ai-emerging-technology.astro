@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Is this an AI keynote or a technology keynote?', a: 'Technology, with AI as the example everyone in the room is living with. The method applies to any new system, which is why it still works when the next one arrives.' },
+  { q: 'Does Jack take a position on whether to adopt AI?', a: 'Yes. Adopt it the way you would hire someone: on purpose, with a job description, a manager, a probation period and a review. Fear is not a control, and neither is a ban.' },
+  { q: 'How technical does it get?', a: 'As technical as the room needs. Directors get the governance questions. Operators get the probation-period mechanics. Nobody gets a tool demo.' },
+  { q: 'Can the board session be combined with the keynote?', a: 'Yes. The usual pattern is the keynote for the wider audience and a closed session with the board or executive team the same day.' }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/ai-emerging-technology', url: site.url + '/industries/ai-emerging-technology',
+  name: 'AI and Emerging Technology Keynote Speaker | Jack P. Flaherty',
+  description: 'AI and emerging technology, decided like a new hire. A job description, a manager, a probation period, a review. Keynote and board sessions by Jack P. Flaherty.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="AI and Emerging Technology Keynote Speaker | Jack P. Flaherty"
+  description="AI and emerging technology, decided like a new hire. A job description, a manager, a probation period, a review. Keynote and board sessions by Jack P. Flaherty."
+  path="/industries/ai-emerging-technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h1>AI and emerging technology, decided like a new hire</h1>
+        <p class="lede">{site.position} This year, the technology on the agenda is AI.</p>
+        <h2>The decision nobody owns</h2>
+        <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
+        <p>Fear is not a control either. Banning a tool does not stop the work from happening. It moves the work somewhere you cannot see it.</p>
+      </div>
+      <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>Treat new technology like a new hire</h2>
+      <p class="lede" style="color:#E3D5BE">You would never let a new hire start without four things. New technology gets the same four.</p>
+      <div class="grid c2" style="margin-top:1.5rem">
+        <div class="card accent"><h3>A job description</h3><p>What it is allowed to do, what it is not, and who it serves.</p></div>
+        <div class="card accent"><h3>A manager</h3><p>One named person who answers for it, not a committee.</p></div>
+        <div class="card accent"><h3>A probation period</h3><p>A limited scope, a fixed window and a number you are watching.</p></div>
+        <div class="card accent"><h3>A review</h3><p>Decide, then watch for the ripple, and change the decision when the ripple says to.</p></div>
+      </div>
+      <p style="margin-top:1.6rem">That is the whole method. It fits on one page, and a board can ask about it in four questions.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Where Jack has sat</h2>
+      <p>25 years in risk and advisory. 15 years at the Big Four, where he served as a director. Held CISSP, CISA and CGEIT. He has sat with boards and audit committees while a new system went live, and he has seen which ones slept.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>Ways to bring this into the room</h2>
+      <div class="card">
+        <h3>Keynote: Fear Is Not A Control</h3>
+        <p>45 to 60 minutes, built for <a href="/keynote-speaker/fear-is-not-a-control-healthcare">health systems</a> or for <a href="/keynote-speaker/fear-is-not-a-control-professional-services">professional services firms</a>.</p>
+        <h3 style="margin-top:1.4rem">Board and executive session</h3>
+        <p>A working session with the directors on the technology decision in front of them. <a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a>.</p>
+        <p>Both start with a discovery call. Jack replies within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <Faq items={faqs} heading="Questions planners ask" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Tell Jack which technology is on your agenda and who is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the keynote', href: '/keynote-speaker/executive-decision-making-keynote'}} />
+    </div>
+  </section>
+</Base>

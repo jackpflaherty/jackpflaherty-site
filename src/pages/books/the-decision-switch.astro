@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+const book = {
+  '@context': 'https://schema.org', '@type': 'Book',
+  name: 'The Decision Switch',
+  author: { '@type': 'Person', '@id': site.url + '/#person', name: 'Jack P. Flaherty' },
+  publisher: { '@type': 'Organization', name: 'Cinch & Stone Press' },
+  url: site.amazon,
+  image: site.url + '/images/the-decision-switch-book-stack.jpg'
+};
+---
+<Base title="The Decision Switch by Jack P. Flaherty | Cinch & Stone Press"
+  description="Decision-making is a process, not an event. The Decision Switch is Jack P. Flaherty's book on how leaders make the call under pressure and stand behind it."
+  path="/books/the-decision-switch" image="/images/the-decision-switch-book-stack-brown.jpg" schema={[book]}>
+
+  <section>
+    <div class="wrap split">
+      <img class="stack" src="/images/the-decision-switch-book-stack.jpg" alt="Stacked copies of The Decision Switch by Jack P. Flaherty" width="673" height="775" loading="lazy" />
+      <div>
+        <h1>The Decision Switch</h1>
+        <p class="lede">Decision-making is a process, not an event. The Decision Switch is Jack P. Flaherty's book on how leaders make the call under pressure and stand behind it. Cinch &amp; Stone Press.</p>
+        <p>Built from 25 years in risk and advisory and the rooms where decisions carried the highest cost, the seven principles show you how to:</p>
+        <ul class="checks">
+          <li>Filter the noise. Triage what is in front of you so the decision gets made before fatigue makes it for you.</li>
+          <li>Keep your focus. Align priorities, effort and decisions with the mission, not the loudest voice in the room.</li>
+          <li>Build bridges. Bring the people who disagree into the decision before it is made, not after.</li>
+          <li>Clear your vision. Use objective inquiry to spot the biases that cloud judgement.</li>
+          <li>Build momentum. Give the decision a champion who keeps it moving and accountable.</li>
+          <li>Build trust. Recognise the sacrifices and setbacks a decision costs the people who carry it.</li>
+          <li>Learn the lesson. Turn every result, good or bad, into the next better decision.</li>
+        </ul>
+        <p>It is a how-to guide, not a theory. The same method now underpins Jack's keynote, Fear Is Not A Control, and the advice he gives boards when a new system is about to go live. <a href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a> or <a href="/insights">read the Insights</a> built on it.</p>
+        <div class="btns"><a class="btn" href={site.amazon} target="_blank" rel="noopener">Buy on Amazon</a></div>
+        <p class="meta" style="margin-top:.7rem">Paperback and Kindle. Opens Amazon in a new tab.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Where does your decision-making actually stand?</h2>
+        <p>Find out in about 3 minutes and get a personalized report.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
+        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .stack { max-width: 480px; width: 100%; justify-self: center; align-self: start; }
+  @media (min-width: 861px) { .wrap.split { grid-template-columns: .8fr 1.2fr; } }
+</style>

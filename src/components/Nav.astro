@@ -1,0 +1,35 @@
+---
+import site from '../data/site.json';
+---
+<header class="nav" id="site-nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Jack P. Flaherty, home"><img src="/images/jack-p-flaherty-signature-logo.png" alt="Jack P. Flaherty" width="900" height="257" /></a>
+    <button class="burger" aria-expanded="false" aria-controls="site-menu" data-burger>Menu</button>
+    <nav id="site-menu" aria-label="Main">
+      <ul>
+        {site.nav.map(item => item.children ? (
+          <li data-dd>
+            <button class="item" aria-expanded="false" data-dd-btn>{item.label} ▾</button>
+            <div class="menu">{item.children.map(c => <a href={c.href}>{c.label}</a>)}</div>
+          </li>
+        ) : (
+          <li><a class="item" href={item.href}>{item.label}</a></li>
+        ))}
+        <li><a class="btn book" href="/book-jack">Book Jack</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<script>
+  const nav = document.getElementById('site-nav');
+  const burger = nav?.querySelector('[data-burger]');
+  burger?.addEventListener('click', () => { const o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', String(o)); });
+  nav?.querySelectorAll('[data-dd]').forEach(li => {
+    const btn = li.querySelector('[data-dd-btn]');
+    btn?.addEventListener('click', (e) => { e.stopPropagation(); const o = li.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
+    li.addEventListener('mouseenter', () => { if (window.innerWidth > 960) li.classList.add('open'); });
+    li.addEventListener('mouseleave', () => { if (window.innerWidth > 960) li.classList.remove('open'); });
+  });
+  document.addEventListener('click', () => nav?.querySelectorAll('[data-dd].open').forEach(li => li.classList.remove('open')));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') nav?.querySelectorAll('.open').forEach(el => el.classList.remove('open')); });
+</script>

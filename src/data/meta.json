@@ -1,0 +1,213 @@
+{
+ "about-jack-flaherty": {
+  "title": "About Jack P. Flaherty | Keynote Speaker, Executive Advisor, Former Big 4 Director",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"ProfilePage\",\"@id\":\"https://www.jackpflaherty.com/about-jack-flaherty\",\"url\":\"https://www.jackpflaherty.com/about-jack-flaherty\",\"name\":\"About Jack P. Flaherty\",\"mainEntity\":{\"@type\":\"Person\",\"@id\":\"https://www.jackpflaherty.com/#person\",\"name\":\"Jack P. Flaherty\",\"honorificSuffix\":\"MBA\",\"description\":\"Jack Flaherty is the trusted advisor who helps boards and executives make decisions with technology. 25 years in risk and advisory, 15 of them at the Big Four. Author of The Decision Switch.\",\"url\":\"https://www.jackpflaherty.com/\",\"email\":\"jack@jackpflaherty.com\",\"telephone\":\"+1-310-463-2018\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Los Angeles\",\"addressRegion\":\"CA\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\",\"https://www.youtube.com/@jackpflaherty\",\"https://www.instagram.com/jackpflaherty/\"],\"alumniOf\":[{\"@type\":\"CollegeOrUniversity\",\"name\":\"Pepperdine Graziadio Business School\"},{\"@type\":\"CollegeOrUniversity\",\"name\":\"Marist College\"}],\"knowsAbout\":[\"Technology decision-making\",\"AI governance\",\"Board risk oversight\",\"Enterprise risk management\",\"Healthcare risk\"],\"memberOf\":{\"@type\":\"Organization\",\"name\":\"Risso Foundation\"},\"subjectOf\":{\"@type\":\"Book\",\"name\":\"The Decision Switch\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cinch & Stone Press\"}}}}"
+  ]
+ },
+ "blogs__2-am-anxiety-test": {
+  "title": "The 2 AM Anxiety Test: Vendor or Trusted Advisor? | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/2-am-anxiety-test\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/2-am-anxiety-test\",\"headline\":\"Trusted Advisor: Passing the 2 AM Anxiety Test\",\"alternativeHeadline\":\"If the call comes at 2 AM, you are the advisor. If it comes at 9 AM, you are the vendor.\",\"description\":\"When a client's world cracks open, do they call you? Jack P. Flaherty, former Big 4 director, on the difference between a vendor and a trusted advisor in accounting, advisory and law firms.\",\"datePublished\":\"2026-02-06\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Trusted advisor\",\"Professional services firms\",\"Client relationships\",\"Technology decision-making\"],\"citation\":{\"@type\":\"ScholarlyArticle\",\"name\":\"The B2B Elements of Value\",\"author\":\"Almquist, E., Cleghorn, J. and Sherer, L.\",\"datePublished\":\"2018\",\"isPartOf\":\"Harvard Business Review, 96(2)\",\"url\":\"https://hbr.org/2018/03/the-b2b-elements-of-value\"}}"
+  ]
+ },
+ "blogs__fear-is-not-a-control": {
+  "title": "Fear Is Not A Control: Why Waiting Is the Costliest Risk Posture | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/fear-is-not-a-control\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/fear-is-not-a-control\",\"headline\":\"Fear Is Not A Control\",\"alternativeHeadline\":\"Waiting feels safe. It is the most expensive risk posture a leadership team can take.\",\"description\":\"Nobody owns the technology decision, so fear makes it. Jack P. Flaherty, former Big 4 director, on why waiting is not a control and the three questions that replace it.\",\"datePublished\":\"2026-10-13\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Technology risk governance\",\"Board oversight\",\"Technology decision-making\",\"AI adoption\"]}"
+  ]
+ },
+ "blogs__go-slow-to-go-fast": {
+  "title": "Go Slow to Go Fast: Four Questions for the Audit Chair Before Go-Live | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/go-slow-to-go-fast\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/go-slow-to-go-fast\",\"headline\":\"Go Slow to Go Fast\",\"alternativeHeadline\":\"What an audit chair should ask before the system goes live, and why asking it speeds the rollout up.\",\"description\":\"Deferring a technology decision is the most expensive option a board has. Jack P. Flaherty, former Big 4 director, on the four questions an audit committee asks once so it can say yes faster.\",\"datePublished\":\"2026-10-13\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Board oversight\",\"Audit committee\",\"AI governance\",\"Technology decision-making\"]}"
+  ]
+ },
+ "blogs__lost-role-of-trusted-advisors": {
+  "title": "The Silent Epidemic: The Lost Trusted Advisor in Accounting and Consulting | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/lost-role-of-trusted-advisors\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/lost-role-of-trusted-advisors\",\"headline\":\"The Silent Epidemic in Accounting and Consulting\",\"alternativeHeadline\":\"Firms are trading relationships for utilisation, and the trusted advisor is disappearing with them.\",\"description\":\"Accounting and consulting firms are trading client relationships for utilisation. Jack P. Flaherty, former Big 4 director, on why the trusted advisor is disappearing and what it costs.\",\"datePublished\":\"2026-02-26\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Trusted advisor\",\"Client relationships\",\"Professional services firms\",\"Technology decision-making\"],\"citation\":{\"@type\":\"Report\",\"name\":\"Prescription for Cutting Costs\",\"author\":\"Reichheld, F. F.\",\"publisher\":\"Bain & Company\",\"url\":\"https://media.bain.com/Images/BB_Prescription_cutting_costs.pdf\"}}"
+  ]
+ },
+ "blogs__the-ai-atrophy": {
+  "title": "The AI Atrophy: When AI Does the Reps, Firms Lose Judgement | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/the-ai-atrophy\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/the-ai-atrophy\",\"headline\":\"The AI Atrophy\",\"alternativeHeadline\":\"When the machine does the reps, your people lose the instinct that catches its mistakes\",\"description\":\"Automation bias is reaching accounting and consulting firms. Jack P. Flaherty, former Big 4 director, on keeping professional judgement when AI does the work: treat the tool like a new hire.\",\"datePublished\":\"2026-02-20\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Automation bias\",\"AI governance\",\"Professional services firms\",\"Technology decision-making\"],\"citation\":{\"@type\":\"ScholarlyArticle\",\"name\":\"Complacency and Bias in Human Use of Automation: An Attentional Integration\",\"author\":\"Parasuraman, R. and Manzey, D. H.\",\"datePublished\":\"2010\",\"isPartOf\":\"Human Factors, 52(3)\",\"url\":\"https://journals.sagepub.com/doi/10.1177/0018720810376055\"}}"
+  ]
+ },
+ "blogs__the-integration-era": {
+  "title": "The Integration Era: Who Owns the Technology Decision? | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/the-integration-era\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/the-integration-era\",\"headline\":\"The Integration Era\",\"alternativeHeadline\":\"Information is now a commodity. The value is in the people who connect it, and the decisions they own.\",\"description\":\"Clinicians, security, compliance and finance in one room, and nobody owns the call. Jack P. Flaherty on integration in health systems and firms: treat new technology like a new hire.\",\"datePublished\":\"2026-01-09\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Technology decision-making\",\"Health systems\",\"Professional services firms\",\"Cross-functional teams\"],\"citation\":{\"@type\":\"ScholarlyArticle\",\"name\":\"Consulting on the Cusp of Disruption\",\"author\":\"Christensen, C. M., Wang, D. and van Bever, D.\",\"datePublished\":\"2013\",\"isPartOf\":\"Harvard Business Review, 91(10)\",\"url\":\"https://hbr.org/2013/10/consulting-on-the-cusp-of-disruption\"}}"
+  ]
+ },
+ "blogs__the-tool-that-showed-up-on-the-unit": {
+  "title": "The Tool That Showed Up on the Unit: New Technology in Health Systems | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/the-tool-that-showed-up-on-the-unit\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/the-tool-that-showed-up-on-the-unit\",\"headline\":\"The Tool That Showed Up on the Unit\",\"alternativeHeadline\":\"Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Decide, then watch for the ripple.\",\"description\":\"Half the team is using the new tool by Friday and nobody owns the decision. Jack P. Flaherty, former acting enterprise risk leader for a $10B health system, on what nurse leaders and executives do the week it shows up.\",\"datePublished\":\"2026-10-13\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Health systems\",\"Nurse leadership\",\"Clinical technology adoption\",\"Technology decision-making\"]}"
+  ]
+ },
+ "blogs__treat-new-technology-like-a-new-hire": {
+  "title": "Treat New Technology Like a New Hire: The Four-Step Method | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://www.jackpflaherty.com/blogs/treat-new-technology-like-a-new-hire\",\"mainEntityOfPage\":\"https://www.jackpflaherty.com/blogs/treat-new-technology-like-a-new-hire\",\"headline\":\"Treat New Technology Like a New Hire\",\"alternativeHeadline\":\"Nobody would hire a person without a job description, a manager, a probation period and a review. Most organisations adopt technology without any of them.\",\"description\":\"A job description, a manager, a probation period and a review. Jack P. Flaherty's four-step method for adopting AI and any new technology without letting fear make the decision.\",\"datePublished\":\"2026-10-13\",\"dateModified\":\"2026-10-13\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\"},\"about\":[\"Technology adoption\",\"AI governance\",\"Technology decision-making\",\"Board oversight\"]}"
+  ]
+ },
+ "book-jack": {
+  "title": "Book Jack P. Flaherty | Keynote Speaker and Executive Advisor",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"ContactPage\",\"@id\":\"https://www.jackpflaherty.com/book-jack\",\"url\":\"https://www.jackpflaherty.com/book-jack\",\"name\":\"Book Jack P. Flaherty | Keynote Speaker and Executive Advisor\",\"description\":\"Book Jack P. Flaherty for a keynote, a keynote plus workshop, or board and executive advisory. Health systems and professional services firms. Reply within one business day.\",\"about\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"email\":\"jack@jackpflaherty.com\",\"telephone\":\"+1-310-463-2018\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"potentialAction\":{\"@type\":\"ReserveAction\",\"name\":\"Book a 30-minute discovery call\",\"target\":\"https://calendly.com/jackpflaherty/discovery-call\"}}"
+  ]
+ },
+ "books__the-decision-switch": {
+  "title": "The Decision Switch by Jack P. Flaherty | Cinch & Stone Press",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "decision-making-toolkit": {
+  "title": "The Decision Toolkit | Leadership Frameworks by Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "home": {
+  "title": "Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "\n{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"honorificSuffix\":\"MBA\",\"description\":\"Jack Flaherty is the trusted advisor who helps boards and executives make decisions with technology.\",\"url\":\"https://www.jackpflaherty.com/\",\"email\":\"jack@jackpflaherty.com\",\"telephone\":\"+1-310-463-2018\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Los Angeles\",\"addressRegion\":\"CA\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\",\"https://www.youtube.com/@jackpflaherty\",\"https://www.instagram.com/jackpflaherty/\"],\"alumniOf\":[{\"@type\":\"CollegeOrUniversity\",\"name\":\"Pepperdine Graziadio Business School\"},{\"@type\":\"CollegeOrUniversity\",\"name\":\"Marist College\"}],\"knowsAbout\":[\"Technology decision-making\",\"AI governance\",\"Board risk oversight\",\"Enterprise risk management\"],\"subjectOf\":{\"@type\":\"Book\",\"name\":\"The Decision Switch\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cinch & Stone Press\"}}}\n"
+  ]
+ },
+ "industries__ai-emerging-technology": {
+  "title": "AI and Emerging Technology Keynote Speaker | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is this an AI keynote or a technology keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Technology, with AI as the example everyone in the room is living with. The method applies to any new system, which is why it still works when the next one arrives.\"}},{\"@type\":\"Question\",\"name\":\"Does Jack take a position on whether to adopt AI?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Adopt it the way you would hire someone: on purpose, with a job description, a manager, a probation period and a review. Fear is not a control, and neither is a ban.\"}},{\"@type\":\"Question\",\"name\":\"How technical does it get?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"As technical as the room needs. Directors get the governance questions. Operators get the probation-period mechanics. Nobody gets a tool demo.\"}},{\"@type\":\"Question\",\"name\":\"Can the board session be combined with the keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. The usual pattern is the keynote for the wider audience and a closed session with the board or executive team the same day.\"}}]}"
+  ]
+ },
+ "industries__healthcare-providers": {
+  "title": "Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.jackpflaherty.com/industries/healthcare-providers\",\"url\":\"https://www.jackpflaherty.com/industries/healthcare-providers\",\"name\":\"Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty\",\"description\":\"Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control.\",\"about\":{\"@type\":\"Person\",\"@id\":\"https://www.jackpflaherty.com/#person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]}},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Who is this for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. Chief nursing officers, CIOs, CMIOs, quality and risk leaders, and the boards they report to.\"}},{\"@type\":\"Question\",\"name\":\"Is it an AI talk?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each.\"}},{\"@type\":\"Question\",\"name\":\"Does Jack customise the keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.\"}},{\"@type\":\"Question\",\"name\":\"Live or virtual?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.\"}},{\"@type\":\"Question\",\"name\":\"Is there a workshop?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. A half-day working session after the keynote, where clinical and operational teams apply the new-hire method to a technology decision they are facing now. It is quoted on the discovery call.\"}},{\"@type\":\"Question\",\"name\":\"My event is close. Is it too late?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email jack@jackpflaherty.com directly.\"}}]}]}"
+  ]
+ },
+ "industries__industry-associations": {
+  "title": "Association and Conference Keynote Speaker on Technology Decisions | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "industries__professional-services-accounting-consulting": {
+  "title": "Keynote Speaker for Accounting, Advisory and Law Firms | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.jackpflaherty.com/industries/professional-services-accounting-consulting\",\"url\":\"https://www.jackpflaherty.com/industries/professional-services-accounting-consulting\",\"name\":\"Keynote Speaker for Accounting, Advisory and Law Firms | Jack P. Flaherty\",\"description\":\"Jack P. Flaherty, former Big 4 director, speaks to partners in accounting, advisory and law firms on making technology decisions their partners and clients will stand behind. Keynote: Fear Is Not A Control.\",\"about\":{\"@type\":\"Person\",\"@id\":\"https://www.jackpflaherty.com/#person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]}},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Who is this for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Partners and practice leaders in accounting, advisory and law firms, and the people who build those firms. Managing partners, practice heads, risk and quality leaders, and the executive committees they report to.\"}},{\"@type\":\"Question\",\"name\":\"Is it an AI talk?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI is in scope, but the talk is about any new technology that reaches an engagement or a client: an AI tool, a new platform, a system the client adopted first. The method is the same for each.\"}},{\"@type\":\"Question\",\"name\":\"Does Jack customise the keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.\"}},{\"@type\":\"Question\",\"name\":\"Live or virtual?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.\"}},{\"@type\":\"Question\",\"name\":\"Is there a workshop?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. A half-day working session after the keynote, where partners and practice leaders apply the new-hire method to a technology decision they are facing now. It is quoted on the discovery call.\"}},{\"@type\":\"Question\",\"name\":\"My event is close. Is it too late?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email jack@jackpflaherty.com directly.\"}}]}]}"
+  ]
+ },
+ "insights": {
+  "title": "Insights on Making Decisions with Technology | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"CollectionPage\",\"@id\":\"https://www.jackpflaherty.com/insights\",\"url\":\"https://www.jackpflaherty.com/insights\",\"name\":\"Insights on Making Decisions with Technology | Jack P. Flaherty\",\"description\":\"Short pieces by Jack P. Flaherty on making decisions with technology, for health-system leaders, professional services partners and the boards they answer to.\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]},\"hasPart\":[{\"@type\":\"BlogPosting\",\"headline\":\"The AI Atrophy\",\"url\":\"https://www.jackpflaherty.com/blogs/the-ai-atrophy\"},{\"@type\":\"BlogPosting\",\"headline\":\"Trusted Advisor: Passing the 2 AM Anxiety Test\",\"url\":\"https://www.jackpflaherty.com/blogs/2-am-anxiety-test\"},{\"@type\":\"BlogPosting\",\"headline\":\"The Silent Epidemic in Accounting and Consulting\",\"url\":\"https://www.jackpflaherty.com/blogs/lost-role-of-trusted-advisors\"},{\"@type\":\"BlogPosting\",\"headline\":\"The Integration Era\",\"url\":\"https://www.jackpflaherty.com/blogs/the-integration-era\"}]}"
+  ]
+ },
+ "keynote-speaker__board-advisor-ai-governance": {
+  "title": "Board and Executive Advisory on AI and Technology Decisions | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "keynote-speaker__executive-decision-making-keynote": {
+  "title": "Decision-Making Keynote Speaker | Jack Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "keynote-speaker__fear-is-not-a-control-healthcare": {
+  "title": "Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.jackpflaherty.com/keynote-speaker/fear-is-not-a-control-healthcare\",\"url\":\"https://www.jackpflaherty.com/keynote-speaker/fear-is-not-a-control-healthcare\",\"name\":\"Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty\",\"description\":\"Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes.\",\"about\":{\"@type\":\"Thing\",\"name\":\"Technology decision-making in health systems\"},\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]}},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Who is this keynote for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. It is built for leadership summits, nursing conferences and association meetings.\"}},{\"@type\":\"Question\",\"name\":\"Is this an AI keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each. Treat new technology like a new hire.\"}},{\"@type\":\"Question\",\"name\":\"What does the audience take home?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Three questions to ask before any technology decision, and one first move for the week they get back. Short enough to repeat without a slide.\"}},{\"@type\":\"Question\",\"name\":\"How long is it, and can it run virtually?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"45 to 60 minutes. A half-day workshop can follow the keynote. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.\"}},{\"@type\":\"Question\",\"name\":\"How do we book Jack?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Book a discovery call at calendly.com/jackpflaherty/discovery-call. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.\"}}]}]}"
+  ]
+ },
+ "keynote-speaker__fear-is-not-a-control-professional-services": {
+  "title": "Fear Is Not A Control: Keynote Speaker for Professional Services Firms | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.jackpflaherty.com/keynote-speaker/fear-is-not-a-control-professional-services\",\"url\":\"https://www.jackpflaherty.com/keynote-speaker/fear-is-not-a-control-professional-services\",\"name\":\"Fear Is Not A Control: Keynote Speaker for Professional Services Firms | Jack P. Flaherty\",\"description\":\"Keynote for partners in accounting, advisory and law firms by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes.\",\"about\":{\"@type\":\"Thing\",\"name\":\"Technology decision-making in professional services firms\"},\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]}},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Who is this keynote for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Partners and practice leaders in accounting, advisory and law firms, and the people who build those firms. It is built for partner meetings, firm retreats and professional association events.\"}},{\"@type\":\"Question\",\"name\":\"Is this an AI keynote?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"AI is in scope, but the talk is about any new technology that reaches an engagement or a client: an AI tool, a new platform, a system the client adopted first. The method is the same for each. Treat new technology like a new hire.\"}},{\"@type\":\"Question\",\"name\":\"What does the audience take home?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Three questions to ask before any technology decision, in the firm or at a client, and one first move for the next partner meeting. Short enough to repeat without a slide.\"}},{\"@type\":\"Question\",\"name\":\"How long is it, and can it run virtually?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"45 to 60 minutes. A half-day workshop can follow the keynote. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.\"}},{\"@type\":\"Question\",\"name\":\"How do we book Jack?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Book a discovery call at calendly.com/jackpflaherty/discovery-call. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.\"}}]}]}"
+  ]
+ },
+ "press-media": {
+  "title": "Testimonials and Media | Jack P. Flaherty, Keynote Speaker and Executive Advisor",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": [
+   "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://www.jackpflaherty.com/press-media\",\"url\":\"https://www.jackpflaherty.com/press-media\",\"name\":\"Testimonials and Media | Jack P. Flaherty\",\"description\":\"What health-system leaders, partners at Deloitte and Baker Tilly, and NCSBN attendees say after hearing Jack P. Flaherty speak, plus podcast and media appearances.\",\"about\":{\"@type\":\"Person\",\"@id\":\"https://www.jackpflaherty.com/#person\",\"name\":\"Jack P. Flaherty\",\"url\":\"https://www.jackpflaherty.com/\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\"]}}"
+  ]
+ },
+ "privacy": {
+  "title": "",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ },
+ "thank-you-jack-flaherty": {
+  "title": "Thank You | Jack P. Flaherty",
+  "description": "",
+  "keywords": "",
+  "og": "",
+  "ld": []
+ }
+}

@@ -1,0 +1,97 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Which audiences does this fit?', a: 'Health-system and nursing associations, accounting, advisory and legal professional bodies, audit and risk associations, and any conference where members make technology decisions they are accountable for.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that lands on a member\'s desk. The method is the same for each, which is why it holds up across a mixed audience.' },
+  { q: 'Does Jack customise it for our members?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'Can members take something away?', a: 'Three questions to ask before any technology decision, and one first move for the week they get back. Short enough to repeat without a slide. A half-day workshop can follow the keynote for chapters that want to work a live decision.' },
+  { q: 'Our date is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/industry-associations', url: site.url + '/industries/industry-associations',
+  name: 'Association and Conference Keynote Speaker on Technology Decisions | Jack P. Flaherty',
+  description: 'Keynote speaker for associations and conferences. Jack P. Flaherty gives a conference audience one method they can repeat on the drive home.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Association and Conference Keynote Speaker on Technology Decisions | Jack P. Flaherty"
+  description="Keynote speaker for associations and conferences. Jack P. Flaherty gives a conference audience one method they can repeat on the drive home."
+  path="/industries/industry-associations" image="/images/jack-p-flaherty-keynote-stage-blue.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h1>Keynote speaker for associations and conferences</h1>
+        <p class="lede">{site.position}</p>
+        <p>Your members are being asked to make calls on new technology faster than their training prepared them for. Jack P. Flaherty has spent 25 years in risk and advisory, 15 of them at the Big Four, in the rooms where those calls get made. His keynote gives a conference audience one method they can repeat on the drive home, whether they run a unit, a practice or a board.</p>
+      </div>
+      <img src="/images/jack-p-flaherty-keynote-stage-blue.jpg" alt="Jack P. Flaherty speaking on a conference stage lit in blue" width="1600" height="1066" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>The keynote</h2>
+      <div class="card">
+        <h3>Fear Is Not A Control</h3>
+        <p>Nobody owns the decision, so fear makes it. Treat new technology like a new hire: a job description, a manager, a probation period, a review. One talk, built for the decision in front of your members, with a version for health-system leaders and a version for partners in accounting, advisory and law firms. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
+        <p><a href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why associations book Jack</h2>
+      <ul class="checks">
+        <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</li>
+        <li>Led training for the Southern California HIMSS chapter, so he knows what a chapter programme chair needs from a speaker.</li>
+        <li>Served as acting enterprise risk and audit leader for a $10B health system and as a director at the Big Four. The stories are from the room, not the textbook.</li>
+        <li>Author of The Decision Switch. Writes The Clear Confidence Report.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>What attendees say</h2>
+      <div class="grid c3">
+        <figure class="quote">
+          <blockquote>"Great presenter! Clear and concise. Informative."</blockquote>
+          <figcaption><strong>Attendee</strong>, NCSBN ICRS graduation keynote</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Inspiring. Provides a framework."</blockquote>
+          <figcaption><strong>Attendee</strong>, NCSBN ICRS graduation keynote</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how."</blockquote>
+          <figcaption><strong>Shola Richards</strong>, Founder and CEO, Go Together Global</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <Faq items={faqs} heading="Questions programme chairs ask" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Planning an annual conference, a chapter meeting or a leadership summit?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .quote { margin: 0; }
+</style>

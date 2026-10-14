@@ -1,0 +1,46 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="/"><img src="/images/jack-p-flaherty-signature-logo-latte.png" alt="Jack P. Flaherty" width="900" height="258" /></a>
+        <p>{site.position}</p>
+        <p><a href={site.phoneHref}>{site.phone}</a><br /><a href={'mailto:' + site.email}>{site.email}</a><br />Los Angeles, California</p>
+      </div>
+      <div>
+        <h3>Speaking and advisory</h3>
+        <ul>
+          <li><a href="/keynote-speaker/executive-decision-making-keynote">Fear Is Not A Control</a></li>
+          <li><a href="/keynote-speaker/executive-decision-making-keynote#the-decision-switch">The Decision Switch</a></li>
+          <li><a href="/keynote-speaker/board-advisor-ai-governance">Board and executive advisory</a></li>
+          <li><a href="/industries/healthcare-providers">Health systems</a></li>
+          <li><a href="/industries/professional-services-accounting-consulting">Professional services</a></li>
+          <li><a href="/book-jack">Book Jack</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>The Clear Confidence Report</h3>
+        <p>Practical insight on making decisions with technology. One idea per issue, no filler.</p>
+        <form action="/api/inquiry" method="post" data-newsletter>
+          <input type="hidden" name="source" value="newsletter" />
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+          <label class="sr" for="nl-email">Email address</label>
+          <input id="nl-email" type="email" name="email" placeholder="you@organization.com" required />
+          <button class="btn" type="submit">Get the Report</button>
+        </form>
+        <ul style="margin-top:1rem">
+          <li><a href={site.linkedin} rel="me">LinkedIn</a></li>
+          <li><a href={site.youtube} rel="me">YouTube</a></li>
+          <li><a href={site.instagram} rel="me">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© {year} Jack P. Flaherty. All rights reserved. "The Decision Switch" and "Clear Confidence" are trademarks.</span>
+      <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>

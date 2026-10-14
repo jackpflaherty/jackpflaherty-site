@@ -1,0 +1,225 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Faq from '../../components/Faq.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Who is this keynote for?', a: 'Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. It is built for leadership summits, nursing conferences and association meetings.' },
+  { q: 'Is this an AI keynote?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each. Treat new technology like a new hire.' },
+  { q: 'What does the audience take home?', a: 'Three questions to ask before any technology decision, and one first move for the week they get back. Short enough to repeat without a slide.' },
+  { q: 'How long is it, and can it run virtually?', a: '45 to 60 minutes. A half-day workshop can follow the keynote. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.' },
+  { q: 'How do we book Jack?', a: `<a href="${site.calendly}">Book a discovery call</a>. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/keynote-speaker/fear-is-not-a-control-healthcare', url: site.url + '/keynote-speaker/fear-is-not-a-control-healthcare',
+  name: 'Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty',
+  description: 'Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes.',
+  about: { '@type': 'Thing', name: 'Technology decision-making in health systems' },
+  author: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty"
+  description="Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes."
+  path="/keynote-speaker/fear-is-not-a-control-healthcare" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering the Fear Is Not A Control keynote on a dark stage" pos="72% 50%">
+    <h1>Fear Is Not A Control</h1>
+    <p>A keynote for health-system executives and nurse leaders</p>
+    <p>Making the Call on New Technology When Patients Are Waiting</p>
+    <p>A standing ovation is not the deliverable. The deliverable is a room that leaves with three questions to ask before any technology decision on the unit, and one first move for the week they get home.</p>
+    <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="/#reel">Watch the reel</a></div>
+  </Hero>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="lede">{site.position} He has spent 25 years in risk and advisory, 15 of them at the Big Four, and served as acting enterprise risk and audit leader for a $10B health system.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>The problem</h2>
+      <p class="lede">Most keynotes are rented for the day. The insight leaves with the speaker.</p>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card">
+          <p class="kicker">01</p>
+          <h3>Leaders are trained in everything except how to decide.</h3>
+          <p>Health systems invest in strategy, culture and technology. Almost none invest in the one skill that determines whether any of it works: making a confident, well-informed call under pressure. The gap shows up as stalled rollouts, workarounds on the unit and teams waiting for permission nobody is giving.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">02</p>
+          <h3>The decision was already made. Nobody in the room knew it.</h3>
+          <p>By the time most technology decisions reach the executive meeting, the outcome is settled. A tool is in use on the unit, a vendor is signed, a system is live. The leaders in the room are ratifying, not deciding. The most dangerous decisions are the ones a team made without noticing, and fear made most of them.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">03</p>
+          <h3>The signals were always there. Nobody was assigned to watch.</h3>
+          <p>Every major failure Jack has sat close to had early warning signs. The organizations that came through were not smarter. Someone had the job of reading what the others ignored. Decide, then watch for what moves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2 class="pull">The teams that adopt new technology well are not the ones with the best plan. They are the ones who gave the decision an owner.</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>The keynote</h2>
+          <p class="lede">One talk, built for the decision in front of health-system leaders.</p>
+        </div>
+        <p class="lede">The method is simple enough to repeat on the drive home: treat new technology like a new hire. A job description. A manager. A probation period. A review.</p>
+      </div>
+      <div class="grid c2" style="margin-top:2.5rem">
+        <div class="card accent">
+          <p class="kicker">For health-system executives and nurse leaders</p>
+          <h3>Making the Call on New Technology When Patients Are Waiting</h3>
+          <p>A new tool shows up on the unit. Half the team is using it by Friday. The other half waits for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
+          <p>Jack has watched decision-making teams, not surgical teams, save a life. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year. He has watched capable clinical leaders stall on technology calls they were equipped to make.</p>
+          <p>The room leaves with the three questions to ask before any technology decision reaches a patient, and one first move for the week they get home.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">Also delivered for</p>
+          <h3>Partners in accounting, advisory and law firms</h3>
+          <p>The same keynote, rebuilt for the decision in front of a partner: the tool a client's team adopted last quarter, and the position the firm has not taken yet.</p>
+          <p><a href="/keynote-speaker/fear-is-not-a-control-professional-services" title="Fear Is Not A Control, the professional services keynote">See the professional services keynote</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>You can't fix what you can't see.</h2>
+        <p>The Clear Confidence Assessment™ shows you your organization's decision architecture in about 3 minutes.</p>
+        <a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a>
+        <p class="meta" style="margin-top:1rem">Free. About 3 minutes. No call required.</p>
+      </div>
+      <ul class="checks">
+        <li>Your Clear Confidence Score, 0 to 100</li>
+        <li>Which of four decision-making tiers you're in</li>
+        <li>Your single biggest gap, named, not guessed</li>
+        <li>A personalized diagnostic report, yours to keep</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap split">
+      <div>
+        <h2>Why Jack</h2>
+        <p class="lede" style="color:#E3D5BE">He has sat in the rooms where technology decisions get made, defended and paid for.</p>
+        <p>Across 25 years in risk and advisory, 15 of them at the Big Four, Jack noticed one pattern: the leaders who struggled most were not the least talented. They were the least equipped to make a call and stand behind it under pressure. Most of them were waiting for a control that did not exist, and fear filled the gap.</p>
+        <p>That observation became a method. The method became one keynote, built for two rooms, and the same questions he asks a board when a new system is about to go live.</p>
+      </div>
+      <div class="grid c2 stats">
+        <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where technology decisions carry the highest cost.</p></div>
+        <div class="card"><p class="stat"><strong>15</strong>Years at the Big Four as a former Big 4 director, building the teams that found the gaps before the regulator did.</p></div>
+        <div class="card"><p class="stat"><strong>$10B</strong>Health system where Jack served as acting enterprise risk and audit leader, reporting to the C-suite and audit committee.</p></div>
+        <div class="card"><p class="stat"><strong>$2.5M</strong>Board-mandated cybersecurity program for a $4B health system. Urgent gaps closed within one year.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>The audience leaves with</h2>
+      <p class="lede">Four things that outlast the applause.</p>
+      <div class="grid c2" style="margin-top:1.5rem">
+        <div class="card">
+          <p class="kicker">01</p>
+          <h3>A method, not a feeling.</h3>
+          <p>Treat new technology like a new hire. A job description, a manager, a probation period, a review. Every person in the room can apply it to the next tool, vendor or system that lands on the unit.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">02</p>
+          <h3>A name for what has been slowing them down.</h3>
+          <p>Nobody owns the decision, so fear makes it. Once a room can say that out loud, it can assign the decision. This keynote gives them the language.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">03</p>
+          <h3>A contrarian view on risk they will argue about on the way home.</h3>
+          <p>Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. The risk person in the room is the one saying go, on conditions.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">04</p>
+          <h3>Something they walk out ready to teach.</h3>
+          <p>The three questions are short enough to repeat without a slide. An executive who attended should be able to walk a nurse manager through them the next morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>How it is delivered</h2>
+      <p class="lede">Three formats. One standard.</p>
+      <p>Every format starts with a 30-minute discovery call, so the talk is built for the room and the decision in front of it.</p>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Keynote</h3>
+          <p>The full talk with live audience exercises. For leadership summits, nursing conferences and health-system association events.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">Keynote plus half day</p>
+          <h3>Keynote and workshop</h3>
+          <p>The keynote, then a working session where clinical and operational teams apply the new-hire method to a technology decision they are facing now.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Virtual keynote</h3>
+          <p>Live on Zoom or Teams with interactive Q&amp;A, rebuilt for the screen. For distributed leadership teams and association audiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap narrow faqwrap">
+      <Faq items={faqs} heading="Questions meeting planners ask" />
+      <p class="lede faqlead">Short answers. The discovery call covers the rest.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next step</h2>
+        <p>The right talk, in the right room, to change what the audience does when they get back to work.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Where does your decision-making actually stand?</h2>
+        <p>Find out in about 3 minutes and get a personalized report.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
+        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .faqwrap { display: flex; flex-direction: column; }
+  .faqwrap :global(.faq) { display: contents; }
+  .faqwrap :global(.faq h2) { order: -2; }
+  .faqlead { order: -1; margin-bottom: 1.4rem; }
+  .pull { max-width: 48rem; font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 0; }
+  .stats .card { padding: 1.3rem; }
+  .stat { margin: 0; }
+  .stat strong { display: block; font-family: var(--font-head); font-size: 2.4rem; line-height: 1; color: #E3A990; margin-bottom: .5rem; }
+</style>

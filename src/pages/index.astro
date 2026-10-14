@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import site from '../data/site.json';
+const video = {
+  '@context': 'https://schema.org', '@type': 'VideoObject',
+  name: 'Jack P. Flaherty speaker reel',
+  description: 'Three minutes of Jack P. Flaherty on stage, from The Decision Switch keynote.',
+  thumbnailUrl: site.url + '/images/jack-p-flaherty-speaker-reel-poster.jpg',
+  uploadDate: '2026-10-13', duration: 'PT3M', embedUrl: site.vimeoEmbed, contentUrl: site.vimeoReel
+};
+---
+<Base title="Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions"
+  description="Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. Keynote speaker, board advisor, author."
+  keywords="keynote speaker, technology decisions, board advisor, AI governance keynote, executive decision making, Jack P. Flaherty, Fear Is Not A Control"
+  path="/" schema={[video]}>
+
+  <Hero image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="58% 50%">
+    <p class="kicker">Keynote speaker and trusted advisor</p>
+    <h1>Fear Is Not A Control</h1>
+    <p>{site.position}</p>
+    <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
+  </Hero>
+
+  <section class="tight" id="reel">
+    <div class="wrap reel">
+      <div class="vid"><div class="box"><iframe src={site.vimeoEmbed} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" title="Jack P. Flaherty speaker reel"></iframe></div></div>
+      <div><h3>Three minutes of Jack on stage</h3><p>The speaker reel, from The Decision Switch keynote. <a href={site.vimeoReel} target="_blank" rel="noopener">Watch the reel</a>.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <img src="/images/jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" width="1600" height="900" loading="lazy" />
+      <div>
+        <h2>The decision nobody owns.</h2>
+        <ul class="checks">
+          <li>AI is in use across your organization and nobody has been asked to decide what it may do.</li>
+          <li>A transformation has stalled because the leadership team will not commit.</li>
+          <li>A risk reaches the board after it has become a crisis.</li>
+        </ul>
+        <p>In each case the decision was made. It was made by default, and fear made it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>Someone who has sat in those rooms.</h2>
+      <p>Most people hear governance and hear a brake. Jack has spent 25 years in risk and advisory, 15 of them at the Big Four, and what he noticed in the room was the opposite: the leaders who moved fastest were the ones who could name the three controls that let them.</p>
+      <p>He served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and audit committee.</p>
+      <p>He led a regulator-driven, board-mandated cybersecurity transformation for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year.</p>
+      <a class="btn light" href="/about-jack-flaherty">About Jack</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h2>Treat new technology like a new hire.</h2>
+        <p>A job description. A manager. A probation period. A review. You would not let a new hire sign checks on day one, and you do not need to let a new system do it either. Decide, then watch for what moves.</p>
+        <p>Fewer than one board in five has a plan to educate its directors on AI (NACD, 2025). The gap is not awareness. It is a decision nobody has been asked to own.</p>
+        <figure class="quote">
+          <blockquote>"The best workplace policies aren't about control. They're about clarity, culture, and making it easy for people to do their best work."</blockquote>
+          <figcaption><strong>Daren Kemp</strong>, President, EMEA, Korn Ferry</figcaption>
+        </figure>
+      </div>
+      <img src="/images/jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" width="1600" height="893" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>Fear Is Not A Control</h2>
+      <p class="lede" style="color:#E3D5BE">One keynote, built for two rooms.</p>
+      <div class="grid c2" style="margin-top:1.5rem">
+        <a class="card" href="/keynote-speaker/fear-is-not-a-control-healthcare" style="text-decoration:none">
+          <p class="kicker">For health-system executives and nurse leaders</p>
+          <h3>Making the Call on New Technology When Patients Are Waiting</h3>
+          <p>See this version</p>
+        </a>
+        <a class="card" href="/keynote-speaker/fear-is-not-a-control-professional-services" style="text-decoration:none">
+          <p class="kicker">For partners in accounting, advisory and law firms</p>
+          <h3>Making Technology Decisions Your Partners and Clients Will Stand Behind</h3>
+          <p>See this version</p>
+        </a>
+      </div>
+      <h2 style="margin-top:3rem">How it works.</h2>
+      <ol>
+        <li>Book a 30-minute discovery call.</li>
+        <li>Jack builds the talk or the session for your room, your audience and the decision in front of them.</li>
+        <li>Your people leave with the three questions to ask before any technology decision, and one first move.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Two ways to work with Jack.</h2>
+      <div class="grid c2">
+        <div class="card">
+          <img src="/images/jack-p-flaherty-keynote-stage.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" width="1600" height="900" loading="lazy" />
+          <h3>Keynote</h3>
+          <p>Forty-five to sixty minutes, built for the room, with one first move your people make the week they get home. A half-day workshop can follow the keynote. Ask on the call.</p>
+          <p style="margin-top:.8rem"><a href="/keynote-speaker/executive-decision-making-keynote">See the keynotes</a></p>
+        </div>
+        <div class="card">
+          <img src="/images/jack-p-flaherty-advisory-conversation.jpg" alt="Jack P. Flaherty in an advisory conversation over coffee" width="1600" height="876" loading="lazy" />
+          <h3>Board and executive advisory</h3>
+          <p>Confidential counsel from someone who has reported to the audit committee and sat on the other side of the table. Delivered by Jack, not a team.</p>
+          <p style="margin-top:.8rem"><a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Decisions deferred do not wait.</h2>
+        <p>They get made by default, and the board finds out afterward.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/book-jack">Send an inquiry</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>You can't fix what you can't see.</h2>
+        <p>The Clear Confidence Assessment shows you your organization's decision architecture in about three minutes. Free, and no call required.</p>
+        <ul class="checks">
+          <li>Your Clear Confidence Score, 0 to 100</li>
+          <li>Which of four decision-making tiers you are in</li>
+          <li>Your single biggest gap, named</li>
+          <li>A personalized diagnostic report, yours to keep</li>
+        </ul>
+        <a class="btn" href={site.assessment}>See where you stand</a>
+      </div>
+      <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
+    </div>
+  </section>
+</Base>

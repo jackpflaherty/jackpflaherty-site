@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Who is this for?', a: 'Partners and practice leaders in accounting, advisory and law firms, and the people who build those firms. Managing partners, practice heads, risk and quality leaders, and the executive committees they report to.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that reaches an engagement or a client: an AI tool, a new platform, a system the client adopted first. The method is the same for each.' },
+  { q: 'Does Jack customise the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where partners and practice leaders apply the new-hire method to a technology decision they are facing now. It is quoted on the discovery call.' },
+  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/professional-services-accounting-consulting', url: site.url + '/industries/professional-services-accounting-consulting',
+  name: 'Keynote Speaker for Accounting, Advisory and Law Firms | Jack P. Flaherty',
+  description: 'Jack P. Flaherty, former Big 4 director, speaks to partners in accounting, advisory and law firms on making technology decisions their partners and clients will stand behind. Keynote: Fear Is Not A Control.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Keynote Speaker for Accounting, Advisory and Law Firms | Jack P. Flaherty"
+  description="Jack P. Flaherty, former Big 4 director, speaks to partners in accounting, advisory and law firms on technology decisions. Keynote: Fear Is Not A Control."
+  path="/industries/professional-services-accounting-consulting" image="/images/jack-p-flaherty-office-discussion.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h1>Keynote speaker for accounting, advisory and law firms</h1>
+        <p class="lede">{site.position}</p>
+        <p>A client asks what the firm thinks about the tool their team adopted last quarter. The partner has an opinion and no position. Every firm has a partner who owns the call on new technology, or it has fear making it. Jack P. Flaherty spent 15 years at the Big Four, where he served as a director, and 25 years in risk and advisory. His keynote gives partners and practice leaders one method for the decision in front of them, in the firm or at a client.</p>
+      </div>
+      <img src="/images/jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion with colleagues in an office" width="1600" height="1083" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>The keynote</h2>
+      <div class="card">
+        <h3>Fear Is Not A Control: Making Technology Decisions Your Partners and Clients Will Stand Behind</h3>
+        <p>Treat new technology like a new hire. A job description, a manager, a probation period, a review. Built for partner meetings, firm retreats and professional association events. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
+        <p><a href="/keynote-speaker/fear-is-not-a-control-professional-services">See the professional services keynote</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why firms book Jack</h2>
+      <ul class="checks">
+        <li>15 years at the Big Four, where he served as a director building the teams that found the gaps before the regulator did.</li>
+        <li>Ran PwC's national Healthcare Risk Roundtable, a gathering of C-suite risk executives, twice a year for five years.</li>
+        <li>Founded and ran his own consulting firm after a layoff, and knows what it takes to win and keep a client without a brand behind you.</li>
+        <li>Has spoken at Deloitte regional events, the IIA, ISACA and AHIA.</li>
+        <li>Writes about the trusted-advisor role in firms: <a href="/blogs/2-am-anxiety-test">The 2 AM Anxiety Test</a>, <a href="/blogs/lost-role-of-trusted-advisors">The Silent Epidemic</a> and <a href="/blogs/the-ai-atrophy">The AI Atrophy</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>What partners say</h2>
+      <div class="grid c3">
+        <figure class="quote">
+          <blockquote>"What would the world be like if we had a system to make better decisions? Jack delivers a practical framework to keep you on track and lead you to the best outcomes."</blockquote>
+          <figcaption><strong>Charles Todd</strong>, Principal, Deloitte</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Want to cut through the Gordian knot of a tough situation? Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework."</blockquote>
+          <figcaption><strong>Jason Emmons</strong>, Partner, Baker Tilly</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Jack delivered a much-needed education for our leaders. Jack's mission, to help leaders make better choices and lead with confidence, comes through loud and clear."</blockquote>
+          <figcaption><strong>Michael Parisi</strong>, Head of Client Acquisition, Schellman</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <Faq items={faqs} heading="Questions partners and planners ask" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Planning a partner meeting, a firm retreat or an association event?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .quote { margin: 0; }
+</style>

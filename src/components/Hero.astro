@@ -1,0 +1,11 @@
+---
+interface Props { image: string; mobileImage?: string; alt: string; pos?: string; posMobile?: string; short?: boolean; }
+const { image, mobileImage, alt, pos = '60% 50%', posMobile = '70% 40%', short = false } = Astro.props;
+---
+<section class={'hero' + (short ? ' short' : '')} style={`--pos:${pos};--pos-m:${posMobile}`}>
+  <picture>
+    {mobileImage && <source media="(max-width: 767px)" srcset={mobileImage} />}
+    <img class="bg" src={image} alt={alt} fetchpriority="high" />
+  </picture>
+  <div class="wrap"><div class="txt"><slot /></div></div>
+</section>

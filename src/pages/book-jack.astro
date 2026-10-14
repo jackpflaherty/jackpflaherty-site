@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const contact = {
+  '@context': 'https://schema.org', '@type': 'ContactPage',
+  '@id': site.url + '/book-jack', url: site.url + '/book-jack',
+  name: 'Book Jack P. Flaherty | Keynote Speaker and Executive Advisor',
+  description: 'Book Jack P. Flaherty for a keynote, a keynote plus workshop, or board and executive advisory. Health systems and professional services firms. Reply within one business day.',
+  about: { '@id': site.url + '/#person' },
+  potentialAction: { '@type': 'ReserveAction', name: 'Book a 30-minute discovery call', target: site.calendly }
+};
+---
+<Base title="Book Jack P. Flaherty | Keynote Speaker and Executive Advisor"
+  description="Book Jack P. Flaherty for a keynote, a keynote plus workshop, or board and executive advisory. Jack replies within one business day."
+  path="/book-jack" image="/images/jack-p-flaherty-portrait-pier.jpg" schema={[contact]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <h1>Book Jack P. Flaherty</h1>
+        <h2>Keynotes, workshops and board advisory</h2>
+        <p>Planning a leadership summit, a nursing conference, a partner meeting or a board session? Send the details below. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.</p>
+        <p>This form is for:</p>
+        <ul class="checks">
+          <li>Keynote inquiries: Fear Is Not A Control, 45 to 60 minutes</li>
+          <li>Keynote plus half-day workshop</li>
+          <li>Board and executive advisory</li>
+          <li>Interim executive and board engagements</li>
+        </ul>
+        <p>Prefer to talk first? <a href={site.calendly} title="Book a 30-minute discovery call with Jack P. Flaherty">Book a 30-minute discovery call</a>.<br />Or reach Jack directly:</p>
+        <ul class="checks">
+          <li><a href={'mailto:' + site.email}>{site.email}</a></li>
+          <li><a href={site.phoneHref}>{site.phone}</a></li>
+        </ul>
+      </div>
+      <img class="portrait" src="/images/jack-p-flaherty-portrait-pier.jpg" alt="Jack P. Flaherty, keynote speaker, outdoor portrait on a pier" width="1200" height="1499" loading="lazy" />
+    </div>
+  </section>
+
+  <section class="tight" id="inquiry">
+    <div class="wrap">
+      <form class="form" action="/api/inquiry" method="post">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+        <input type="hidden" name="source" value="/book-jack" />
+        <div class="row">
+          <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+          <div><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <div class="row">
+          <div><label for="organization">Organization</label><input id="organization" name="organization" type="text" autocomplete="organization" /></div>
+          <div><label for="role">Role</label><input id="role" name="role" type="text" autocomplete="organization-title" /></div>
+        </div>
+        <div class="row">
+          <div><label for="event_date">Date</label><input id="event_date" name="event_date" type="date" max="2080-12-31" /></div>
+          <div><label for="audience">Audience</label><input id="audience" name="audience" type="text" /></div>
+        </div>
+        <div><label for="message">Brief description of your challenges and goals</label><textarea id="message" name="message"></textarea></div>
+        <div><button class="btn" type="submit">Submit My Inquiry</button></div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What happens after you send this</h2>
+      <ol class="grid c3 steps">
+        <li class="card">
+          <p class="kicker">01</p>
+          <h3>A reply within one business day</h3>
+          <p>Jack reads every inquiry himself and answers with questions, not a brochure.</p>
+        </li>
+        <li class="card">
+          <p class="kicker">02</p>
+          <h3>A 30-minute discovery call</h3>
+          <p>Who is in the room, what decision they are facing, and what you need them to do when they get back to work.</p>
+        </li>
+        <li class="card">
+          <p class="kicker">03</p>
+          <h3>A proposal built for your room</h3>
+          <p>Format and the one first move the audience will leave with. No proposal goes out before the call.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .portrait { max-width: 420px; width: 100%; justify-self: center; align-self: start; }
+  @media (min-width: 861px) { .portrait { justify-self: end; } }
+  h1 + h2 { font-size: 1.4rem; color: var(--brown); }
+  ol.steps { list-style: none; padding: 0; margin: 0; }
+  ol.steps li { max-width: none; }
+  .form button { cursor: pointer; }
+</style>
