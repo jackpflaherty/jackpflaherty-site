@@ -15,6 +15,8 @@ async function handleInquiry(request, env) {
   const form = await request.formData();
   const data = Object.fromEntries(form.entries());
   if (data.website) return Response.redirect(new URL('/thank-you-jack-flaherty', request.url), 303); // honeypot
+  data.form = data.source === 'newsletter' ? 'newsletter' : 'inquiry';
+  data.inquiry_id = crypto.randomUUID();
   data.received_at = new Date().toISOString();
   data.user_agent = request.headers.get('user-agent') || '';
   data.ip_country = request.headers.get('cf-ipcountry') || '';
