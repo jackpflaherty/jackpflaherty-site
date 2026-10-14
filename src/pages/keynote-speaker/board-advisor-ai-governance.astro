@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
 import site from '../../data/site.json';
 const page = {
@@ -26,27 +27,31 @@ const page = {
   </div>
 
   <section>
-    <div class="wrap narrow">
-      <figure class="quote">
-        <blockquote>"The ripple is always there. The question is whether anyone on your board is assigned to watch for it."</blockquote>
-        <figcaption><strong>Jack P. Flaherty</strong></figcaption>
-      </figure>
-      <p class="lede" style="margin-top:1.6rem">Jack has sat in boardrooms as a Big 4 director, as acting enterprise risk and audit leader for a $10B health system, and as interim COO and risk advisor for fintech and digital-asset companies. The boards that handled new technology well all had one thing in common. They knew, in specific terms, which decisions they were responsible for overseeing. Not which functions reported up through them. Which decisions.</p>
+    <div class="wrap">
+      <div class="intro">
+        <figure class="quote">
+          <blockquote>"Technology changes in ripples, every day, in every tool your people use. The question is whether anyone in your organization is watching, and ready to act on the opportunities those ripples create."</blockquote>
+          <figcaption><strong>Jack P. Flaherty</strong></figcaption>
+        </figure>
+        <p class="lede" style="margin-top:1.6rem">Jack has sat in boardrooms as a Big 4 director, as acting enterprise risk and audit leader for a $10B health system, and as interim COO and risk advisor for fintech and digital-asset companies.</p>
+        <p class="lede">The boards that handled new technology well all had one thing in common. They knew, in specific terms, which decisions they were responsible for overseeing.</p>
+        <p class="lede">Not which functions reported up through them. Which decisions.</p>
+      </div>
     </div>
   </section>
 
   <section class="dark">
     <div class="wrap">
-      <div class="split">
-        <div>
-          <h2>The gap</h2>
-          <p class="lede" style="color:#E3D5BE">Most boards believe they have governance over new technology. Few can name who owns the decision.</p>
-          <p>Boards are approving AI strategies. Receiving risk updates in quarterly packets. Asking thoughtful questions about data governance and model accuracy. Then going home believing they have exercised appropriate oversight.</p>
-          <p>The gap is not malice. It is not incompetence. It is architecture.</p>
-          <p>Algorithmic systems are already influencing credit scoring, clinical recommendations, hiring decisions and risk classifications at organizations where the board believes it has control. The systems were deployed at the operational level, optimized for efficiency, and by the time they reached the board packet they looked like a technology update, not a fiduciary exposure.</p>
-          <p>The pattern repeats across industries. The sector changes. The failure mode does not.</p>
-        </div>
-        <div class="grid stack">
+      <div class="gap-text">
+        <h2>The gap</h2>
+        <p class="lede" style="color:#E3D5BE">Most boards believe they have governance over new technology. Few can name who owns the decision.</p>
+        <p>Boards are approving AI strategies. Receiving risk updates in quarterly packets. Asking thoughtful questions about data governance and model accuracy. Then going home believing they have exercised appropriate oversight.</p>
+        <p>The gap is not malice. It is not incompetence. It is architecture.</p>
+        <p>Algorithmic systems are already influencing credit scoring, clinical recommendations, hiring decisions and risk classifications at organizations where the board believes it has control. The systems were deployed at the operational level, optimized for efficiency, and by the time they reached the board packet they looked like a technology update, not a fiduciary exposure.</p>
+        <p>The pattern repeats across industries. The sector changes. The failure mode does not.</p>
+      </div>
+      <h3 class="room">What it looks like in the room</h3>
+      <div class="grid c3">
           <div class="card">
             <h3>Healthcare</h3>
             <p>A regulator made the cybersecurity risk at a $4B health system unavoidable. Jack built the board proposal, hired and managed the vendors, and the urgent gaps closed on a $2.5 million budget within one year. The organisation was fully compliant a year later.</p>
@@ -62,27 +67,11 @@ const page = {
             <p>One failure mode: no named person, with a named responsibility, assigned to watch for the decisions already being made without them.</p>
             <p>That is the problem. That is what Jack fixes.</p>
           </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap split">
-      <div>
-        <h2>You can't fix what you can't see.</h2>
-        <p>The Clear Confidence Assessment™ shows you your organization's decision architecture in about 3 minutes.</p>
-        <a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a>
-        <p class="meta" style="margin-top:1rem">Free. About 3 minutes. No call required.</p>
-      </div>
-      <ul class="checks">
-        <li>Your Clear Confidence Score, 0 to 100</li>
-        <li>Which of four decision-making tiers you're in</li>
-        <li>Your single biggest gap, named, not guessed</li>
-        <li>A personalized diagnostic report, yours to keep</li>
-      </ul>
-    </div>
-  </section>
+  <Assessment />
 
   <section>
     <div class="wrap">
@@ -152,16 +141,6 @@ const page = {
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
-      </div>
-    </div>
-  </section>
 </Base>
 
 <style>
@@ -169,7 +148,9 @@ const page = {
   .board-hero :global(.hero:after) { background: linear-gradient(270deg, rgba(42,26,14,.86) 0%, rgba(42,26,14,.66) 36%, rgba(42,26,14,.1) 64%, rgba(42,26,14,0) 80%); }
   .board-hero :global(.hero .txt) { max-width: 38rem; }
   .board-hero :global(.hero h1) { font-size: clamp(2rem, 4.2vw, 3rem); }
-  .stack { grid-template-columns: 1fr; }
+  .intro, .gap-text { max-width: 58rem; }
+  .intro p, .gap-text p { max-width: none; }
+  .room { margin: 2rem 0 1rem; }
   .quote { margin: 0; }
   .stats .card { padding: 1.3rem; }
   .stat { margin: 0; }

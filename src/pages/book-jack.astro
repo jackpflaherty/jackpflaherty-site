@@ -14,15 +14,15 @@ const contact = {
   description="Book Jack P. Flaherty for a keynote, a keynote plus workshop, or board and executive advisory. Jack replies within one business day."
   path="/book-jack" image="/images/jack-p-flaherty-portrait-pier.jpg" schema={[contact]}>
 
-  <section>
+  <section class="intro">
     <div class="wrap split rev">
       <div>
         <h1>Book Jack P. Flaherty</h1>
         <h2>Keynotes, workshops and board advisory</h2>
-        <p>Planning a leadership summit, a nursing conference, a partner meeting or a board session? Send the details below. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.</p>
+        <p>Planning a leadership summit, a partner meeting or a board session? Send the details below. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.</p>
         <p>This form is for:</p>
         <ul class="checks">
-          <li>Keynote inquiries: Fear Is Not A Control, 45 to 60 minutes</li>
+          <li>Keynote inquiries, 45 to 60 minutes</li>
           <li>Keynote plus half-day workshop</li>
           <li>Board and executive advisory</li>
           <li>Interim executive and board engagements</li>
@@ -85,6 +85,7 @@ const contact = {
 </Base>
 
 <style>
+  section.intro { padding-top: 2rem; }
   .portrait { max-width: 420px; width: 100%; justify-self: center; align-self: start; }
   @media (min-width: 861px) { .portrait { justify-self: end; } }
   h1 + h2 { font-size: 1.4rem; color: var(--brown); }

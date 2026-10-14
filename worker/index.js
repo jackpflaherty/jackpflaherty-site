@@ -1,6 +1,17 @@
-// Cloudflare Pages Function: receives the Book Jack inquiry form and the newsletter form,
-// forwards the fields to a Make webhook (MAKE_WEBHOOK_URL env var), then redirects to the thank-you page.
-export async function onRequestPost({ request, env }) {
+// Cloudflare Worker in front of the static site.
+// Handles the two forms at /api/inquiry; everything else is served from the built assets.
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/api/inquiry') {
+      if (request.method === 'POST') return handleInquiry(request, env);
+      return Response.redirect(new URL('/book-jack', request.url), 302);
+    }
+    return env.ASSETS.fetch(request);
+  }
+};
+
+async function handleInquiry(request, env) {
   const form = await request.formData();
   const data = Object.fromEntries(form.entries());
   if (data.website) return Response.redirect(new URL('/thank-you-jack-flaherty', request.url), 303); // honeypot
@@ -14,7 +25,4 @@ export async function onRequestPost({ request, env }) {
   }
   const dest = data.source === 'newsletter' ? '/thank-you-jack-flaherty?from=newsletter' : '/thank-you-jack-flaherty';
   return Response.redirect(new URL(dest, request.url), 303);
-}
-export async function onRequestGet({ request }) {
-  return Response.redirect(new URL('/book-jack', request.url), 302);
 }

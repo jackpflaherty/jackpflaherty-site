@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import Assessment from '../components/Assessment.astro';
 import site from '../data/site.json';
 const video = {
   '@context': 'https://schema.org', '@type': 'VideoObject',
@@ -124,20 +125,5 @@ const video = {
     </div>
   </section>
 
-  <section>
-    <div class="wrap split">
-      <div>
-        <h2>You can't fix what you can't see.</h2>
-        <p>The Clear Confidence Assessment shows you your organization's decision architecture in about three minutes. Free, and no call required.</p>
-        <ul class="checks">
-          <li>Your Clear Confidence Score, 0 to 100</li>
-          <li>Which of four decision-making tiers you are in</li>
-          <li>Your single biggest gap, named</li>
-          <li>A personalized diagnostic report, yours to keep</li>
-        </ul>
-        <a class="btn" href={site.assessment}>See where you stand</a>
-      </div>
-      <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
-    </div>
-  </section>
+  <Assessment />
 </Base>

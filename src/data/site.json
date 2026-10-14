@@ -15,14 +15,20 @@
   "assessment": "https://assessment.jackpflaherty.com/",
   "nav": [
     {"label": "About", "href": "/about-jack-flaherty"},
-    {"label": "Speaking", "children": [
-      {"label": "Fear Is Not A Control", "href": "/keynote-speaker/executive-decision-making-keynote"},
-      {"label": "The Decision Switch", "href": "/keynote-speaker/executive-decision-making-keynote#the-decision-switch"},
-      {"label": "Health systems", "href": "/industries/healthcare-providers"},
-      {"label": "Professional services", "href": "/industries/professional-services-accounting-consulting"},
-      {"label": "Associations", "href": "/industries/industry-associations"},
-      {"label": "AI and emerging technology", "href": "/industries/ai-emerging-technology"},
-      {"label": "Board and executive advisory", "href": "/keynote-speaker/board-advisor-ai-governance"}
+    {"label": "Speaking", "groups": [
+      {"label": "Keynotes", "items": [
+        {"label": "Fear Is Not A Control", "href": "/keynote-speaker/executive-decision-making-keynote"},
+        {"label": "The Decision Switch", "href": "/keynote-speaker/executive-decision-making-keynote#the-decision-switch"}
+      ]},
+      {"label": "Audiences", "items": [
+        {"label": "Health Systems", "href": "/industries/healthcare-providers"},
+        {"label": "Professional Services", "href": "/industries/professional-services-accounting-consulting"},
+        {"label": "Associations", "href": "/industries/industry-associations"},
+        {"label": "AI and Emerging Technology", "href": "/industries/ai-emerging-technology"}
+      ]},
+      {"label": "Advisory", "items": [
+        {"label": "Board and Executive Advisory", "href": "/keynote-speaker/board-advisor-ai-governance"}
+      ]}
     ]},
     {"label": "Toolkit", "href": "/decision-making-toolkit"},
     {"label": "Insights", "href": "/insights"},

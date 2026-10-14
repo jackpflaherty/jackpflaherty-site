@@ -23,7 +23,7 @@ const page = {
   path="/industries/ai-emerging-technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]}>
 
   <section>
-    <div class="wrap split rev">
+    <div class="wrap split top">
       <div>
         <h1>AI and emerging technology, decided like a new hire</h1>
         <p class="lede">{site.position} This year, the technology on the agenda is AI.</p>
@@ -31,19 +31,28 @@ const page = {
         <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
         <p>Fear is not a control either. Banning a tool does not stop the work from happening. It moves the work somewhere you cannot see it.</p>
       </div>
-      <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
+      <img class="hero-img" src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="eager" />
     </div>
   </section>
 
   <section class="dark">
     <div class="wrap">
-      <h2>Treat new technology like a new hire</h2>
-      <p class="lede" style="color:#E3D5BE">You would never let a new hire start without four things. New technology gets the same four.</p>
+      <h2>Fear Is Not A Control</h2>
+      <p class="lede" style="color:#E3D5BE">Take fear out of your organization by making the goal clear, raising transparency, encouraging curious collaboration, and then stepping back to watch your teams flourish with technology.</p>
       <div class="grid c2" style="margin-top:1.5rem">
-        <div class="card accent"><h3>A job description</h3><p>What it is allowed to do, what it is not, and who it serves.</p></div>
-        <div class="card accent"><h3>A manager</h3><p>One named person who answers for it, not a committee.</p></div>
-        <div class="card accent"><h3>A probation period</h3><p>A limited scope, a fixed window and a number you are watching.</p></div>
-        <div class="card accent"><h3>A review</h3><p>Decide, then watch for the ripple, and change the decision when the ripple says to.</p></div>
+        <div class="card accent"><p class="kicker">1.</p><h3>A clear goal</h3><p>Say what you are trying to accomplish before you pick a tool.</p></div>
+        <div class="card accent"><p class="kicker">2.</p><h3>Governance built in</h3><p>Every technology project carries it from day one, and AI, large language models and agents most of all.</p></div>
+        <div class="card accent"><p class="kicker">3.</p><h3>A repeatable framework</h3><p>One way of developing AI work, so each project strengthens the foundation for the next.</p></div>
+        <div class="card accent"><p class="kicker">4.</p><h3>High-quality data</h3><p>Garbage in, garbage out. Decide what the system is allowed to learn from.</p></div>
+      </div>
+      <div class="questions">
+        <h3>The four questions a board can ask</h3>
+        <ol>
+          <li>What is this for, and how will we know it worked?</li>
+          <li>Who owns it, and what governance did it come with?</li>
+          <li>Is this the same way we did the last one, or a new way every time?</li>
+          <li>Where does its data come from, and would we stand behind it?</li>
+        </ol>
       </div>
       <p style="margin-top:1.6rem">That is the whole method. It fits on one page, and a board can ask about it in four questions.</p>
     </div>
@@ -52,7 +61,9 @@ const page = {
   <section>
     <div class="wrap">
       <h2>Where Jack has sat</h2>
-      <p>25 years in risk and advisory. 15 years at the Big Four, where he served as a director. Held CISSP, CISA and CGEIT. He has sat with boards and audit committees while a new system went live, and he has seen which ones slept.</p>
+      <p>25 years in risk and advisory. 15 years at the Big Four, where he served as a director. Held CISSP, CISA and CGEIT.</p>
+      <p>He has implemented and audited enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, medical records, and human resources. He served as principal consultant for California's first statewide Health Information Exchange, led PwC's healthcare risk and digital assurance work as a director, and has been interim executive and advisor to startups in fintech, blockchain and AI.</p>
+      <p>He has sat with boards and audit committees while a new system went live, and he has seen which ones slept.</p>
     </div>
   </section>
 
@@ -60,17 +71,18 @@ const page = {
     <div class="wrap">
       <h2>Ways to bring this into the room</h2>
       <div class="card">
-        <h3>Keynote: Fear Is Not A Control</h3>
-        <p>45 to 60 minutes, built for <a href="/keynote-speaker/fear-is-not-a-control-healthcare">health systems</a> or for <a href="/keynote-speaker/fear-is-not-a-control-professional-services">professional services firms</a>.</p>
+        <h3>Keynote: Fear Is Not A Control or The Decision Switch</h3>
+        <p>45 to 60 minutes, built for <a href="/keynote-speaker/fear-is-not-a-control-healthcare">health systems</a>, <a href="/keynote-speaker/fear-is-not-a-control-professional-services">professional services firms</a> or <a href="/industries/industry-associations">an association audience</a>, with one first move the room takes home.</p>
         <h3 style="margin-top:1.4rem">Board and executive session</h3>
         <p>A working session with the directors on the technology decision in front of them. <a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a>.</p>
-        <p>Both start with a discovery call. Jack replies within one business day.</p>
+        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
+        <p><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></p>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="wrap narrow">
+    <div class="wrap">
       <Faq items={faqs} heading="Questions planners ask" />
     </div>
   </section>
@@ -81,3 +93,11 @@ const page = {
     </div>
   </section>
 </Base>
+
+<style>
+  .hero-img { width: 100%; height: auto; aspect-ratio: auto; object-fit: unset; }
+  .questions { margin-top: 2rem; max-width: 58rem; }
+  .questions h3 { margin-bottom: .6rem; }
+  .questions ol { margin: 0; padding-left: 1.4rem; }
+  .questions li { margin: 0 0 .5rem; }
+</style>

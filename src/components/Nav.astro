@@ -7,10 +7,17 @@ import site from '../data/site.json';
     <button class="burger" aria-expanded="false" aria-controls="site-menu" data-burger>Menu</button>
     <nav id="site-menu" aria-label="Main">
       <ul>
-        {site.nav.map(item => item.children ? (
+        {site.nav.map(item => item.groups ? (
           <li data-dd>
             <button class="item" aria-expanded="false" data-dd-btn>{item.label} ▾</button>
-            <div class="menu">{item.children.map(c => <a href={c.href}>{c.label}</a>)}</div>
+            <div class="menu">
+              {item.groups.map(g => (
+                <>
+                  <span class="grp">{g.label}</span>
+                  {g.items.map(c => <a href={c.href}>{c.label}</a>)}
+                </>
+              ))}
+            </div>
           </li>
         ) : (
           <li><a class="item" href={item.href}>{item.label}</a></li>

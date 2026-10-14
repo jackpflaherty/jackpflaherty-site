@@ -1,24 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
 import site from '../data/site.json';
+import Assessment from '../components/Assessment.astro';
 ---
 <Base title="The Decision Toolkit | Leadership Frameworks by Jack P. Flaherty"
   description="The Clear Confidence Assessment shows where your decision process breaks down before a crisis makes it obvious. About five minutes, results to your inbox."
   path="/decision-making-toolkit" image="/images/jack-p-flaherty-teaching-whiteboard.jpg">
 
   <section class="dark">
-    <div class="wrap split rev">
+    <div class="wrap split rev top">
       <div>
         <h1>The Clear Confidence Assessment: find out where your decision process breaks</h1>
-        <p class="lede" style="color:#E3D5BE">Drowning in data? Do decisions still feel like a guess?</p>
-        <p>You do not need more information. You need a cleaner process.</p>
+        <p class="lede" style="color:#E3D5BE">Drowning in data? Do decisions still feel like a guess? You do not need more information. You need a cleaner process.</p>
+        <div class="what">
+          <p><strong>What it is:</strong> a three-minute assessment of how your organization makes decisions with technology, built from the framework in The Decision Switch.</p>
+          <p><strong>Why it exists:</strong> most leaders do not have a decision problem. They have a structure problem, and it shows up at the moment it costs the most.</p>
+          <p><strong>What you get:</strong> your Clear Confidence Score from 0 to 100, the decision-making tier you are in, your single biggest gap named, and a personalized report sent to your inbox.</p>
+        </div>
+        <a class="btn" href={site.assessment} target="_blank" rel="noopener">Take the assessment</a>
       </div>
       <img src="/images/jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" width="1600" height="900" loading="lazy" />
     </div>
   </section>
 
-  <section>
-    <div class="wrap split">
+  <section class="tight">
+    <div class="wrap split top">
       <img src="/images/jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop at a table" width="1600" height="1199" loading="lazy" />
       <div>
         <h2>Most leaders do not have a decision problem. They have a structure problem.</h2>
@@ -31,6 +37,7 @@ import site from '../data/site.json';
           <li><b>Context &amp; Agility:</b> When pressure is real, do you move, or do you wait for certainty that never arrives?</li>
         </ul>
         <p>Your results go straight to your inbox, with a practical read on where your decision process is solid and where it needs reinforcement.</p>
+        <p>Your decision process either works under pressure or it does not. This assessment tells you which.</p>
       </div>
     </div>
   </section>
@@ -46,18 +53,7 @@ import site from '../data/site.json';
     </div>
   </section>
 
-  <section>
-    <div class="wrap split">
-      <img src="/images/jack-p-flaherty-advisory-conversation.jpg" alt="Jack P. Flaherty in a confidential advisory conversation" width="1600" height="876" loading="lazy" />
-      <div>
-        <h2>Take the Clear Confidence Assessment</h2>
-        <p>Your results are sent straight to your inbox, with the first moves to make your next technology decision with confidence.</p>
-        <p>Your decision process either works under pressure or it does not.</p>
-        <p>This assessment tells you which.</p>
-        <a class="btn" href={site.assessment} target="_blank" rel="noopener">Take the assessment</a>
-      </div>
-    </div>
-  </section>
+  <Assessment />
 
   <section class="tight">
     <div class="wrap">
@@ -71,22 +67,27 @@ import site from '../data/site.json';
 
   <section class="dark">
     <div class="wrap">
-      <h2>When decisions matter most</h2>
-      <p class="lede" style="color:#E3D5BE">Your team needs more than a strategy session. They need a method they can run themselves.</p>
-      <div class="btns"><a class="btn light" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
-      <p style="margin-top:1.6rem">The cost of uninformed and delayed decisions compounds quickly.</p>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
+      <div class="col">
+        <h2>When decisions matter most</h2>
+        <p class="kicker">When nobody saw it coming. When the information is incomplete. When the long-term impact is unclear. When the drivers underneath are not understood and the call gets made blind.</p>
+        <p class="lede" style="color:#E3D5BE">Your team needs more than a strategy session. They need a framework they can run themselves.</p>
+        <div class="btns"><a class="btn light" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <p class="close">The cost of uninformed and delayed decisions compounds quickly.</p>
       </div>
     </div>
   </section>
+
 </Base>
+
+<style>
+  h1 { font-size: clamp(2.1rem, 3.8vw, 2.9rem); }
+  @media (min-width: 861px) { section.dark .split.rev { grid-template-columns: 1.1fr .9fr; } }
+  .what p { margin-bottom: .7em; }
+  .what { margin-bottom: 1.4rem; }
+  .col { max-width: 40rem; }
+  .col p, .col .lede { max-width: none; }
+  .col .kicker { font-size: 1.05rem; line-height: 1.45; margin: 0 0 1rem; }
+  .col .btns { margin-top: 1.2rem; }
+  .col .close { margin: 1.4rem 0 0; }
+</style>
 

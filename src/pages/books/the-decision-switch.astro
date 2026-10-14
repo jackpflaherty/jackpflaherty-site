@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Assessment from '../../components/Assessment.astro';
 import site from '../../data/site.json';
 const book = {
   '@context': 'https://schema.org', '@type': 'Book',
@@ -32,21 +33,11 @@ const book = {
         </ul>
         <p>It is a how-to guide, not a theory. The same method now underpins Jack's keynote, Fear Is Not A Control, and the advice he gives boards when a new system is about to go live. <a href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a> or <a href="/insights">read the Insights</a> built on it.</p>
         <div class="btns"><a class="btn" href={site.amazon} target="_blank" rel="noopener">Buy on Amazon</a></div>
-        <p class="meta" style="margin-top:.7rem">Paperback and Kindle. Opens Amazon in a new tab.</p>
       </div>
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
-      </div>
-    </div>
-  </section>
+  <Assessment />
 </Base>
 
 <style>

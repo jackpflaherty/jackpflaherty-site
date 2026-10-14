@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Assessment from '../components/Assessment.astro';
 import site from '../data/site.json';
 const page = {
   '@context': 'https://schema.org', '@type': 'WebPage',
@@ -12,9 +13,9 @@ const health = [
   { q: 'Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!', n: 'Bill Lazarus', t: 'CTO, UCLA Health' },
   { q: 'Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today\'s workforce struggles with mental health and making confident decisions.', n: 'Sheila Blackwell', t: 'Healthcare Transformation Leader' },
   { q: 'Jack\'s personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.', n: 'Kierney Palazzo', t: 'Internal Audit Manager, SCAN Health Plan' },
-  { q: 'Great presenter! Clear and concise. Informative.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' },
-  { q: 'Inspiring. Provides a framework.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' },
-  { q: 'Intriguing. I found the content interesting to help make better informed decisions.', n: 'Attendee', t: 'NCSBN ICRS graduation keynote' }
+  { q: 'Great presenter! Clear and concise. Informative.', n: 'B.D.', t: 'nursing regulator, NCSBN ICRS graduation' },
+  { q: 'Inspiring. Provides a framework.', n: 'L.S.', t: 'nursing conference attendee' },
+  { q: 'Intriguing. I found the content interesting to help make better informed decisions.', n: 'S.M.', t: 'nursing conference attendee' }
 ];
 const partners = [
   { q: 'What would the world be like if we had a system to make better decisions? Jack delivers a practical framework to keep you on track and lead you to the best outcomes.', n: 'Charles Todd', t: 'Principal, Deloitte' },
@@ -24,7 +25,7 @@ const partners = [
 ];
 const teams = [
   { q: 'Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.', n: 'Ray Sims', t: 'Global Lead, Training and Education, IBM' },
-  { q: 'Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.', n: 'Shola Richards', t: 'Founder and CEO, Go Together Global' },
+  { q: 'Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.', n: 'Shola Richards', t: 'keynote speaker and author, Go Together' },
   { q: 'Decision-making is critical to our success and yet it is more complicated than ever before. Too much information. Too many stimuli. Jack delivers a proven framework for you to consistently achieve the best outcomes possible.', n: 'Sara Canady', t: 'Leadership Strategist' }
 ];
 const media = [
@@ -115,16 +116,7 @@ const photos = [
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
-      </div>
-    </div>
-  </section>
+  <Assessment />
 </Base>
 
 <style>
@@ -132,5 +124,4 @@ const photos = [
   h2.group { margin-top: 2.5rem; font-size: 1.5rem; }
   .card h3 { font-size: 1.1rem; }
   .card p { font-size: 1rem; }
-  .photos .card img { aspect-ratio: 1 / 1; }
 </style>

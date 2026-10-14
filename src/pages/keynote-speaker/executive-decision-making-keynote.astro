@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
 import site from '../../data/site.json';
 const page = {
@@ -109,33 +110,27 @@ const page = {
         </div>
         <div class="card">
           <h3>Built for</h3>
-          <p>Executive teams, leadership offsites and association conferences. Any room that owns decisions and is tired of carrying them.</p>
+          <ul class="checks">
+            <li>Executive teams</li>
+            <li>Leadership offsites</li>
+            <li>Association conferences</li>
+            <li>Any room that owns decisions and is tired of carrying them</li>
+          </ul>
         </div>
         <div class="card">
           <h3>Format</h3>
-          <p>45 to 60 minutes, live or virtual. Every version is built for the room after a discovery call.</p>
+          <ul class="checks">
+            <li>45 to 60 minutes</li>
+            <li>Live or virtual</li>
+            <li>Built for the room after a discovery call</li>
+          </ul>
         </div>
       </div>
       <div class="btns"><a class="btn light" href="/#reel" title="Watch the speaker reel">Watch the reel</a><a class="btn" href="/book-jack" title="Book The Decision Switch keynote">Book this keynote</a></div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap split">
-      <div>
-        <h2>You can't fix what you can't see.</h2>
-        <p>The Clear Confidence Assessment™ shows you your organization's decision architecture in about 3 minutes.</p>
-        <a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a>
-        <p class="meta" style="margin-top:1rem">Free. About 3 minutes. No call required.</p>
-      </div>
-      <ul class="checks">
-        <li>Your Clear Confidence Score, 0 to 100</li>
-        <li>Which of four decision-making tiers you're in</li>
-        <li>Your single biggest gap, named, not guessed</li>
-        <li>A personalized diagnostic report, yours to keep</li>
-      </ul>
-    </div>
-  </section>
+  <Assessment />
 
   <section class="dark">
     <div class="wrap split">
@@ -219,16 +214,6 @@ const page = {
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
-      </div>
-    </div>
-  </section>
 </Base>
 
 <style>

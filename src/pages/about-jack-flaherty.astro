@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Assessment from '../components/Assessment.astro';
 import site from '../data/site.json';
 const profile = {
   '@context': 'https://schema.org', '@type': 'ProfilePage',
@@ -22,42 +23,46 @@ const profile = {
   description="Jack Flaherty is the trusted advisor who helps boards and executives make decisions with technology. 25 years in risk and advisory, 15 of them at the Big Four."
   path="/about-jack-flaherty" image="/images/jack-p-flaherty-portrait-about.jpg" schema={[profile]}>
 
-  <section>
-    <div class="wrap split rev">
+  <section class="intro">
+    <div class="wrap split rev top">
       <div>
         <p class="kicker">About</p>
         <h1>Jack P. Flaherty</h1>
         <p class="lede">{site.position}</p>
-        <p>For 25 years in risk and advisory, 15 of them at the Big Four, Jack has sat in the rooms where technology decisions get made, defended and paid for. He has watched capable leaders stall on calls they were equipped to make, and he has watched the ones who gave the decision an owner move faster than everyone else.</p>
-        <p>That observation became a method: treat new technology like a new hire. A job description, a manager, a probation period, a review. The method became one keynote, <a href="/keynote-speaker/executive-decision-making-keynote">Fear Is Not A Control</a>, built for health-system leaders and professional services partners, and the same questions he asks a board when a new system is about to go live.</p>
+        <p>For 25 years in risk and advisory, 15 of them at the Big 4, Jack has sat in the rooms where technology decisions were made, defended and paid for. Enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, medical records, and human resources. He has implemented them and audited them.</p>
+        <p>The organization's future rode on those choices. When one failed, he watched capable leaders stumble or stall on calls they were not equipped to make. When one worked, the hard questions got asked first, one person owned the decision, and the team stood behind it. Those organizations moved faster than everyone around them and could show the results.</p>
+        <p>The gap between the two is the foundation of Jack's work. <a href="/keynote-speaker/executive-decision-making-keynote#the-decision-switch">The Decision Switch</a> is the framework and keynote for organizations that want to make decisions faster, so attention can return to the goal. <a href="/keynote-speaker/executive-decision-making-keynote">Fear Is Not A Control</a> is the keynote for leaders bringing in AI and emerging technology. Most know they need to move. Fewer know which questions to ask before they commit.</p>
       </div>
       <img class="portrait" src="/images/jack-p-flaherty-portrait-about.jpg" alt="Jack P. Flaherty, keynote speaker and trusted advisor, portrait" width="1200" height="1500" loading="lazy" />
     </div>
   </section>
 
   <section class="dark">
-    <div class="wrap">
-      <h2>Where he has sat</h2>
-      <ul class="checks">
-        <li>Acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.</li>
-        <li>Led a board-mandated cybersecurity programme for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.</li>
-        <li>Data governance implementation for a $15B financial institution.</li>
-        <li>Principal consultant for California's first statewide health information exchange.</li>
-        <li>Ran PwC's national Healthcare Risk Roundtable, a gathering of C-suite risk executives, twice a year for five years.</li>
-        <li>Discreet board-requested investigations.</li>
-        <li>Interim COO and risk advisor for fintech, digital-asset and growth-stage companies through Connacht Ventures.</li>
-      </ul>
+    <div class="wrap split top">
+      <div>
+        <h2>Where he has sat</h2>
+        <ul class="checks">
+          <li>Acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.</li>
+          <li>Led a board-mandated cybersecurity programme for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.</li>
+          <li>Data governance implementation for a $15B financial institution.</li>
+          <li>Principal consultant for California's first statewide health information exchange.</li>
+          <li>Ran PwC's national Healthcare Risk Roundtable, a gathering of C-suite risk executives, twice a year for five years.</li>
+          <li>Discreet board-requested investigations.</li>
+          <li>Interim COO and risk advisor for fintech, digital-asset and growth-stage companies through Connacht Ventures.</li>
+        </ul>
+      </div>
+      <img src="/images/jack-p-flaherty-seated-advisor.jpg" alt="Jack P. Flaherty seated in a high-backed chair with a laptop, advisory setting" width="938" height="642" loading="lazy" />
     </div>
   </section>
 
   <section>
-    <div class="wrap split">
+    <div class="wrap split top">
       <img src="/images/jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" width="1600" height="893" loading="lazy" />
       <div>
         <h2>How he got here</h2>
-        <p>Jack started on the derivatives trading desks in New York, then moved to Los Angeles, finished a one-year MBA at Pepperdine and joined Deloitte's risk advisory practice in 2001. He moved from financial services into healthcare, implementing and auditing enterprise and clinical systems, and led training for the Southern California HIMSS chapter.</p>
-        <p>A layoff in 2009 became his first consulting firm, Abidance Solutions. He joined Orion Health because he saw data integration as the next thing in healthcare, then returned to the Big Four at PwC as a director focused on healthcare risk and digital assurance.</p>
-        <p>He wrote <a href="/books/the-decision-switch">The Decision Switch</a> after watching leaders outside the Big Four and the regulated industries struggle with decisions about technology that his clients had learned to make, and he began speaking. In 2026 he rebuilt his platform under his own name.</p>
+        <p>Jack started on Morgan Stanley's derivatives trading desk in New York. In 2001 he moved to Los Angeles and joined Deloitte's risk advisory practice. Healthcare was years behind financial services in how it used technology, so he moved there. He led large risk programs, implemented and audited enterprise and clinical systems, and ran training for the firm and for the Southern California HIMSS chapter.</p>
+        <p>In 2009 he founded Abidance Solutions, his first consulting firm. It answered the question his clients kept asking: how do you deliver a regulator-driven, board-mandated technology program and have it hold? The work pointed to the next problem. Data. He joined Orion Health in 2013 as principal consultant for California's first statewide Health Information Exchange. There he saw how hard it is to move data between organizations that were never built to share it. That pulled him back to the Big 4. In 2015 he joined PwC as a director in healthcare risk and digital assurance.</p>
+        <p>He left PwC in 2021 to work with startups in fintech, blockchain and AI as an interim executive and advisor. Startups make the same technology decisions as large companies, but without the governance or structure. One client was hacked. Another had its intellectual property stolen. A third was named in a lawsuit. He wrote <a href="/books/the-decision-switch">The Decision Switch</a> in 2023 for the capable leaders he had watched make technology decisions without the knowledge or experience, and has spoken, taught, and advised on it since.</p>
       </div>
     </div>
   </section>
@@ -68,19 +73,20 @@ const profile = {
         <div class="card">
           <h2>Speaking and writing</h2>
           <ul class="checks">
-            <li>Keynote: <a href="/keynote-speaker/executive-decision-making-keynote">Fear Is Not A Control</a>, 45 to 60 minutes, for health-system executives and nurse leaders and for partners in accounting, advisory and law firms.</li>
-            <li>Author of The Decision Switch (Cinch &amp; Stone Press).</li>
-            <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</li>
+            <li>Keynotes: <a href="/keynote-speaker/executive-decision-making-keynote">Fear Is Not A Control</a> and <a href="/keynote-speaker/executive-decision-making-keynote#the-decision-switch">The Decision Switch</a>, 45 to 60 minutes.</li>
+            <li>Author of <a href="/books/the-decision-switch">The Decision Switch</a>.</li>
+            <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, the National Council of State Boards of Nursing (NCSBN) and the Nursing World Conference.</li>
             <li>Writes The Clear Confidence Report. The site's <a href="/insights">Insights</a> page holds the pieces that sell the keynote.</li>
           </ul>
         </div>
         <div class="card">
           <h2>Credentials</h2>
           <ul class="checks">
+            <li>Former Big 4 Executive at Deloitte &amp; PwC</li>
             <li>MBA, Finance, Pepperdine Graziadio Business School. B.S., Business Administration, Marist College.</li>
             <li>Held CISSP, CISA and CGEIT.</li>
             <li>Board member, Risso Foundation, since 2015, funding strategies for Hispanic students.</li>
-            <li>Based in Los Angeles.</li>
+            <li>Based in Los Angeles, California.</li>
           </ul>
         </div>
       </div>
@@ -96,21 +102,18 @@ const profile = {
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Where does your decision-making actually stand?</h2>
-        <p>Find out in about 3 minutes and get a personalized report.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.assessment} target="_blank" rel="noopener">See where you stand</a></div>
-        <p class="meta" style="margin-top:1rem">Free. No call required.</p>
-      </div>
-    </div>
-  </section>
+  <Assessment />
 </Base>
 
 <style>
+  section.intro { padding-top: 2rem; }
+  .intro h1 { font-size: clamp(2.2rem, 4.2vw, 3rem); white-space: nowrap; }
   .card h2 { font-size: 1.3rem; }
   .card ul.checks { margin-bottom: 0; }
   .portrait { max-width: 420px; width: 100%; justify-self: center; }
-  @media (min-width: 861px) { .portrait { justify-self: end; } }
+  @media (min-width: 861px) {
+    .intro .split { grid-template-columns: 1.2fr .8fr; }
+    .portrait { justify-self: end; }
+  }
+  @media (max-width: 420px) { .intro h1 { white-space: normal; } }
 </style>

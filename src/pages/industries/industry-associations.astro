@@ -25,7 +25,7 @@ const page = {
   path="/industries/industry-associations" image="/images/jack-p-flaherty-keynote-stage-blue.jpg" schema={[page, faqSchema(faqs)]}>
 
   <section>
-    <div class="wrap split rev">
+    <div class="wrap split rev top">
       <div>
         <h1>Keynote speaker for associations and conferences</h1>
         <p class="lede">{site.position}</p>
@@ -37,42 +37,53 @@ const page = {
 
   <section class="dark">
     <div class="wrap">
-      <h2>The keynote</h2>
-      <div class="card">
-        <h3>Fear Is Not A Control</h3>
-        <p>Nobody owns the decision, so fear makes it. Treat new technology like a new hire: a job description, a manager, a probation period, a review. One talk, built for the decision in front of your members, with a version for health-system leaders and a version for partners in accounting, advisory and law firms. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
-        <p><a href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a></p>
+      <h2>The keynotes</h2>
+      <div class="grid c2">
+        <div class="card">
+          <h3>Fear Is Not A Control</h3>
+          <p>Nobody owns the decision, so fear makes it. Treat new technology like a new hire: a job description, a manager, a probation period, a review. One talk, built for the decision in front of your members, with a version for health-system leaders and a version for partners in accounting, advisory and law firms. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
+          <p><a href="/keynote-speaker/executive-decision-making-keynote">See the keynote</a></p>
+        </div>
+        <div class="card">
+          <h3>The Decision Switch</h3>
+          <p>The original keynote. Seven principles that turn a stalled decision into one the team will stand behind. Built for leadership summits and association conferences. 45 to 60 minutes.</p>
+          <p><a href="/keynote-speaker/executive-decision-making-keynote#the-decision-switch">See The Decision Switch</a></p>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="wrap">
-      <h2>Why associations book Jack</h2>
-      <ul class="checks">
-        <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</li>
-        <li>Led training for the Southern California HIMSS chapter, so he knows what a chapter programme chair needs from a speaker.</li>
-        <li>Served as acting enterprise risk and audit leader for a $10B health system and as a director at the Big Four. The stories are from the room, not the textbook.</li>
-        <li>Author of The Decision Switch. Writes The Clear Confidence Report.</li>
-      </ul>
+    <div class="wrap split top">
+      <div>
+        <h2>Why associations book Jack</h2>
+        <ul class="checks">
+          <li>Members leave with what they need to know about technology change, the questions they did not know to ask, and material they enjoy learning. Proven content, built for a conference audience that is living through change and uncertainty.</li>
+          <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</li>
+          <li>Led training for the Southern California HIMSS chapter, so he knows what a chapter programme chair needs from a speaker.</li>
+          <li>Served as acting enterprise risk and audit leader for a $10B health system and as a director at the Big Four. The stories are from the room, not the textbook.</li>
+          <li>Author of The Decision Switch. Writes The Clear Confidence Report.</li>
+        </ul>
+      </div>
+      <img src="/images/jack-p-flaherty-interview.jpg" alt="Jack P. Flaherty in conversation at an interview table" width="1600" height="862" loading="lazy" />
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap">
-      <h2>What attendees say</h2>
+      <h2>What audiences and fellow speakers say</h2>
       <div class="grid c3">
         <figure class="quote">
           <blockquote>"Great presenter! Clear and concise. Informative."</blockquote>
-          <figcaption><strong>Attendee</strong>, NCSBN ICRS graduation keynote</figcaption>
+          <figcaption><strong>B.D.</strong>, nursing regulator, NCSBN ICRS graduation</figcaption>
         </figure>
         <figure class="quote">
           <blockquote>"Inspiring. Provides a framework."</blockquote>
-          <figcaption><strong>Attendee</strong>, NCSBN ICRS graduation keynote</figcaption>
+          <figcaption><strong>L.S.</strong>, nursing conference attendee</figcaption>
         </figure>
         <figure class="quote">
           <blockquote>"Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how."</blockquote>
-          <figcaption><strong>Shola Richards</strong>, Founder and CEO, Go Together Global</figcaption>
+          <figcaption><strong>Shola Richards</strong>, keynote speaker and author, Go Together</figcaption>
         </figure>
       </div>
       <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
@@ -80,7 +91,7 @@ const page = {
   </section>
 
   <section>
-    <div class="wrap narrow">
+    <div class="wrap">
       <Faq items={faqs} heading="Questions programme chairs ask" />
     </div>
   </section>
