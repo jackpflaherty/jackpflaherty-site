@@ -1,7 +1,7 @@
 {
   "name": "Jack P. Flaherty",
   "url": "https://www.jackpflaherty.com",
-  "position": "Jack Flaherty is the trusted advisor who helps boards and executives make decisions with technology.",
+  "position": "Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology.",
   "phone": "+1 (310) 463-2018",
   "phoneHref": "tel:+13104632018",
   "email": "jack@jackpflaherty.com",
@@ -15,25 +15,73 @@
   "amazon": "https://www.amazon.com/dp/B0C6FSNYBH",
   "assessment": "https://assessment.jackpflaherty.com/",
   "nav": [
-    {"label": "About", "href": "/about-jack-flaherty"},
-    {"label": "Speaking", "groups": [
-      {"label": "Keynotes", "items": [
-        {"label": "Fear Is Not A Control", "href": "/keynote-speaker/executive-decision-making-keynote"},
-        {"label": "The Decision Switch", "href": "/keynote-speaker/executive-decision-making-keynote#the-decision-switch"}
-      ]},
-      {"label": "Audiences", "items": [
-        {"label": "Health Systems", "href": "/industries/healthcare-providers"},
-        {"label": "Professional Services", "href": "/industries/professional-services-accounting-consulting"},
-        {"label": "Associations", "href": "/industries/industry-associations"},
-        {"label": "AI and Emerging Technology", "href": "/industries/ai-emerging-technology"}
-      ]},
-      {"label": "Advisory", "items": [
-        {"label": "Board and Executive Advisory", "href": "/keynote-speaker/board-advisor-ai-governance"}
-      ]}
-    ]},
-    {"label": "Toolkit", "href": "/decision-making-toolkit"},
-    {"label": "Insights", "href": "/insights"},
-    {"label": "Media", "href": "/press-media"},
-    {"label": "The Book", "href": "/books/the-decision-switch"}
+    {
+      "label": "About",
+      "href": "/about-jack-flaherty"
+    },
+    {
+      "label": "Speaking",
+      "groups": [
+        {
+          "label": "Keynotes",
+          "items": [
+            {
+              "label": "Fear Is Not A Control",
+              "href": "/keynote-speaker/executive-decision-making-keynote"
+            },
+            {
+              "label": "The Decision Switch",
+              "href": "/keynote-speaker/executive-decision-making-keynote#the-decision-switch"
+            }
+          ]
+        },
+        {
+          "label": "Advisory",
+          "items": [
+            {
+              "label": "Board and Executive Advisory",
+              "href": "/keynote-speaker/board-advisor-ai-governance"
+            }
+          ]
+        },
+        {
+          "label": "Audiences",
+          "items": [
+            {
+              "label": "AI and Emerging Technology",
+              "href": "/industries/ai-emerging-technology"
+            },
+            {
+              "label": "Professional Services",
+              "href": "/industries/professional-services-accounting-consulting"
+            },
+            {
+              "label": "Health Systems",
+              "href": "/industries/healthcare-providers"
+            },
+            {
+              "label": "Associations",
+              "href": "/industries/industry-associations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Toolkit",
+      "href": "/decision-making-toolkit"
+    },
+    {
+      "label": "Insights",
+      "href": "/insights"
+    },
+    {
+      "label": "Media",
+      "href": "/press-media"
+    },
+    {
+      "label": "The Book",
+      "href": "/books/the-decision-switch"
+    }
   ]
 }
