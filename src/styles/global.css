@@ -130,6 +130,7 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
 .hero .wrap{position:relative;z-index:1;width:100%;padding-top:3rem;padding-bottom:3rem}
 .hero .txt{max-width:48rem}
 .hero h1{color:var(--latte);font-size:clamp(2.6rem,5.6vw,4rem)}
+.hero .offer{color:var(--latte);font-family:var(--font-head);font-weight:700;font-size:1.15rem;margin-top:-.4rem}
 .hero p{color:var(--latte);font-size:1.3rem;line-height:1.45}
 .hero .kicker{color:var(--orange-bright);font-size:1.15rem}
 @media (max-width:767px){
