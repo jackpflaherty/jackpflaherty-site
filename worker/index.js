@@ -3,6 +3,10 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.hostname === 'jackpflaherty.com') { // apex to www, permanent
+      url.hostname = 'www.jackpflaherty.com';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === '/api/inquiry') {
       if (request.method === 'POST') return handleInquiry(request, env);
       return Response.redirect(new URL('/book-jack', request.url), 302);
