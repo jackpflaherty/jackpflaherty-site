@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+import a from '../../data/assessment.json';
+const letters = ['A', 'B', 'C', 'D'];
+const dimOf = (q: { dim: string }) => (a.dims as Record<string, { name: string }>)[q.dim].name;
+const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
+---
+<Base title="Start the Clear Confidence Assessment | Jack P. Flaherty"
+  description="Fifteen questions about how your organization decides. Three minutes. Your score, your tier and your lowest dimension at the end."
+  path="/assessment/start" canonicalUrl={a.host + a.paths.start} image="/images/jack-p-flaherty-teaching-whiteboard.jpg">
+
+  <section id="cca" class="cca">
+    <div class="wrap narrow">
+
+      <noscript><p class="notice">The assessment needs JavaScript to run. Turn it on, or email <a href="mailto:jack@jackpflaherty.com">jack@jackpflaherty.com</a> and Jack will send the questions.</p></noscript>
+
+      <div class="cs on" id="cca-ctx">
+        <p class="kicker">The Clear Confidence Assessment</p>
+        <h1>Three details, then fifteen questions.</h1>
+        <p class="lede">Role, size and industry shape the written read you get at the end. Answer from how things work today, not how they should.</p>
+        <div class="form">
+          <label for="cca-cq1">Your current role</label>
+          <select id="cca-cq1" required><option value="">Select your role</option>{a.roles.map(r => <option value={r}>{r}</option>)}</select>
+          <label for="cca-cq2">Organization size</label>
+          <select id="cca-cq2" required><option value="">Select size</option>{a.sizes.map(s => <option value={s}>{s.replace(/M-\$/, 'M–$')}</option>)}</select>
+          <label for="cca-cq3">Primary industry</label>
+          <select id="cca-cq3" required><option value="">Select industry</option>{a.industries.map(i => <option value={i}>{i}</option>)}</select>
+          <p class="err" id="cca-ctx-err" hidden>All three are needed before the questions start.</p>
+          <button class="btn" id="cca-start-btn" type="button">Start the assessment</button>
+        </div>
+        <p class="fine">Your answers stay between you and Jack. Nothing is shared or sold.</p>
+      </div>
+
+      {a.questions.map((q, i) => (
+        <div class="cs" id={'cca-qs' + q.id} data-qid={q.id}>
+          {q.banner && <div class="banner"><p class="kicker">{q.banner.fw}</p><p>{q.banner.tag}</p></div>}
+          <div class="prog" aria-hidden="true"><div class="fill" style={`width:${Math.round(i / a.questions.length * 100)}%`}></div></div>
+          <p class="hdr">{(a.headers as Record<string, string>)[String(q.id)]}</p>
+          <p class="sub">{dimOf(q)}, {q.id === 15 ? 'final question' : `${nOf(q)} of 5`}</p>
+          <p class="qnum">Question {q.id} of 15</p>
+          <p class="stem">{q.stem}</p>
+          <div class="opts" role="group" aria-label={'Question ' + q.id}>
+            {q.opts.map((o, idx) => (
+              <button class="opt" type="button" data-qid={q.id} data-idx={idx}><span class="badge">{letters[idx]}</span><span>{o}</span></button>
+            ))}
+          </div>
+          {q.id > 1 && <button class="back" type="button" data-back={q.id - 1}>Back</button>}
+        </div>
+      ))}
+
+      <div class="cs" id="cca-gate">
+        <p class="kicker">Last step</p>
+        <h2>Your score is ready.</h2>
+        <p>You will see your score and the three-dimension breakdown on the next screen. The written read on your biggest gap, and the first move Jack would make, goes to your inbox. First name and a work email.</p>
+        <div class="form">
+          <div class="row">
+            <div><label for="cca-fname">First name</label><input id="cca-fname" type="text" autocomplete="given-name" required /></div>
+            <div><label for="cca-email">Work email</label><input id="cca-email" type="email" autocomplete="email" required /></div>
+          </div>
+          <div id="cca-ts" class="ts"></div>
+          <p class="err" id="cca-gate-err" hidden></p>
+          <button class="btn" id="cca-submit-btn" type="button">Show my results</button>
+        </div>
+        <p class="fine">Your results and one written follow-up. Nothing else.</p>
+        <button class="back" type="button" data-back="15">Back</button>
+      </div>
+
+      <div class="cs" id="cca-wait" aria-live="polite">
+        <p class="kicker">One moment</p>
+        <h2>Scoring your answers.</h2>
+      </div>
+
+    </div>
+  </section>
+</Base>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+  import a from '../../data/assessment.json';
+  const WH = a.worker, RES = a.host + a.paths.results, SITEKEY = a.turnstileSiteKey;
+  const w = window as unknown as { dataLayer: unknown[]; turnstile?: { render: (el: string, o: object) => string; getResponse: (id: string) => string; reset: (id: string) => void } };
+  w.dataLayer = w.dataLayer || [];
+  const track = (event: string, p: object = {}) => w.dataLayer.push({ event, ...p });
+  const $ = (id: string) => document.getElementById(id) as HTMLElement | null;
+  const ctx = { role: '', org_size: '', industry: '' };
+  const choices: Record<number, number> = {};
+  let tsId: string | null = null;
+
+  function show(id: string) {
+    document.querySelectorAll('#cca .cs').forEach(s => s.classList.remove('on'));
+    $(id)?.classList.add('on');
+    $('cca')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (id === 'cca-gate') renderTs();
+  }
+  function renderTs() {
+    if (tsId || !w.turnstile || !$('cca-ts')) return;
+    tsId = w.turnstile.render('#cca-ts', { sitekey: SITEKEY, theme: 'light' });
+  }
+
+  $('cca-start-btn')?.addEventListener('click', () => {
+    const r = ($('cca-cq1') as HTMLSelectElement).value, o = ($('cca-cq2') as HTMLSelectElement).value, i = ($('cca-cq3') as HTMLSelectElement).value;
+    const e = $('cca-ctx-err');
+    if (!r || !o || !i) { if (e) e.hidden = false; return; }
+    if (e) e.hidden = true;
+    Object.assign(ctx, { role: r, org_size: o, industry: i });
+    track('assessment_start', { assessment_name: 'clarity_confidence', role: r, org_size: o, industry: i });
+    show('cca-qs1');
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('#cca .opt').forEach(btn => btn.addEventListener('click', () => {
+    const qid = Number(btn.dataset.qid), idx = Number(btn.dataset.idx);
+    btn.closest('.cs')?.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+    btn.classList.add('sel');
+    choices[qid] = idx;
+    setTimeout(() => {
+      if (qid < 15) { track('question_view', { assessment_name: 'clarity_confidence', step_number: qid + 1 }); show('cca-qs' + (qid + 1)); }
+      else show('cca-gate');
+    }, 250);
+  }));
+  document.querySelectorAll<HTMLButtonElement>('#cca .back').forEach(b => b.addEventListener('click', () => show('cca-qs' + b.dataset.back)));
+
+  $('cca-submit-btn')?.addEventListener('click', async () => {
+    const btn = $('cca-submit-btn') as HTMLButtonElement;
+    const fn = ($('cca-fname') as HTMLInputElement).value.trim();
+    const em = ($('cca-email') as HTMLInputElement).value.trim().toLowerCase();
+    const er = $('cca-gate-err');
+    const say = (m: string) => { if (er) { er.textContent = m; er.hidden = false; } };
+    if (!fn || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return say('A first name and a valid email are needed.');
+    const token = (tsId && w.turnstile) ? w.turnstile.getResponse(tsId) : '';
+    if (!token) return say('Please complete the verification check.');
+    if (er) er.hidden = true;
+    btn.disabled = true; show('cca-wait');
+    try {
+      const res = await fetch(WH, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ turnstile_token: token, first_name: fn, email: em, role: ctx.role, org_size: ctx.org_size, industry: ctx.industry, choices }) });
+      const R = await res.json();
+      if (!res.ok || !R.ok) throw new Error(R.error || 'Submission failed');
+      track('generate_lead', { assessment_name: 'clarity_confidence', tier: R.tier, score: R.display_score });
+      const q = new URLSearchParams({ score: R.display_score, tier: R.tier, d1: R.d1_score, d2: R.d2_score, d3: R.d3_score, name: fn, role: ctx.role, org: ctx.org_size, industry: ctx.industry, low: R.lowest_dimension, sid: R.submission_id, email: em });
+      window.location.href = RES + '?' + q.toString();
+    } catch (e) {
+      show('cca-gate'); btn.disabled = false;
+      if (tsId && w.turnstile) w.turnstile.reset(tsId);
+      say((e as Error).message === 'Too many submissions. Try again shortly.' ? 'Too many submissions from this connection. Try again in an hour.' : 'We could not save your results. Please try again.');
+    }
+  });
+</script>
+
+<style>
+  .cca{min-height:60vh;scroll-margin-top:5.5rem}
+  .cs{display:none}
+  .cs.on{display:block}
+  .form{margin-top:1.2rem}
+  .form label{margin-top:.9rem}
+  .form .btn{margin-top:1.2rem}
+  .form select{appearance:auto}
+  .err{color:var(--sienna);font-weight:700;margin:.8rem 0 0}
+  .fine{font-size:.95rem;color:var(--brown);margin-top:1.2rem}
+  .banner{background:#fff;border:1px solid var(--linen);border-left:4px solid var(--sienna);border-radius:var(--r);padding:.9rem 1.2rem;margin-bottom:1.4rem}
+  .banner .kicker{margin:0 0 .2rem}
+  .banner p{margin:0}
+  .prog{height:6px;background:var(--linen);border-radius:3px;overflow:hidden;margin:0 0 1.4rem}
+  .prog .fill{height:100%;background:var(--sienna)}
+  .hdr{font-family:var(--font-head);font-weight:800;font-size:clamp(1.35rem,2.6vw,1.75rem);color:var(--ink);margin:0 0 .2rem;line-height:1.2}
+  .sub{color:var(--brown);margin:0 0 1.2rem;font-size:.95rem}
+  .qnum{font-family:var(--font-head);font-weight:700;color:var(--orange);font-size:.95rem;margin:0 0 .5rem}
+  .stem{font-size:1.2rem;line-height:1.5;margin-bottom:1.3rem}
+  .opts{display:grid;gap:.7rem}
+  .opt{display:flex;gap:.9rem;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:.95rem 1.1rem;font:inherit;font-size:1.05rem;line-height:1.45;color:var(--ink);cursor:pointer}
+  .opt:hover{border-color:var(--cobalt)}
+  .opt.sel{border-color:var(--cobalt);background:rgba(46,91,255,.06)}
+  .badge{flex:0 0 auto;font-family:var(--font-head);font-weight:800;color:var(--sienna);min-width:1.4rem}
+  .back{background:none;border:0;color:var(--brown);font:inherit;text-decoration:underline;cursor:pointer;margin-top:1.2rem;padding:0}
+  .ts{margin-top:1rem;min-height:65px}
+  .notice{margin-bottom:1.5rem}
+</style>

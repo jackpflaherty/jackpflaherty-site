@@ -1,0 +1,45 @@
+---
+// Score breakdown and tier copy for the results and report pages. All four tier
+// blocks are rendered; the page script shows the one named in the URL.
+import a from '../data/assessment.json';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+const dims = Object.entries(a.dims) as [string, { name: string; max: number }][];
+---
+<div class="score-grid" data-score-grid>
+  {dims.map(([k, d]) => (
+    <div class="dim card" id={'dim-' + k} data-max={d.max}>
+      <p class="kicker">{d.name}</p>
+      <p class="pct"><span data-pct={k}>--</span>%</p>
+      <div class="bar"><div class="fill" data-bar={k}></div></div>
+      {!compact && <p class="raw"><span data-raw={k}>--</span> of {d.max}</p>}
+      <p class="gap" data-gap={k} hidden>Your key gap</p>
+    </div>
+  ))}
+</div>
+
+<div class="tiers">
+  {Object.entries(a.tiers).map(([k, t]) => (
+    <div class="tier" id={'tier-' + k} hidden>
+      <p class="kicker">Your profile</p>
+      <h2>{t.label}</h2>
+      <p class="lede">{t.line}</p>
+      {t.narrative.map(p => <p>{p}</p>)}
+    </div>
+  ))}
+</div>
+
+<style>
+  .score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0 2rem}
+  @media (max-width:700px){.score-grid{grid-template-columns:1fr}}
+  .dim{padding:1.1rem 1.2rem}
+  .dim.gap-on{border-color:var(--sienna);box-shadow:inset 0 0 0 1px var(--sienna)}
+  .dim .kicker{font-size:.9rem;margin-bottom:.4rem}
+  .pct{font-family:var(--font-head);font-weight:800;font-size:2rem;line-height:1;margin:0 0 .6rem;color:var(--ink)}
+  .bar{height:8px;background:var(--linen);border-radius:4px;overflow:hidden}
+  .bar .fill{height:100%;width:0;background:var(--cobalt);transition:width .6s ease}
+  .raw{font-size:.9rem;color:var(--brown);margin:.6rem 0 0}
+  .gap{display:inline-block;font-family:var(--font-head);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--sienna);border-radius:4px;padding:.2rem .5rem;margin:.7rem 0 0}
+  .gap[hidden],.tier[hidden]{display:none}
+  .tier h2{margin-top:.2rem}
+</style>

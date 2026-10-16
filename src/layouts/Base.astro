@@ -4,8 +4,8 @@ import site from '../data/site.json';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import manifest from '../data/images.json';
-interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; hero?: string; heroMobile?: string; }
-const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website', hero, heroMobile } = Astro.props;
+interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; hero?: string; heroMobile?: string; canonicalUrl?: string; }
+const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website', hero, heroMobile, canonicalUrl } = Astro.props;
 // Preload the hero photo (WebP srcset) so the browser fetches it before it parses the body.
 const srcsetFor = (p: string) => {
   const n = p.replace(/^\/images\//, ''); const m = (manifest as Record<string, { widths: number[] }>)[n];
@@ -13,7 +13,7 @@ const srcsetFor = (p: string) => {
 };
 const heroSet = hero ? srcsetFor(hero) : '';
 const heroMobileSet = heroMobile ? srcsetFor(heroMobile) : '';
-const canonical = site.url + (path === '/' ? '/' : path);
+const canonical = canonicalUrl || site.url + (path === '/' ? '/' : path);
 const person = {
   '@context': 'https://schema.org', '@type': 'Person', '@id': site.url + '/#person',
   name: 'Jack P. Flaherty', alternateName: 'Jack Flaherty', url: site.url,

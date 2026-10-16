@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import AssessmentScore from '../../components/AssessmentScore.astro';
+import a from '../../data/assessment.json';
+import site from '../../data/site.json';
+---
+<Base title="Your results | The Clear Confidence Assessment" description="Your Clear Confidence Score, your tier and your lowest dimension."
+  path="/assessment/results" canonicalUrl={a.host + a.paths.results} noindex={true}>
+
+  <section class="dark tight">
+    <div class="wrap">
+      <p class="kicker">The Clear Confidence Assessment</p>
+      <h1><span data-score>--</span> out of 100.</h1>
+      <p class="lede" style="color:#E3D5BE">Your score, the three dimensions behind it, and the one that is holding the others back.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <AssessmentScore />
+      <div class="narrow">
+        <p class="hello"><span data-first></span>, here is the direct read on your score.</p>
+        <div class="tiers-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="grid c2">
+        <div class="card">
+          <h3>What happens next</h3>
+          <p>The written read for your role and industry is on its way to <strong data-email></strong>. It usually arrives within a minute. If it has not, check your spam or promotions folder.</p>
+          <p>It covers what your lowest dimension means for someone in your seat, where the gap shows up first, and what it costs if it goes unaddressed.</p>
+        </div>
+        <div class="card accent">
+          <h3>The conversation worth having</h3>
+          <p>Thirty minutes with Jack on what the score surfaced and whether it is worth acting on now. No pitch. Either way you leave with a clearer read.</p>
+          <p style="margin-top:1rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { read, render } from '../../scripts/assessment-view';
+  const v = read();
+  // Move the tier blocks under the greeting so the narrative reads as one piece.
+  const slot = document.querySelector('.tiers-slot'); const tiers = document.querySelector('.tiers');
+  if (slot && tiers) slot.replaceWith(tiers);
+  render(v);
+  if (!v.first) { const h = document.querySelector<HTMLElement>('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
+  document.title = 'Your results | Clear Confidence Assessment' + (v.first ? ' | ' + v.first : '');
+</script>
+
+<style>
+  .hello{font-family:var(--font-head);font-weight:700;font-size:1.15rem;margin-bottom:1.2rem}
+</style>

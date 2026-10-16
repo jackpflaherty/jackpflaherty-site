@@ -1,5 +1,16 @@
 // Cloudflare Worker in front of the static site.
 // Handles the two forms at /api/inquiry; everything else is served from the built assets.
+// The Clear Confidence Assessment lives on its own hostname. Legacy paths (from emailed
+// report links and the site's buttons) map onto the /assessment/* pages in the build.
+const ASSESS_HOST = 'assessment.jackpflaherty.com';
+const ASSESS_PATHS = {
+  '/': '/assessment',
+  '/start-clarity-confidence-assessment': '/assessment/start',
+  '/results-clarity-confidence-assessment': '/assessment/results',
+  '/report-clarity-confidence-assessment': '/assessment/report',
+};
+const ASSESS_BACK = Object.fromEntries(Object.entries(ASSESS_PATHS).map(([legacy, built]) => [built, legacy]));
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -10,6 +21,20 @@ export default {
     if (url.pathname === '/api/inquiry') {
       if (request.method === 'POST') return handleInquiry(request, env);
       return Response.redirect(new URL('/book-jack', request.url), 302);
+    }
+    const path = url.pathname.length > 1 ? url.pathname.replace(/\/+$/, '') : '/';
+    if (url.hostname === ASSESS_HOST) {
+      if (ASSESS_PATHS[path]) { // serve the built page at the legacy URL, query string intact
+        url.pathname = ASSESS_PATHS[path];
+        return env.ASSETS.fetch(new Request(url.toString(), request));
+      }
+      if (/^\/(_astro|images|fonts)\//.test(path) || path === '/favicon.ico') return env.ASSETS.fetch(request);
+      url.hostname = 'www.jackpflaherty.com'; // nav, footer and anything else belong to the main site
+      return Response.redirect(url.toString(), 301);
+    }
+    if (url.hostname === 'www.jackpflaherty.com' && ASSESS_BACK[path]) { // /assessment/* on www points at the assessment host (preview hosts keep serving the built pages)
+      url.hostname = ASSESS_HOST; url.pathname = ASSESS_BACK[path];
+      return Response.redirect(url.toString(), 301);
     }
     return env.ASSETS.fetch(request);
   }

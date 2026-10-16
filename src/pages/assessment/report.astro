@@ -1,0 +1,94 @@
+---
+import Base from '../../layouts/Base.astro';
+import AssessmentScore from '../../components/AssessmentScore.astro';
+import a from '../../data/assessment.json';
+import site from '../../data/site.json';
+---
+<Base title="Your Clear Confidence Report | Jack P. Flaherty" description="Your Clear Confidence Assessment results, with the written read for your role and industry."
+  path="/assessment/report" canonicalUrl={a.host + a.paths.report} noindex={true}>
+
+  <section class="tight no-print">
+    <div class="wrap toolbar">
+      <p class="kicker" style="margin:0">The Clear Confidence Assessment</p>
+      <button class="btn alt" type="button" onclick="window.print()" data-print hidden>Print or save as PDF</button>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap report">
+      <header class="head">
+        <div>
+          <h1>Your Clear Confidence Report</h1>
+          <p class="meta">Prepared for <strong data-name></strong> · <span data-date></span></p>
+          <p class="meta" data-ctx hidden></p>
+        </div>
+        <div class="big"><span data-score>--</span><small>/100</small></div>
+      </header>
+
+      <div class="pending notice" data-pending hidden>
+        <h3>The written read is in your inbox</h3>
+        <p>Your score is above. What it means for someone in your seat, where the gap shows up first, and what it costs if it goes unaddressed, is in the report heading to your inbox now. It usually arrives within a minute. If it has not, check your spam or promotions folder.</p>
+      </div>
+
+      <div class="insight" data-insight hidden>
+        <p class="kicker">What this means for you</p>
+        <p class="summary" data-summary></p>
+      </div>
+
+      <div class="narrow">
+        <p class="hello"><span data-first></span>, here is the direct read on your score.</p>
+        <div class="tiers-slot"></div>
+      </div>
+
+      <h2 style="margin-top:2rem">Your score breakdown</h2>
+      <AssessmentScore />
+
+      <div class="card accent close">
+        <h3>The conversation worth having</h3>
+        <p>If your results raised a question worth thinking through with someone who has sat in the same seat, that is what the discovery call is for. Thirty minutes with Jack on what the score surfaced and whether it is worth acting on now. No pitch. Either way you leave with a clearer read.</p>
+        <p><a class="btn" href={site.calendly} target="_blank" rel="noopener">Schedule time with Jack</a></p>
+        <p class="sig">Jack P. Flaherty · <a href={'mailto:' + site.email}>{site.email}</a> · <a href={site.url}>www.jackpflaherty.com</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { read, render } from '../../scripts/assessment-view';
+  const v = read();
+  const slot = document.querySelector('.tiers-slot'); const tiers = document.querySelector('.tiers');
+  if (slot && tiers) slot.replaceWith(tiers);
+  render(v);
+  const q = (s: string) => document.querySelector<HTMLElement>(s);
+  const d = new Date();
+  const dateEl = q('[data-date]'); if (dateEl) dateEl.textContent = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const has = !!v.summary;
+  const ins = q('[data-insight]'); if (ins) ins.hidden = !has;
+  const sum = q('[data-summary]'); if (sum) sum.textContent = v.summary;
+  const pend = q('[data-pending]'); if (pend) pend.hidden = has;
+  const pr = q('[data-print]'); if (pr) pr.hidden = !has;
+  if (!v.first) { const h = q('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
+  document.title = 'Clear Confidence Report | ' + (v.name || 'Your results') + ' | Jack P. Flaherty';
+</script>
+
+<style>
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .report{background:#fff;border:1px solid var(--linen);border-radius:var(--r);padding:clamp(1.4rem,4vw,2.6rem)}
+  .head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;border-bottom:1px solid var(--linen);padding-bottom:1.2rem;margin-bottom:1.4rem}
+  .head h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:.4rem}
+  .meta{margin:0;color:var(--brown)}
+  .big{font-family:var(--font-head);font-weight:800;font-size:3rem;line-height:1;color:var(--ink);background:var(--latte);border-radius:var(--r);padding:.8rem 1.2rem}
+  .big small{font-size:1.1rem;font-weight:400;color:var(--brown);margin-left:.2rem}
+  .insight{border-left:4px solid var(--sienna);padding:.2rem 0 .2rem 1.2rem;margin:0 0 1.6rem}
+  .summary{white-space:pre-line}
+  .hello{font-family:var(--font-head);font-weight:700;font-size:1.15rem;margin-bottom:1.2rem}
+  .close{margin-top:2rem}
+  .close p:last-child{margin:0}
+  .sig{font-size:.95rem;color:var(--brown);margin-top:1rem}
+  .pending{margin-bottom:1.6rem}
+  @media print{
+    .no-print,:global(.nav),:global(.footer),.close .btn{display:none !important}
+    .report{border:0;padding:0}
+    body{background:#fff}
+  }
+</style>

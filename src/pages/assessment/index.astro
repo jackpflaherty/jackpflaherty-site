@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import Pic from '../../components/Pic.astro';
+import a from '../../data/assessment.json';
+const start = a.paths.start;
+---
+<Base title="The Clear Confidence Assessment | Jack P. Flaherty"
+  description="Fifteen questions, three minutes. A read on how your organization makes decisions: who owns the call, whether the signals arrive in time, and whether the team knows what you know."
+  path="/assessment/" canonicalUrl={a.host + '/'} image="/images/jack-p-flaherty-teaching-whiteboard.jpg">
+
+  <section class="dark">
+    <div class="wrap split rev top">
+      <div>
+        <p class="kicker">The Clear Confidence Assessment</p>
+        <h1>Where does your decision process break?</h1>
+        <p class="lede" style="color:#E3D5BE">Fifteen questions, three minutes. A read on how your organization decides, across three dimensions, with your score, your tier and the one gap costing you the most.</p>
+        <div class="btns"><a class="btn" href={start}>Take the assessment</a></div>
+        <p class="small">No email needed to begin. Your results and one written follow-up. Nothing else.</p>
+      </div>
+      <Pic src="jack-p-flaherty-teaching-whiteboard.jpg" alt="Jack P. Flaherty teaching at a whiteboard" loading="eager" fetchpriority="high" />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Three dimensions. Five questions each.</h2>
+      <div class="grid c3">
+        {Object.entries(a.dims).map(([k, d]) => (
+          <div class="card accent"><h3>{d.name}</h3><p>{d.blurb}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap split top">
+      <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop at a table" />
+      <div>
+        <h2>What comes back.</h2>
+        <ul class="checks">
+          <li>Your Clear Confidence Score, 0 to 100.</li>
+          <li>Which of four tiers you are in.</li>
+          <li>Your lowest dimension, named.</li>
+          <li>A written read for your role and industry, in your inbox within a minute.</li>
+        </ul>
+        <p>Most leaders do not have a decision problem. They have a structure problem, and it shows up at the moment it costs the most. The assessment is built from the method in The Decision Switch, after 25 years in risk and advisory watching capable teams stall at the exact moment it counted.</p>
+        <div class="btns"><a class="btn" href={start}>Take the assessment</a></div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .small{font-size:.95rem;color:#E3D5BE;margin-top:1rem}
+</style>
