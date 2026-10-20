@@ -1,6 +1,7 @@
 ---
 import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
+import Proof from '../../components/Proof.astro';
 import Faq from '../../components/Faq.astro';
 import Cta from '../../components/Cta.astro';
 import site from '../../data/site.json';
@@ -20,6 +21,11 @@ const page = {
   description: 'Jack P. Flaherty, former Big 4 director, speaks to partners in accounting, advisory and law firms on making technology decisions their partners and clients will stand behind. Keynote: Fear Is Not A Control.',
   about: { '@id': site.url + '/#person' }
 };
+const proof = [
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" },
+  { q: "Jack delivered a much-needed education for our leaders. Jack’s mission, to help leaders make better choices and lead with confidence, comes through loud and clear.", who: "Michael Parisi", role: "Head of Client Acquisition, Schellman" }
+];
 ---
 <Base title="Keynote Speaker for Accounting, Advisory and Law Firms | Jack P. Flaherty"
   description="Jack P. Flaherty, former Big 4 director, speaks to partners in accounting, advisory and law firms on technology decisions. Keynote: Fear Is Not A Control."
@@ -35,6 +41,8 @@ const page = {
       <Pic src="jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion with colleagues in an office" />
     </div>
   </section>
+
+  <Proof quotes={proof} />
 
   <section class="dark">
     <div class="wrap">
