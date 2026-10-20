@@ -1,35 +1,52 @@
 ---
 import Essay from '../../layouts/Essay.astro';
-const about = ['Automation bias', 'AI governance', 'Professional services firms', 'Technology decision-making'];
+const about = ['AI critical thinking atrophy', 'Automation bias', 'AI governance', 'Professional services firms', 'Technology decision-making'];
 const citation = { '@type': 'ScholarlyArticle', name: 'Complacency and Bias in Human Use of Automation: An Attentional Integration', author: 'Parasuraman, R. and Manzey, D. H.', datePublished: '2010', isPartOf: 'Human Factors, 52(3)', url: 'https://journals.sagepub.com/doi/10.1177/0018720810376055' };
+const tldr = [
+  'When the machine does the reps, your people lose the instinct that catches its mistakes. The research calls it automation complacency and bias.',
+  'The danger is not a glaring error. It is a small contextual mistake in an output nobody checks, reviewed by a team that no longer doubts it.',
+  'The test: if the system went down tomorrow, could your second-year analysts rebuild the analysis from the raw data?',
+  'Treat the tool like a new hire, and build friction back into training on purpose. Juniors audit the machine’s logic before accepting it. Seniors explain a number without the dashboard.'
+];
+const faqs = [
+  { q: 'What is AI atrophy?', a: 'The loss of professional judgment that happens when people stop doing the work by hand and stop checking the output of the system that does it for them. The skill that catches the machine’s mistakes was built by reps. When the reps go, so does the skill. Research on automation complacency and bias has documented the pattern for decades.' },
+  { q: 'How do you know if it is happening in your firm?', a: 'Ask whether your second-year analysts could rebuild last quarter’s analysis from raw data if the tool went down. Ask whether a senior manager traced the reconciliation she signed off on. If the answers are no, the tool is replacing a skill the firm has not decided to give up.' },
+  { q: 'Should firms slow down AI adoption to protect judgment?', a: 'No. Adopt, with conditions. Give the tool a job description, a manager, a probation period and a review, and keep deliberate reps in training. The firms that handle this well are faster, because they can say yes with conditions instead of waiting for someone else to prove it is safe.' },
+  { q: 'What does "keep the reps" look like in practice?', a: 'Juniors audit the machine’s logic before they accept it. Seniors explain a number without the dashboard. A sample of the work is rebuilt by hand during probation and compared. Friction added on purpose, in training, so the instinct survives the tool.' }
+];
 ---
-<Essay title="The AI Atrophy: When AI Does the Reps, Firms Lose Judgement | Jack P. Flaherty"
-  description="Automation bias is reaching accounting and consulting firms. Jack P. Flaherty on keeping professional judgment when AI does the work."
+<Essay title="AI Critical Thinking Atrophy: What Leaders Miss | Jack P. Flaherty"
+  description="Automation bias is reaching accounting and consulting firms. Jack P. Flaherty, former Big 4 director, on keeping professional judgment when AI does the work."
   keywords={about.join(', ')}
   path="/blogs/the-ai-atrophy"
-  kicker="The Clear Confidence Report"
+  kicker="For partners in accounting, advisory and law firms"
   headline="The AI Atrophy"
   standfirst="When the machine does the reps, your people lose the instinct that catches its mistakes."
-  date="2026-02-20" updated="2026-10-13"
+  date="2026-02-20" updated="2026-10-20"
   about={about} citation={citation}
+  tldr={tldr}
+  faqs={faqs}
   cta={{ text: 'This is the ground the keynote covers for partner groups.', label: 'See Fear Is Not A Control for professional services firms', href: '/keynote-speaker/fear-is-not-a-control-professional-services' }}>
 
   <p>My father ran a wholesale printing company. He never went to college. He could hear a sixteenth of an inch of misalignment in a press from a shift in its roar. Nobody taught him that. He earned it standing next to the machine.</p>
   <p>I swept his floors at ten. In my twenties I traded derivatives at Morgan Stanley. Later I spent 15 years at the Big 4, where I served as a director. Different rooms, same lesson. The people who caught the problem early were the ones who had done the work by hand long enough to feel when something was off.</p>
   <p>Accounting and consulting firms are now moving that work to AI. I am for it. The efficiency is real. But one question keeps coming back: when the system does the reps, where does the judgment come from?</p>
-  <h2>What atrophy looks like</h2>
-  <p>The danger is not a glaring error. Those get caught. The danger is a small contextual mistake in an output nobody checks, reviewed by a team that no longer has the instinct to doubt it.</p>
+
+  <h2>What does AI atrophy look like in a firm?</h2>
+  <p>Quiet, and small. The danger is not a glaring error. Those get caught. The danger is a small contextual mistake in an output nobody checks, reviewed by a team that no longer has the instinct to doubt it.</p>
   <p>The research has a name for this. When people rely on automated systems they stop monitoring and start trusting, and they miss the cases the system gets wrong. Parasuraman and Manzey laid it out in an integrative review of the research on automation complacency and bias.<sup>1</sup></p>
   <p>In a firm it shows up quietly. A senior manager signs off on a reconciliation she did not trace. An associate accepts a risk score he could not have built. The firm’s muscle memory, the thing clients pay for, thins out one unchecked output at a time.</p>
   <p>Ask yourself: if the system went down tomorrow, could your second-year analysts rebuild the analysis from the raw data? If the answer is no, the tool is not assisting your people. It is replacing a skill you have not decided to give up.</p>
-  <h2>Treat the tool like a new hire</h2>
-  <p>Here is the method I use with boards and executive teams. Treat new technology like a new hire.</p>
+
+  <h2>How do you adopt the tool without losing the judgment?</h2>
+  <p>Treat new technology like a new hire. Here is the method I use with boards and executive teams.</p>
   <p>A new hire gets a job description. Write down what the tool is allowed to decide and what it is not.</p>
   <p>A new hire gets a manager. One named person owns the tool’s output and answers for it.</p>
   <p>A new hire gets a probation period. For the first ninety days, a person rebuilds a sample of the work by hand and compares.</p>
   <p>A new hire gets a review. Decide, then watch for what moves: error rates, client questions, the things your people stopped noticing.</p>
   <p>The firms that handle this well are not slower to adopt. They are faster, because they can say yes with conditions instead of waiting for someone else to prove it is safe. Fear is not a control. A probation period is.</p>
-  <h2>Keep the reps</h2>
-  <p>Embrace the analytics. Then build friction back into training on purpose. Make juniors audit the machine’s logic before they accept it. Make seniors explain a number without the dashboard. You are not slowing the firm down. You are keeping the instinct that tells you when the press is a sixteenth of an inch off.</p>
+
+  <h2>How do you keep the reps?</h2>
+  <p>Build friction back into training on purpose. Embrace the analytics. Then make juniors audit the machine’s logic before they accept it. Make seniors explain a number without the dashboard. You are not slowing the firm down. You are keeping the instinct that tells you when the press is a sixteenth of an inch off.</p>
   <p class="meta">1. Parasuraman, R. and Manzey, D. H. (2010). Complacency and Bias in Human Use of Automation: An Attentional Integration. <em>Human Factors</em>, 52(3), 381 to 410. <a href="https://journals.sagepub.com/doi/10.1177/0018720810376055" rel="noopener" target="_blank">doi:10.1177/0018720810376055</a></p>
 </Essay>
