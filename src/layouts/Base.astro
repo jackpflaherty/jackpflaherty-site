@@ -22,9 +22,25 @@ const person = {
   description: site.position,
   telephone: site.phone, email: site.email,
   address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
-  sameAs: [site.linkedin, site.youtube, site.instagram, site.amazon]
+  sameAs: [site.linkedin, site.youtube, site.instagram, site.amazon],
+  knowsAbout: ['Technology decision-making', 'AI governance', 'Board and audit committee oversight', 'Enterprise risk management', 'Cybersecurity governance', 'Healthcare technology risk'],
+  worksFor: { '@id': site.url + '/#organization' }
 };
-const all = [person, ...schema];
+const organization = {
+  '@context': 'https://schema.org', '@type': 'Organization', '@id': site.url + '/#organization',
+  name: 'The Decision Switch', url: site.url,
+  logo: site.url + '/images/jack-p-flaherty-signature-logo.png',
+  founder: { '@id': site.url + '/#person' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
+  telephone: site.phone, email: site.email,
+  sameAs: [site.linkedin, site.youtube, site.instagram]
+};
+const website = {
+  '@context': 'https://schema.org', '@type': 'WebSite', '@id': site.url + '/#website',
+  name: 'Jack P. Flaherty', url: site.url,
+  publisher: { '@id': site.url + '/#person' }
+};
+const all = [person, organization, website, ...schema];
 ---
 <!doctype html>
 <html lang="en">
