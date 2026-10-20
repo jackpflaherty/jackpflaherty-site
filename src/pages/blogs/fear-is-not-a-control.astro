@@ -1,34 +1,53 @@
 ---
 import Essay from '../../layouts/Essay.astro';
-const about = ['Technology risk governance', 'Board oversight', 'Technology decision-making', 'AI adoption'];
+const about = ['Fear of AI at work', 'Technology risk governance', 'Board oversight', 'Technology decision-making', 'AI adoption'];
+const tldr = [
+  'Most organizations rely on one control when a new technology shows up, and it is not on any framework: waiting.',
+  'Waiting is not a control. It cannot be tested, it has no owner, and it does not stop the technology from arriving. It only stops the organization from deciding.',
+  'A real control says go, with conditions: a named owner, a budget, a deadline and a review.',
+  'Three questions replace fear before any technology decision: what is its job, who manages it, when do we review it.'
+];
+const faqs = [
+  { q: 'How do I get my team to stop being afraid of AI?', a: 'Give the decision an owner. Fear fills the gap when nobody is assigned to make the call. One named person with a job description for the tool, a probation period and a review date turns fear into a decision the team can argue with and improve. Banning the tool does not do that; the work moves to personal devices.' },
+  { q: 'Is fear of AI at work rational?', a: 'The fear is reasonable. Acting on it by waiting is not. A tool that is in use, unreviewed, by whoever moved first is more dangerous than the same tool with a job description and a review. Fear is information. It is not a control.' },
+  { q: 'What is the difference between a control and fear?', a: 'A control can be tested, has an owner, and tells the organization what to do next. Fear has none of those. It feels responsible because nobody gets blamed for a tool that was never switched on, and that is exactly why it survives.' },
+  { q: 'What should a board ask before a new technology goes live?', a: 'Who owns it. What it is for. How the board will know it was a success. Those three questions, asked before the decision, are the board-level version of the method, and they give management an update the board can act on.' }
+];
 ---
-<Essay title="Fear Is Not A Control: Why Waiting Is the Costliest Risk Posture | Jack P. Flaherty"
-  description="Nobody owns the technology decision, so fear makes it. Jack P. Flaherty on why waiting is not a control and the three questions that replace it."
+<Essay title="Fear of AI at Work Is Not a Control | Jack P. Flaherty"
+  description="Nobody owns the technology decision, so fear makes it. Jack P. Flaherty, former Big 4 director, on why waiting is not a control and the three questions that replace it."
   keywords={about.join(', ')}
   path="/blogs/fear-is-not-a-control"
-  kicker="Jack P. Flaherty"
+  kicker="For health-system leaders and professional services partners"
   headline="Fear Is Not A Control"
-  standfirst="Waiting feels safe. It is the most expensive risk posture a leadership team can take."
+  standfirst="Waiting feels safe. It is the most expensive risk posture a leadership team can take, and it is the one most of them take when AI shows up."
   date="2026-10-13"
+  updated="2026-10-20"
   about={about}
+  tldr={tldr}
+  faqs={faqs}
   cta={{ text: 'This is the idea behind the keynote.', label: 'See Fear Is Not A Control, built for health systems and professional services firms', href: '/keynote-speaker/fear-is-not-a-control' }}>
 
   <p>Every risk framework I have worked with has a list of controls. Approvals. Segregation of duties. Access reviews. Monitoring. Not one of them lists the control most organizations actually rely on when a new technology shows up: waiting.</p>
   <p>Waiting feels responsible. Nobody gets blamed for a tool that was never switched on. But waiting is not a control. It cannot be tested. It has no owner. And it does not stop the technology from arriving. It only stops the organization from deciding about it.</p>
-  <h2>How fear makes the decision</h2>
-  <p>Here is what I have watched happen in boardrooms and executive teams for 25 years. A new system is in front of the leadership team. Half the room wants it. Half the room wants more information. Nobody is assigned to make the call, so the meeting ends with a request for another deck.</p>
+
+  <h2>How does fear end up making the decision?</h2>
+  <p>By default, and by whoever moved first. Here is what I have watched happen in boardrooms and executive teams for 25 years. A new system is in front of the leadership team. Half the room wants it. Half the room wants more information. Nobody is assigned to make the call, so the meeting ends with a request for another deck.</p>
   <p>Meanwhile the technology is already in the building. A department bought a license. A manager started using the free version. A vendor added the feature to a platform the organization already runs. By the time the leadership team meets again, the decision has been made, by default, by whoever moved first.</p>
   <p>That is the pattern. Nobody owns the decision, so fear makes it. And the decisions fear makes are the ones no control ever reviewed.</p>
-  <h2>What a real control looks like</h2>
-  <p>I led a board-mandated cybersecurity program for a $4B health system that had to close its urgent gaps within a year, on a $2.5 million budget. A regulator had made the risk unavoidable. The board did not respond with a freeze. It responded with a decision: a named owner, a budget, a deadline and a review. The urgent gaps closed within the year, and the organization was fully compliant a year later.</p>
+
+  <h2>What does a real control look like?</h2>
+  <p>A decision with an owner, a budget, a deadline and a review. I led a board-mandated cybersecurity program for a $4B health system that had to close its urgent gaps within a year, on a $2.5 million budget. A regulator had made the risk unavoidable. The board did not respond with a freeze. It responded with a decision: a named owner, a budget, a deadline and a review. The urgent gaps closed within the year, and the organization was fully compliant a year later.</p>
   <p>Fear said stop. The control said go, with conditions. That difference is the whole job.</p>
   <p>The risk person in the room has a reputation for slowing things down, and sometimes earns it. But the risk person’s real job is to be the one who can say yes with conditions, because they are the one who knows what the conditions should be.</p>
-  <h2>Three questions that replace fear</h2>
+
+  <h2>What three questions replace fear?</h2>
   <p>Before any technology decision, ask three questions.</p>
   <p><strong>What is its job?</strong> Write down what the tool is allowed to decide and what it is not.</p>
   <p><strong>Who manages it?</strong> One name. Not a committee.</p>
   <p><strong>When do we review it?</strong> A date, and the two or three things you will look at.</p>
   <p>That is treating new technology like a new hire. A job description, a manager, a probation period, a review. Nobody would hire a person without them. Most organizations adopt technology without any of them.</p>
-  <h2>Decide, then watch</h2>
-  <p>Go slow to go fast. The organizations that adopt well are not the ones with the longest evaluation. They are the ones that decide early, with conditions, and then watch for the ripple: what moved, what broke, who complained, what the vendor changed. That is a control. Fear is not.</p>
+
+  <h2>Is deciding early reckless?</h2>
+  <p>It is the opposite. Go slow to go fast. The organizations that adopt well are not the ones with the longest evaluation. They are the ones that decide early, with conditions, and then watch for the ripple: what moved, what broke, who complained, what the vendor changed. That is a control. Fear is not.</p>
 </Essay>
