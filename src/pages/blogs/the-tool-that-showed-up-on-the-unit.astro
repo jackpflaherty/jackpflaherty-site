@@ -1,31 +1,52 @@
 ---
 import Essay from '../../layouts/Essay.astro';
-const about = ['Health systems', 'Nurse leadership', 'Clinical technology adoption', 'Technology decision-making'];
+const about = ['Health systems', 'Nurse leadership', 'Clinical technology adoption', 'AI in nursing', 'Technology decision-making'];
+const tldr = [
+  'A new tool is usually in use on the unit before anyone has decided whether it should be. Nobody owns the decision, so fear makes it.',
+  'The week it shows up, a nurse leader can treat the tool like a new hire: give it a job, name its manager, set its probation, review it. None of that needs a committee.',
+  'The risk is in the ripple, not the rollout. A tool that is usually right changes what people check.',
+  'Fear is not a control. A nurse manager with a job description, a sample and a review date is.'
+];
+const faqs = [
+  { q: 'Who should own the decision when a new tool shows up on a nursing unit?', a: 'One named person on the unit, usually the nurse manager, because the team already looks to her for a yes or a no. IT, compliance and the vendor each own a piece. The decision needs one owner who answers for it.' },
+  { q: 'Does this apply to AI tools or to any new technology?', a: 'Any technology that reaches a patient: an AI documentation tool, a monitoring system, a new module in the record. AI is the live case in most health systems right now, and the method is the same for each.' },
+  { q: 'What does a probation period look like for a clinical tool?', a: 'For a fixed period, someone checks a sample of what the tool produces against what a person would have done. Decide the sample size and the period before the tool is in use, not after the first near miss.' },
+  { q: 'What should the board hear about it?', a: 'Who owns it, what it is for, and how the board will know it was a success. The Joint Commission and the Coalition for Health AI guidance of September 2025 asks governing boards to receive periodic updates on AI use, outcomes and adverse events. The three questions give that update a shape.' }
+];
 ---
-<Essay title="The Tool That Showed Up on the Unit: New Technology in Health Systems | Jack P. Flaherty"
-  description="Half the team is using the new tool by Friday and nobody owns the decision. Jack P. Flaherty on what nurse leaders and executives do the week it shows up."
+<Essay title="What Nurse Leaders Should Do When AI Shows Up on the Unit | Jack P. Flaherty"
+  description="Half the team is using the new tool by Friday and nobody owns the decision. Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, on what nurse leaders do the week it shows up."
   keywords={about.join(', ')}
   path="/blogs/the-tool-that-showed-up-on-the-unit"
-  kicker="Jack P. Flaherty"
+  kicker="For health-system executives and nurse leaders"
   headline="The Tool That Showed Up on the Unit"
-  standfirst="Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Decide, then watch for the ripple."
+  standfirst="Half the team is using it by Friday. The other half is waiting for someone to say it is safe. What a nurse leader does that week decides whether the tool helps a patient or hurts one."
   date="2026-10-13"
+  updated="2026-10-20"
   about={about}
+  tldr={tldr}
+  faqs={faqs}
   cta={{ text: 'This is the ground the keynote covers for health-system leaders.', label: 'See Fear Is Not A Control for health systems', href: '/keynote-speaker/fear-is-not-a-control-healthcare' }}>
 
   <p>A new tool shows up on the unit. Sometimes it came through procurement. More often it came through a vendor update, a pilot in one department, or a nurse who found something that saves twenty minutes a shift. By Friday half the team is using it. The other half is waiting for someone to say it is safe.</p>
   <p>Nobody owns the decision. So fear makes it. And fear’s decision is the worst one available: the tool is in use, unreviewed, by the people least able to see how it fails, while the people who could see it are waiting for permission nobody is giving.</p>
-  <h2>Why health systems get this backwards</h2>
-  <p>Health systems are better at controls than almost any organization I have worked with. Medication reconciliation. The time-out before surgery. Two identifiers before a transfusion. Those controls exist because the organization decided, once, that the risk of acting without them was higher than the cost of the check.</p>
-  <p>New technology rarely gets that decision. It gets a committee, a request for a policy, and a quiet workaround on the floor while the committee meets. I served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee, and the pattern I saw there is the pattern I see everywhere: the tool is already in use by the time the risk conversation starts.</p>
-  <h2>What to do the week it shows up</h2>
+
+  <h2>Why do health systems get new technology backwards?</h2>
+  <p>Because the control conversation starts after the tool is already in use. Health systems are better at controls than almost any organization I have worked with. Medication reconciliation. The time-out before surgery. Two identifiers before a transfusion. Those controls exist because the organization decided, once, that the risk of acting without them was higher than the cost of the check.</p>
+  <p>New technology rarely gets that decision. It gets a committee, a request for a policy, and a quiet workaround on the floor while the committee meets. I served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee, and the pattern I saw there is the pattern I see everywhere: the tool is already in use by the time the risk conversation starts. The committee is not deciding. It is ratifying.</p>
+
+  <h2>What should a nurse leader do the week a new tool shows up?</h2>
   <p>Treat the tool like a new hire. On the unit that means four things, and none of them needs a committee.</p>
   <p><strong>Give it a job.</strong> In one paragraph, what is the tool for, and what must it never do? “It drafts the handoff note” is a job. “It replaces the handoff conversation” is not.</p>
   <p><strong>Name its manager.</strong> One person on the unit owns how it is used and answers for it. The nurse manager is usually the right person, because she is the one the team already looks to for a yes or a no.</p>
   <p><strong>Set its probation.</strong> For a fixed period, someone checks a sample of what the tool produces against what a person would have done. Decide the sample and the period before Friday, not after the first near miss.</p>
   <p><strong>Review it.</strong> Decide, then watch for the ripple. What moved? Did the time it saved show up as time at the bedside, or as more tasks? What did people stop doing because the tool did it? What did the vendor change?</p>
-  <h2>Decide, then watch</h2>
-  <p>The ripple is where the real risk lives. A tool that is usually right changes what people check, and the time it is wrong lands on whichever patient is in the bed that day.</p>
-  <p>The teams that adopt new technology well are not the ones with the longest evaluation. They decide early, with conditions, and then they watch. That is not slower. It is the only version of fast that holds up when the regulator, the board or a family asks what happened.</p>
+
+  <h2>What happens after the decision?</h2>
+  <p>The ripple is where the real risk lives. A tool that is usually right changes what people check, and the time it is wrong lands on whichever patient is in the bed that day. The review is not paperwork. It is the only control that catches the failure a good tool creates: the one nobody checks for because the tool has been right every time until now.</p>
+  <p>The board will ask about this eventually. <a href="https://www.jointcommission.org/en-us/knowledge-library/news/2025-09-jc-and-chai-release-initial-guidance-to-support-responsible-ai-adoption" rel="noopener">Guidance from The Joint Commission and the Coalition for Health AI</a>, published in September 2025, asks governing boards to receive periodic updates on AI use, outcomes and adverse events. A nurse manager who gave the tool a job, a sample and a review date can answer that question in three sentences. A committee that is still meeting cannot.</p>
+
+  <h2>Is deciding early faster or slower?</h2>
+  <p>Faster, and the only kind of fast that holds up. The teams that adopt new technology well are not the ones with the longest evaluation. They decide early, with conditions, and then they watch. Go slow for one week to go fast for the next two years. That is the version of speed that survives when the regulator, the board or a family asks what happened.</p>
   <p>Fear is not a control. A nurse manager with a job description, a sample and a review date is.</p>
 </Essay>
