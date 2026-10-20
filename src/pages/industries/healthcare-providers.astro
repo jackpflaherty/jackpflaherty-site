@@ -1,6 +1,7 @@
 ---
 import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
+import Proof from '../../components/Proof.astro';
 import Faq from '../../components/Faq.astro';
 import Cta from '../../components/Cta.astro';
 import site from '../../data/site.json';
@@ -20,6 +21,11 @@ const page = {
   description: 'Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control.',
   about: { '@id': site.url + '/#person' }
 };
+const proof = [
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
+  { q: "Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today’s workforce struggles with mental health and making confident decisions.", who: "Sheila Blackwell", role: "Healthcare Transformation Leader" },
+  { q: "Inspiring. Provides a framework.", who: "Attendee", role: "NCSBN ICRS graduation keynote" }
+];
 ---
 <Base title="Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty"
   description="Jack P. Flaherty speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control."
@@ -35,6 +41,8 @@ const page = {
       <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop with a leadership team around a table" />
     </div>
   </section>
+
+  <Proof quotes={proof} />
 
   <section class="dark">
     <div class="wrap">

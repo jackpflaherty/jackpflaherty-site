@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Proof from '../../components/Proof.astro';
 import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
 import Faq from '../../components/Faq.astro';
@@ -20,6 +21,11 @@ const page = {
   about: { '@type': 'Thing', name: 'Technology decision-making in health systems' },
   author: { '@id': site.url + '/#person' }
 };
+const proof = [
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
+  { q: "Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today’s workforce struggles with mental health and making confident decisions.", who: "Sheila Blackwell", role: "Healthcare Transformation Leader" },
+  { q: "Inspiring. Provides a framework.", who: "Attendee", role: "NCSBN ICRS graduation keynote" }
+];
 ---
 <Base title="Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty"
   description="Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes."
@@ -32,6 +38,8 @@ const page = {
     <p>A keynote for health-system executives and nurse leaders who have the vendor, the IT team and the policy, and still have to decide what reaches the unit.</p>
     <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="/#reel">Watch the reel</a></div>
   </Hero>
+
+  <Proof quotes={proof} />
 
   <section class="tight">
     <div class="wrap">

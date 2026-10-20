@@ -1,6 +1,7 @@
 ---
 import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
+import Proof from '../../components/Proof.astro';
 import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
 import site from '../../data/site.json';
@@ -12,6 +13,11 @@ const page = {
   about: { '@type': 'Thing', name: 'Technology decision-making' },
   author: { '@id': site.url + '/#person' }
 };
+const proof = [
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
+  { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" }
+];
 ---
 <Base title="Decision-Making Keynote Speaker | Jack P. Flaherty"
   description="Fear Is Not A Control, a keynote for health-system leaders and professional services partners by Jack P. Flaherty. Treat new technology like a new hire."
@@ -23,6 +29,8 @@ const page = {
     <p>Two keynotes for the people who have to decide on new technology and answer for it later. Fear Is Not A Control, built for two rooms. The Decision Switch, the original.</p>
     <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="/#reel">Watch the reel</a></div>
   </Hero>
+
+  <Proof quotes={proof} />
 
   <section class="tight">
     <div class="wrap">

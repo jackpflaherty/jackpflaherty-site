@@ -1,6 +1,7 @@
 ---
 import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
+import Proof from '../components/Proof.astro';
 import Hero from '../components/Hero.astro';
 import Assessment from '../components/Assessment.astro';
 import site from '../data/site.json';
@@ -12,6 +13,11 @@ const video = {
   uploadDate: '2026-10-14', duration: 'PT3M', embedUrl: site.reelEmbed, contentUrl: site.reelWatch,
   publisher: { '@type': 'Person', '@id': site.url + '/#person' }
 };
+const proof = [
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" },
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" }
+];
 ---
 <Base title="Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions"
   description="Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. Keynote speaker, board advisor, author."
@@ -21,10 +27,13 @@ const video = {
   <Hero image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="68% 18%">
     <p class="kicker">Keynote speaker and trusted advisor</p>
     <h1>Fear Is Not A Control</h1>
+    <p class="translate">For health-system leaders and partners who have to decide on new technology and answer for it later. One way to decide. Three questions to ask first.</p>
     <p>Your IT team, your risk function and your counsel each own a piece of a technology decision. The board owns the outcome. Jack works with the people who answer for it.</p>
     <p class="offer">Two keynotes. Board and executive advisory.</p>
     <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
   </Hero>
+
+  <Proof quotes={proof} />
 
   <section class="tight" id="reel">
     <div class="wrap reel">

@@ -1,0 +1,39 @@
+---
+// Proof band: three testimonials in the speaker's own words (frozen tier, verbatim) and the
+// "spoken for" row. Sits directly under the hero on the pages that sell. Event names are the
+// Verified speaking history in the Facts Ledger; client names appear only as testimonial attributions.
+interface Quote { q: string; who: string; role: string; }
+interface Props { quotes: Quote[]; events?: string[]; heading?: string; }
+const defaultEvents = ['HIMSS', 'IIA', 'ISACA', 'AHIA', 'NCSBN', 'Nursing World Conference', 'Tenable', "PwC's national Healthcare Risk Roundtable", 'Deloitte regional events'];
+const { quotes, events = defaultEvents, heading = 'Jack has spoken for' } = Astro.props;
+---
+<section class="proof" aria-label="What leaders say, and where Jack has spoken">
+  <div class="wrap">
+    <div class="quotes">
+      {quotes.map(t => (
+        <figure>
+          <blockquote><p>{t.q}</p></blockquote>
+          <figcaption><strong>{t.who}</strong>, {t.role}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="events"><span class="label">{heading}</span>{events.map((e, i) => <span class="ev">{i > 0 && <span class="dot" aria-hidden="true">·</span>}{e}</span>)}</p>
+  </div>
+</section>
+
+<style>
+  .proof{background:var(--linen);padding:clamp(1.75rem,3.5vw,2.75rem) 0}
+  .quotes{display:grid;gap:1.25rem;grid-template-columns:repeat(3,1fr)}
+  figure{margin:0;background:#fff;border:1px solid var(--sand);border-left:4px solid var(--sienna);border-radius:var(--r);padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.75rem}
+  blockquote{margin:0;quotes:"\201C" "\201D"}
+  blockquote p{margin:0;font-size:1.02rem;line-height:1.5;color:var(--ink)}
+  blockquote p::before{content:open-quote}
+  blockquote p::after{content:close-quote}
+  figcaption{font-size:.9rem;color:var(--brown);margin-top:auto}
+  figcaption strong{color:var(--ink);font-weight:700}
+  .events{margin:1.5rem 0 0;font-size:.95rem;color:var(--brown);line-height:1.8;display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.2rem}
+  .events .label{font-family:var(--font-head);font-weight:700;color:var(--ink);margin-right:.6rem;white-space:nowrap}
+  .events .ev{white-space:nowrap}
+  .events .dot{margin:0 .55rem;color:var(--sienna)}
+  @media (max-width:900px){.quotes{grid-template-columns:1fr}}
+</style>

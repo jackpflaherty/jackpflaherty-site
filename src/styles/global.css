@@ -132,6 +132,8 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
 .hero h1{color:var(--latte);font-size:clamp(2.6rem,5.6vw,4rem)}
 .hero .offer{color:var(--latte);font-family:var(--font-head);font-weight:700;font-size:1.15rem;margin-top:-.4rem}
 .hero p{color:var(--latte);font-size:1.3rem;line-height:1.45}
+.hero .translate{font-family:var(--font-head);font-weight:700;font-size:1.25rem;line-height:1.4;margin-top:-.3rem}
+@media (max-width:767px){.hero .translate ~ p:not(.offer):not(.translate){display:none}.hero .translate ~ .offer{display:none}}
 .hero .kicker{color:var(--orange-bright);font-size:1.15rem}
 @media (max-width:767px){
   .hero{min-height:0;display:block}
