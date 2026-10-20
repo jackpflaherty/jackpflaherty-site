@@ -1,0 +1,163 @@
+---
+import Pic from '../../components/Pic.astro';
+import Base from '../../layouts/Base.astro';
+import Proof from '../../components/Proof.astro';
+import Assessment from '../../components/Assessment.astro';
+import Hero from '../../components/Hero.astro';
+import Faq from '../../components/Faq.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Who is this keynote for?', a: 'Executive teams, leadership offsites and association conferences. Any room that owns decisions and is tired of carrying them. It does not assume a technology agenda; it works for the decision in front of the room, whatever it is.' },
+  { q: 'How is it different from Fear Is Not A Control?', a: 'The Decision Switch is the original keynote and the method underneath everything Jack does: how a team gets a stalled decision made and stands behind it. Fear Is Not A Control applies that method to one decision, the call on new technology, and is built for health systems and professional services firms. <a href="/keynote-speaker/fear-is-not-a-control">See Fear Is Not A Control</a>.' },
+  { q: 'What does the audience take home?', a: 'A way to triage what is on the desk so the decision that matters gets made first, a way to bring the people who disagree into the decision instead of around it, and a review habit that turns every outcome into the next better call.' },
+  { q: 'How long is it, and can it run virtually?', a: '45 to 60 minutes, live or virtual. A half-day workshop can follow, where teams apply the method to a decision they are carrying now. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.' },
+  { q: 'How do we book Jack?', a: `<a href="${site.calendly}">Book a discovery call</a>. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/keynote-speaker/the-decision-switch', url: site.url + '/keynote-speaker/the-decision-switch',
+  name: 'Decision Making Keynote Speaker: The Decision Switch | Jack P. Flaherty',
+  description: 'The Decision Switch, the decision-making keynote by Jack P. Flaherty: how a leadership team gets a stalled decision made and stands behind it. 45 to 60 minutes, live or virtual.',
+  about: { '@type': 'Thing', name: 'Executive decision-making' },
+  author: { '@id': site.url + '/#person' }
+};
+const video = {
+  '@context': 'https://schema.org', '@type': 'VideoObject',
+  name: 'Jack P. Flaherty speaker reel: The Decision Switch keynote',
+  description: 'Three minutes of Jack P. Flaherty on stage delivering The Decision Switch, his decision-making keynote for executive teams and conferences.',
+  thumbnailUrl: site.url + '/images/jack-p-flaherty-speaker-reel-poster.jpg',
+  uploadDate: '2026-10-14', duration: 'PT3M', embedUrl: site.reelEmbed, contentUrl: site.reelWatch,
+  publisher: { '@type': 'Person', '@id': site.url + '/#person' }
+};
+const proof = [
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" },
+  { q: "Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.", who: "Ray Sims", role: "Global Lead, Training and Education, IBM" }
+];
+---
+<Base title="Decision Making Keynote Speaker: The Decision Switch | Jack P. Flaherty"
+  description="The Decision Switch, the decision-making keynote by Jack P. Flaherty: how a leadership team gets a stalled decision made and stands behind it. 45 to 60 minutes, live or virtual."
+  keywords="decision making keynote speaker, The Decision Switch, executive decision making keynote, leadership keynote speaker, decision making under pressure, Jack P. Flaherty"
+  path="/keynote-speaker/the-decision-switch" image="/images/jack-p-flaherty-decision-switch-stage-bw.jpg" schema={[page, video, faqSchema(faqs)]} hero="/images/jack-p-flaherty-decision-switch-stage-bw.jpg">
+
+  <Hero image="/images/jack-p-flaherty-decision-switch-stage-bw.jpg" alt="Jack P. Flaherty on stage delivering The Decision Switch keynote, in black and white" pos="60% 40%">
+    <p class="kicker">The original keynote. The one in the reel.</p>
+    <h1>The Decision Switch</h1>
+    <p>A decision-making keynote for executive teams and conferences. Most leaders do not lose to bad decisions. They lose to decisions that never got made.</p>
+    <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
+  </Hero>
+
+  <Proof quotes={proof} />
+
+  <section class="tight" id="reel">
+    <div class="wrap reel">
+      <div class="vid"><div class="box"><iframe src={site.reelEmbed} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Jack P. Flaherty speaker reel, The Decision Switch keynote"></iframe></div></div>
+      <div><h3>Three minutes of Jack on stage</h3><p>The speaker reel, from The Decision Switch keynote. Executive audience, live exercises, the method in use.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>The decision that never got made</h2>
+        <p class="lede">The meeting ends. The issue stays open. Three months later the cost shows up somewhere else, and nobody connects the two.</p>
+        <p>Every leadership team carries a few of these. The merger nobody will call. The system nobody will switch off. The hire nobody will make. The team is not short of information or talent. It is short of a way to decide that everyone in the room will stand behind afterward.</p>
+        <p>The Decision Switch is the method Jack built over 25 years in risk and advisory and wrote down in <a href="/books/the-decision-switch">his book</a>. Seven principles that turn a stalled decision into one the team owns. The promise is plain: how to make better decisions faster.</p>
+      </div>
+      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard working through a decision with a leadership team" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>What the room leaves with</h2>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card">
+          <p class="kicker">01</p>
+          <h3>Triage.</h3>
+          <p>A way to sort what is on the desk, so the decision that matters gets made first and the ones that do not stop taking the room's attention.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">02</p>
+          <h3>The people who disagree, inside the decision.</h3>
+          <p>How to bring the dissenting voice into the call instead of around it. The decision gets better, and the person who argued against it still backs it in the hallway.</p>
+        </div>
+        <div class="card">
+          <p class="kicker">03</p>
+          <h3>A review habit.</h3>
+          <p>A way to look at every outcome, good or bad, and turn it into the next better call. Decide, then watch for the ripple.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <h2>Why Jack</h2>
+        <p class="lede">He has sat in the rooms where the cost of a decision not made came due.</p>
+        <p>Across 25 years in risk and advisory, 15 of them at the Big 4, Jack noticed one pattern: the leaders who struggled most were not the least talented. They were the least equipped to make a call and stand behind it under pressure. That observation became the method, the book, and this keynote.</p>
+        <p>He served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and audit committee, and has spoken for HIMSS, the IIA, ISACA, AHIA, NCSBN and the Nursing World Conference.</p>
+      </div>
+      <div class="grid c2 stats">
+        <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where decisions carry the highest cost.</p></div>
+        <div class="card"><p class="stat"><strong>15</strong>Years at the Big 4, where he served as a director.</p></div>
+        <div class="card"><p class="stat"><strong>7</strong>Principles in The Decision Switch, the method and the book.</p></div>
+        <div class="card"><p class="stat"><strong>$10B</strong>Health system where Jack served as acting enterprise risk and audit leader.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>How it is delivered</h2>
+      <p class="lede">Three formats. One standard.</p>
+      <p>Every format starts with a 30-minute discovery call, so the talk is built for the room and the decision in front of it.</p>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Keynote</h3>
+          <p>The full talk with live audience exercises. For conferences, leadership summits and association events.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">Keynote plus half day</p>
+          <h3>Keynote and workshop</h3>
+          <p>The keynote, then a working session where the team applies the method to a decision it is carrying now.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Virtual keynote</h3>
+          <p>Live on Zoom or Teams with interactive Q&amp;A, rebuilt for the screen. For distributed leadership teams and association audiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Faq items={faqs} />
+    </div>
+  </section>
+
+  <Assessment />
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next step</h2>
+        <p>The right talk, in the right room, to change what the audience does when they get back to work.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+        <p class="meta">Deciding on new technology? <a href="/keynote-speaker/fear-is-not-a-control">See Fear Is Not A Control</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .stats .card { padding: 1.3rem; }
+  .stat { margin: 0; }
+  .stat strong { display: block; font-family: var(--font-head); font-size: 2.4rem; line-height: 1; color: var(--sienna); margin-bottom: .5rem; }
+</style>
