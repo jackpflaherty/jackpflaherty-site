@@ -1,32 +1,50 @@
 ---
 import Essay from '../../layouts/Essay.astro';
-const about = ['Board oversight', 'Audit committee', 'AI governance', 'Technology decision-making'];
+const about = ['Board AI oversight', 'Audit committee', 'AI governance for boards', 'Board oversight', 'Technology decision-making'];
+const tldr = [
+  'Deferring a technology decision is the most expensive option a board has. The technology arrives anyway, and the board ends up ratifying what already happened.',
+  'Go slow for one meeting to go fast for two years: settle before go-live who owns the system, what it may do, and when the board sees it again.',
+  'Four questions for the audit chair: who is the manager, what is its job description, what is the probation period, when does this committee see it again.',
+  'A board that asks them once can say yes to the next ten decisions faster, because the shape of the answer is already agreed.'
+];
+const faqs = [
+  { q: 'What should a board ask before an AI system goes live?', a: 'Four questions. Who is the one named executive who owns the output and answers to the committee for it. What is the one-page job description: what it may decide, what it may recommend, what it must never touch. What is the probation period, on what sample, and who signs off at the end. And when does the committee see it again, with a date and the three things management will bring.' },
+  { q: 'Does board oversight of AI slow adoption down?', a: 'Deferral does. One hour of sequencing before go-live does the opposite. Once the committee has agreed what a yes looks like, management knows what will be asked, the risk function knows what to produce, and nobody waits for someone to say it is safe, because safe has been defined.' },
+  { q: 'Does the board need to understand the model?', a: 'No. The board needs to understand the boundary: what the system is allowed to do and who answers when it is wrong. That is the same oversight a board already applies to a senior hire.' },
+  { q: 'What should management bring back at the review?', a: 'Three things. Where the tool was wrong. What people changed to work around it. What the vendor changed without telling anyone. Decide, then watch for the ripple.' }
+];
 ---
-<Essay title="Go Slow to Go Fast: Four Questions for the Audit Chair Before Go-Live | Jack P. Flaherty"
-  description="Deferring a technology decision is the most expensive option a board has. Jack P. Flaherty on the four questions an audit committee asks once to say yes faster."
+<Essay title="Board AI Oversight: Go Slow to Go Fast | Jack P. Flaherty"
+  description="Deferring a technology decision is the most expensive option a board has. Jack P. Flaherty, former Big 4 director, on the four questions an audit chair asks once to say yes faster."
   keywords={about.join(', ')}
   path="/blogs/go-slow-to-go-fast"
-  kicker="Jack P. Flaherty"
+  kicker="For board and audit committee chairs"
   headline="Go Slow to Go Fast"
   standfirst="What an audit chair should ask before the system goes live, and why asking it speeds the rollout up."
   date="2026-10-13"
+  updated="2026-10-20"
   about={about}
-  cta={{ text: 'This is the work of the advisory practice.', label: 'See board and executive advisory', href: '/keynote-speaker/board-advisor-ai-governance', secondary: { label: 'Bring Fear Is Not A Control to your leadership team', href: '/keynote-speaker/executive-decision-making-keynote' } }}>
+  tldr={tldr}
+  faqs={faqs}
+  cta={{ text: 'This is the work of the advisory practice.', label: 'See board and executive advisory', href: '/keynote-speaker/board-advisor-ai-governance', secondary: { label: 'Bring Fear Is Not A Control to your leadership team', href: '/keynote-speaker/fear-is-not-a-control' } }}>
 
   <p>Every board has sat through the presentation. A new platform, an AI tool, a system that will touch patients or clients or the ledger. Management wants a decision. The slides are confident. The timeline is tight. And somewhere in the room a director is wondering whether the question in their head will sound like obstruction.</p>
   <p>Ask it. The directors I have watched do this well are not the ones who slowed the organization down. They are the ones who made the rollout faster, because they forced the one conversation that otherwise happens after go-live, in a crisis, with the regulator on the line.</p>
   <p>Go slow to go fast is not caution. It is sequencing.</p>
-  <h2>The two speeds</h2>
-  <p>There are two ways to be slow about new technology. The first is to defer: ask for another analysis, another pilot, another quarter. That feels prudent, and it is the most expensive option there is, because the technology does not wait for the board. It arrives anyway, through a department, a vendor update or a contract nobody read closely. The board ends up ratifying what already happened.</p>
+
+  <h2>Why is deferring the decision the expensive option?</h2>
+  <p>Because the technology does not wait for the board. There are two ways to be slow about new technology. The first is to defer: ask for another analysis, another pilot, another quarter. That feels prudent, and it is the most expensive option there is. The technology arrives anyway, through a department, a vendor update or a contract nobody read closely. The board ends up ratifying what already happened.</p>
   <p>The second is to be slow for one meeting and fast for the next two years: settle, before go-live, who owns this, what it is allowed to do, and when the board will see it again. That meeting costs an hour. It buys the organization the right to move without stopping to re-argue the decision every time something goes wrong.</p>
-  <h2>Four questions for the audit chair</h2>
-  <p>I spent 15 years at the Big 4, where I served as a director, and I have reported to an audit committee as acting enterprise risk and audit leader for a $10B health system. These are the four questions that separate a decision from a drift.</p>
+
+  <h2>What should the audit chair ask before go-live?</h2>
+  <p>Four questions, and they separate a decision from a drift. I spent 15 years at the Big 4, where I served as a director, and I have reported to an audit committee as acting enterprise risk and audit leader for a $10B health system. These are the four.</p>
   <p><strong>Who is the manager?</strong> One named executive owns the tool’s output and answers to this committee for it. If the answer is a vendor, a project team or “IT”, the tool has no manager.</p>
   <p><strong>What is its job description?</strong> One page: what it is allowed to decide, what it may recommend, and what it must never touch. A board does not need to understand the model. It needs to understand the boundary.</p>
   <p><strong>What is the probation period?</strong> For how long, and on what sample, will a person check the tool’s work by hand before the organization trusts it? Who signs off at the end?</p>
   <p><strong>When does this committee see it again?</strong> Not “we will keep you updated”. A date, and the three things management will bring: where it was wrong, what people changed to work around it, and what the vendor changed.</p>
   <p>Treat new technology like a new hire. Boards already know how to oversee a senior hire. The same four instruments work for a system.</p>
-  <h2>What this buys you</h2>
-  <p>A board that asks these four questions once can say yes to the next ten decisions faster, because the shape of the answer is already agreed. Management knows what the committee will ask. The risk function knows what it has to produce. Nobody has to wait for someone to say it is safe, because safe has been defined.</p>
+
+  <h2>What does asking once buy the board?</h2>
+  <p>The next ten decisions, faster. A board that asks these four questions once can say yes to what follows, because the shape of the answer is already agreed. Management knows what the committee will ask. The risk function knows what it has to produce. Nobody has to wait for someone to say it is safe, because safe has been defined.</p>
   <p>Fear is not a control. A named manager, a one-page job description, a probation sample and a date on the committee calendar are. Decide, then watch for the ripple.</p>
 </Essay>
