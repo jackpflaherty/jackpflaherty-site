@@ -1,6 +1,8 @@
 ---
 import Base from './Base.astro';
 import Cta from '../components/Cta.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema } from '../lib/faq';
 import site from '../data/site.json';
 interface Link { label: string; href: string; }
 interface Props {
@@ -8,9 +10,9 @@ interface Props {
   kicker: string; headline: string; standfirst: string;
   date?: string; updated?: string;
   cta: { text: string; label: string; href: string; secondary?: Link };
-  about?: string[]; citation?: object;
+  about?: string[]; citation?: object; faqs?: { q: string; a: string }[]; tldr?: string[];
 }
-const { title, description, keywords = '', path, kicker, headline, standfirst, date, updated, cta, about, citation } = Astro.props;
+const { title, description, keywords = '', path, kicker, headline, standfirst, date, updated, cta, about, citation, faqs, tldr } = Astro.props;
 const image = '/images/jack-p-flaherty-writing-at-desk.jpg';
 const canonical = site.url + path;
 const monthYear = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -28,7 +30,7 @@ if (updated || date) article.dateModified = updated || date;
 if (about) article.about = about;
 if (citation) article.citation = citation;
 ---
-<Base title={title} description={description} keywords={keywords} path={path} image={image} schema={[article]} type="article">
+<Base title={title} description={description} keywords={keywords} path={path} image={image} schema={faqs ? [article, faqSchema(faqs)] : [article]} type="article">
   <section>
     <div class="wrap">
       <div class="narrow">
@@ -37,9 +39,11 @@ if (citation) article.citation = citation;
         <p class="lede">{standfirst}</p>
         <p class="byline">{byline}</p>
       </div>
+      {tldr && <aside class="tldr narrow"><p class="kicker">In short</p><ul>{tldr.map(t => <li>{t}</li>)}</ul></aside>}
       <article class="prose">
         <slot />
       </article>
+      {faqs && <div class="narrow essay-faq"><Faq items={faqs} heading="Questions readers ask" /></div>}
       <div class="after">
         <Cta text={cta.text} primary={{ label: cta.label, href: cta.href }} secondary={cta.secondary} />
         <p class="meta more"><a href="/insights">More Insights</a></p>
@@ -50,5 +54,10 @@ if (citation) article.citation = citation;
 
 <style>
   .after { margin-top: 3rem; }
+  .tldr { background: var(--linen); border-left: 4px solid var(--sienna); border-radius: var(--r); padding: 1.1rem 1.4rem; margin: 0 0 1.75rem; }
+  .tldr .kicker { margin-bottom: .4rem; }
+  .tldr ul { margin: 0; padding-left: 1.2rem; }
+  .tldr li { margin: .25rem 0; }
+  .essay-faq { margin-top: 2.5rem; }
   .more { text-align: center; margin: 1.2rem 0 0; max-width: none; }
 </style>
