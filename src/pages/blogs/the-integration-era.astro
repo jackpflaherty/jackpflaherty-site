@@ -1,29 +1,46 @@
 ---
 import Essay from '../../layouts/Essay.astro';
-const about = ['Technology decision-making', 'Health systems', 'Professional services firms', 'Cross-functional teams'];
+const about = ['Technology decisions for boards', 'Technology decision-making', 'Health systems', 'Professional services firms', 'Cross-functional teams'];
 const citation = { '@type': 'ScholarlyArticle', name: 'Consulting on the Cusp of Disruption', author: 'Christensen, C. M., Wang, D. and van Bever, D.', datePublished: '2013', isPartOf: 'Harvard Business Review, 91(10)', url: 'https://hbr.org/2013/10/consulting-on-the-cusp-of-disruption' };
+const tldr = [
+  'Information is a commodity now. A model produces the risk analysis in seconds. The value sits in integration: the people who connect six disciplines into one decision someone owns.',
+  'Every new technology puts clinical, security, compliance and finance in one room. Nobody is wrong, and nobody owns the call, so the tool drifts into use and fear decides.',
+  'Clients are not buying the analysis. They are buying the decision it makes possible and the person who stands behind it.',
+  'Integration with an owner: write the tool a job description the six languages agree on, name its manager, give it a probation period, review it.'
+];
+const faqs = [
+  { q: 'Who should own a technology decision when several departments are involved?', a: 'One person, named before the tool goes live, who answers for the outcome. Clinical, security, compliance and finance each own a piece of the decision and each is right about its piece. The board owns the outcome, and it needs one name to ask. Without that name, the decision gets made by default, by whoever moves first.' },
+  { q: 'What does integration mean in a health system or a firm?', a: 'Pulling the separate goals of several disciplines into one decision that someone owns. At Orion Health that meant clinicians, data scientists, programmers, cybersecurity specialists and regulatory leads in one room, each respected, and one owner for the call. The data was not the hard part. The ownership was.' },
+  { q: 'What are clients buying from a firm now that analysis is cheap?', a: 'The decision, and the person who stands behind it. Harvard Business Review’s research on the disruption of consulting found clients no longer want opaque, time-based reports. They want transparent, measurable, integrated outcomes. A deliverable that hands the client more data to decipher is the old product.' },
+  { q: 'How does a board get six departments to one decision?', a: 'Treat the new technology like a new hire. Write its job description so the six languages agree on what it is for. Name its manager. Give it a probation period. Review it. That is integration with an owner, and it is the same oversight a board already applies to a senior hire.' }
+];
 ---
-<Essay title="The Integration Era: Who Owns the Technology Decision? | Jack P. Flaherty"
-  description="Clinicians, security, compliance and finance in one room, and nobody owns the call. Jack P. Flaherty on integration in health systems and firms."
+<Essay title="Technology Decisions for Boards in the Integration Era | Jack P. Flaherty"
+  description="Clinicians, security, compliance and finance in one room, and nobody owns the call. Jack P. Flaherty, former Big 4 director, on how boards, health systems and firms get six disciplines to one owned decision."
   keywords={about.join(', ')}
   path="/blogs/the-integration-era"
-  kicker="The Clear Confidence Report"
+  kicker="For boards, health-system leaders and firm partners"
   headline="The Integration Era"
   standfirst="Information is now a commodity. The value is in the people who connect it, and the decisions they own."
-  date="2026-01-09" updated="2026-10-13"
+  date="2026-01-09" updated="2026-10-20"
   about={about} citation={citation}
+  tldr={tldr}
+  faqs={faqs}
   cta={{ text: 'This is the ground the keynote covers.', label: 'See Fear Is Not A Control, built for health systems and professional services firms', href: '/keynote-speaker/fear-is-not-a-control' }}>
 
   <p>For decades professional services ran on one premise: the client had an information deficit and the firm charged by the hour to fill it. That premise is gone. A model can produce a risk analysis in seconds. So where does the value sit now?</p>
   <p>It sits in integration.</p>
-  <h2>The room with six languages</h2>
-  <p>At Orion Health I was asked to prove that sharing healthcare data could cut cost and improve patient care. The team I built had clinicians, data scientists, programrs, cybersecurity specialists and regulatory leads. Six professional languages in one room. The project did not succeed because anyone had the most data. It succeeded because each discipline’s expertise was respected and their separate goals were pulled into one decision that someone owned.</p>
+
+  <h2>What does a room with six languages need?</h2>
+  <p>One owner. At Orion Health I was asked to prove that sharing healthcare data could cut cost and improve patient care. The team I built had clinicians, data scientists, programmers, cybersecurity specialists and regulatory leads. Six professional languages in one room. The project did not succeed because anyone had the most data. It succeeded because each discipline’s expertise was respected and their separate goals were pulled into one decision that someone owned.</p>
   <p>Health systems and firms face that same room every time a new technology arrives. The clinical team wants it on the unit by Friday. Security wants ninety days. Compliance wants a policy. Finance wants the business case. Nobody is wrong, and nobody owns the call, so the tool drifts into use and fear makes the decision by default.</p>
-  <h2>What clients are actually buying</h2>
-  <p>Harvard Business Review’s research on the disruption of consulting put it plainly: clients no longer want opaque, time-based reports. They want transparent, measurable, integrated outcomes.<sup>1</sup> The deliverable is not the analysis. It is the decision the analysis makes possible, and the person who stands behind it.</p>
+
+  <h2>What are clients actually buying?</h2>
+  <p>The decision, and the person who stands behind it. Harvard Business Review’s research on the disruption of consulting put it plainly: clients no longer want opaque, time-based reports. They want transparent, measurable, integrated outcomes.<sup>1</sup> The deliverable is not the analysis. It is the decision the analysis makes possible.</p>
   <p>My father ran a wholesale printing company without a degree. He did not sell paper. He integrated himself into his clients’ businesses, understood what they were trying to do and solved for that. He operated on principles over profits, and it earned him a comfortable retirement and real respect. I swept his floors at ten and learned the job before I had a word for it.</p>
-  <h2>Become the connective tissue</h2>
-  <p>If your firm is handing clients disjointed analytics, you are already obsolete. The work now is to bridge the gap between the cybersecurity fear, the financial reality and the operational bottleneck, and to hand the client one decision they can make.</p>
+
+  <h2>How does a firm become the connective tissue?</h2>
+  <p>By handing the client one decision instead of more data. If your firm is handing clients disjointed analytics, you are already obsolete. The work now is to bridge the gap between the cybersecurity fear, the financial reality and the operational bottleneck, and to hand the client one decision they can make.</p>
   <p>The method I use with boards: treat new technology like a new hire. Write its job description so the six languages agree on what it is for. Name its manager. Give it a probation period. Review it. That is integration with an owner.</p>
   <p>Look at your deliverables from last quarter. Did you give your clients more data to decipher, or one decision they could act on with peace of mind?</p>
   <p>The firms and health systems that thrive in this era will not be the ones with the smartest software. They will be the ones with the empathy to listen, the integrity to say what is true, and a leader willing to own the call.</p>
