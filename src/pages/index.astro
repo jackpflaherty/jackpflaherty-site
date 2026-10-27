@@ -1,4 +1,7 @@
 ---
+// Home page. Copy is Home page copy v1.1, approved by Jack on Oct 27 2026 at 9:57 am after Mode C.
+// Twelve screens in the approved order. Every line is verbatim; components bend to the copy, not the reverse.
+// Trademark symbols on first appearance (H1, screen 10 card) wait for the A5 treatment spec and are not in this file.
 import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
 import Proof from '../components/Proof.astro';
@@ -13,26 +16,35 @@ const video = {
   uploadDate: '2026-10-14', duration: 'PT3M', embedUrl: site.reelEmbed, contentUrl: site.reelWatch,
   publisher: { '@type': 'Person', '@id': site.url + '/#person' }
 };
+// Screen 2, proof band: three testimonials, frozen tier, verbatim. Korn Ferry removed (Jack's ruling, Oct 27 2026).
 const proof = [
   { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
   { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" },
   { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" }
 ];
+const nacd = 'https://www.nacdonline.org/all-governance/governance-resources/governance-surveys/surveys-benchmarking/bpo-tables/ai-oversight-activities-conducted-by-the-board';
 ---
-<Base title="Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions"
-  description="Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. Keynote speaker, board advisor, author."
+<Base title="Jack P. Flaherty | AI Governance & Decision Keynote Speaker"
+  description={site.entity}
+  personDescription={site.entity}
   keywords="keynote speaker, technology decisions, board advisor, AI governance keynote, executive decision making, Jack P. Flaherty, Fear Is Not A Control"
   path="/" schema={[video]} hero="/images/jack-p-flaherty-keynote-speaker-hero.jpg" heroMobile="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg">
 
-  <Hero image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="68% 18%">
-    <p class="kicker">Keynote speaker and trusted advisor</p>
-    <h1>Fear Is Not A Control</h1>
-    <p class="translate">For health-system leaders and partners who have to decide on new technology and answer for it later. One way to decide. Three questions to ask first.</p>
-    <p>Your IT team, your risk function and your counsel each own a piece of a technology decision. The board owns the outcome. Jack works with the people who answer for it.</p>
+  <!-- 1. Hero -->
+  <Hero extra="home" image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="68% 18%">
+    <h1>Fear Is Not A Control: AI and Technology Decisions for Health Systems and Professional Services</h1>
+    <p class="tag1">FEAR IS NOT A CONTROL</p>
+    <p class="tag2">How we build teams who ask the hard questions.</p>
+    <p class="tag3">When failure is not an option, this former PwC Director develops leaders who challenge norms, overcome adversity, and deliver under pressure.</p>
+    <ul class="positions">
+      <li>Helping professional services partners approve AI tools their clients and their insurers will stand behind.</li>
+      <li>Helping health-system executives decide on new clinical technology when the board, the clinicians and the regulator each want a different answer.</li>
+    </ul>
     <p class="offer">Two keynotes. Board and executive advisory.</p>
     <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
   </Hero>
 
+  <!-- 2. Proof band -->
   <Proof quotes={proof} />
 
   <section class="tight" id="reel">
@@ -42,64 +54,110 @@ const proof = [
     </div>
   </section>
 
+  <!-- 3. The problem -->
   <section>
-    <div class="wrap split">
-      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" />
+    <div class="wrap split rev">
       <div>
-        <h2>Who owns it? What was it for? How will the board know it was a success?</h2>
-        <p>A good platform. Nine years, millions spent, then switched off. The purchase was right. What failed came after it: nobody accountable for keeping the build true to the goal the board had funded, and no reporting the board could see. Jack works with boards on the questions to ask, so that is not how it ends.</p>
+        <h2>The decision nobody owns.</h2>
+        <p>Your IT team, your risk function and your counsel each own a piece of a technology decision. The board owns the outcome. Jack works with the people who answer for it.</p>
         <ul class="checks">
           <li>AI is in use across your organization and nobody has been asked to decide what it may do.</li>
           <li>A transformation has stalled because the leadership team will not commit.</li>
           <li>A risk reaches the board after it has become a crisis.</li>
         </ul>
-        <p>In each case the decision was made. It was made by default, and fear made it.</p>
+        <p>In each case the decision was made. It was made by default, and fear made it. Fewer than one public-company board in five has a plan to educate its directors on AI (<a href={nacd} rel="noopener" target="_blank">NACD, 2025</a>). The gap is not awareness. It is a decision nobody has been asked to own.</p>
+      </div>
+      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" />
+    </div>
+  </section>
+
+  <!-- 4. The stakes -->
+  <section class="dark">
+    <div class="wrap split">
+      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" />
+      <div>
+        <h2>Who owns it? What was it for? How will the board know it was a success?</h2>
+        <p>A good platform. Nine years, millions spent, then switched off. The purchase was right. What failed came after it: nobody accountable for keeping the build true to the goal the board had funded, and no reporting the board could see. Jack's job is to make sure that is not how it ends.</p>
       </div>
     </div>
   </section>
 
+  <!-- 5. The turn -->
+  <section>
+    <div class="wrap narrow-wide">
+      <h2>The quiet is the tell.</h2>
+      <p>Someone in the room saw it coming. The analyst who read the vendor contract. The nurse manager who watched half her unit start using the tool by Friday. The senior manager who knew the client had already decided. They said nothing, because nobody had asked, and the cost of asking was theirs alone. Silence is the symptom. Fear is the cause.</p>
+    </div>
+  </section>
+
+  <!-- 6. The answer -->
+  <section class="dark">
+    <div class="wrap narrow-wide">
+      <h2>Governance is not the brake.</h2>
+      <p>Most people hear governance and hear a brake. Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. A control is something you can test. Fear is not. In Jack's rooms, the leaders who moved fastest were the ones who could name the controls that let them. Clarity is the cure. Agency is the result. Good governance is not paperwork. It is what makes asking routine, so nobody has to be brave to raise a hand.</p>
+    </div>
+  </section>
+
+  <!-- 7. Three moves, and 8. the three questions beneath them -->
+  <section>
+    <div class="wrap">
+      <h2>The teams that get it right make three moves.</h2>
+      <div class="grid c3 moves">
+        <div class="card accent">
+          <h3>Go slow to go fast.</h3>
+          <p>Plan it. Name the accountable owner. Build the governance that carries the rollout and the years of upkeep after it. Speed comes from the setup, not the sprint.</p>
+        </div>
+        <div class="card accent">
+          <h3>Mind the drift.</h3>
+          <p>Over months and years a build wanders from the goal that won the budget. Somebody stays accountable for keeping it true, and the board sees reporting on it.</p>
+        </div>
+        <div class="card accent">
+          <h3>Spot the ripple.</h3>
+          <p>Watch for the ripples of change, risk or opportunity. Act on what the teams, the instinct and the colleagues are telling you.</p>
+        </div>
+      </div>
+      <p class="lede questions">The three questions are the hard questions, written down, so nobody has to be brave to ask them. Every keynote, workshop and board session ends with these three and one first move.</p>
+    </div>
+  </section>
+
+  <!-- 9. Who Jack is -->
   <section class="dark">
     <div class="wrap">
       <h2>Someone who has sat in those rooms.</h2>
-      <p>Most people hear governance and hear a brake. Jack has spent 25 years in risk and advisory, 15 of them at the Big 4, and what he noticed in the room was the opposite: the leaders who moved fastest were the ones who could name the three controls that let them.</p>
+      <p>A former PwC Director, Jack has spent 25 years in risk and advisory, 15 of them at the Big 4. He has sat on both sides of the boardroom table.</p>
       <p>He served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and audit committee.</p>
       <p>He led a regulator-driven, board-mandated cybersecurity transformation for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year.</p>
       <a class="btn light" href="/about-jack-flaherty">About Jack</a>
     </div>
   </section>
 
+  <!-- 10. What he sells -->
   <section>
-    <div class="wrap split rev">
-      <div>
-        <h2>Treat new technology like a new hire.</h2>
-        <p>A job description. A manager. A probation period. A review. You would not let a new hire sign checks on day one, and you do not need to let a new system do it either. Decide, then watch for what moves.</p>
-        <p>Fewer than one board in five has a plan to educate its directors on AI (NACD, 2025). The gap is not awareness. It is a decision nobody has been asked to own.</p>
-        <figure class="quote">
-          <blockquote>"The best workplace policies aren't about control. They're about clarity, culture, and making it easy for people to do their best work."</blockquote>
-          <figcaption><strong>Daren Kemp</strong>, President, EMEA, Korn Ferry</figcaption>
-        </figure>
+    <div class="wrap">
+      <h2>Two keynotes. One method.</h2>
+      <p class="lede">Fear Is Not A Control. Built for two rooms.</p>
+      <div class="grid c2 sells">
+        <a class="card accent" href="/keynote-speaker/fear-is-not-a-control-professional-services">
+          <p><strong>For partners in accounting, advisory and law firms:</strong> approving AI tools your clients and your insurers will stand behind.</p>
+        </a>
+        <a class="card accent" href="/keynote-speaker/fear-is-not-a-control-healthcare">
+          <p><strong>For health-system executives and nurse leaders:</strong> deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer.</p>
+        </a>
       </div>
-      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" />
+      <a class="card accent sells-one" href="/keynote-speaker/the-decision-switch">
+        <p><strong>The Decision Switch.</strong> The original. The method in the book and in the reel: how a leadership team gets a stalled decision made and stands behind it.</p>
+      </a>
+      <p class="formats">45 to 60 minutes, live or virtual. A half-day workshop can follow either keynote. Ask on the call.</p>
+      <a class="card accent sells-one" href="/keynote-speaker/board-advisor-ai-governance">
+        <p><strong>Board and executive advisory.</strong> The same questions, asked one level up, where the silence costs most. Confidential counsel from someone who has reported to the audit committee and sat on the other side of the table. Delivered by Jack, not a team.</p>
+      </a>
     </div>
   </section>
 
+  <!-- 11. How it works, then the Assessment block -->
   <section class="dark">
     <div class="wrap">
-      <h2>Two keynotes.</h2>
-      <p class="lede" style="color:#E3D5BE">Fear Is Not A Control, built for two rooms. <a href="/keynote-speaker/the-decision-switch" style="color:#FFF9EF">The Decision Switch</a>, the original.</p>
-      <div class="grid c2" style="margin-top:1.5rem">
-        <a class="card" href="/keynote-speaker/fear-is-not-a-control-professional-services" style="text-decoration:none">
-          <p class="kicker">For partners in accounting, advisory and law firms</p>
-          <h3>Making Technology Decisions Your Partners and Clients Will Stand Behind</h3>
-          <p>See this version</p>
-        </a>
-        <a class="card" href="/keynote-speaker/fear-is-not-a-control-healthcare" style="text-decoration:none">
-          <p class="kicker">For health-system executives and nurse leaders</p>
-          <h3>Making the Call on New Technology When Patients Are Waiting</h3>
-          <p>See this version</p>
-        </a>
-      </div>
-      <h2 style="margin-top:3rem">How it works.</h2>
+      <h2>How it works.</h2>
       <ol>
         <li>Book a 30-minute discovery call.</li>
         <li>Jack builds the talk or the session for your room, your audience and the decision in front of them.</li>
@@ -108,35 +166,16 @@ const proof = [
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <h2>Two ways to work with Jack.</h2>
-      <div class="grid c2">
-        <div class="card">
-          <Pic src="jack-p-flaherty-keynote-stage.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" />
-          <h3>Keynote</h3>
-          <p>Forty-five to sixty minutes, built for the room, with one first move your people make the week they get home. A half-day workshop can follow the keynote. Ask on the call.</p>
-          <p style="margin-top:.8rem"><a href="/keynote-speaker/executive-decision-making-keynote">See the keynotes</a></p>
-        </div>
-        <div class="card">
-          <Pic src="jack-p-flaherty-advisory-conversation.jpg" alt="Jack P. Flaherty in an advisory conversation over coffee" />
-          <h3>Board and executive advisory</h3>
-          <p>Confidential counsel from someone who has reported to the audit committee and sat on the other side of the table. Delivered by Jack, not a team.</p>
-          <p style="margin-top:.8rem"><a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Assessment />
 
+  <!-- 12. The close -->
   <section class="tight">
     <div class="wrap">
       <div class="cta-band">
         <h2>Decisions deferred do not wait.</h2>
-        <p>They get made by default, and the board finds out afterward.</p>
+        <p>They get made by default, and the board finds out afterward. Who owns the next one?</p>
         <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/book-jack">Send an inquiry</a></div>
       </div>
     </div>
   </section>
-
-  <Assessment />
 </Base>
