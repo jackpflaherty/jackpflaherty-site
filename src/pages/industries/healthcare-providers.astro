@@ -4,21 +4,22 @@ import Base from '../../layouts/Base.astro';
 import Proof from '../../components/Proof.astro';
 import Faq from '../../components/Faq.astro';
 import Cta from '../../components/Cta.astro';
+import Assessment from '../../components/Assessment.astro';
 import site from '../../data/site.json';
 import { faqSchema } from '../../lib/faq';
 const faqs = [
   { q: 'Who is this for?', a: 'Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. Chief nursing officers, CIOs, CMIOs, quality and risk leaders, and the boards they report to.' },
-  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The three questions are the same for each.' },
   { q: 'Does Jack customize the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
   { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
-  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where clinical and operational teams apply the new-hire method to a technology decision they are facing now. It is quoted on the discovery call.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where clinical and operational teams apply the method to a technology decision they are facing now. It is quoted on the discovery call.' },
   { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
 ];
 const page = {
   '@context': 'https://schema.org', '@type': 'WebPage',
   '@id': site.url + '/industries/healthcare-providers', url: site.url + '/industries/healthcare-providers',
   name: 'Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty',
-  description: 'Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control.',
+  description: 'Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer. Keynote: Fear Is Not A Control.',
   about: { '@id': site.url + '/#person' }
 };
 const proof = [
@@ -28,15 +29,19 @@ const proof = [
 ];
 ---
 <Base title="Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty"
-  description="Jack P. Flaherty speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not A Control."
+  description="Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer. Keynote: Fear Is Not A Control."
   path="/industries/healthcare-providers" image="/images/jack-p-flaherty-workshop-table.jpg" schema={[page, faqSchema(faqs)]}>
 
   <section>
     <div class="wrap split rev">
       <div>
         <h1>Keynote speaker for health systems and nurse leaders</h1>
-        <p class="lede">A new tool shows up on the unit. Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
-        <p>The health system has IT, compliance and a vendor contract. None of them owns that decision. Jack's keynote gives clinical and executive leaders one method they can repeat on the drive home: who owns it, what is it for, how will the board know it was a success. He has spent 25 years in risk and advisory, 15 of them at the Big 4, in the rooms where health-system technology decisions get made, defended and paid for.</p>
+        <p class="lede">Helping health-system executives decide on new clinical technology when the board, the clinicians and the regulator each want a different answer.</p>
+        <p>A new tool shows up on the unit. Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
+        <p>The health system has IT, compliance and a vendor contract. None of them owns that decision. The nurse leader did not buy the tool and does not manage it, and she is the one standing next to the patient when it is wrong. The first thing she needs is not a policy. It is a name. Who owns this.</p>
+        <p>Jack's keynote gives clinical and executive leaders one method they can repeat on the drive home: who owns it, what was it for, how will the board know it was a success. A control is something you can test. Fear is not.</p>
+        <p>Jack has watched it happen inside a health system. A good platform. Nine years, millions spent, then switched off. The purchase was right. What failed came after it: nobody accountable for keeping the build true to the goal the board had funded, and no reporting the board could see.</p>
+        <div class="btns"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/book-jack">Book Jack</a></div>
       </div>
       <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop with a leadership team around a table" />
     </div>
@@ -49,8 +54,8 @@ const proof = [
       <h2>The keynotes</h2>
       <div class="grid c2">
         <div class="card">
-          <h3>Fear Is Not A Control: Making the Call on New Technology When Patients Are Waiting</h3>
-          <p>Treat new technology like a new hire. A job description, a manager, a probation period, a review. Jack has watched decision-making teams, not surgical teams, save a life. Built for leadership summits, nursing conferences and health-system association events. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
+          <h3>Fear Is Not A Control</h3>
+          <p>Deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer. Jack has watched decision-making teams, not surgical teams, save a life. Go slow to go fast: plan it, name the accountable owner, and build the governance that carries the rollout and the years of upkeep after it. Built for leadership summits, nursing conferences and health-system association events. 45 to 60 minutes. A half-day workshop can follow. Ask on the call.</p>
           <p><a href="/keynote-speaker/fear-is-not-a-control-healthcare">See the healthcare keynote</a></p>
         </div>
         <div class="card">
@@ -66,6 +71,7 @@ const proof = [
     <div class="wrap">
       <h2>Why health systems book Jack</h2>
       <ul class="checks">
+        <li>A former PwC Director with 25 years in risk and advisory, 15 of them at the Big 4, in the rooms where health-system technology decisions get made, defended and paid for.</li>
         <li>Served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.</li>
         <li>Led a board-mandated cybersecurity program for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.</li>
         <li>Principal consultant for California's first statewide health information exchange.</li>
@@ -104,9 +110,11 @@ const proof = [
 
   <section class="tight">
     <div class="wrap">
-      <Cta text="Planning a leadership summit, a nursing conference or a board session?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
+      <Cta heading="Who owns the tool that is already on the unit?" text="If nobody can say, that is the room this keynote is built for." primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
     </div>
   </section>
+
+  <Assessment />
 </Base>
 
 <style>
