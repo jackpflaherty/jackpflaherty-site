@@ -1,11 +1,33 @@
+# Retired URLs from the FlexiFunnels site (its 32-URL sitemap), one home for every redirect.
+# No Redirect Rules in the Cloudflare dashboard: a zone rule runs before the Worker and overrides this file.
+# Trailing-slash forms are listed where the old sitemap published them; _redirects matches the path exactly.
+
+# Hubs and the home page
+/home / 301
+/index.html / 301
+/keynote-speaker /keynote-speaker/executive-decision-making-keynote 301
+/keynote-speaker/ /keynote-speaker/executive-decision-making-keynote 301
+/industries / 301
+/industries/ / 301
+/book/the-decision-switch /books/the-decision-switch 301
+/book/the-decision-switch/ /books/the-decision-switch 301
+
+# Retired keynote and workshop pages
+/keynote-speaker/board-governance-workshop /keynote-speaker/board-advisor-ai-governance 301
+/keynote-speaker/team-alignment-strategy-workshop /keynote-speaker/executive-decision-making-keynote 301
+/keynote-speaker/cybersecurity-risk-governance-keynote /keynote-speaker/fear-is-not-a-control 301
+/keynote-speaker/crisis-due-diligence-turnaround /keynote-speaker/board-advisor-ai-governance 301
+
+# Retired industry pages
+/industries/pharma-biotech /keynote-speaker/fear-is-not-a-control-healthcare 301
+/industries/medtech-diagnostics /keynote-speaker/fear-is-not-a-control-healthcare 301
+/industries/fintech-defi-speaker /keynote-speaker/board-advisor-ai-governance 301
+/industries/banking-finance /keynote-speaker/board-advisor-ai-governance 301
+/industries/energy-utilities /keynote-speaker/executive-decision-making-keynote 301
+/industries/manufacturing-supply-chain /keynote-speaker/executive-decision-making-keynote 301
+
+# Retired posts
 /blogs/the-yes-trap-mental-health /insights 301
 /blogs/the-burn-out-trap /insights 301
 /blogs/executive-tool-kit /insights 301
 /blogs/consulting-career-path /insights 301
-/industries/pharma-biotech /keynote-speaker/fear-is-not-a-control-healthcare 301
-/industries/medtech-diagnostics /keynote-speaker/fear-is-not-a-control-healthcare 301
-/home / 301
-/index.html / 301
-/keynote-speaker /keynote-speaker/executive-decision-making-keynote 301
-/industries / 301
-/book/the-decision-switch /books/the-decision-switch 301
