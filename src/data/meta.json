@@ -104,12 +104,12 @@
   "ld": []
  },
  "home": {
-  "title": "Jack P. Flaherty | Keynote Speaker and Trusted Advisor on Technology Decisions",
-  "description": "",
+  "title": "Jack P. Flaherty | AI Governance & Decision Keynote Speaker",
+  "description": "Jack P. Flaherty is a keynote speaker and executive advisor who helps health-system executives and professional services partners decide on new technology when the cost of getting it wrong lands on them.",
   "keywords": "",
-  "og": "",
+  "og": "Jack P. Flaherty | AI Governance & Decision Keynote Speaker",
   "ld": [
-   "\n{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"honorificSuffix\":\"MBA\",\"description\":\"Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology.\",\"url\":\"https://www.jackpflaherty.com/\",\"email\":\"jack@jackpflaherty.com\",\"telephone\":\"+1-310-463-2018\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Los Angeles\",\"addressRegion\":\"CA\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\",\"https://www.youtube.com/@jackpflaherty\",\"https://www.instagram.com/jackpflaherty/\"],\"alumniOf\":[{\"@type\":\"CollegeOrUniversity\",\"name\":\"Pepperdine Graziadio Business School\"},{\"@type\":\"CollegeOrUniversity\",\"name\":\"Marist College\"}],\"knowsAbout\":[\"Technology decision-making\",\"AI governance\",\"Board risk oversight\",\"Enterprise risk management\"],\"subjectOf\":{\"@type\":\"Book\",\"name\":\"The Decision Switch\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cinch & Stone Press\"}}}\n"
+   "\n{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\",\"honorificSuffix\":\"MBA\",\"description\":\"Jack P. Flaherty is a keynote speaker and executive advisor who helps health-system executives and professional services partners decide on new technology when the cost of getting it wrong lands on them.\",\"url\":\"https://www.jackpflaherty.com/\",\"email\":\"jack@jackpflaherty.com\",\"telephone\":\"+1-310-463-2018\",\"jobTitle\":\"Keynote Speaker and Executive Advisor\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Los Angeles\",\"addressRegion\":\"CA\",\"addressCountry\":\"US\"},\"sameAs\":[\"https://www.linkedin.com/in/jackpflaherty\",\"https://www.youtube.com/@jackpflaherty\",\"https://www.instagram.com/jackpflaherty/\"],\"alumniOf\":[{\"@type\":\"CollegeOrUniversity\",\"name\":\"Pepperdine Graziadio Business School\"},{\"@type\":\"CollegeOrUniversity\",\"name\":\"Marist College\"}],\"knowsAbout\":[\"Technology decision-making\",\"AI governance\",\"Board risk oversight\",\"Enterprise risk management\"],\"subjectOf\":{\"@type\":\"Book\",\"name\":\"The Decision Switch\",\"author\":{\"@type\":\"Person\",\"name\":\"Jack P. Flaherty\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cinch & Stone Press\"}}}\n"
   ]
  },
  "industries__ai-emerging-technology": {

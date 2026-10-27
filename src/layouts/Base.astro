@@ -4,8 +4,10 @@ import site from '../data/site.json';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import manifest from '../data/images.json';
-interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; hero?: string; heroMobile?: string; canonicalUrl?: string; }
-const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website', hero, heroMobile, canonicalUrl } = Astro.props;
+interface Props { title: string; description: string; keywords?: string; path: string; image?: string; noindex?: boolean; schema?: object[]; type?: string; hero?: string; heroMobile?: string; canonicalUrl?: string; personDescription?: string; }
+// personDescription: the Person schema description for this page. The home page passes the canonical entity
+// sentence (Facts Ledger, Search and entity fields); other pages keep the position line until each is rewritten.
+const { title, description, keywords = '', path, image = '/images/jack-p-flaherty-keynote-speaker-hero.jpg', noindex = false, schema = [], type = 'website', hero, heroMobile, canonicalUrl, personDescription = site.position } = Astro.props;
 // Preload the hero photo (WebP srcset) so the browser fetches it before it parses the body.
 const srcsetFor = (p: string) => {
   const n = p.replace(/^\/images\//, ''); const m = (manifest as Record<string, { widths: number[] }>)[n];
@@ -19,7 +21,7 @@ const person = {
   name: 'Jack P. Flaherty', alternateName: 'Jack Flaherty', url: site.url,
   image: site.url + '/images/jack-p-flaherty-portrait-about.jpg',
   jobTitle: 'Keynote speaker and trusted advisor to boards and executives',
-  description: site.position,
+  description: personDescription,
   telephone: site.phone, email: site.email,
   address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
   sameAs: [site.linkedin, site.youtube, site.instagram, site.amazon],
