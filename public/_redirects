@@ -12,17 +12,20 @@
 /book/the-decision-switch /books/the-decision-switch 301
 /book/the-decision-switch/ /books/the-decision-switch 301
 
+# Advisory moved out of /keynote-speaker/ (Oct 27 2026)
+/keynote-speaker/board-advisor-ai-governance /advisory/board-and-leadership 301
+
 # Retired keynote and workshop pages
-/keynote-speaker/board-governance-workshop /keynote-speaker/board-advisor-ai-governance 301
+/keynote-speaker/board-governance-workshop /advisory/board-and-leadership 301
 /keynote-speaker/team-alignment-strategy-workshop /keynote-speaker/executive-decision-making-keynote 301
 /keynote-speaker/cybersecurity-risk-governance-keynote /keynote-speaker/fear-is-not-a-control 301
-/keynote-speaker/crisis-due-diligence-turnaround /keynote-speaker/board-advisor-ai-governance 301
+/keynote-speaker/crisis-due-diligence-turnaround /advisory/board-and-leadership 301
 
 # Retired industry pages
 /industries/pharma-biotech /keynote-speaker/fear-is-not-a-control-healthcare 301
 /industries/medtech-diagnostics /keynote-speaker/fear-is-not-a-control-healthcare 301
-/industries/fintech-defi-speaker /keynote-speaker/board-advisor-ai-governance 301
-/industries/banking-finance /keynote-speaker/board-advisor-ai-governance 301
+/industries/fintech-defi-speaker /advisory/board-and-leadership 301
+/industries/banking-finance /advisory/board-and-leadership 301
 /industries/energy-utilities /keynote-speaker/executive-decision-making-keynote 301
 /industries/manufacturing-supply-chain /keynote-speaker/executive-decision-making-keynote 301
 

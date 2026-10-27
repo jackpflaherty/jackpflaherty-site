@@ -3,12 +3,25 @@ import Pic from '../../components/Pic.astro';
 import Base from '../../layouts/Base.astro';
 import Proof from '../../components/Proof.astro';
 import Hero from '../../components/Hero.astro';
+import Faq from '../../components/Faq.astro';
 import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'Who is this for?', a: 'Professional services partners approving AI tools their clients and their insurers will stand behind, and health-system executives and nurse leaders deciding on new clinical technology. Event producers and program chairs book Jack for both rooms.' },
+  { q: 'Which keynote should we book?', a: 'Fear Is Not A Control when the room is deciding on a specific technology. The Decision Switch when the room has a stalled decision of any kind. The discovery call settles it.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope. The talk is about any new technology a leader has to approve: an AI tool, a new platform, a module in the system of record. The method is the same for each.' },
+  { q: 'Does Jack customize the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'How long is a keynote?', a: '45 to 60 minutes. Jack takes questions afterward when the program allows it.' },
+  { q: 'What does the room leave with?', a: 'Three questions to ask before any technology decision, and one first move. Who owns it, what was it for, and how the board will know it was a success.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where the team applies the method to a decision they are facing now. It is quoted on the discovery call. Departments can also book the standalone <a href="/workshops/the-team-writes-the-plan">AI and automation workshop</a>.' },
+  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
 const page = {
   '@context': 'https://schema.org', '@type': 'CollectionPage',
   '@id': site.url + '/keynote-speaker/executive-decision-making-keynote', url: site.url + '/keynote-speaker/executive-decision-making-keynote',
   name: 'Keynotes by Jack P. Flaherty',
-  description: 'Two keynotes by Jack P. Flaherty: Fear Is Not A Control, for leaders deciding on new technology, and The Decision Switch, the original decision-making keynote.',
+  description: 'Two keynotes by Jack P. Flaherty. Fear Is Not A Control, for leaders deciding on new technology. The Decision Switch, the original on decision-making.',
   hasPart: [
     { '@type': 'WebPage', '@id': site.url + '/keynote-speaker/fear-is-not-a-control', name: 'Fear Is Not A Control' },
     { '@type': 'WebPage', '@id': site.url + '/keynote-speaker/the-decision-switch', name: 'The Decision Switch' }
@@ -22,9 +35,9 @@ const proof = [
 ];
 ---
 <Base title="Keynotes by Jack P. Flaherty | Fear Is Not A Control and The Decision Switch"
-  description="Two keynotes by Jack P. Flaherty: Fear Is Not A Control, for leaders deciding on new technology, and The Decision Switch, the original decision-making keynote."
+  description="Two keynotes by Jack P. Flaherty. Fear Is Not A Control, for leaders deciding on new technology. The Decision Switch, the original on decision-making."
   keywords="keynote speaker, Fear Is Not A Control, The Decision Switch, technology decision keynote, decision making keynote, Jack P. Flaherty"
-  path="/keynote-speaker/executive-decision-making-keynote" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
+  path="/keynote-speaker/executive-decision-making-keynote" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
 
   <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" pos="72% 50%" short>
     <p class="kicker">Keynotes</p>
@@ -65,6 +78,12 @@ const proof = [
         <p>Jack replies within one business day.</p>
         <div class="btns"><a class="btn light" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <Faq items={faqs} heading="Questions event producers ask" />
     </div>
   </section>
 
