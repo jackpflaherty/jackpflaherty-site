@@ -143,23 +143,25 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
   .hero p{font-size:1.15rem}
 }
 .hero.short{min-height:min(60vh,520px)}
-/* home hero: the search H1, then the tagline block (three lines), the two position lines and the offer line */
-.hero.home .txt{max-width:50rem}
-/* The H1 is the search string (Facts Ledger, Search and entity fields). It stays in the document for search
-   engines and screen readers and is not displayed; the tagline block leads the hero visually. */
+/* hero stacks: the tagline lines, position lines and offer line under an H1 (home and keynote pages) */
+.hero.home .txt,.hero.stack .txt{max-width:50rem}
 .hero.home h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hero.home .tag1{font-family:var(--font-head);font-weight:800;font-size:clamp(2.2rem,4.4vw,3.2rem);line-height:1.08;letter-spacing:.03em;margin:0 0 .5rem}
-.hero.home .tag2{font-family:var(--font-head);font-weight:700;font-size:1.3rem;line-height:1.4;margin:0 0 .6rem}
-.hero.home .tag3{font-size:1.15rem;line-height:1.5;margin:0 0 1.1rem;max-width:42rem}
-.hero.home .positions{list-style:none;padding:0;margin:0 0 1rem}
-.hero.home .positions li{color:var(--latte);font-size:1.1rem;line-height:1.45;padding-left:1.3rem;position:relative;margin:0 0 .5rem;max-width:42rem}
-.hero.home .positions li:before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:50%;background:var(--sienna)}
-.hero.home .offer{margin-top:.2rem}
-.hero.home:after{background:linear-gradient(90deg,rgba(42,26,14,.9) 0%,rgba(42,26,14,.78) 42%,rgba(42,26,14,.2) 72%,rgba(42,26,14,0) 88%)}
+.hero .tag2{font-family:var(--font-head);font-weight:700;font-size:1.3rem;line-height:1.4;margin:0 0 .6rem}
+.hero .tag3{font-size:1.15rem;line-height:1.5;margin:0 0 1.1rem;max-width:42rem}
+.hero .room{font-family:var(--font-head);font-weight:700;font-size:1.15rem;line-height:1.4;margin:0 0 .5rem}
+.hero .positions{list-style:none;padding:0;margin:0 0 1rem}
+.hero .positions li{color:var(--latte);font-size:1.1rem;line-height:1.45;padding-left:1.3rem;position:relative;margin:0 0 .5rem;max-width:42rem}
+.hero .positions li:before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:50%;background:var(--sienna)}
+.hero.home .offer,.hero.stack .offer{margin-top:.2rem}
+.hero.stack .offer{margin-bottom:.8rem}
+.hero.stack h1{margin-bottom:.4rem}
+.hero.stack p{font-size:1.15rem}
+.hero.home:after,.hero.stack:after{background:linear-gradient(90deg,rgba(42,26,14,.9) 0%,rgba(42,26,14,.78) 42%,rgba(42,26,14,.2) 72%,rgba(42,26,14,0) 88%)}
 @media (max-width:767px){
   .hero.home .tag1{font-size:2rem}
-  .hero.home .tag2{font-size:1.15rem}
-  .hero.home .tag3,.hero.home .positions li{font-size:1.05rem}
+  .hero .tag2{font-size:1.15rem}
+  .hero .tag3,.hero .positions li{font-size:1.05rem}
 }
 /* home sections */
 .narrow-wide{max-width:50rem}
