@@ -1,0 +1,134 @@
+---
+import Pic from '../../components/Pic.astro';
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const faqs = [
+  { q: 'How long does it take?', a: 'Two half-day sessions. Live in one room, or virtual.' },
+  { q: 'Who should be in the room?', a: 'The whole team, including the people who do the routine work. The session fails if only managers attend.' },
+  { q: 'Do we need leadership approval?', a: 'No. The department initiates it and leadership receives the plan.' },
+  { q: 'What do we send in advance?', a: 'One real use case the team already recognizes. Jack reviews it before the first session.' },
+  { q: 'What happens afterward?', a: 'The team receives the written report under its name. For the top-ranked items, Jack can work with the team to build the automation.' },
+  { q: 'Is this a keynote?', a: 'No. It is a working session. Jack speaks as little as the room allows.' }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/workshops/the-team-writes-the-plan', url: site.url + '/workshops/the-team-writes-the-plan',
+  name: 'AI and Automation Workshop for Department Teams | Jack P. Flaherty',
+  description: 'A working session where the team that does the work maps it and ranks what to automate first. Led by Jack P. Flaherty. Written up for leadership.',
+  about: { '@type': 'Thing', name: 'AI and automation planning for department teams' },
+  author: { '@id': site.url + '/#person' }
+};
+---
+<Base title="AI and Automation Workshop for Department Teams | Jack P. Flaherty"
+  description="A working session where the team that does the work maps it and ranks what to automate first. Led by Jack P. Flaherty. Written up for leadership."
+  path="/workshops/the-team-writes-the-plan" image="/images/jack-p-flaherty-workshop-table.jpg" schema={[page, faqSchema(faqs)]}>
+
+  <section>
+    <div class="wrap split rev">
+      <div>
+        <p class="kicker">Workshop</p>
+        <h1>The Team Writes the Plan: an AI and automation workshop for department teams</h1>
+        <p class="lede">A working session where the people who do the work decide what to automate first.</p>
+        <p>Leadership has asked every part of the business to adopt AI. Most teams will wait to be told what changes. Yours can hand leadership a ranked plan before anyone writes one on its behalf.</p>
+        <div class="btns"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+      </div>
+      <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop with a team around a table" loading="eager" fetchpriority="high" />
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="grid c2">
+        <div>
+          <h2>What this is</h2>
+          <p>One facilitated working session with your team. The people who do the work map it, examine it and produce a ranked list of what to automate first. They own the recommendation. Jack runs the room, keeps it honest and writes it up.</p>
+        </div>
+        <div>
+          <h2>Who it is for</h2>
+          <p>Finance, operations, revenue cycle, compliance and human resources teams, in professional services firms and health systems. Any department whose leader has been asked what AI will change and would rather answer with the team's own plan than wait for one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How the session runs</h2>
+      <div class="grid c3 steps">
+        <div class="card accent"><p class="kicker">1.</p><h3>Map the real work</h3><p>The real week, the real processes. Each person lays out what they spend time on, not the job description. The team sees, often for the first time, where the effort sits.</p></div>
+        <div class="card accent"><p class="kicker">2.</p><h3>Try on the future role</h3><p>Before anyone is asked what to automate, the team walks through what the job looks like once routine work is handled elsewhere. People volunteer far more when they can see where they land.</p></div>
+        <div class="card accent"><p class="kicker">3.</p><h3>Work a live example</h3><p>Using one real use case you supply in advance, the team applies automation to something they already recognize. No hypotheticals.</p></div>
+        <div class="card accent"><p class="kicker">4.</p><h3>Assess, role by role</h3><p>What could be automated, what should not be, and what would break if it were. The team makes those calls. Jack has sat through enough of these sessions to know the quiet person at the end of the table usually has the list already.</p></div>
+        <div class="card accent"><p class="kicker">5.</p><h3>Rank it</h3><p>Every candidate is scored on business impact, ease of implementation and risk. The result is a priority order the team can defend.</p></div>
+        <div class="card accent"><p class="kicker">6.</p><h3>Write it up</h3><p>Jack produces the report. It goes to leadership under the team's name, with an owner and a first action attached to every item.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="grid c2">
+        <div>
+          <h2>What you get</h2>
+          <ul class="checks">
+            <li>A clear picture of how the department's work is distributed today.</li>
+            <li>A force-ranked automation priority list, built and defended by the team.</li>
+            <li>A written recommendation ready for leadership.</li>
+            <li>A team that authored the change rather than absorbed it.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>What Jack needs from you</h2>
+          <ul class="checks">
+            <li>Time: two half-day sessions, live or virtual.</li>
+            <li>People: the whole team, one room, for the duration.</li>
+            <li>In advance: one real use case to work from.</li>
+            <li>From leadership: nothing. The department initiates this.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="grid c3">
+        <div>
+          <h2>What it will not do</h2>
+          <p>It will not pick the software. It will not replace a controls review before anything goes live. And a team that has already been told the answer will not produce an honest list, so the session is not run after the decision has been made.</p>
+        </div>
+        <div>
+          <h2>How you will know it worked</h2>
+          <p>Leadership receives a ranked automation plan from the department before one is written for it. Every person on the team can name what changes in their own role. The first item is in build within a quarter.</p>
+        </div>
+        <div>
+          <h2>Afterwards</h2>
+          <p>For the top-ranked items, Jack works with the team to design and stand up the automation, so the list turns into working process rather than a document that ages on a shared drive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <Faq items={faqs} heading="Questions department leaders ask" />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next step</h2>
+        <p>A 30-minute discovery call about your team, the use case and the date. A proposal follows within 48 hours.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a><a class="btn alt" href="/book-jack">Send an inquiry</a></div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .steps { margin-top: 1.5rem; }
+</style>

@@ -6,28 +6,28 @@ import Cta from '../../components/Cta.astro';
 import site from '../../data/site.json';
 import { faqSchema } from '../../lib/faq';
 const faqs = [
-  { q: 'Is this an AI keynote or a technology keynote?', a: 'Technology, with AI as the example everyone in the room is living with. The method applies to any new system, which is why it still works when the next one arrives.' },
-  { q: 'Does Jack take a position on whether to adopt AI?', a: 'Yes. Adopt it the way you would hire someone: on purpose, with a job description, a manager, a probation period and a review. Fear is not a control, and neither is a ban.' },
-  { q: 'How technical does it get?', a: 'As technical as the room needs. Directors get the governance questions. Operators get the probation-period mechanics. Nobody gets a tool demo.' },
-  { q: 'Can the board session be combined with the keynote?', a: 'Yes. The usual pattern is the keynote for the wider audience and a closed session with the board or executive team the same day.' }
+  { q: 'Is this an AI keynote or a technology keynote?', a: 'A technology keynote that uses AI as the main example, because AI is what most rooms are deciding on now. The method applies to any new system, so it still works when the next technology arrives.' },
+  { q: 'Does Jack take a position on whether to adopt AI?', a: 'Yes. Adopt it on purpose. A named owner, a stated goal, governance built before the rollout, and reporting the board can see. A ban is not a control. Neither is fear.' },
+  { q: 'How technical does it get?', a: 'As technical as the room needs. Directors get the governance questions. Operators get the mechanics of ownership, goals and review. Nobody gets a tool demo.' },
+  { q: 'Can the board session be combined with the keynote?', a: 'Yes. The usual pattern is a keynote for the wider audience and a closed session with the board or executive team on the same day.' }
 ];
 const page = {
   '@context': 'https://schema.org', '@type': 'WebPage',
   '@id': site.url + '/industries/ai-emerging-technology', url: site.url + '/industries/ai-emerging-technology',
   name: 'AI and Emerging Technology Keynote Speaker | Jack P. Flaherty',
-  description: 'AI and emerging technology, decided like a new hire. A job description, a manager, a probation period, a review. Keynote and board sessions by Jack P. Flaherty.',
+  description: 'Jack P. Flaherty on deciding AI and emerging technology: name the owner, state the goal, build the governance that carries it. For boards and executives.',
   about: { '@id': site.url + '/#person' }
 };
 ---
 <Base title="AI and Emerging Technology Keynote Speaker | Jack P. Flaherty"
-  description="AI and emerging technology, decided like a new hire. A job description, a manager, a probation period, a review. Keynote and board sessions by Jack P. Flaherty."
+  description="Jack P. Flaherty on deciding AI and emerging technology: name the owner, state the goal, build the governance that carries it. For boards and executives."
   path="/industries/ai-emerging-technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-teaching-whiteboard.jpg">
 
   <section>
     <div class="wrap split top">
       <div>
-        <h1>AI and emerging technology, decided like a new hire</h1>
-        <p class="lede">You have the tools. Most organizations do. What you may not have is a decision anyone owns. Jack works with boards and executives on the three questions to ask before AI, or any new system, is allowed to do real work: who owns it, what is it for, how will the board know it was a success.</p>
+        <h1>AI and emerging technology keynote speaker for the leaders who have to approve it</h1>
+        <p class="lede">A tool is already in use on the floor. Half the team found it on their own. Nobody has been asked to decide what it may do, so fear is deciding. Jack's keynote gives the executives, partners and directors who answer for that decision one method they can run on the next one: name the owner, state the goal, and build the governance that carries the rollout and the years after it.</p>
         <h2>The decision nobody owns</h2>
         <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
         <p>Fear is not a control either. Banning a tool does not stop the work from happening. It moves the work somewhere you cannot see it.</p>
@@ -75,7 +75,7 @@ const page = {
         <h3>Keynote: Fear Is Not A Control or The Decision Switch</h3>
         <p>45 to 60 minutes, built for <a href="/keynote-speaker/fear-is-not-a-control-healthcare">health systems</a>, <a href="/keynote-speaker/fear-is-not-a-control-professional-services">professional services firms</a> or <a href="/industries/industry-associations">an association audience</a>, with one first move the room takes home.</p>
         <h3 style="margin-top:1.4rem">Board and executive session</h3>
-        <p>A working session with the directors on the technology decision in front of them. <a href="/keynote-speaker/board-advisor-ai-governance">See board and executive advisory</a>.</p>
+        <p>A working session with the directors on the technology decision in front of them. <a href="/advisory/board-and-leadership">See board and leadership advisory</a>.</p>
         <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
         <p><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></p>
       </div>

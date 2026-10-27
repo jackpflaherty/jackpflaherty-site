@@ -37,21 +37,26 @@
           ]
         },
         {
+          "label": "Workshops",
+          "items": [
+            {
+              "label": "The Team Writes the Plan",
+              "href": "/workshops/the-team-writes-the-plan"
+            }
+          ]
+        },
+        {
           "label": "Advisory",
           "items": [
             {
-              "label": "Board and Executive Advisory",
-              "href": "/keynote-speaker/board-advisor-ai-governance"
+              "label": "Board and Leadership Advisory",
+              "href": "/advisory/board-and-leadership"
             }
           ]
         },
         {
           "label": "Audiences",
           "items": [
-            {
-              "label": "AI and Emerging Technology",
-              "href": "/industries/ai-emerging-technology"
-            },
             {
               "label": "Professional Services",
               "href": "/industries/professional-services-accounting-consulting"
@@ -63,6 +68,10 @@
             {
               "label": "Associations",
               "href": "/industries/industry-associations"
+            },
+            {
+              "label": "AI and Emerging Technology",
+              "href": "/industries/ai-emerging-technology"
             }
           ]
         }

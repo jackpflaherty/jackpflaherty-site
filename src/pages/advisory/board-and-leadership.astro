@@ -3,23 +3,31 @@ import Base from '../../layouts/Base.astro';
 import Assessment from '../../components/Assessment.astro';
 import Hero from '../../components/Hero.astro';
 import site from '../../data/site.json';
+import { faqSchema } from '../../lib/faq';
+const questions = [
+  { q: 'Which decisions in this organization are currently being made, or materially influenced, by an algorithmic system?', a: 'Credit scoring, clinical recommendations, hiring decisions and risk classifications are common answers. Most boards cannot name them with specificity.' },
+  { q: 'Who is responsible for validating that AI output is accurate before it becomes an action?', a: 'If the answer is "the vendor" or "the technology team", the board does not own the decision. It owns the consequence.' },
+  { q: 'When was the last time a human reviewed the model\'s assumptions against current conditions?', a: 'A model optimized for the conditions of three years ago, operating in today\'s market, is active risk.' },
+  { q: 'If the model drifted today, producing systematically biased outputs, how long before the board would know?', a: 'The ripple runs the entire time nobody is assigned to watch for it.' },
+  { q: 'And who, by name, with a named responsibility, is assigned to watch for that?', a: 'This is not an IT question. It is a governance question, and it lands in the boardroom. The absence of a named person with a named responsibility is the gap. A named owner, a stated goal and reporting the board can see. That is what closes it.' }
+];
 const page = {
   '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/keynote-speaker/board-advisor-ai-governance', url: site.url + '/keynote-speaker/board-advisor-ai-governance',
-  name: 'Board and Executive Advisory on AI and Technology Decisions | Jack P. Flaherty',
-  description: 'Board and executive advisory from Jack P. Flaherty. Most boards believe they have governance over new technology. Few can name who owns the decision.',
+  '@id': site.url + '/advisory/board-and-leadership', url: site.url + '/advisory/board-and-leadership',
+  name: 'Board and Leadership Advisory on AI and Technology Decisions | Jack P. Flaherty',
+  description: 'Board and leadership advisory from Jack P. Flaherty. Who owns the technology decision, what it was for, and how the board will know it worked.',
   about: { '@type': 'Thing', name: 'Board oversight of AI and technology decisions' },
   author: { '@id': site.url + '/#person' }
 };
 ---
-<Base title="Board and Executive Advisory on AI and Technology Decisions | Jack P. Flaherty"
-  description="Board and executive advisory from Jack P. Flaherty. Most boards believe they have governance over new technology. Few can name who owns the decision."
-  path="/keynote-speaker/board-advisor-ai-governance" image="/images/jack-p-flaherty-board-advisory-sepia.jpg" schema={[page]} hero="/images/jack-p-flaherty-board-advisory-sepia.jpg">
+<Base title="Board and Leadership Advisory on AI and Technology Decisions | Jack P. Flaherty"
+  description="Board and leadership advisory from Jack P. Flaherty. Who owns the technology decision, what it was for, and how the board will know it worked."
+  path="/advisory/board-and-leadership" image="/images/jack-p-flaherty-board-advisory-sepia.jpg" schema={[page, faqSchema(questions)]} hero="/images/jack-p-flaherty-board-advisory-sepia.jpg">
 
   <div class="board-hero">
     <Hero image="/images/jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive beside an office window" pos="30% 50%" posMobile="30% 40%" short>
       <h1>The board owns the decision. Jack works with the people who answer for it.</h1>
-      <p>Board and executive advisory</p>
+      <p>Board and leadership advisory</p>
       <p>Confidential counsel for boards and executive teams on the technology decision in front of them. Your IT team, your risk function and your counsel each own a piece of it. Jack works on the piece the board owns: who is accountable, what it was for, and how the board will know it was a success. Delivered by Jack, not a team.</p>
       <div class="btns"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
     </Hero>
@@ -46,7 +54,7 @@ const page = {
         <h2>The gap</h2>
         <p class="lede" style="color:#E3D5BE">Most boards believe they have governance over new technology. Few can name who owns the decision.</p>
         <p>Boards are approving AI strategies. Receiving risk updates in quarterly packets. Asking thoughtful questions about data governance and model accuracy. Then going home believing they have exercised appropriate oversight.</p>
-        <p>The gap is not malice. It is not incompetence. It is architecture.</p>
+        <p>The gap is architecture.</p>
         <p>Algorithmic systems are already influencing credit scoring, clinical recommendations, hiring decisions and risk classifications at organizations where the board believes it has control. The systems were deployed at the operational level, optimized for efficiency, and by the time they reached the board packet they looked like a technology update, not a fiduciary exposure.</p>
         <p>The pattern repeats across industries. The sector changes. The failure mode does not.</p>
       </div>
@@ -92,7 +100,7 @@ const page = {
         <div class="card accent">
           <p class="kicker">3.</p>
           <h3>When was the last time a human reviewed the model's assumptions against current conditions?</h3>
-          <p>A model optimized for the conditions of three years ago, operating in today's market, is not just outdated. It is active risk.</p>
+          <p>A model optimized for the conditions of three years ago, operating in today's market, is active risk.</p>
         </div>
         <div class="card accent">
           <p class="kicker">4.</p>
@@ -102,9 +110,22 @@ const page = {
         <div class="card accent">
           <p class="kicker">5.</p>
           <h3>And who, by name, with a named responsibility, is assigned to watch for that?</h3>
-          <p>This is not an IT question. It is a governance question, and it lands in the boardroom. The absence of a named person with a named responsibility is the gap. Treat new technology like a new hire: a job description, a manager, a probation period, a review. That is what closes it.</p>
+          <p>This is not an IT question. It is a governance question, and it lands in the boardroom. The absence of a named person with a named responsibility is the gap. A named owner, a stated goal and reporting the board can see. That is what closes it.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What the board receives</h2>
+      <p class="lede">Every engagement produces three things the board can hold.</p>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card accent"><h3>A board paper</h3><p>One page. It answers who owns the decision, what it was for and how success will be evidenced.</p></div>
+        <div class="card accent"><h3>The questions for management</h3><p>Written for the next quarter's meeting, with the answer each one should produce.</p></div>
+        <div class="card accent"><h3>A decision record</h3><p>The owner, the goal, the review date and the reporting the board will see.</p></div>
+      </div>
+      <p style="margin-top:1.4rem">Advisory is delivered by Jack, not a team. The first 30 days are set on the discovery call.</p>
     </div>
   </section>
 
@@ -113,7 +134,6 @@ const page = {
       <div class="split">
         <div>
           <h2>Why boards call Jack</h2>
-          <p class="lede" style="color:#E3D5BE">The background boards are looking for.</p>
           <p>25 years in risk and advisory, 15 of them at the Big 4, and a method a board can run itself. Built from inside the rooms, not from a governance textbook.</p>
         </div>
         <figure class="quote">
@@ -136,7 +156,7 @@ const page = {
         <h2>The next step</h2>
         <p>A 30-minute conversation about which decisions are already being made without your board.</p>
         <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
-        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing. For a department rather than a board, see <a href="/workshops/the-team-writes-the-plan">the workshop</a>.</p>
       </div>
     </div>
   </section>
