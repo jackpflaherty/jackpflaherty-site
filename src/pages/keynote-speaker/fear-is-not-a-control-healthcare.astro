@@ -8,16 +8,16 @@ import site from '../../data/site.json';
 import { faqSchema } from '../../lib/faq';
 const faqs = [
   { q: 'Who is this keynote for?', a: 'Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. It is built for leadership summits, nursing conferences and association meetings.' },
-  { q: 'Is this an AI keynote?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each. Treat new technology like a new hire.' },
-  { q: 'What does the audience take home?', a: 'Three questions to ask before any technology decision, and one first move for the week they get back. Short enough to repeat without a slide.' },
-  { q: 'How long is it, and can it run virtually?', a: '45 to 60 minutes. A half-day workshop can follow the keynote. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.' },
+  { q: 'Is this an AI keynote?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The three questions are the same for each.' },
+  { q: 'What does the audience take home?', a: 'Three questions to ask before any technology decision: who owns it, what was it for, how will the board know it was a success. And one first move for the week they get back. Short enough to repeat without a slide.' },
+  { q: 'How long is it, and can it run virtually?', a: '45 to 60 minutes. A half-day workshop can follow the keynote, where teams apply the method to a decision they are facing now. The virtual version runs live on Zoom or Teams and is rebuilt for the screen.' },
   { q: 'How do we book Jack?', a: `<a href="${site.calendly}">Book a discovery call</a>. Jack replies within one business day and asks who is in the room and what decision they are facing before he sends a proposal.` }
 ];
 const page = {
   '@context': 'https://schema.org', '@type': 'WebPage',
   '@id': site.url + '/keynote-speaker/fear-is-not-a-control-healthcare', url: site.url + '/keynote-speaker/fear-is-not-a-control-healthcare',
   name: 'Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty',
-  description: 'Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes.',
+  description: 'Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former PwC Director: deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer. 45 to 60 minutes.',
   about: { '@type': 'Thing', name: 'Technology decision-making in health systems' },
   author: { '@id': site.url + '/#person' }
 };
@@ -28,25 +28,21 @@ const proof = [
 ];
 ---
 <Base title="Fear Is Not A Control: Healthcare AI Keynote Speaker | Jack P. Flaherty"
-  description="Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former Big 4 director: treat new technology like a new hire. 45 to 60 minutes."
+  description="Keynote for health-system executives and nurse leaders by Jack P. Flaherty, former PwC Director: deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer. 45 to 60 minutes."
   path="/keynote-speaker/fear-is-not-a-control-healthcare" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
 
-  <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering the Fear Is Not A Control keynote on a dark stage" pos="72% 50%">
+  <Hero extra="stack" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering the Fear Is Not A Control keynote on a dark stage" pos="72% 50%">
     <h1>Fear Is Not A Control</h1>
-    <p>A keynote for health-system executives and nurse leaders</p>
-    <p>Making the Call on New Technology When Patients Are Waiting</p>
-    <p>A keynote for health-system executives and nurse leaders who have the vendor, the IT team and the policy, and still have to decide what reaches the unit.</p>
+    <p class="tag2">How we build teams who ask the hard questions.</p>
+    <p class="tag3">When failure is not an option, this former PwC Director develops leaders who challenge norms, overcome adversity, and deliver under pressure.</p>
+    <p class="room">A keynote for health-system executives and nurse leaders</p>
+    <ul class="positions"><li>Helping health-system executives decide on new clinical technology when the board, the clinicians and the regulator each want a different answer.</li></ul>
+    <p>The deliverable is a room that leaves with three questions to ask before any technology decision on the unit, and one first move for the week they get home.</p>
+    <p>A standing ovation is not the deliverable. The questions are.</p>
     <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="/#reel">Watch the reel</a></div>
   </Hero>
 
   <Proof quotes={proof} />
-
-  <section class="tight">
-    <div class="wrap">
-      <p class="lede">The room leaves with three questions to ask before any technology decision reaches a patient: who owns it, what is it for, how will the board know it worked. And one first move for the week they get home.</p>
-      <p class="lede">Jack served as acting enterprise risk and audit leader for a $10B health system.</p>
-    </div>
-  </section>
 
   <section>
     <div class="wrap">
@@ -66,7 +62,7 @@ const proof = [
         <div class="card">
           <p class="kicker">03</p>
           <h3>The signals were always there. Nobody was assigned to watch.</h3>
-          <p>Every major failure Jack has sat close to had early warning signs. The organizations that came through were not smarter. Someone had the job of reading what the others ignored. Decide, then watch for what moves.</p>
+          <p>Every major failure Jack has sat close to had early warning signs. The organizations that came through were not smarter. Someone had the job of reading what the others ignored. Spot the ripple: watch for the ripples of change, risk or opportunity, and act on what the teams, the instinct and the colleagues are telling you.</p>
         </div>
       </div>
     </div>
@@ -85,14 +81,14 @@ const proof = [
           <h2>The keynote</h2>
           <p class="lede">One talk, built for the decision in front of health-system leaders.</p>
         </div>
-        <p class="lede">The method is simple enough to repeat on the drive home: treat new technology like a new hire. A job description. A manager. A probation period. A review.</p>
+        <p class="lede">Go slow to go fast. Plan it, name the accountable owner, and build the governance that carries the rollout and the years of upkeep after it. The way Jack teaches it is simple enough to repeat on the drive home: treat new technology like a new hire. A job description. A manager. A probation period. A review.</p>
       </div>
       <div class="grid c2" style="margin-top:2.5rem">
         <div class="card accent">
           <p class="kicker">For health-system executives and nurse leaders</p>
-          <h3>Making the Call on New Technology When Patients Are Waiting</h3>
+          <h3>Deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer.</h3>
           <p>A new tool shows up on the unit. Half the team is using it by Friday. The other half waits for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
-          <p>Jack has watched decision-making teams, not surgical teams, save a life. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year. He has watched capable clinical leaders stall on technology calls they were equipped to make.</p>
+          <p>Jack has watched decision-making teams, not surgical teams, save a life. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year.</p>
           <p>The room leaves with the three questions to ask before any technology decision reaches a patient, and one first move for the week they get home.</p>
         </div>
         <div class="card">
@@ -117,7 +113,7 @@ const proof = [
       </div>
       <div class="grid c2 stats">
         <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where technology decisions carry the highest cost.</p></div>
-        <div class="card"><p class="stat"><strong>15</strong>Years at the Big 4 as a former Big 4 director, building the teams that found the gaps before the regulator did.</p></div>
+        <div class="card"><p class="stat"><strong>15</strong>Years at the Big 4, most recently as a PwC Director, building the teams that found the gaps before the regulator did.</p></div>
         <div class="card"><p class="stat"><strong>$10B</strong>Health system where Jack served as acting enterprise risk and audit leader, reporting to the C-suite and audit committee.</p></div>
         <div class="card"><p class="stat"><strong>$2.5M</strong>Board-mandated cybersecurity program for a $4B health system. Urgent gaps closed within one year.</p></div>
       </div>
@@ -131,8 +127,8 @@ const proof = [
       <div class="grid c2" style="margin-top:1.5rem">
         <div class="card">
           <p class="kicker">01</p>
-          <h3>A method, not a feeling.</h3>
-          <p>Treat new technology like a new hire. A job description, a manager, a probation period, a review. Every person in the room can apply it to the next tool, vendor or system that lands on the unit.</p>
+          <h3>Three questions, not a feeling.</h3>
+          <p>Who owns it. What was it for. How will the board know it was a success. Every person in the room can ask them of the next tool, vendor or system that lands on the unit.</p>
         </div>
         <div class="card">
           <p class="kicker">02</p>
@@ -142,7 +138,7 @@ const proof = [
         <div class="card">
           <p class="kicker">03</p>
           <h3>A contrarian view on risk they will argue about on the way home.</h3>
-          <p>Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. The risk person in the room is the one saying go, on conditions.</p>
+          <p>Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. A control is something you can test. Fear is not. The risk person in the room is the one saying go, on conditions.</p>
         </div>
         <div class="card">
           <p class="kicker">04</p>
@@ -167,7 +163,7 @@ const proof = [
         <div class="card accent">
           <p class="kicker">Keynote plus half day</p>
           <h3>Keynote and workshop</h3>
-          <p>The keynote, then a working session where clinical and operational teams apply the new-hire method to a technology decision they are facing now.</p>
+          <p>The keynote, then a working session where clinical and operational teams apply the method to a technology decision they are facing now.</p>
         </div>
         <div class="card accent">
           <p class="kicker">45 to 60 min</p>
@@ -190,8 +186,9 @@ const proof = [
       <div class="cta-band">
         <h2>The next step</h2>
         <p>The right talk, in the right room, to change what the audience does when they get back to work.</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href="/book-jack">Book Jack</a><a class="btn alt" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
         <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+        <p class="meta">Looking for the original keynote? <a href="/keynote-speaker/the-decision-switch">See The Decision Switch</a>.</p>
       </div>
     </div>
   </section>
