@@ -3,12 +3,14 @@
   "name": "jackpflaherty-site",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
-  // Custom domains the Worker answers on. www was attached in the dashboard at the Oct 14 cutover;
-  // assessment is attached by the first `wrangler deploy` after this lands, which creates its DNS
-  // record. That deploy stops and asks before it replaces the existing record (the FlexiFunnels
-  // CNAME); say yes only on Jack's go. The Worker already maps the legacy assessment paths.
+  // Hostnames, as the zone is actually wired (read from the dashboard Oct 27 2026):
+  // the apex is this Worker's custom domain; www is a proxied CNAME to the apex served through a
+  // zone route; assessment is added as a custom domain by the first deploy after this lands, which
+  // creates its DNS record and asks before replacing the existing FlexiFunnels CNAME. Say yes only
+  // on Jack's go. The Worker already maps the legacy assessment paths onto the built pages.
   "routes": [
-    { "pattern": "www.jackpflaherty.com", "custom_domain": true },
+    { "pattern": "jackpflaherty.com", "custom_domain": true },
+    { "pattern": "www.jackpflaherty.com/*", "zone_name": "jackpflaherty.com" },
     { "pattern": "assessment.jackpflaherty.com", "custom_domain": true }
   ],
   "assets": {
