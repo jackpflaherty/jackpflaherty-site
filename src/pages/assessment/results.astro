@@ -3,6 +3,14 @@ import Base from '../../layouts/Base.astro';
 import AssessmentScore from '../../components/AssessmentScore.astro';
 import a from '../../data/assessment.json';
 import site from '../../data/site.json';
+// Sixteen Summary Brief blocks: four tier fallbacks plus twelve tier-by-lowest-dimension reads (PR #24).
+type Block = { label: string; line: string; narrative: string[] };
+const tiers = a.tiers as Record<string, Block>;
+const reads = a.reads as Record<string, Omit<Block, 'label'>>;
+const blocks: [string, Block][] = [
+  ...Object.entries(tiers),
+  ...Object.entries(reads).map(([k, r]) => [k, { label: tiers[k.split('_')[0]].label, ...r }] as [string, Block]),
+];
 ---
 <Base title="Your results | The Clear Confidence Assessment" description="Your Clear Confidence Score, your tier and your lowest dimension."
   path="/assessment/results" canonicalUrl={a.host + a.paths.results} noindex={true} flow={true}>
@@ -27,7 +35,7 @@ import site from '../../data/site.json';
   <section class="read" id="read">
     <div class="wrap narrow">
       <h2 class="hello"><span data-first></span>, here is your Summary Brief.</h2>
-      {Object.entries(a.tiers).map(([k, t]) => (
+      {blocks.map(([k, t]) => (
         <div class="tier" id={'tier-' + k} hidden>
           {t.narrative.map(p => <p>{p}</p>)}
         </div>
@@ -58,7 +66,9 @@ import site from '../../data/site.json';
   import a from '../../data/assessment.json';
   const v = read();
   render(v);
-  const t = (a.tiers as Record<string, { line: string }>)[v.tier];
+  // The summary line follows the same key as the brief: tier_low when that read exists, else the tier.
+  const reads = a.reads as Record<string, { line: string }>, tiersL = a.tiers as Record<string, { line: string }>;
+  const t = reads[v.tier + '_' + v.low] || tiersL[v.tier];
   const tl = document.querySelector<HTMLElement>('[data-tier-line]'); if (tl) tl.textContent = t ? t.line : '';
   if (!v.first) { const h = document.querySelector<HTMLElement>('.hello'); if (h) h.textContent = 'Here is your Summary Brief.'; }
   document.title = 'Your results | Clear Confidence Assessment' + (v.first ? ' | ' + v.first : '');
