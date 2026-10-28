@@ -48,12 +48,10 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
       <div class="cs" id="cca-gate">
         <p class="kicker">Last step</p>
         <h2>Your score is ready.</h2>
-        <p>You will see your score and the three-dimension breakdown on the next screen. The written read on your biggest gap, and the first move Jack would make, goes to your inbox. First name and a work email.</p>
+        <p class="lede">Your score is on the next screen. The written read on your biggest gap goes to your inbox.</p>
         <div class="form">
-          <div class="row">
-            <div><label for="cca-fname">First name</label><input id="cca-fname" type="text" autocomplete="given-name" required /></div>
-            <div><label for="cca-email">Work email</label><input id="cca-email" type="email" autocomplete="email" required /></div>
-          </div>
+          <label for="cca-fname">First name</label><input id="cca-fname" type="text" autocomplete="given-name" required />
+          <label for="cca-email">Work email</label><input id="cca-email" type="email" autocomplete="email" inputmode="email" required />
           <div id="cca-ts" class="ts"></div>
           <p class="err" id="cca-gate-err" hidden></p>
           <button class="btn" id="cca-submit-btn" type="button">Show my results</button>
@@ -179,6 +177,6 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
   .opt.sel{border-color:var(--cobalt);background:rgba(46,91,255,.06)}
   .badge{font-family:var(--font-head);font-weight:800;color:var(--sienna);margin-right:.35rem}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .ts{margin-top:1rem;min-height:65px}
+  .ts{margin:.75rem 0 0;min-height:65px}
   .notice{margin-bottom:1.5rem}
 </style>
