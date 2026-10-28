@@ -107,6 +107,14 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
   .nav .menu{position:static;display:flex;box-shadow:none;min-width:0;margin:.2rem 0 .6rem}
   .nav .book{margin:.6rem 0 0;text-align:center}
 }
+/* assessment flow chrome: 48px logo strip with Back chevron, one-line footer */
+.nav.flow .wrap{min-height:3rem;justify-content:center;position:relative}
+.nav.flow .logo img{height:2rem}
+.nav.flow .flow-back{position:absolute;left:calc(var(--gutter) - .6rem);top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;background:none;border:0;padding:0;color:var(--brown);cursor:pointer}
+.nav.flow .flow-back:hover{color:var(--ink)}
+.nav.flow .flow-back[hidden]{display:none}
+.footer.flow{padding:1rem 0}
+.footer.flow .legal{margin-top:0;padding-top:0;border-top:0}
 /* footer */
 .footer{background:var(--ink);color:var(--latte);padding:3.5rem 0 2rem}
 .footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
