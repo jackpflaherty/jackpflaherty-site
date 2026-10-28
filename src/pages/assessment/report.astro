@@ -4,7 +4,7 @@ import AssessmentScore from '../../components/AssessmentScore.astro';
 import a from '../../data/assessment.json';
 import site from '../../data/site.json';
 ---
-<Base title="Your Clear Confidence Report | Jack P. Flaherty" description="Your Clear Confidence Assessment results, with the written read for your role and industry."
+<Base title="Your Clear Confidence Report | Jack P. Flaherty" description="Your Clear Confidence Assessment results, with the personalized assessment report for your role and industry."
   path="/assessment/report" canonicalUrl={a.host + a.paths.report} noindex={true}>
 
   <section class="tight no-print">
@@ -26,7 +26,7 @@ import site from '../../data/site.json';
       </header>
 
       <div class="pending notice" data-pending hidden>
-        <h3>The written read is in your inbox</h3>
+        <h3>The personalized assessment report is in your inbox</h3>
         <p>Your score is above. What it means for someone in your seat, where the gap shows up first, and what it costs if it goes unaddressed, is in the report heading to your inbox now. It usually arrives within a minute. If it has not, check your spam or promotions folder.</p>
       </div>
 
@@ -36,7 +36,7 @@ import site from '../../data/site.json';
       </div>
 
       <div class="narrow">
-        <p class="hello"><span data-first></span>, here is the direct read on your score.</p>
+        <p class="hello"><span data-first></span>, here is your Summary Brief.</p>
         <div class="tiers-slot"></div>
       </div>
 
@@ -67,7 +67,7 @@ import site from '../../data/site.json';
   const sum = q('[data-summary]'); if (sum) sum.textContent = v.summary;
   const pend = q('[data-pending]'); if (pend) pend.hidden = has;
   const pr = q('[data-print]'); if (pr) pr.hidden = !has;
-  if (!v.first) { const h = q('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
+  if (!v.first) { const h = q('.hello'); if (h) h.textContent = 'Here is your Summary Brief.'; }
   document.title = 'Clear Confidence Report | ' + (v.name || 'Your results') + ' | Jack P. Flaherty';
 </script>
 
