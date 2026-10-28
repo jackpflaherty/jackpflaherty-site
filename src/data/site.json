@@ -46,15 +46,6 @@
           ]
         },
         {
-          "label": "Advisory",
-          "items": [
-            {
-              "label": "Board and Leadership Advisory",
-              "href": "/advisory/board-and-leadership"
-            }
-          ]
-        },
-        {
           "label": "Audiences",
           "items": [
             {
@@ -76,6 +67,10 @@
           ]
         }
       ]
+    },
+    {
+      "label": "Advisory",
+      "href": "/advisory/board-and-leadership"
     },
     {
       "label": "Toolkit",
