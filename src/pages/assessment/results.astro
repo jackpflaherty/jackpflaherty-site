@@ -19,15 +19,15 @@ import site from '../../data/site.json';
   <section class="first">
     <div class="wrap narrow">
       <p class="tierline"><span class="k">Your profile:</span> <span class="t" data-tier-label></span></p>
-      <AssessmentScore rows={true} />
       <p class="tline" data-tier-line></p>
-      <p class="act"><a class="btn" href="#read">Read the direct read</a></p>
+      <AssessmentScore rows={true} />
+      <p class="act"><a class="btn" href="#read">Read the Summary Brief</a></p>
     </div>
   </section>
 
   <section class="read" id="read">
     <div class="wrap narrow">
-      <h2 class="hello"><span data-first></span>, here is the direct read on your score.</h2>
+      <h2 class="hello"><span data-first></span>, here is your Summary Brief.</h2>
       {Object.entries(a.tiers).map(([k, t]) => (
         <div class="tier" id={'tier-' + k} hidden>
           {t.narrative.map(p => <p>{p}</p>)}
@@ -61,7 +61,7 @@ import site from '../../data/site.json';
   render(v);
   const t = (a.tiers as Record<string, { line: string }>)[v.tier];
   const tl = document.querySelector<HTMLElement>('[data-tier-line]'); if (tl) tl.textContent = t ? t.line : '';
-  if (!v.first) { const h = document.querySelector<HTMLElement>('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
+  if (!v.first) { const h = document.querySelector<HTMLElement>('.hello'); if (h) h.textContent = 'Here is your Summary Brief.'; }
   document.title = 'Your results | Clear Confidence Assessment' + (v.first ? ' | ' + v.first : '');
 </script>
 
@@ -73,7 +73,7 @@ import site from '../../data/site.json';
   .tierline{font-family:var(--font-head);font-weight:700;font-size:1.25rem;line-height:1.3;margin:0 0 .25rem;color:var(--ink)}
   .tierline .k{color:var(--ink);font-size:1rem;text-transform:uppercase;letter-spacing:.04em}
   .tierline .t{color:var(--sienna)}
-  .tline{font-size:1rem;line-height:1.5;color:var(--brown);margin:.9rem 0 0}
+  .tline{font-size:1rem;line-height:1.5;color:var(--brown);margin:.4rem 0 .9rem}
   .act{margin:.9rem 0 0}
   .act .btn{display:block;width:100%;text-align:center;padding:.85rem 1rem;min-height:52px}
   .read{padding:1.5rem 0 1rem}

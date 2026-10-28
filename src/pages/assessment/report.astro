@@ -36,7 +36,7 @@ import site from '../../data/site.json';
       </div>
 
       <div class="narrow">
-        <p class="hello"><span data-first></span>, here is the direct read on your score.</p>
+        <p class="hello"><span data-first></span>, here is your Summary Brief.</p>
         <div class="tiers-slot"></div>
       </div>
 
@@ -67,7 +67,7 @@ import site from '../../data/site.json';
   const sum = q('[data-summary]'); if (sum) sum.textContent = v.summary;
   const pend = q('[data-pending]'); if (pend) pend.hidden = has;
   const pr = q('[data-print]'); if (pr) pr.hidden = !has;
-  if (!v.first) { const h = q('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
+  if (!v.first) { const h = q('.hello'); if (h) h.textContent = 'Here is your Summary Brief.'; }
   document.title = 'Clear Confidence Report | ' + (v.name || 'Your results') + ' | Jack P. Flaherty';
 </script>
 
