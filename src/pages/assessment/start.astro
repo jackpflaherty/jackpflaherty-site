@@ -33,18 +33,15 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
 
       {a.questions.map((q, i) => (
         <div class="cs" id={'cca-qs' + q.id} data-qid={q.id}>
-          {q.banner && <div class="banner"><p class="kicker">{q.banner.fw}</p><p>{q.banner.tag}</p></div>}
           <div class="prog" aria-hidden="true"><div class="fill" style={`width:${Math.round(i / a.questions.length * 100)}%`}></div></div>
+          <p class="pline"><span class="sr">Question </span>{q.id} of 15 · {dimOf(q)}<span class="sr">, {q.id === 15 ? 'final question' : `${nOf(q)} of 5`}</span></p>
           <p class="hdr">{(a.headers as Record<string, string>)[String(q.id)]}</p>
-          <p class="sub">{dimOf(q)}, {q.id === 15 ? 'final question' : `${nOf(q)} of 5`}</p>
-          <p class="qnum">Question {q.id} of 15</p>
           <p class="stem">{q.stem}</p>
           <div class="opts" role="group" aria-label={'Question ' + q.id}>
             {q.opts.map((o, idx) => (
-              <button class="opt" type="button" data-qid={q.id} data-idx={idx}><span class="badge">{letters[idx]}</span><span>{o}</span></button>
+              <button class="opt" type="button" data-qid={q.id} data-idx={idx}><span class="badge">{letters[idx]}</span> {o}</button>
             ))}
           </div>
-          {q.id > 1 && <button class="back" type="button" data-back={q.id - 1}>Back</button>}
         </div>
       ))}
 
@@ -62,7 +59,6 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
           <button class="btn" id="cca-submit-btn" type="button">Show my results</button>
         </div>
         <p class="fine">Your results and one written follow-up. Nothing else.</p>
-        <button class="back" type="button" data-back="15">Back</button>
       </div>
 
       <div class="cs" id="cca-wait" aria-live="polite">
@@ -86,12 +82,19 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
   const choices: Record<number, number> = {};
   let tsId: string | null = null;
 
+  // The Back chevron lives in the flow header (Base.astro, flow mode). Questions 2 to 15 and the gate show it.
+  const backBtn = $('flow-back') as HTMLButtonElement | null;
+  let backTo = 0;
   function show(id: string) {
     document.querySelectorAll('#cca .cs').forEach(s => s.classList.remove('on'));
     $(id)?.classList.add('on');
-    $('cca')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const m = /^cca-qs(\d+)$/.exec(id);
+    backTo = m ? Number(m[1]) - 1 : id === 'cca-gate' ? 15 : 0;
+    if (backBtn) backBtn.hidden = backTo < 1;
     if (id === 'cca-gate') renderTs();
   }
+  backBtn?.addEventListener('click', () => { if (backTo >= 1) show('cca-qs' + backTo); });
   function renderTs() {
     if (tsId || !w.turnstile || !$('cca-ts')) return;
     tsId = w.turnstile.render('#cca-ts', { sitekey: SITEKEY, theme: 'light' });
@@ -117,7 +120,6 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
       else show('cca-gate');
     }, 250);
   }));
-  document.querySelectorAll<HTMLButtonElement>('#cca .back').forEach(b => b.addEventListener('click', () => show('cca-qs' + b.dataset.back)));
 
   $('cca-submit-btn')?.addEventListener('click', async () => {
     const btn = $('cca-submit-btn') as HTMLButtonElement;
@@ -163,21 +165,20 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
   .form select{appearance:auto}
   .err{color:var(--sienna);font-weight:700;margin:.6rem 0 0;font-size:.95rem}
   .fine{font-size:.875rem;line-height:1.3;color:var(--brown);margin:.6rem 0 0}
-  .banner{background:#fff;border:1px solid var(--linen);border-left:4px solid var(--sienna);border-radius:var(--r);padding:.9rem 1.2rem;margin-bottom:1.4rem}
-  .banner .kicker{margin:0 0 .2rem}
-  .banner p{margin:0}
-  .prog{height:6px;background:var(--linen);border-radius:3px;overflow:hidden;margin:0 0 1.4rem}
-  .prog .fill{height:100%;background:var(--sienna)}
-  .hdr{font-family:var(--font-head);font-weight:800;font-size:clamp(1.35rem,2.6vw,1.75rem);color:var(--ink);margin:0 0 .2rem;line-height:1.2}
-  .sub{color:var(--brown);margin:0 0 1.2rem;font-size:.95rem}
-  .qnum{font-family:var(--font-head);font-weight:700;color:var(--sienna);font-size:.95rem;margin:0 0 .5rem}
-  .stem{font-size:1.2rem;line-height:1.5;margin-bottom:1.3rem}
-  .opts{display:grid;gap:.7rem}
-  .opt{display:flex;gap:.9rem;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:.95rem 1.1rem;font:inherit;font-size:1.05rem;line-height:1.45;color:var(--ink);cursor:pointer}
+  /* Question template: one progress line (bar + "6 of 15 · Signal Intelligence"), a one-line kicker, the stem at
+     19.2px over four lines at most, four option cards at 16px with the letter inline, 12px between cards.
+     Back is the chevron in the flow header. A5 layout spec, Oct 28 2026. */
+  .prog{height:4px;background:var(--linen);border-radius:2px;overflow:hidden;margin:0 0 .35rem}
+  .prog .fill{height:100%;background:var(--cobalt)}
+  .pline{font-family:var(--font-head);font-weight:700;font-size:.875rem;line-height:1.3;color:var(--brown);margin:0 0 .6rem}
+  .hdr{font-family:var(--font-head);font-weight:700;font-size:1rem;line-height:1.3;color:var(--sienna);margin:0 0 .4rem}
+  .stem{font-family:var(--font-head);font-weight:700;font-size:1.2rem;line-height:1.45;color:var(--ink);margin:0 0 .75rem}
+  .opts{display:grid;gap:.75rem}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:1rem;font:inherit;font-size:1rem;line-height:1.5;color:var(--ink);cursor:pointer}
   .opt:hover{border-color:var(--cobalt)}
   .opt.sel{border-color:var(--cobalt);background:rgba(46,91,255,.06)}
-  .badge{flex:0 0 auto;font-family:var(--font-head);font-weight:800;color:var(--sienna);min-width:1.4rem}
-  .back{background:none;border:0;color:var(--brown);font:inherit;text-decoration:underline;cursor:pointer;margin-top:1.2rem;padding:0}
+  .badge{font-family:var(--font-head);font-weight:800;color:var(--sienna);margin-right:.35rem}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .ts{margin-top:1rem;min-height:65px}
   .notice{margin-bottom:1.5rem}
 </style>
