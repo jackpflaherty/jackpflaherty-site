@@ -9,6 +9,7 @@ export type View = {
 
 const dims = a.dims as Record<string, { name: string; max: number }>;
 const tiers = a.tiers as Record<string, { rank: number; label: string; line: string }>;
+const reads = a.reads as Record<string, { line: string }>;
 
 export function read(): View {
   const u = new URLSearchParams(location.search);
@@ -42,7 +43,9 @@ export function render(v: View) {
     const g = q(`[data-gap="${k}"]`); if (g) g.hidden = k !== v.low;
     const card = q(`#dim-${k}`); if (card) card.classList.toggle('gap-on', k === v.low);
   }
-  document.querySelectorAll<HTMLElement>('.tier').forEach(t => { t.hidden = t.id !== 'tier-' + v.tier; });
+  // Read keyed on tier and lowest dimension (e.g. monitor_d2); the tier entry is the fallback.
+  const readKey = reads[v.tier + '_' + v.low] ? v.tier + '_' + v.low : v.tier;
+  document.querySelectorAll<HTMLElement>('.tier').forEach(t => { t.hidden = t.id !== 'tier-' + readKey; });
   document.querySelectorAll<HTMLElement>('[data-score]').forEach(e => { e.textContent = v.score; });
   document.querySelectorAll<HTMLElement>('[data-first]').forEach(e => { e.textContent = v.first; });
   document.querySelectorAll<HTMLElement>('[data-name]').forEach(e => { e.textContent = v.name || 'Your name'; });
