@@ -48,7 +48,7 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
       <div class="cs" id="cca-gate">
         <p class="kicker">Last step</p>
         <h2>Your score is ready.</h2>
-        <p class="lede">Your score is on the next screen. The Summary Brief on your biggest gap goes to your inbox.</p>
+        <p class="lede">See your score and three-dimension breakdown on the next screen. Shortly after, you'll receive a personalized assessment report by email, including my first recommendation.</p>
         <div class="form">
           <label for="cca-fname">First name</label><input id="cca-fname" type="text" autocomplete="given-name" required />
           <label for="cca-email">Work email</label><input id="cca-email" type="email" autocomplete="email" inputmode="email" required />
@@ -56,7 +56,6 @@ const nOf = (q: { id: number }) => ((q.id - 1) % 5) + 1;
           <p class="err" id="cca-gate-err" hidden></p>
           <button class="btn" id="cca-submit-btn" type="button">Show my results</button>
         </div>
-        <p class="fine">Your results and one written follow-up. Nothing else.</p>
       </div>
 
       <div class="cs" id="cca-wait" aria-live="polite">
