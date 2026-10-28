@@ -1,10 +1,18 @@
 ---
-// Score breakdown and tier copy for the results and report pages. All four tier
-// blocks are rendered; the page script shows the one named in the URL.
+// Score breakdown and tier copy for the results and report pages. All sixteen
+// blocks are rendered (four tier fallbacks plus twelve tier-by-lowest-dimension
+// reads); the page script shows `${tier}_${low}` when it exists, else the tier.
 import a from '../data/assessment.json';
 interface Props { compact?: boolean }
 const { compact = false } = Astro.props;
 const dims = Object.entries(a.dims) as [string, { name: string; max: number }][];
+type Block = { label: string; line: string; narrative: string[] };
+const tiers = a.tiers as Record<string, Block>;
+const reads = a.reads as Record<string, Omit<Block, 'label'>>;
+const blocks: [string, Block][] = [
+  ...Object.entries(tiers),
+  ...Object.entries(reads).map(([k, r]) => [k, { label: tiers[k.split('_')[0]].label, ...r }] as [string, Block]),
+];
 ---
 <div class="score-grid" data-score-grid>
   {dims.map(([k, d]) => (
@@ -19,7 +27,7 @@ const dims = Object.entries(a.dims) as [string, { name: string; max: number }][]
 </div>
 
 <div class="tiers">
-  {Object.entries(a.tiers).map(([k, t]) => (
+  {blocks.map(([k, t]) => (
     <div class="tier" id={'tier-' + k} hidden>
       <p class="kicker">Your profile</p>
       <h2>{t.label}</h2>
