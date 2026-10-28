@@ -3,7 +3,7 @@
 // blocks are rendered; the page script shows the one named in the URL.
 import a from '../data/assessment.json';
 // rows: the phone-first results layout (A5 layout spec, Oct 28 2026). One row per dimension, name and percentage
-// on one line with the bar beneath, the lowest marked; no tier blocks, the page renders the written read itself.
+// on one line with the bar beneath, the lowest marked; no tier blocks, the page renders the Summary Brief itself.
 interface Props { compact?: boolean; rows?: boolean }
 const { compact = false, rows = false } = Astro.props;
 const dims = Object.entries(a.dims) as [string, { name: string; max: number }][];
