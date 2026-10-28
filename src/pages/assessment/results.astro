@@ -5,23 +5,34 @@ import a from '../../data/assessment.json';
 import site from '../../data/site.json';
 ---
 <Base title="Your results | The Clear Confidence Assessment" description="Your Clear Confidence Score, your tier and your lowest dimension."
-  path="/assessment/results" canonicalUrl={a.host + a.paths.results} noindex={true}>
+  path="/assessment/results" canonicalUrl={a.host + a.paths.results} noindex={true} flow={true}>
 
-  <section class="dark tight">
-    <div class="wrap">
+  <!-- Phone-first results (A5 layout spec, Oct 28 2026): the score, the tier, the three dimensions with the lowest
+       marked, one sentence and one button sit in the first screen; the written read follows below it. -->
+  <section class="dark hero-score">
+    <div class="wrap narrow">
       <p class="kicker">The Clear Confidence Assessment</p>
       <h1><span data-score>--</span> out of 100.</h1>
-      <p class="lede" style="color:#E3D5BE">Your score, the three dimensions behind it, and the one that is holding the others back.</p>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <AssessmentScore />
-      <div class="narrow">
-        <p class="hello"><span data-first></span>, here is the direct read on your score.</p>
-        <div class="tiers-slot"></div>
-      </div>
+  <section class="first">
+    <div class="wrap narrow">
+      <p class="tierline"><span class="k">Your profile</span> · <span data-tier-label></span></p>
+      <AssessmentScore rows={true} />
+      <p class="tline" data-tier-line></p>
+      <p class="act"><a class="btn" href="#read">Read the direct read</a></p>
+    </div>
+  </section>
+
+  <section class="read" id="read">
+    <div class="wrap narrow">
+      <h2 class="hello"><span data-first></span>, here is the direct read on your score.</h2>
+      {Object.entries(a.tiers).map(([k, t]) => (
+        <div class="tier" id={'tier-' + k} hidden>
+          {t.narrative.map(p => <p>{p}</p>)}
+        </div>
+      ))}
     </div>
   </section>
 
@@ -45,15 +56,28 @@ import site from '../../data/site.json';
 
 <script>
   import { read, render } from '../../scripts/assessment-view';
+  import a from '../../data/assessment.json';
   const v = read();
-  // Move the tier blocks under the greeting so the narrative reads as one piece.
-  const slot = document.querySelector('.tiers-slot'); const tiers = document.querySelector('.tiers');
-  if (slot && tiers) slot.replaceWith(tiers);
   render(v);
+  const t = (a.tiers as Record<string, { line: string }>)[v.tier];
+  const tl = document.querySelector<HTMLElement>('[data-tier-line]'); if (tl) tl.textContent = t ? t.line : '';
   if (!v.first) { const h = document.querySelector<HTMLElement>('.hello'); if (h) h.textContent = 'Here is the direct read on your score.'; }
   document.title = 'Your results | Clear Confidence Assessment' + (v.first ? ' | ' + v.first : '');
 </script>
 
 <style>
-  .hello{font-family:var(--font-head);font-weight:700;font-size:1.15rem;margin-bottom:1.2rem}
+  .hero-score{padding:1rem 0 1.1rem}
+  .hero-score .kicker{font-size:.875rem;margin:0 0 .3rem}
+  .hero-score h1{font-size:2.5rem;line-height:1.1;margin:0}
+  .first{padding:.9rem 0 1.25rem}
+  .tierline{font-family:var(--font-head);font-weight:700;font-size:1.25rem;line-height:1.3;margin:0 0 .25rem;color:var(--ink)}
+  .tierline .k{color:var(--sienna);font-size:1rem}
+  .tline{font-size:1rem;line-height:1.5;color:var(--brown);margin:.9rem 0 0}
+  .act{margin:.9rem 0 0}
+  .act .btn{display:block;width:100%;text-align:center;padding:.85rem 1rem;min-height:52px}
+  .read{padding:1.5rem 0 1rem}
+  .read p{font-size:1rem;line-height:1.55}
+  .hello{font-family:var(--font-head);font-weight:700;font-size:1.25rem;line-height:1.3;margin:0 0 .9rem}
+  .tier[hidden]{display:none}
+  .tight p{font-size:1rem}
 </style>
