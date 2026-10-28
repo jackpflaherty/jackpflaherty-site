@@ -72,7 +72,7 @@ const all = [person, organization, website, ...schema];
   <link rel="preload" href="/fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   {all.map(s => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
-<body>
+<body class={flow ? 'flow' : undefined}>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQKGW9HK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="skip" href="#main">Skip to content</a>
   {flow ? (
