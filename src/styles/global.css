@@ -40,6 +40,8 @@ h3 .num{color:var(--sienna);margin-right:.55em}
 .btn.alt:hover{background:rgba(46,91,255,.08)}
 .btn.light{background:transparent;color:var(--latte);border-color:var(--latte)}
 .btn.light:hover{background:rgba(255,249,239,.12)}
+.btn.orange{background:#FF9447;border-color:#FF9447;color:var(--ink)}
+.btn.orange:hover{background:#FFA866;border-color:#FFA866}
 .btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.6rem}
 .dark{background:var(--ink);color:var(--latte)}
 .dark h1,.dark h2,.dark h3,.dark p,.dark li{color:var(--latte)}
@@ -174,6 +176,11 @@ body.flow main{flex:1 0 auto}
   .hero.home .tag2{font-size:1.15rem}
   .hero.home .tag3,.hero.home .problem,.hero.home .positions li{font-size:1.05rem}
 }
+/* home: "sat in those rooms" with the seated photo fading into the dark panel */
+.who .fade{position:relative;border-radius:var(--r);overflow:hidden}
+.who .fade img{display:block;width:100%;height:auto}
+.who .fade:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,26,14,0) 55%,rgba(42,26,14,.55) 85%,var(--ink) 100%),linear-gradient(180deg,rgba(42,26,14,0) 70%,rgba(42,26,14,.5) 100%);pointer-events:none}
+@media (max-width:860px){.who .fade:after{background:linear-gradient(180deg,rgba(42,26,14,0) 65%,var(--ink) 100%)}}
 /* home sections */
 .narrow-wide{max-width:50rem}
 .narrow-wide p{max-width:none}
