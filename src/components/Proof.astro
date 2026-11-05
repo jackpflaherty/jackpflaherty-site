@@ -17,7 +17,7 @@ const { quotes, events = defaultEvents, heading = 'Jack has spoken for' } = Astr
         </figure>
       ))}
     </div>
-    <p class="events"><span class="label">{heading}</span>{events.map((e, i) => <span class="ev">{i > 0 && <span class="dot" aria-hidden="true">·</span>}{e}</span>)}</p>
+    {events.length > 0 && <p class="events"><span class="label">{heading}</span>{events.map((e, i) => <span class="ev">{i > 0 && <span class="dot" aria-hidden="true">·</span>}{e}</span>)}</p>}
   </div>
 </section>
 
