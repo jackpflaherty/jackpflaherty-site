@@ -25,7 +25,9 @@
 /blogs/fear-is-not-a-control /blogs/fear-is-not-the-control 301
 
 # AI and Emerging Technology audience page renamed Technology (Nov 5 2026)
-/industries/ai-emerging-technology /industries/technology 301
+/industries/ai-emerging-technology /platforms 301
+/industries/technology /platforms 301
+/industries/entrepreneurs-and-owners /platforms 301
 
 # Advisory moved out of /keynote-speaker/ (Oct 27 2026)
 /keynote-speaker/board-advisor-ai-governance /advisory/board-and-leadership 301

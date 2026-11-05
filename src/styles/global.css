@@ -96,7 +96,7 @@ ul.checks li:before{content:"";position:absolute;left:0;top:.55em;width:.7rem;he
 .nav li.open .menu{display:flex}
 .nav .menu a{color:var(--latte);text-decoration:none;padding:.55rem 1.1rem;font-weight:700;white-space:nowrap}
 .nav .menu a:hover{background:rgba(255,249,239,.12)}
-.nav .menu .grp{display:block;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--latte);opacity:.7;padding:.7rem 1.1rem .25rem;line-height:1.2}
+.nav .menu .grp{display:block;font-family:var(--font-head);font-weight:700;font-size:12px;color:#FF9447;opacity:1;padding:.7rem 1.1rem .25rem;line-height:1.2}
 .nav .menu .grp:first-child{padding-top:.3rem}
 .nav .book{margin-left:.6rem;padding:.65rem 1.2rem}
 .nav .burger{display:none;background:none;border:2px solid var(--brown);border-radius:8px;padding:.4rem .6rem;color:var(--brown);font-weight:700;cursor:pointer}
