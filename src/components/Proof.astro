@@ -1,13 +1,11 @@
 ---
-// Proof band: three testimonials in the speaker's own words (frozen tier, verbatim) and the
-// "spoken for" row. Sits directly under the hero on the pages that sell. Event names are the
-// Verified speaking history in the Facts Ledger; client names appear only as testimonial attributions.
+// Proof band: three testimonials in the speaker's own words (frozen tier, verbatim). Sits directly under the hero
+// on the pages that sell. The "Jack has spoken for" row was removed Nov 5 2026 (Jack); client names appear only as testimonial attributions.
 interface Quote { q: string; who: string; role: string; }
-interface Props { quotes: Quote[]; events?: string[]; heading?: string; }
-const defaultEvents = ['HIMSS', 'IIA', 'ISACA', 'AHIA', 'NCSBN', 'Nursing World Conference', 'Tenable', "PwC's national Healthcare Risk Roundtable", 'Deloitte regional events'];
-const { quotes, events = defaultEvents, heading = 'Jack has spoken for' } = Astro.props;
+interface Props { quotes: Quote[]; }
+const { quotes } = Astro.props;
 ---
-<section class="proof" aria-label="What leaders say, and where Jack has spoken">
+<section class="proof" aria-label="What leaders say">
   <div class="wrap">
     <div class="quotes">
       {quotes.map(t => (
@@ -17,7 +15,6 @@ const { quotes, events = defaultEvents, heading = 'Jack has spoken for' } = Astr
         </figure>
       ))}
     </div>
-    {events.length > 0 && <p class="events"><span class="label">{heading}</span>{events.map((e, i) => <span class="ev">{i > 0 && <span class="dot" aria-hidden="true">·</span>}{e}</span>)}</p>}
   </div>
 </section>
 
@@ -31,9 +28,5 @@ const { quotes, events = defaultEvents, heading = 'Jack has spoken for' } = Astr
   blockquote p::after{content:close-quote}
   figcaption{font-size:.9rem;color:var(--brown);margin-top:auto}
   figcaption strong{color:var(--ink);font-weight:700}
-  .events{margin:1.5rem 0 0;font-size:.95rem;color:var(--brown);line-height:1.8;display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.2rem}
-  .events .label{font-family:var(--font-head);font-weight:700;color:var(--ink);margin-right:.6rem;white-space:nowrap}
-  .events .ev{white-space:nowrap}
-  .events .dot{margin:0 .55rem;color:var(--sienna)}
   @media (max-width:900px){.quotes{grid-template-columns:1fr}}
 </style>
