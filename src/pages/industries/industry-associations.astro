@@ -1,109 +1,81 @@
 ---
-import Pic from '../../components/Pic.astro';
-import Base from '../../layouts/Base.astro';
-import Faq from '../../components/Faq.astro';
-import Cta from '../../components/Cta.astro';
-import site from '../../data/site.json';
-import { faqSchema } from '../../lib/faq';
-const faqs = [
-  { q: 'Which audiences does this fit?', a: 'Health-system and nursing associations, accounting, advisory and legal professional bodies, audit and risk associations, and any conference where members make technology decisions they are accountable for.' },
-  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that lands on a member\'s desk. The method is the same for each, which is why it holds up across a mixed audience.' },
-  { q: 'Does Jack customize it for our members?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
-  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
-  { q: 'Can members take something away?', a: 'Three questions to ask before any technology decision, and one first move for the week they get back. Short enough to repeat without a slide. A half-day workshop can follow the keynote for chapters that want to work a live decision.' },
-  { q: 'Our date is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
-];
-const page = {
-  '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/industries/industry-associations', url: site.url + '/industries/industry-associations',
-  name: 'Association and Conference Keynote Speaker on Technology Decisions | Jack P. Flaherty',
-  description: 'Keynote speaker for associations and conferences. Jack P. Flaherty gives a conference audience one method they can repeat on the drive home.',
-  about: { '@id': site.url + '/#person' }
+// Industry Associations audience page. Draft copy from T2 Build Prompt v2 (Nov 5 2026), set verbatim. Jack approves each page.
+// The template and the standard blocks (buttons, the keynote card endings, the five standard FAQs, the close buttons,
+// the assessment block) are in src/components/AudiencePage.astro. Only this page's own copy is here.
+// Proof band: the prompt says "Unchanged from live" and the live page has none, so none is set. "What audiences and fellow speakers say" is unchanged from live.
+import AudiencePage from '../../components/AudiencePage.astro';
+const copy = {
+  "path": "/industries/industry-associations",
+  "title": "AI Governance Keynote Speaker for Associations and Conferences | Jack P. Flaherty",
+  "description": "AI governance keynote for associations and conferences. Jack P. Flaherty shows members how to make informed, accountable decisions on AI: when to adopt it, which technology, where to use it, how to govern it, and what to spend.",
+  "h1": "AI governance keynote speaker for associations and conferences",
+  "image": "jack-p-flaherty-keynote-stage-blue.jpg",
+  "imageAlt": "Jack P. Flaherty speaking on a conference stage lit in blue",
+  "position": "Helping associations show their members how to make informed, accountable decisions on AI: when to adopt it, which technology, where to use it, how to govern it, and what to spend.",
+  "problem": [
+    "A member calls with the question you keep hearing: we bought an AI tool, now what? They cannot say what it was bought to do or who owns it, and the people using it were never asked.",
+    "Every member faces the same five decisions: when to adopt AI, which technology to choose, where in the organization to use it, how to govern it, and how much to spend. Vendors will answer one of those for them.",
+    "Your program needs an AI session that gives members something to do when they get home, and a vendor demonstration will not do that."
+  ],
+  "adds": [
+    "Vendors show your members what AI can do. Jack shows them how to decide. He gives leaders one method for the five calls they have to make: when to adopt, which technology, where to use it, how to govern it, and what to spend. Each one is an informed decision that starts with the people who will use the tool, with a named leader held accountable for what it delivers and for the risk it carries.",
+    "Members leave with three questions and one first move."
+  ],
+  "firstButtons": "event",
+  "fearCard": {
+    "text": "When nobody owns the decision, fear makes it. Go slow to go fast: state what the AI is for, name the accountable owner, and build the governance that carries the rollout and the years of upkeep after it. Members leave with three questions to ask of any AI tool: who owns it, what was it for, and how will we know it worked. Built around the decision in front of your members, with versions for health-system leaders and for partners in accounting, advisory and law firms.",
+    "linkLabel": "See the keynote",
+    "linkHref": "/platforms#fear-is-not-the-control"
+  },
+  "builtFor": "Built for leadership summits and association conferences.",
+  "whyHeading": "Why associations book Jack",
+  "whyLead": [
+    "AI is the current wave of new technology, and it is not the first Jack has worked through. Over 25 years in risk and advisory, as a PwC Director and then as an interim executive, he has implemented, managed and audited the earlier ones: finance systems, medical records, cybersecurity, blockchain and data governance. He has seen those projects succeed and fail, and the difference each time was leadership, clear goals and a governance structure.",
+    "So he does not ask your members to fear AI. He asks them to respect it as new. It can be shaped to almost any job, more than any technology he has worked with. That makes it exciting, and precarious when it is built without strong governance. What he learned from those waves helps their organizations deploy AI faster, in control, and fitted to their own work."
+  ],
+  "whyBullets": [
+    "The takeaway is three questions and one first move, short enough to repeat without a slide.",
+    "He has spoken at HIMSS, the IIA, ISACA, AHIA, NCSBN, Tenable, the Nursing World Conference and Deloitte regional events.",
+    "At PwC he prepared and led the C-suite risk executives' discussions at the firm's national Payer Healthcare Risk Roundtable, twice a year for five years.",
+    "He led training for the Southern California HIMSS chapter, so he knows what a program chair needs from a speaker.",
+    "He has held the CGEIT (Certified in the Governance of Enterprise IT), CISSP and CISA certifications.",
+    "Every booking starts with a 30-minute discovery call about who is in the room."
+  ],
+  "whyImage": {
+    "src": "jack-p-flaherty-interview.jpg",
+    "alt": "Jack P. Flaherty in conversation at an interview table"
+  },
+  "saysHeading": "What audiences and fellow speakers say",
+  "says": [
+    {
+      "q": "Great presenter! Clear and concise. Informative.",
+      "who": "B.D.",
+      "role": "nursing regulator, NCSBN ICRS graduation"
+    },
+    {
+      "q": "Inspiring. Provides a framework.",
+      "who": "L.S.",
+      "role": "nursing conference attendee"
+    },
+    {
+      "q": "Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.",
+      "who": "Shola Richards",
+      "role": "keynote speaker and author, Go Together"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Who is this for?",
+      "a": "Association executives, program chairs and boards whose members are selecting AI or already living with it. It fits health-system and nursing associations, accounting, advisory and legal bodies, and audit and risk associations."
+    },
+    {
+      "q": "Is this a vendor session or a tool demonstration?",
+      "a": "Neither. Members get a way to judge any AI tool: what it is for, who is accountable for it, and how the people using it are heard. They can apply it the week they get back, whatever they bought."
+    }
+  ],
+  "faqHeading": "Questions program chairs ask",
+  "closeHeading": "Planning an annual conference, a chapter meeting or a leadership summit?",
+  "closeLine": "Tell Jack who is in the room and what AI decisions they are facing."
 };
 ---
-<Base title="Association and Conference Keynote Speaker on Technology Decisions | Jack P. Flaherty"
-  description="Keynote speaker for associations and conferences. Jack P. Flaherty gives a conference audience one method they can repeat on the drive home."
-  path="/industries/industry-associations" image="/images/jack-p-flaherty-keynote-stage-blue.jpg" schema={[page, faqSchema(faqs)]}>
-
-  <section class="dark">
-    <div class="wrap split rev top">
-      <div>
-        <h1>Keynote speaker for associations and conferences</h1>
-        <p class="lede">Your members have the tools and the training sessions. What most of them do not have is a way to decide, and the questions to ask before they commit.</p>
-        <p>Jack's keynote gives a conference audience one method they can repeat on the drive home, whether they run a unit, a practice or a board. He has spent 25 years in risk and advisory, 15 of them at the Big 4, in the rooms where those calls get made.</p>
-      </div>
-      <Pic src="jack-p-flaherty-keynote-stage-blue.jpg" alt="Jack P. Flaherty speaking on a conference stage lit in blue" />
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <h2>The keynotes</h2>
-      <div class="grid c2">
-        <div class="card">
-          <h3>Fear Is Not The Control</h3>
-          <p>Nobody owns the decision, so fear makes it. Go slow to go fast. Name the owner, state the goal, build the governance that carries the rollout. One talk, built for the decision in front of your members, with a version for health-system leaders and a version for partners in accounting, advisory and law firms. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
-          <p><a href="/platforms#fear-is-not-the-control">See the keynote</a></p>
-        </div>
-        <div class="card">
-          <h3>The Decision Switch</h3>
-          <p>The original keynote. Seven principles that turn a stalled decision into one the team will stand behind. Built for leadership summits and association conferences. 45 to 60 minutes.</p>
-          <p><a href="/platforms#the-decision-switch">See The Decision Switch</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap split top">
-      <div>
-        <h2>Why associations book Jack</h2>
-        <ul class="checks">
-          <li>Members leave with what they need to know about technology change, the questions they did not know to ask, and material they enjoy learning. Proven content, built for a conference audience that is living through change and uncertainty.</li>
-          <li>Has spoken at HIMSS, Deloitte regional events, PwC's national Healthcare Risk Roundtable, the IIA, ISACA, AHIA, Tenable, NCSBN and the Nursing World Conference.</li>
-          <li>Led training for the Southern California HIMSS chapter, so he knows what a chapter program chair needs from a speaker.</li>
-          <li>Served as acting enterprise risk and audit leader for a $10B health system and as a director at the Big 4. The stories are from the room, not the textbook.</li>
-          <li>Author of The Decision Switch. Writes The Clear Confidence Report.</li>
-        </ul>
-      </div>
-      <Pic src="jack-p-flaherty-interview.jpg" alt="Jack P. Flaherty in conversation at an interview table" />
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <h2>What audiences and fellow speakers say</h2>
-      <div class="grid c3">
-        <figure class="quote">
-          <blockquote>"Great presenter! Clear and concise. Informative."</blockquote>
-          <figcaption><strong>B.D.</strong>, nursing regulator, NCSBN ICRS graduation</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>"Inspiring. Provides a framework."</blockquote>
-          <figcaption><strong>L.S.</strong>, nursing conference attendee</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>"Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how."</blockquote>
-          <figcaption><strong>Shola Richards</strong>, keynote speaker and author, Go Together</figcaption>
-        </figure>
-      </div>
-      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <Faq items={faqs} heading="Questions program chairs ask" />
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <Cta text="Planning an annual conference, a chapter meeting or a leadership summit?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
-    </div>
-  </section>
-</Base>
-
-<style>
-  .quote { margin: 0; }
-</style>
+<AudiencePage {...copy} />
