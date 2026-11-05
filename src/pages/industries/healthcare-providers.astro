@@ -1,114 +1,92 @@
 ---
-import Pic from '../../components/Pic.astro';
-import Base from '../../layouts/Base.astro';
-import Proof from '../../components/Proof.astro';
-import Faq from '../../components/Faq.astro';
-import Cta from '../../components/Cta.astro';
-import site from '../../data/site.json';
-import { faqSchema } from '../../lib/faq';
-const faqs = [
-  { q: 'Who is this for?', a: 'Health-system executives, nurse leaders and the clinical and operational teams who decide which technology reaches the unit. Chief nursing officers, CIOs, CMIOs, quality and risk leaders, and the boards they report to.' },
-  { q: 'Is it an AI talk?', a: 'AI is in scope, but the talk is about any new technology that reaches a patient: an AI tool, a monitoring system, a new module in the record. The method is the same for each.' },
-  { q: 'Does Jack customize the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
-  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
-  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where clinical and operational teams apply the method to a technology decision they are facing now. It is quoted on the discovery call.' },
-  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
-];
-const page = {
-  '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/industries/healthcare-providers', url: site.url + '/industries/healthcare-providers',
-  name: 'Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty',
-  description: 'Jack P. Flaherty, former acting enterprise risk and audit leader for a $10B health system, speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not The Control.',
-  about: { '@id': site.url + '/#person' }
+// Healthcare audience page. Draft copy from T2 Build Prompt v2 (Nov 5 2026), set verbatim. Jack approves each page.
+// The template and the standard blocks (buttons, the keynote card endings, the five standard FAQs, the close buttons,
+// the assessment block) are in src/components/AudiencePage.astro. Only this page's own copy is here.
+// Proof band is unchanged from live. "What health-system leaders say" keeps the live three; the Palazzo quote is now the full sentence from the press and media page.
+import AudiencePage from '../../components/AudiencePage.astro';
+const copy = {
+  "path": "/industries/healthcare-providers",
+  "title": "AI Governance Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty",
+  "description": "AI governance keynote and advisory for health systems. Informed, accountable decisions on AI, and governed use by clinical teams, so the health system gets what it needed and is not put at risk.",
+  "h1": "AI governance keynote speaker for health systems and nurse leaders",
+  "image": "jack-p-flaherty-workshop-table.jpg",
+  "imageAlt": "Jack P. Flaherty leading a workshop with a leadership team around a table",
+  "position": "Helping health-system executives make informed, accountable decisions on AI and govern how their clinical teams use it, so clinicians and the board get what they needed and the health system is not put at risk.",
+  "problem": [
+    "A new AI tool arrives on the unit with a go-live date and a training video. Half the team is using it by Friday, and the other half is waiting for someone to say it is safe.",
+    "The health system has IT, compliance and a vendor contract. None of them can say what the tool was bought to do, or who owns it now that it is live. The nurse leader did not choose it and does not manage it, and she is the one standing next to the patient when it is wrong.",
+    "She saw the problem in the first week. She had nowhere to take it."
+  ],
+  "adds": [
+    "Jack helps executives govern AI before go-live and after it. Make an informed decision: state what the tool is for, and hear from the people at the bedside before it arrives. Then name the accountable executive, give the bedside a way to say what they see, and give the board reporting it can read, on results and on risk.",
+    "Jack has watched what happens without that inside a health system. A good platform. Nine years, millions spent, then switched off. The purchase was right. What failed came after it: nobody accountable for keeping the build true to the goal the board had funded, and no reporting the board could see."
+  ],
+  "proof": [
+    {
+      "q": "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!",
+      "who": "Bill Lazarus",
+      "role": "CTO, UCLA Health"
+    },
+    {
+      "q": "Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today’s workforce struggles with mental health and making confident decisions.",
+      "who": "Sheila Blackwell",
+      "role": "Healthcare Transformation Leader"
+    },
+    {
+      "q": "Inspiring. Provides a framework.",
+      "who": "Attendee",
+      "role": "NCSBN ICRS graduation keynote"
+    }
+  ],
+  "fearCard": {
+    "text": "Jack has watched decision-making teams, not surgical teams, save a life. Go slow to go fast: before an AI tool reaches the unit, state what it is for, name the accountable owner, and give the people at the bedside a way to say what they see. Leaders leave with three questions: who owns it, what was it for, and how will the board know it was a success. Built for leadership summits, nursing conferences and health-system association events.",
+    "linkLabel": "See the healthcare keynote",
+    "linkHref": "/keynote-speaker/fear-is-not-the-control-healthcare"
+  },
+  "builtFor": "Built for leadership summits, nursing conferences and health-system association events.",
+  "whyHeading": "Why health systems book Jack",
+  "whyLead": [
+    "AI is the current wave of new technology, and it is not the first Jack has worked through. Over 25 years in risk and advisory, including as a PwC Director and national leader for life sciences and healthcare risk, regulatory and digital assurance, he has implemented, managed and audited the earlier ones: medical records, cybersecurity, human resources platforms and data governance. He has seen those projects succeed and fail, and the difference each time was leadership, clear goals and a governance structure.",
+    "So he does not ask executives or nurse leaders to fear AI. He asks them to respect it as new. It can be shaped to almost any job, more than any technology he has worked with. That makes it exciting, and precarious when it is built without strong governance. What he learned from those waves helps a health system deploy AI faster, in control, and fitted to its own work."
+  ],
+  "whyBullets": [
+    "Served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.",
+    "Led a board-mandated cybersecurity program for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.",
+    "Principal consultant for California's first statewide health information exchange.",
+    "Has held the CGEIT (Certified in the Governance of Enterprise IT), CISSP and CISA certifications.",
+    "Has spoken at HIMSS, AHIA, NCSBN and the Nursing World Conference, and led training for the Southern California HIMSS chapter."
+  ],
+  "saysHeading": "What health-system leaders say",
+  "says": [
+    {
+      "q": "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!",
+      "who": "Bill Lazarus",
+      "role": "CTO, UCLA Health"
+    },
+    {
+      "q": "Great presenter! Clear and concise. Informative.",
+      "who": "B.D.",
+      "role": "nursing regulator, NCSBN ICRS graduation"
+    },
+    {
+      "q": "Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.",
+      "who": "Kierney Palazzo",
+      "role": "Internal Audit Manager, SCAN Health Plan"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Who is this for?",
+      "a": "Health-system executives, nurse leaders, and the clinical and operational teams who decide which AI reaches the unit. Executives leave knowing who owns each tool and what the board should see. Nurse leaders leave knowing how to find out who owns the tool on their unit, and where to take what they see."
+    },
+    {
+      "q": "We have IT, compliance and a vendor. What does Jack add?",
+      "a": "Each covers its part. IT installs the tool, compliance reviews the contract, and the vendor answers for the product. None of them decides what the tool is for on your units, or who hears the nurse who sees it go wrong. Jack helps executives name that owner and build that path."
+    }
+  ],
+  "faqHeading": "Questions meeting planners ask",
+  "closeHeading": "Who owns the AI that is already on the unit?",
+  "closeLine": "If nobody can say, that is the room this keynote is built for."
 };
-const proof = [
-  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
-  { q: "Jack has hit the mark again! Tackling an issue impacting virtually every industry and certainly within healthcare, a growing percentage of today’s workforce struggles with mental health and making confident decisions.", who: "Sheila Blackwell", role: "Healthcare Transformation Leader" },
-  { q: "Inspiring. Provides a framework.", who: "Attendee", role: "NCSBN ICRS graduation keynote" }
-];
 ---
-<Base title="Healthcare Keynote Speaker for Health Systems and Nurse Leaders | Jack P. Flaherty"
-  description="Jack P. Flaherty speaks to health-system executives and nurse leaders on making the call on new technology. Keynote: Fear Is Not The Control."
-  path="/industries/healthcare-providers" image="/images/jack-p-flaherty-workshop-table.jpg" schema={[page, faqSchema(faqs)]}>
-
-  <section class="dark">
-    <div class="wrap split rev">
-      <div>
-        <h1>Keynote speaker for health systems and nurse leaders</h1>
-        <p class="lede">A new tool shows up on the unit. Half the team is using it by Friday. The other half is waiting for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
-        <p>The health system has IT, compliance and a vendor contract. None of them owns that decision. Jack's keynote gives clinical and executive leaders one method they can repeat on the drive home: who owns it, what is it for, how will the board know it was a success. He has spent 25 years in risk and advisory, 15 of them at the Big 4, in the rooms where health-system technology decisions get made, defended and paid for.</p>
-      </div>
-      <Pic src="jack-p-flaherty-workshop-table.jpg" alt="Jack P. Flaherty leading a workshop with a leadership team around a table" />
-    </div>
-  </section>
-
-  <Proof quotes={proof} />
-
-  <section class="dark">
-    <div class="wrap">
-      <h2>The keynotes</h2>
-      <div class="grid c2">
-        <div class="card">
-          <h3>Fear Is Not The Control: Making the Call on New Technology When Patients Are Waiting</h3>
-          <p>Go slow to go fast. Name the owner, state the goal, build the governance that carries the rollout. Jack has watched decision-making teams, not surgical teams, save a life. Built for leadership summits, nursing conferences and health-system association events. 45 to 60 minutes, with a half-day workshop available after the keynote.</p>
-          <p><a href="/keynote-speaker/fear-is-not-the-control-healthcare">See the healthcare keynote</a></p>
-        </div>
-        <div class="card">
-          <h3>The Decision Switch</h3>
-          <p>The original keynote. Seven principles that turn a stalled decision into one the team will stand behind. Built for leadership summits, nursing conferences and health-system association events. 45 to 60 minutes.</p>
-          <p><a href="/platforms#the-decision-switch">See The Decision Switch</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Why health systems book Jack</h2>
-      <ul class="checks">
-        <li>Served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and the audit committee.</li>
-        <li>Led a board-mandated cybersecurity program for a $4B health system: built the board proposal, hired and managed the vendors, and closed the urgent gaps on a $2.5 million budget within one year.</li>
-        <li>Principal consultant for California's first statewide health information exchange.</li>
-        <li>Ran PwC's national Healthcare Risk Roundtable, a gathering of C-suite risk executives, twice a year for five years.</li>
-        <li>Has spoken at HIMSS, AHIA, NCSBN and the Nursing World Conference, and led training for the Southern California HIMSS chapter.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <h2>What health-system leaders say</h2>
-      <div class="grid c3">
-        <figure class="quote">
-          <blockquote>"Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!"</blockquote>
-          <figcaption><strong>Bill Lazarus</strong>, CTO, UCLA Health</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>"Great presenter! Clear and concise. Informative."</blockquote>
-          <figcaption><strong>B.D.</strong>, nursing regulator, NCSBN ICRS graduation</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote>"Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships."</blockquote>
-          <figcaption><strong>Kierney Palazzo</strong>, Internal Audit Manager, SCAN Health Plan</figcaption>
-        </figure>
-      </div>
-      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <Faq items={faqs} heading="Questions meeting planners ask" />
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <Cta text="Planning a leadership summit, a nursing conference or a board session?" primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
-    </div>
-  </section>
-</Base>
-
-<style>
-  .quote { margin: 0; }
-</style>
+<AudiencePage {...copy} />

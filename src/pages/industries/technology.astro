@@ -1,106 +1,90 @@
 ---
-import Pic from '../../components/Pic.astro';
-import Base from '../../layouts/Base.astro';
-import Faq from '../../components/Faq.astro';
-import Cta from '../../components/Cta.astro';
-import site from '../../data/site.json';
-import { faqSchema } from '../../lib/faq';
-const faqs = [
-  { q: 'Is this an AI keynote or a technology keynote?', a: 'A technology keynote that uses AI as the main example, because AI is what most rooms are deciding on now. The method applies to any new system, so it still works when the next technology arrives.' },
-  { q: 'Does Jack take a position on whether to adopt AI?', a: 'Yes. Adopt it on purpose. A named owner, a stated goal, governance built before the rollout, and reporting the board can see. A ban is not a control. Neither is fear.' },
-  { q: 'How technical does it get?', a: 'As technical as the room needs. Directors get the governance questions. Operators get the mechanics of ownership, goals and review. Nobody gets a tool demo.' },
-  { q: 'Can the board session be combined with the keynote?', a: 'Yes. The usual pattern is a keynote for the wider audience and a closed session with the board or executive team on the same day.' }
-];
-const page = {
-  '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/industries/technology', url: site.url + '/industries/technology',
-  name: 'AI and Emerging Technology Keynote Speaker | Jack P. Flaherty',
-  description: 'Jack P. Flaherty on deciding AI and emerging technology: name the owner, state the goal, build the governance that carries it. For boards and executives.',
-  about: { '@id': site.url + '/#person' }
+// Technology audience page. Draft copy from T2 Build Prompt v2 (Nov 5 2026), set verbatim. Jack approves each page.
+// The template and the standard blocks (buttons, the keynote card endings, the five standard FAQs, the close buttons,
+// the assessment block) are in src/components/AudiencePage.astro. Only this page's own copy is here.
+// Testimonials are borrowed, full quotes verbatim from the press and media page, with each person's real title and organization.
+import AudiencePage from '../../components/AudiencePage.astro';
+const copy = {
+  "path": "/industries/technology",
+  "title": "AI Governance Keynote Speaker for Technology Companies | Jack P. Flaherty",
+  "description": "AI governance keynote and advisory for technology executives. Informed, accountable decisions on AI, and governed use by your own teams, so the company gets what it needed and is not put at risk.",
+  "h1": "AI governance keynote speaker and advisor for technology companies",
+  "image": "jack-p-flaherty-teaching-whiteboard.jpg",
+  "imageAlt": "Jack P. Flaherty teaching at a whiteboard",
+  "position": "Helping technology executives make informed, accountable decisions on AI and govern how their own teams use it, so the company gets what it needed without being put at risk.",
+  "problem": [
+    "Leadership said every team would use AI this year. Engineering picked one assistant, support picked another, and sales pays for a third on a company card.",
+    "Usage is on a dashboard and it keeps going up. Nobody wrote down what the company wanted from any of it, or who decides what code and customer data may go in.",
+    "Your engineers can tell you which tools speed up the work and which ones create more of it to review. They were not in the room when the target was set."
+  ],
+  "adds": [
+    "Your platform team can deploy the tools and your security team can block the worst of them. Neither decides what the company is trying to get from AI, and neither is held accountable for the result.",
+    "Jack left PwC in 2021 to work with startups in fintech, blockchain and AI. He has seen fast companies skip a control they meant to add later, and he has seen what it cost them. Go slow to go fast is not a brake. Make the decision an informed one: state what each tool is for and hear from the engineers who use it. Then name the leader accountable for what it delivers and for the risk it carries."
+  ],
+  "proof": [
+    {
+      "q": "Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.",
+      "who": "Ray Sims",
+      "role": "Global Lead, Training and Education, IBM"
+    },
+    {
+      "q": "Jack delivered a much-needed education for our leaders. Jack's mission, to help leaders make better choices and lead with confidence, comes through loud and clear.",
+      "who": "Michael Parisi",
+      "role": "Head of Client Acquisition, Schellman"
+    },
+    {
+      "q": "I would recommend Jack to any company looking to gain market share during these turbulent times through increased operational efficiency or flawless execution.",
+      "who": "Ramesh Swamey",
+      "role": "Founder and Principal, Halifax West"
+    }
+  ],
+  "fearCard": {
+    "text": "Spot the ripple. The people using the tools see the problems first. This keynote shows leaders how to build a path for what their teams already know, and how to act on it: who owns it, what was it for, and how will we know it worked. Built for leadership offsites, company meetings and industry conferences.",
+    "linkLabel": "See the keynote",
+    "linkHref": "/platforms#fear-is-not-the-control"
+  },
+  "builtFor": "Built for leadership offsites, company meetings and industry conferences.",
+  "whyHeading": "Why technology leaders book Jack",
+  "whyLead": [
+    "AI is the current wave of new technology, and it is not the first Jack has worked through. Over 25 years in risk and advisory, as a PwC Director and then as an interim COO and risk advisor to fintech, digital-asset and growth-stage companies, he has implemented, managed and audited the earlier ones, from finance systems to blockchain. He has seen those projects succeed and fail, and the difference each time was leadership, clear goals and a governance structure.",
+    "So he does not ask technology leaders to fear AI. He asks them to respect it as new. It can be shaped to almost any job, more than any technology he has worked with. That makes it exciting, and precarious when it is built without strong governance. What he learned from those waves helps a company deploy AI faster, in control, and fitted to its own work."
+  ],
+  "whyBullets": [
+    "He has implemented and audited enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, medical records, and human resources.",
+    "He has held the CGEIT (Certified in the Governance of Enterprise IT), CISSP and CISA certifications.",
+    "Board and executive sessions are delivered by Jack himself, not by a team."
+  ],
+  "saysHeading": "What partners and leaders say about Jack",
+  "says": [
+    {
+      "q": "Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.",
+      "who": "Ray Sims",
+      "role": "Global Lead, Training and Education, IBM"
+    },
+    {
+      "q": "Jack delivered a much-needed education for our leaders. Jack's mission, to help leaders make better choices and lead with confidence, comes through loud and clear.",
+      "who": "Michael Parisi",
+      "role": "Head of Client Acquisition, Schellman"
+    },
+    {
+      "q": "I would recommend Jack to any company looking to gain market share during these turbulent times through increased operational efficiency or flawless execution.",
+      "who": "Ramesh Swamey",
+      "role": "Founder and Principal, Halifax West"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Who is this for?",
+      "a": "Technology executives, engineering and product leaders, and boards whose teams have been told to use AI. The managers who supervise the work should be in the room."
+    },
+    {
+      "q": "We already have an AI rollout plan. What does Jack add?",
+      "a": "A rollout plan says who gets which tool and when. Governance says what the company wants from it, who is accountable for it, and how engineers report what they see. Without that, the dashboard measures use and nobody measures results."
+    }
+  ],
+  "faqHeading": "Questions planners ask",
+  "closeHeading": "Who decides what your teams get from AI?",
+  "closeLine": "Tell Jack which tools are in use and who is in the room."
 };
 ---
-<Base title="AI and Emerging Technology Keynote Speaker | Jack P. Flaherty"
-  description="Jack P. Flaherty on deciding AI and emerging technology: name the owner, state the goal, build the governance that carries it. For boards and executives."
-  path="/industries/technology" image="/images/jack-p-flaherty-teaching-whiteboard.jpg" schema={[page, faqSchema(faqs)]} hero="/images/jack-p-flaherty-teaching-whiteboard.jpg">
-
-  <section class="dark">
-    <div class="wrap split top">
-      <div>
-        <h1>AI and emerging technology keynote speaker for the leaders who have to approve it</h1>
-        <p class="lede">A tool is already in use on the floor. Half the team found it on their own. Nobody has been asked to decide what it may do, so fear is deciding. Jack's keynote gives the executives, partners and directors who answer for that decision one method they can run on the next one: name the owner, state the goal, and build the governance that carries the rollout and the years after it.</p>
-        <h2>The decision nobody owns</h2>
-        <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
-        <p>Fear is not a control either. Banning a tool does not stop the work from happening. It moves the work somewhere you cannot see it.</p>
-      </div>
-      <Pic src="jack-p-flaherty-teaching-whiteboard.jpg" class="hero-img" alt="Jack P. Flaherty teaching at a whiteboard" loading="eager" fetchpriority="high" />
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Fear Is Not The Control</h2>
-      <p class="lede">Take fear out of your organization by making the goal clear, raising transparency, encouraging curious collaboration, and then stepping back to watch your teams flourish with technology.</p>
-      <div class="grid c2" style="margin-top:1.5rem">
-        <div class="card accent"><h3><span class="num">1.</span>A clear goal</h3><p>Say what you are trying to accomplish before you pick a tool.</p></div>
-        <div class="card accent"><h3><span class="num">2.</span>Governance built in</h3><p>Every technology project carries it from day one, and AI, large language models and agents most of all.</p></div>
-        <div class="card accent"><h3><span class="num">3.</span>A repeatable framework</h3><p>One way of developing AI work, so each project strengthens the foundation for the next.</p></div>
-        <div class="card accent"><h3><span class="num">4.</span>High-quality data</h3><p>Garbage in, garbage out. Decide what the system is allowed to learn from.</p></div>
-      </div>
-      <div class="questions">
-        <h3>The four questions a board can ask</h3>
-        <ol>
-          <li>What is this for, and how will we know it worked?</li>
-          <li>Who owns it, and what governance did it come with?</li>
-          <li>Is this the same way we did the last one, or a new way every time?</li>
-          <li>Where does its data come from, and would we stand behind it?</li>
-        </ol>
-        <p class="close">That is the whole method. It fits on one page, and a board can ask about it in four questions.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Where Jack has sat</h2>
-      <p>25 years in risk and advisory. 15 years at the Big 4, where he served as a director. Held CISSP, CISA and CGEIT.</p>
-      <p>He has implemented and audited enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, medical records, and human resources. He served as principal consultant for California's first statewide Health Information Exchange, led PwC's healthcare risk and digital assurance work as a director, and has been interim executive and advisor to startups in fintech, blockchain and AI.</p>
-      <p>He has sat with boards and audit committees while a new system went live, and he has seen which ones slept.</p>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <h2>Ways to bring this into the room</h2>
-      <div class="card">
-        <h3>Keynote: Fear Is Not The Control or The Decision Switch</h3>
-        <p>45 to 60 minutes, built for <a href="/keynote-speaker/fear-is-not-the-control-healthcare">health systems</a>, <a href="/keynote-speaker/fear-is-not-the-control-professional-services">professional services firms</a> or <a href="/industries/industry-associations">an association audience</a>, with one first move the room takes home.</p>
-        <h3 style="margin-top:1.4rem">Board and executive session</h3>
-        <p>A working session with the directors on the technology decision in front of them. <a href="/advisory/board-and-leadership">See board and leadership advisory</a>.</p>
-        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
-        <p><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <Faq items={faqs} heading="Questions planners ask" />
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <Cta text="Tell Jack which technology is on your agenda and who is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the keynote', href: '/platforms#fear-is-not-the-control'}} />
-    </div>
-  </section>
-</Base>
-
-<style>
-  .hero-img { width: 100%; height: auto; aspect-ratio: auto; object-fit: unset; }
-  .questions { margin-top: 2rem; padding-left: 2.5rem; }
-  .questions h3 { margin-bottom: .6rem; }
-  .questions ol { margin: 0; padding-left: 1.4rem; }
-  .questions li { margin: 0 0 .5rem; white-space: nowrap; }
-  .questions .close { margin: 1.4rem 0 0; max-width: none; white-space: nowrap; }
-  @media (max-width: 860px) { .questions { padding-left: 1rem; } .questions li, .questions .close { white-space: normal; } }
-</style>
+<AudiencePage {...copy} />

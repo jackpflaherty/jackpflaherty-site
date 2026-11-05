@@ -1,57 +1,94 @@
 ---
-// Entrepreneurs and Owners audience page. Placeholder until Jack's copy lands (Nov 5 2026): noindex, no claims
-// beyond the Facts Ledger. Swap the placeholder blocks for the copy and remove noindex when it is ready.
-import Pic from '../../components/Pic.astro';
-import Base from '../../layouts/Base.astro';
-import Cta from '../../components/Cta.astro';
-import site from '../../data/site.json';
-const page = {
-  '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/industries/entrepreneurs-and-owners', url: site.url + '/industries/entrepreneurs-and-owners',
-  name: 'Keynote Speaker for Entrepreneurs and Owners | Jack P. Flaherty',
-  description: 'Jack P. Flaherty speaks to founders and business owners on making the call on new technology when the cost of getting it wrong lands on them.',
-  about: { '@id': site.url + '/#person' }
+// Entrepreneurs & Owners audience page. Draft copy from T2 Build Prompt v2 (Nov 5 2026), set verbatim. Jack approves each page.
+// The template and the standard blocks (buttons, the keynote card endings, the five standard FAQs, the close buttons,
+// the assessment block) are in src/components/AudiencePage.astro. Only this page's own copy is here.
+// Testimonials are borrowed, full quotes verbatim from the press and media page, with each person's real title and organization.
+import AudiencePage from '../../components/AudiencePage.astro';
+const copy = {
+  "path": "/industries/entrepreneurs-and-owners",
+  "title": "AI Governance for Founders and Business Owners | Jack P. Flaherty",
+  "description": "AI governance for founders and business owners. Make informed, accountable decisions on AI and govern how your team uses it, so the business gets what it needed and is not put at risk. Keynote and advisory.",
+  "h1": "AI governance speaker and advisor for founders and business owners",
+  "image": "jack-p-flaherty-office-discussion.jpg",
+  "imageAlt": "Jack P. Flaherty in discussion in an office",
+  "position": "Helping founders and owners make informed, accountable decisions on AI and govern how their team uses it, on one page, so the business gets what it needed without being put at risk.",
+  "problem": [
+    "Every vendor says you are already behind. Your bookkeeper uses one AI tool, your marketing contractor uses another, and some of your people pay for a third on their own cards. You never chose any of them.",
+    "There is no IT department to ask and no risk team to check, so if a tool leaks a customer list or gets a quote wrong, your name is on it.",
+    "Your team knows which tools save time and which ones create extra work. You have not had the hour to ask, and they have had no reason to tell you."
+  ],
+  "adds": [
+    "You do not need a department to govern AI. You need an informed decision and a name beside it, on one page: what each tool is for, who is accountable for it, what never goes into it, and who checks the work before a customer sees it. Jack helps owners write that page and keep it true as the business grows.",
+    "A client of Jack's had never required a second signature on payments, and its accounts were emptied. A better tool would not have prevented that. A decision written down in advance would have."
+  ],
+  "proof": [
+    {
+      "q": "I would recommend Jack to any company looking to gain market share during these turbulent times through increased operational efficiency or flawless execution.",
+      "who": "Ramesh Swamey",
+      "role": "Founder and Principal, Halifax West"
+    },
+    {
+      "q": "Want to cut through the Gordian knot of a tough situation? Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.",
+      "who": "Jason Emmons",
+      "role": "Partner, Baker Tilly"
+    },
+    {
+      "q": "Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.",
+      "who": "Shola Richards",
+      "role": "keynote speaker and author, Go Together"
+    }
+  ],
+  "fearCard": {
+    "text": "Go slow to go fast. Before you pay for the next AI tool, state what it is for, name who is accountable for it, and agree what your people never put into it. Owners leave with three questions: who owns it, what was it for, and how will we know it worked. Built for owner groups, company events and industry association meetings.",
+    "linkLabel": "See the keynote",
+    "linkHref": "/platforms#fear-is-not-the-control"
+  },
+  "builtFor": "Built for owner groups, company events and industry association meetings.",
+  "whyHeading": "Why owners book Jack",
+  "whyLead": [
+    "AI is the current wave of new technology, and it is not the first Jack has worked through. Over 25 years in risk and advisory, as a PwC Director and then as a founder and interim COO, he has implemented, managed and audited the earlier ones: finance systems, cybersecurity, blockchain and data governance. He has seen those projects succeed and fail, and the difference each time was leadership, clear goals and a governance structure.",
+    "So he does not ask owners to fear AI. He asks them to respect it as new. It can be shaped to almost any job, more than any technology he has worked with. That makes it exciting, and precarious when it is built without strong governance. What he learned from those waves helps a business deploy AI faster, in control, and fitted to its own work."
+  ],
+  "whyBullets": [
+    "He founded and ran his own consulting firm after a layoff. He knows the decision is yours, and so is the bill.",
+    "As an interim COO and risk advisor, he has built governance and risk frameworks for growth-stage companies.",
+    "He has held the CGEIT (Certified in the Governance of Enterprise IT), CISSP and CISA certifications.",
+    "Advice comes from Jack himself, not from a team."
+  ],
+  "saysHeading": "What founders, partners and leaders say about Jack",
+  "says": [
+    {
+      "q": "I would recommend Jack to any company looking to gain market share during these turbulent times through increased operational efficiency or flawless execution.",
+      "who": "Ramesh Swamey",
+      "role": "Founder and Principal, Halifax West"
+    },
+    {
+      "q": "Want to cut through the Gordian knot of a tough situation? Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.",
+      "who": "Jason Emmons",
+      "role": "Partner, Baker Tilly"
+    },
+    {
+      "q": "Want to change the world? Start by learning how to make the best decisions that take you to where you want to go. Jack shows you how.",
+      "who": "Shola Richards",
+      "role": "keynote speaker and author, Go Together"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Who is this for?",
+      "a": "Founders and owner-operators of small and mid-sized businesses, and the managers who run the team day to day."
+    },
+    {
+      "q": "Are we too small for AI governance?",
+      "a": "No. For a small company it fits on one page: what each tool is for, who is accountable for it, what never goes into it, and who checks the work before a customer sees it."
+    },
+    {
+      "q": "Will Jack recommend specific tools?",
+      "a": "No. The work is how you select a tool and govern it, whatever you buy."
+    }
+  ],
+  "closeHeading": "Who in your company decides which AI tool is next?",
+  "closeLine": "If the answer is everyone, start with a 30-minute call."
 };
 ---
-<Base title="Keynote Speaker for Entrepreneurs and Owners | Jack P. Flaherty"
-  description="Jack P. Flaherty speaks to founders and business owners on making the call on new technology when the cost of getting it wrong lands on them."
-  path="/industries/entrepreneurs-and-owners" image="/images/jack-p-flaherty-office-discussion.jpg" schema={[page]} noindex>
-
-  <section class="dark">
-    <div class="wrap split rev">
-      <div>
-        <p class="kicker">Audience. Copy in progress.</p>
-        <h1>Keynote speaker for entrepreneurs and owners</h1>
-        <p class="lede">For the founders and owners who decide on new technology without a committee, and who carry the cost when it goes wrong.</p>
-        <p>Copy in progress. Jack is writing this page. The platforms he brings to this room are on the <a href="/platforms">Platforms page</a>.</p>
-      </div>
-      <Pic src="jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion in an office" />
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Where Jack has sat</h2>
-      <p>25 years in risk and advisory. 15 years at the Big 4, where he served as a director. Interim executive and advisor to startups in fintech, blockchain and AI, and the author of The Decision Switch.</p>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <h2>Ways to bring this into the room</h2>
-      <div class="card">
-        <h3>Keynote</h3>
-        <p>45 to 60 minutes, live or virtual, built for the room on a 30-minute discovery call. <a href="/platforms">See the platforms</a>.</p>
-        <h3 style="margin-top:1.4rem">Department workshop</h3>
-        <p>Two half-day sessions where the team ranks what to automate first and writes the plan. <a href="/workshops/the-team-writes-the-plan">See The Team Writes the Plan</a>.</p>
-        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <Cta text="Tell Jack which decision is in front of you and who else is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the platforms', href: '/platforms'}} />
-    </div>
-  </section>
-</Base>
+<AudiencePage {...copy} />

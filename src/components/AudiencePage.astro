@@ -1,0 +1,148 @@
+---
+// Audience page template (T2 Build Prompt v2, Nov 5 2026). Every audience page runs the same nine parts in this order:
+// search fields, first screen, proof band, the keynotes, why they book Jack, what they say, FAQ, the close, assessment.
+// The standard blocks are written here once (first-screen and close buttons, the ending of the Fear Is Not The Control
+// card, The Decision Switch card, the five standard FAQs, the assessment block). Each page file carries only its own
+// copy, set verbatim from the prompt. The WebPage schema description is the meta description string.
+import Pic from './Pic.astro';
+import Base from '../layouts/Base.astro';
+import Proof from './Proof.astro';
+import Faq from './Faq.astro';
+import Cta from './Cta.astro';
+import Assessment from './Assessment.astro';
+import site from '../data/site.json';
+import { faqSchema } from '../lib/faq';
+
+interface Quote { q: string; who: string; role: string }
+interface Props {
+  path: string;
+  title: string;
+  description: string;
+  h1: string;
+  image: string;
+  imageAlt: string;
+  position: string;
+  problem: string[];
+  adds: string[];
+  // 'event' is the Associations pair: Book a discovery call and Send the event details.
+  firstButtons?: 'standard' | 'event';
+  proof?: Quote[];
+  fearCard: { text: string; linkLabel: string; linkHref: string };
+  builtFor: string;
+  whyHeading: string;
+  whyLead: string[];
+  whyBullets: string[];
+  whyImage?: { src: string; alt: string };
+  saysHeading: string;
+  says: Quote[];
+  faqs: { q: string; a: string }[];
+  faqHeading?: string;
+  closeHeading: string;
+  closeLine: string;
+}
+const { path, title, description, h1, image, imageAlt, position, problem, adds, firstButtons = 'standard', proof, fearCard, builtFor,
+  whyHeading, whyLead, whyBullets, whyImage, saysHeading, says, faqs, faqHeading, closeHeading, closeLine } = Astro.props;
+
+const standardFaqs = [
+  { q: 'What is AI governance, in plain terms?', a: 'Leaders make informed decisions about AI and are held accountable for them. They also govern how their own people use it, so the organization gets what it needed from the tools and is not put at risk. In practice that is five things, written down. What each AI tool is for. Which leader is accountable for it. What your people may and may not put into it. How the people using it report what they see. What leadership checks to know it is working.' },
+  { q: 'Does Jack customize the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where the people in the room apply the method to an AI decision they are facing now. It is quoted on the discovery call.' },
+  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
+const allFaqs = [...faqs, ...standardFaqs];
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + path, url: site.url + path,
+  name: title,
+  description,
+  about: { '@id': site.url + '/#person' }
+};
+const second = firstButtons === 'event' ? { label: 'Send the event details', href: '/book-jack' } : { label: 'Book Jack', href: '/book-jack' };
+---
+<Base title={title} description={description} path={path} image={'/images/' + image} schema={[page, faqSchema(allFaqs)]}>
+
+  <!-- First screen: the H1 runs the full width so the search string sits on two lines, then position line, problem, what Jack adds, two buttons. -->
+  <section class="dark first">
+    <div class="wrap">
+      <h1>{h1}</h1>
+      <div class="split top">
+        <div>
+          <p class="lede">{position}</p>
+          {problem.map(p => <p>{p}</p>)}
+          {adds.map(p => <p>{p}</p>)}
+          <div class="btns"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn light" href={second.href}>{second.label}</a></div>
+        </div>
+        <Pic src={image} alt={imageAlt} loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  {proof && <Proof quotes={proof} />}
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>The keynotes</h2>
+      <div class="grid c2">
+        <div class="card">
+          <h3>Fear Is Not The Control</h3>
+          <p>{fearCard.text} 45 to 60 minutes. A half-day workshop can follow. Ask on the call.</p>
+          <p><a href={fearCard.linkHref}>{fearCard.linkLabel}</a></p>
+        </div>
+        <div class="card">
+          <h3>The Decision Switch</h3>
+          <p>The original keynote. Seven principles that turn a stalled decision into one the team will stand behind. {builtFor} 45 to 60 minutes.</p>
+          <p><a href="/platforms#the-decision-switch">See The Decision Switch</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class={whyImage ? 'wrap split top' : 'wrap'}>
+      <div>
+        <h2>{whyHeading}</h2>
+        {whyLead.map(p => <p>{p}</p>)}
+        <ul class="checks">
+          {whyBullets.map(b => <li>{b}</li>)}
+        </ul>
+      </div>
+      {whyImage && <Pic src={whyImage.src} alt={whyImage.alt} />}
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>{saysHeading}</h2>
+      <div class="grid c3">
+        {says.map(t => (
+          <figure class="quote">
+            <blockquote>"{t.q}"</blockquote>
+            <figcaption><strong>{t.who}</strong>, {t.role}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <p style="margin-top:1.4rem"><a href="/press-media">More testimonials and media</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <Faq items={allFaqs} heading={faqHeading} />
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta heading={closeHeading} text={closeLine} primary={{label: 'Book a discovery call', href: site.calendly}} secondary={{label: 'Send the event details', href: '/book-jack'}} />
+    </div>
+  </section>
+
+  <Assessment />
+</Base>
+
+<style>
+  .quote { margin: 0; }
+  .first h1 { font-size: clamp(2rem, 3.9vw, 2.9rem); max-width: 58rem; margin-bottom: .8em; }
+  .first .lede { margin-bottom: 1.2em; }
+</style>

@@ -1,58 +1,89 @@
 ---
-// Financial Services audience page. Placeholder until Jack's copy lands (Nov 5 2026): noindex, no claims
-// beyond the Facts Ledger. Swap the placeholder blocks for the copy and remove noindex when it is ready.
-import Pic from '../../components/Pic.astro';
-import Base from '../../layouts/Base.astro';
-import Cta from '../../components/Cta.astro';
-import site from '../../data/site.json';
-const page = {
-  '@context': 'https://schema.org', '@type': 'WebPage',
-  '@id': site.url + '/industries/financial-services', url: site.url + '/industries/financial-services',
-  name: 'Financial Services Keynote Speaker | Jack P. Flaherty',
-  description: 'Jack P. Flaherty speaks to financial services boards and leadership teams on making the call on new technology.',
-  about: { '@id': site.url + '/#person' }
+// Financial Services audience page. Draft copy from T2 Build Prompt v2 (Nov 5 2026), set verbatim. Jack approves each page.
+// The template and the standard blocks (buttons, the keynote card endings, the five standard FAQs, the close buttons,
+// the assessment block) are in src/components/AudiencePage.astro. Only this page's own copy is here.
+// Testimonials are borrowed, full quotes verbatim from the press and media page, with each person's real title and organization.
+import AudiencePage from '../../components/AudiencePage.astro';
+const copy = {
+  "path": "/industries/financial-services",
+  "title": "AI Governance Keynote Speaker for Banks, Credit Unions and Insurers | Jack P. Flaherty",
+  "description": "AI governance keynote and board advisory for banks, credit unions and insurers. Informed, accountable decisions on AI, and governed use by your own teams, so the institution gets what it needed and is not put at risk.",
+  "h1": "AI governance keynote speaker and board advisor for banks, credit unions and insurers",
+  "image": "jack-p-flaherty-board-advisory-sepia.jpg",
+  "imageAlt": "Jack P. Flaherty in a board advisory conversation",
+  "position": "Helping bank, credit union and insurance executives make informed, accountable decisions on AI and govern how their own teams use it, so the institution gets what it needed without being put at risk.",
+  "problem": [
+    "Every team in the institution now has AI in something it uses. The fraud desk has a vendor model, lending has a score inside the new platform, and staff across the institution draft with a chatbot nobody approved.",
+    "Each tool cleared procurement on its own. No single committee can say what all of them were bought to do, who owns each one, or how you would switch one off. Those are the questions an examiner asks.",
+    "Your analysts and branch staff see the false positives first. Their notes go into a queue that never reaches the risk committee."
+  ],
+  "adds": [
+    "Your model risk team validates models and your vendors answer for their own products. Neither makes the decision about which AI your people should be using, and neither is held accountable for it.",
+    "Jack works with executives and audit committees on that layer: one inventory of every AI tool in use, an informed decision and a named accountable executive for each, and a path from the front line to the risk committee. Then mind the drift, so somebody keeps each tool true to the purpose it was approved for."
+  ],
+  "proof": [
+    {
+      "q": "What would the world be like if we had a system to make better decisions? Jack delivers a practical framework to keep you on track and lead you to the best outcomes.",
+      "who": "Charles Todd",
+      "role": "Principal, Deloitte"
+    },
+    {
+      "q": "Jack delivered a much-needed education for our leaders. Jack's mission, to help leaders make better choices and lead with confidence, comes through loud and clear.",
+      "who": "Michael Parisi",
+      "role": "Head of Client Acquisition, Schellman"
+    },
+    {
+      "q": "Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.",
+      "who": "Kierney Palazzo",
+      "role": "Internal Audit Manager, SCAN Health Plan"
+    }
+  ],
+  "fearCard": {
+    "text": "Mind the drift. Over months and years, a tool that was right at approval wanders from its purpose. This keynote shows leaders how to keep someone accountable for each AI tool their people use, with reporting the board can read: who owns it, what was it for, and how will the board know it was a success. Built for leadership meetings, board retreats and industry association events.",
+    "linkLabel": "See the keynote",
+    "linkHref": "/platforms#fear-is-not-the-control"
+  },
+  "builtFor": "Built for leadership meetings, board retreats and industry association events.",
+  "whyHeading": "Why financial institutions book Jack",
+  "whyLead": [
+    "AI is the current wave of new technology, and it is not the first Jack has worked through. He started on Morgan Stanley's derivatives trading desk in New York. In 25 years in risk and advisory since, as a PwC Director and then as an interim COO for fintech and digital-asset companies, he has implemented, managed and audited the earlier ones: finance systems, cybersecurity, blockchain and data governance. He has seen those projects succeed and fail, and the difference each time was leadership, clear goals and a governance structure.",
+    "So he does not ask executives and directors to fear AI. He asks them to respect it as new. It can be shaped to almost any job, more than any technology he has worked with. That makes it exciting, and precarious when it is built without strong governance. What he learned from those waves helps an institution deploy AI faster, in control, and fitted to its own work."
+  ],
+  "whyBullets": [
+    "His record includes a sole-sourced, $2.5 million data governance implementation for a $15B financial institution.",
+    "He has held the CGEIT (Certified in the Governance of Enterprise IT), CISSP and CISA certifications, and has spoken for the IIA and ISACA.",
+    "Board and leadership advisory is delivered by Jack himself, not by a team."
+  ],
+  "saysHeading": "What partners and leaders say about Jack",
+  "says": [
+    {
+      "q": "What would the world be like if we had a system to make better decisions? Jack delivers a practical framework to keep you on track and lead you to the best outcomes.",
+      "who": "Charles Todd",
+      "role": "Principal, Deloitte"
+    },
+    {
+      "q": "Jack delivered a much-needed education for our leaders. Jack's mission, to help leaders make better choices and lead with confidence, comes through loud and clear.",
+      "who": "Michael Parisi",
+      "role": "Head of Client Acquisition, Schellman"
+    },
+    {
+      "q": "Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.",
+      "who": "Kierney Palazzo",
+      "role": "Internal Audit Manager, SCAN Health Plan"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Who is this for?",
+      "a": "Executives, directors and audit and risk committee members at banks, credit unions, insurers and wealth managers, and the leaders who supervise the staff using AI every day."
+    },
+    {
+      "q": "Does this replace our model risk program?",
+      "a": "No. It sits above it. Model risk validates the models. Jack works with the executives and directors who decide which AI their people use, what it is for, and who is accountable for it."
+    }
+  ],
+  "closeHeading": "If an examiner asked tomorrow, who would answer for the AI your people use?",
+  "closeLine": "Start with a 30-minute call about the decision in front of your board."
 };
 ---
-<Base title="Financial Services Keynote Speaker | Jack P. Flaherty"
-  description="Jack P. Flaherty speaks to financial services boards and leadership teams on making the call on new technology."
-  path="/industries/financial-services" image="/images/jack-p-flaherty-board-advisory-sepia.jpg" schema={[page]} noindex>
-
-  <section class="dark">
-    <div class="wrap split rev">
-      <div>
-        <p class="kicker">Audience. Copy in progress.</p>
-        <h1>Keynote speaker for financial services</h1>
-        <p class="lede">For the boards and leadership teams in banking, asset management, fintech and digital assets who have to decide on new technology and answer for it later.</p>
-        <p>Copy in progress. Jack is writing this page. The platforms he brings to this room are on the <a href="/platforms">Platforms page</a>.</p>
-      </div>
-      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in a board advisory conversation" />
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Where Jack has sat</h2>
-      <p>25 years in risk and advisory. 15 years at the Big 4, where he served as a director. Held CISSP, CISA and CGEIT.</p>
-      <p>He has implemented and audited enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, and has been interim executive and advisor to startups in fintech, blockchain and AI.</p>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <h2>Ways to bring this into the room</h2>
-      <div class="card">
-        <h3>Keynote</h3>
-        <p>45 to 60 minutes, live or virtual, built for the room on a 30-minute discovery call. <a href="/platforms">See the platforms</a>.</p>
-        <h3 style="margin-top:1.4rem">Board and executive session</h3>
-        <p>A working session with the directors on the technology decision in front of them. <a href="/advisory/board-and-leadership">See board and leadership advisory</a>.</p>
-        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="tight">
-    <div class="wrap">
-      <Cta text="Tell Jack which technology is on your agenda and who is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the platforms', href: '/platforms'}} />
-    </div>
-  </section>
-</Base>
+<AudiencePage {...copy} />
