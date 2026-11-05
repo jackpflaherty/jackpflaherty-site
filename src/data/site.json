@@ -24,24 +24,23 @@
       "label": "Speaking",
       "groups": [
         {
-          "label": "Keynotes",
+          "label": "Platforms",
           "items": [
             {
-              "label": "Fear Is Not A Control",
-              "href": "/keynote-speaker/fear-is-not-a-control"
+              "label": "AI Governance",
+              "href": "/platforms#ai-governance"
+            },
+            {
+              "label": "Fear Is Not The Control",
+              "href": "/platforms#fear-is-not-the-control"
+            },
+            {
+              "label": "Spot The Ripple",
+              "href": "/platforms#spot-the-ripple"
             },
             {
               "label": "The Decision Switch",
-              "href": "/keynote-speaker/the-decision-switch"
-            }
-          ]
-        },
-        {
-          "label": "Workshops",
-          "items": [
-            {
-              "label": "The Team Writes the Plan",
-              "href": "/workshops/the-team-writes-the-plan"
+              "href": "/platforms#the-decision-switch"
             }
           ]
         },
@@ -53,16 +52,24 @@
               "href": "/industries/professional-services-accounting-consulting"
             },
             {
-              "label": "Health Systems",
-              "href": "/industries/healthcare-providers"
-            },
-            {
               "label": "Associations",
               "href": "/industries/industry-associations"
             },
             {
-              "label": "AI and Emerging Technology",
-              "href": "/industries/ai-emerging-technology"
+              "label": "Healthcare",
+              "href": "/industries/healthcare-providers"
+            },
+            {
+              "label": "Financial Services",
+              "href": "/industries/financial-services"
+            },
+            {
+              "label": "Technology",
+              "href": "/industries/technology"
+            },
+            {
+              "label": "Entrepreneurs & Owners",
+              "href": "/industries/entrepreneurs-and-owners"
             }
           ]
         }
@@ -70,7 +77,26 @@
     },
     {
       "label": "Advisory",
-      "href": "/advisory/board-and-leadership"
+      "groups": [
+        {
+          "label": "Advisory",
+          "items": [
+            {
+              "label": "Board and Leadership Advisory",
+              "href": "/advisory/board-and-leadership"
+            }
+          ]
+        },
+        {
+          "label": "Workshops",
+          "items": [
+            {
+              "label": "The Team Writes the Plan",
+              "href": "/workshops/the-team-writes-the-plan"
+            }
+          ]
+        }
+      ]
     },
     {
       "label": "Toolkit",

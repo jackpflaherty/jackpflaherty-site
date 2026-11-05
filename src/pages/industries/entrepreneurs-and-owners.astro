@@ -1,0 +1,57 @@
+---
+// Entrepreneurs and Owners audience page. Placeholder until Jack's copy lands (Nov 5 2026): noindex, no claims
+// beyond the Facts Ledger. Swap the placeholder blocks for the copy and remove noindex when it is ready.
+import Pic from '../../components/Pic.astro';
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/entrepreneurs-and-owners', url: site.url + '/industries/entrepreneurs-and-owners',
+  name: 'Keynote Speaker for Entrepreneurs and Owners | Jack P. Flaherty',
+  description: 'Jack P. Flaherty speaks to founders and business owners on making the call on new technology when the cost of getting it wrong lands on them.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Keynote Speaker for Entrepreneurs and Owners | Jack P. Flaherty"
+  description="Jack P. Flaherty speaks to founders and business owners on making the call on new technology when the cost of getting it wrong lands on them."
+  path="/industries/entrepreneurs-and-owners" image="/images/jack-p-flaherty-office-discussion.jpg" schema={[page]} noindex>
+
+  <section class="dark">
+    <div class="wrap split rev">
+      <div>
+        <p class="kicker">Audience. Copy in progress.</p>
+        <h1>Keynote speaker for entrepreneurs and owners</h1>
+        <p class="lede">For the founders and owners who decide on new technology without a committee, and who carry the cost when it goes wrong.</p>
+        <p>Copy in progress. Jack is writing this page. The platforms he brings to this room are on the <a href="/platforms">Platforms page</a>.</p>
+      </div>
+      <Pic src="jack-p-flaherty-office-discussion.jpg" alt="Jack P. Flaherty in discussion in an office" />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Where Jack has sat</h2>
+      <p>25 years in risk and advisory. 15 years at the Big 4, where he served as a director. Interim executive and advisor to startups in fintech, blockchain and AI, and the author of The Decision Switch.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>Ways to bring this into the room</h2>
+      <div class="card">
+        <h3>Keynote</h3>
+        <p>45 to 60 minutes, live or virtual, built for the room on a 30-minute discovery call. <a href="/platforms">See the platforms</a>.</p>
+        <h3 style="margin-top:1.4rem">Department workshop</h3>
+        <p>Two half-day sessions where the team ranks what to automate first and writes the plan. <a href="/workshops/the-team-writes-the-plan">See The Team Writes the Plan</a>.</p>
+        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Tell Jack which decision is in front of you and who else is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the platforms', href: '/platforms'}} />
+    </div>
+  </section>
+</Base>
