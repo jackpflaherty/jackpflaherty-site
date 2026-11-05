@@ -1,0 +1,58 @@
+---
+// Financial Services audience page. Placeholder until Jack's copy lands (Nov 5 2026): noindex, no claims
+// beyond the Facts Ledger. Swap the placeholder blocks for the copy and remove noindex when it is ready.
+import Pic from '../../components/Pic.astro';
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../data/site.json';
+const page = {
+  '@context': 'https://schema.org', '@type': 'WebPage',
+  '@id': site.url + '/industries/financial-services', url: site.url + '/industries/financial-services',
+  name: 'Financial Services Keynote Speaker | Jack P. Flaherty',
+  description: 'Jack P. Flaherty speaks to financial services boards and leadership teams on making the call on new technology.',
+  about: { '@id': site.url + '/#person' }
+};
+---
+<Base title="Financial Services Keynote Speaker | Jack P. Flaherty"
+  description="Jack P. Flaherty speaks to financial services boards and leadership teams on making the call on new technology."
+  path="/industries/financial-services" image="/images/jack-p-flaherty-board-advisory-sepia.jpg" schema={[page]} noindex>
+
+  <section class="dark">
+    <div class="wrap split rev">
+      <div>
+        <p class="kicker">Audience. Copy in progress.</p>
+        <h1>Keynote speaker for financial services</h1>
+        <p class="lede">For the boards and leadership teams in banking, asset management, fintech and digital assets who have to decide on new technology and answer for it later.</p>
+        <p>Copy in progress. Jack is writing this page. The platforms he brings to this room are on the <a href="/platforms">Platforms page</a>.</p>
+      </div>
+      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in a board advisory conversation" />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Where Jack has sat</h2>
+      <p>25 years in risk and advisory. 15 years at the Big 4, where he served as a director. Held CISSP, CISA and CGEIT.</p>
+      <p>He has implemented and audited enterprise systems spanning cybersecurity, finance, blockchain, AI and data governance, and has been interim executive and advisor to startups in fintech, blockchain and AI.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>Ways to bring this into the room</h2>
+      <div class="card">
+        <h3>Keynote</h3>
+        <p>45 to 60 minutes, live or virtual, built for the room on a 30-minute discovery call. <a href="/platforms">See the platforms</a>.</p>
+        <h3 style="margin-top:1.4rem">Board and executive session</h3>
+        <p>A working session with the directors on the technology decision in front of them. <a href="/advisory/board-and-leadership">See board and leadership advisory</a>.</p>
+        <p>Both start with a <a href={site.calendly} target="_blank" rel="noopener">discovery call</a>. Jack replies within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Cta text="Tell Jack which technology is on your agenda and who is in the room." primary={{label: 'Book Jack', href: '/book-jack'}} secondary={{label: 'See the platforms', href: '/platforms'}} />
+    </div>
+  </section>
+</Base>

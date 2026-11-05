@@ -1,0 +1,316 @@
+---
+// Platforms: one page, four platforms, each reached from the Speaking menu by its section anchor.
+// Section order and structure (Jack's instruction, Nov 5 2026): the problem, what the platform does,
+// three outcomes, a closing summary. AI Governance and Spot The Ripple carry placeholder copy until
+// Jack's copy lands. Fear Is Not The Control and The Decision Switch carry the copy from their retired pages.
+import Pic from '../components/Pic.astro';
+import Base from '../layouts/Base.astro';
+import Proof from '../components/Proof.astro';
+import Assessment from '../components/Assessment.astro';
+import Hero from '../components/Hero.astro';
+import Faq from '../components/Faq.astro';
+import site from '../data/site.json';
+import { faqSchema } from '../lib/faq';
+const platforms = [
+  { id: 'ai-governance', label: 'AI Governance' },
+  { id: 'fear-is-not-the-control', label: 'Fear Is Not The Control' },
+  { id: 'spot-the-ripple', label: 'Spot The Ripple' },
+  { id: 'the-decision-switch', label: 'The Decision Switch' }
+];
+const faqs = [
+  { q: 'Who is this for?', a: 'Professional services partners approving AI tools their clients and their insurers will stand behind, and health-system executives and nurse leaders deciding on new clinical technology. Event producers and program chairs book Jack for both rooms.' },
+  { q: 'Which platform should we book?', a: 'Fear Is Not The Control when the room is deciding on a specific technology. The Decision Switch when the room has a stalled decision of any kind. The discovery call settles it.' },
+  { q: 'Is it an AI talk?', a: 'AI is in scope. The talk is about any new technology a leader has to approve: an AI tool, a new platform, a module in the system of record. The method is the same for each.' },
+  { q: 'Does Jack customize the keynote?', a: 'Every time. Every booking starts with a 30-minute discovery call about who is in the room and what decision they are facing. No proposal goes out before that call.' },
+  { q: 'Live or virtual?', a: 'Both. The virtual version runs live on Zoom or Teams and is rebuilt for the screen, not transferred from the stage.' },
+  { q: 'How long is a keynote?', a: '45 to 60 minutes. Jack takes questions afterward when the program allows it.' },
+  { q: 'What does the room leave with?', a: 'Three questions to ask before any technology decision, and one first move. Who owns it, what was it for, and how the board will know it was a success.' },
+  { q: 'Is there a workshop?', a: 'Yes. A half-day working session after the keynote, where the team applies the method to a decision they are facing now. It is quoted on the discovery call. Departments can also book the standalone <a href="/workshops/the-team-writes-the-plan">AI and automation workshop</a>.' },
+  { q: 'My event is close. Is it too late?', a: `Ask. Jack keeps limited availability for short-notice dates and will say quickly whether the date and the room fit. Email <a href="mailto:${site.email}">${site.email}</a> directly.` }
+];
+const page = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage',
+  '@id': site.url + '/platforms', url: site.url + '/platforms',
+  name: 'Platforms by Jack P. Flaherty',
+  description: 'The four platforms Jack P. Flaherty speaks on: AI Governance, Fear Is Not The Control, Spot The Ripple and The Decision Switch. Keynotes of 45 to 60 minutes, live or virtual.',
+  hasPart: platforms.map(p => ({ '@type': 'WebPageElement', '@id': site.url + '/platforms#' + p.id, name: p.label })),
+  author: { '@id': site.url + '/#person' }
+};
+const video = {
+  '@context': 'https://schema.org', '@type': 'VideoObject',
+  name: 'Jack P. Flaherty speaker reel: The Decision Switch keynote',
+  description: 'Three minutes of Jack P. Flaherty on stage delivering The Decision Switch, his decision-making keynote for executive teams and conferences.',
+  thumbnailUrl: site.url + '/images/jack-p-flaherty-speaker-reel-poster.jpg',
+  uploadDate: '2026-10-14', duration: 'PT3M', embedUrl: site.reelEmbed, contentUrl: site.reelWatch,
+  publisher: { '@type': 'Person', '@id': site.url + '/#person' }
+};
+const proof = [
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
+  { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" }
+];
+---
+<Base title="Platforms by Jack P. Flaherty | AI Governance, Fear Is Not The Control, Spot The Ripple, The Decision Switch"
+  description="The four platforms Jack P. Flaherty speaks on: AI Governance, Fear Is Not The Control, Spot The Ripple and The Decision Switch. Keynotes of 45 to 60 minutes, live or virtual."
+  keywords="keynote speaker, AI governance keynote, Fear Is Not The Control, Spot The Ripple, The Decision Switch, technology decision keynote, decision making keynote, Jack P. Flaherty"
+  path="/platforms" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page, video, faqSchema(faqs)]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
+
+  <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty delivering a keynote on a dark stage" pos="72% 50%" short>
+    <p class="kicker">Platforms</p>
+    <h1>Four platforms. One method.</h1>
+    <p>For the people who have to decide and answer for it later. Each sends the room home with questions it can repeat without a slide, and one first move for the week they get back.</p>
+    <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
+  </Hero>
+
+  <nav class="jump" aria-label="Platforms on this page">
+    <div class="wrap">
+      {platforms.map(p => <a href={'#' + p.id}>{p.label}</a>)}
+    </div>
+  </nav>
+
+  <Proof quotes={proof} />
+
+  <!-- 1. AI Governance -->
+  <section class="platform" id="ai-governance">
+    <div class="wrap">
+      <p class="kicker">Platform. Copy in progress.</p>
+      <h2>AI Governance</h2>
+      <p class="lede">For the boards, audit chairs and executive teams who answer for the technology after it goes live.</p>
+
+      <h3>The problem</h3>
+      <p>AI is already in use across your organization. Some of it was approved. Most of it was not. At some point the board will ask what the controls are, and "we told people to be careful" is not one.</p>
+
+      <h3>What the platform does</h3>
+      <p>Copy in progress. The platform gives the people who answer for the decision three questions to ask before any technology goes live: who owns it, what is it for, how will the board know it was a success.</p>
+
+      <h3>Three outcomes</h3>
+      <div class="grid c3">
+        <div class="card"><h4><span class="num">01</span>Outcome one</h4><p>Copy in progress.</p></div>
+        <div class="card"><h4><span class="num">02</span>Outcome two</h4><p>Copy in progress.</p></div>
+        <div class="card"><h4><span class="num">03</span>Outcome three</h4><p>Copy in progress.</p></div>
+      </div>
+
+      <h3>What changes</h3>
+      <p>Copy in progress.</p>
+    </div>
+  </section>
+
+  <!-- 2. Fear Is Not The Control -->
+  <section class="platform alt" id="fear-is-not-the-control">
+    <div class="wrap">
+      <p class="kicker">For health-system leaders and professional services partners</p>
+      <h2>Fear Is Not The Control</h2>
+      <p class="lede">For the people who have to decide on new technology and answer for it later. One keynote, built for two rooms.</p>
+
+      <h3>The problem</h3>
+      <p class="lede">Most keynotes are rented for the day. The insight leaves with the speaker.</p>
+      <div class="grid c3">
+        <div class="card">
+          <h4><span class="num">01</span>Leaders are trained in everything except how to decide.</h4>
+          <p>Organizations invest in strategy, culture and technology. Almost none invest in the one skill that determines whether any of it works: making a confident, well-informed call under pressure. The gap shows up as missed timelines, stalled initiatives and teams waiting for permission nobody is giving.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">02</span>The decision was already made. Nobody in the room knew it.</h4>
+          <p>By the time most technology decisions reach a meeting, the outcome is settled. A tool is in use, a vendor is signed, a system is live. The leaders in the room are ratifying, not deciding. The most dangerous decisions are the ones a team made without noticing, and fear made most of them.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">03</span>The signals were always there. Nobody was assigned to watch.</h4>
+          <p>Every major failure Jack has sat close to had early warning signs. The organizations that came through were not smarter. Someone had the job of reading what the others ignored. Decide, then watch for what moves.</p>
+        </div>
+      </div>
+
+      <h3>What the platform does</h3>
+      <p>Your people already have the tools, the IT team and the policy. What they do not have is a way to decide. This keynote sends the room home with three questions to ask before the next technology decision: who owns it, what is it for, how will the board know it was a success. And one first move for the week they get home.</p>
+      <div class="grid c2">
+        <div class="card accent">
+          <p class="kicker">For health-system executives and nurse leaders</p>
+          <h4>Making the Call on New Technology When Patients Are Waiting</h4>
+          <p>A new tool shows up on the unit. Half the team is using it by Friday. The other half waits for someone to say it is safe. Nobody owns the decision, so fear makes it.</p>
+          <p>Jack has watched decision-making teams, not surgical teams, save a life. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system that closed its urgent gaps on a $2.5 million budget within one year.</p>
+          <p><a href="/keynote-speaker/fear-is-not-the-control-healthcare" title="Fear Is Not The Control, the healthcare keynote">See the healthcare keynote</a></p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">For partners in accounting, advisory and law firms</p>
+          <h4>Making Technology Decisions Your Partners and Clients Will Stand Behind</h4>
+          <p>A client asks what the firm thinks about the tool their team adopted last quarter. The partner has an opinion and no position. Every firm has a partner who owns the call on new technology, or it has fear making it.</p>
+          <p>Jack spent 15 years at the Big 4, where he served as a director, and has presented at PwC's national Healthcare Risk Roundtable twice a year for five years. The firms he watched move first on new technology shared one trait: a partner who owned the call.</p>
+          <p><a href="/keynote-speaker/fear-is-not-the-control-professional-services" title="Fear Is Not The Control, the professional services keynote">See the professional services keynote</a></p>
+        </div>
+      </div>
+
+      <h3>Three outcomes</h3>
+      <div class="grid c3">
+        <div class="card">
+          <h4><span class="num">01</span>A name for what has been slowing them down.</h4>
+          <p>Nobody owns the decision, so fear makes it. Once a room can say that out loud, it can assign the decision. This keynote gives them the language.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">02</span>A contrarian view on risk they will argue about on the way home.</h4>
+          <p>Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. The risk person in the room is the one saying go, on conditions.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">03</span>Something they walk out ready to teach.</h4>
+          <p>The three questions are short enough to repeat without a slide. An executive who attended should be able to walk a direct report through them the next morning.</p>
+        </div>
+      </div>
+
+      <h3>What changes</h3>
+      <p class="pull">The teams that adopt new technology well are not the ones with the best plan. They are the ones who gave the decision an owner.</p>
+      <p>A standing ovation is not the deliverable. The questions are.</p>
+    </div>
+  </section>
+
+  <!-- 3. Spot The Ripple -->
+  <section class="platform" id="spot-the-ripple">
+    <div class="wrap">
+      <p class="kicker">Platform. Copy in progress.</p>
+      <h2>Spot The Ripple</h2>
+      <p class="lede">Watch for the ripples of change, risk or opportunity, and act on what the teams, the instinct and the colleagues are telling you.</p>
+
+      <h3>The problem</h3>
+      <p>Every major failure Jack has sat close to had early warning signs. The organizations that came through were not smarter. Someone had the job of reading what the others ignored.</p>
+
+      <h3>What the platform does</h3>
+      <p>Copy in progress.</p>
+
+      <h3>Three outcomes</h3>
+      <div class="grid c3">
+        <div class="card"><h4><span class="num">01</span>Outcome one</h4><p>Copy in progress.</p></div>
+        <div class="card"><h4><span class="num">02</span>Outcome two</h4><p>Copy in progress.</p></div>
+        <div class="card"><h4><span class="num">03</span>Outcome three</h4><p>Copy in progress.</p></div>
+      </div>
+
+      <h3>What changes</h3>
+      <p>Decide, then watch for the ripple.</p>
+    </div>
+  </section>
+
+  <!-- 4. The Decision Switch -->
+  <section class="platform alt" id="the-decision-switch">
+    <div class="wrap">
+      <p class="kicker">The original keynote. The one in the reel.</p>
+      <h2>The Decision Switch</h2>
+      <p class="lede">A decision-making keynote for executive teams and conferences. Most leaders do not lose to bad decisions. They lose to decisions that never got made.</p>
+
+      <div class="reel" id="reel">
+        <div class="vid"><div class="box"><iframe src={site.reelEmbed} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Jack P. Flaherty speaker reel, The Decision Switch keynote"></iframe></div></div>
+        <div><h4>Three minutes of Jack on stage</h4><p>The speaker reel, from The Decision Switch keynote. Executive audience, live exercises, the method in use.</p></div>
+      </div>
+
+      <h3>The problem</h3>
+      <div class="split">
+        <div>
+          <p class="lede">The meeting ends. The issue stays open. Three months later the cost shows up somewhere else, and nobody connects the two.</p>
+          <p>Every leadership team carries a few of these. The merger nobody will call. The system nobody will switch off. The hire nobody will make. The team is not short of information or talent. It is short of a way to decide that everyone in the room will stand behind afterward.</p>
+        </div>
+        <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard working through a decision with a leadership team" />
+      </div>
+
+      <h3>What the platform does</h3>
+      <p>The Decision Switch is the method Jack built over 25 years in risk and advisory and wrote down in <a href="/books/the-decision-switch">his book</a>. Seven principles that turn a stalled decision into one the team owns. The promise is plain: how to make better decisions faster.</p>
+
+      <h3>Three outcomes</h3>
+      <div class="grid c3">
+        <div class="card">
+          <h4><span class="num">01</span>Triage.</h4>
+          <p>A way to sort what is on the desk, so the decision that matters gets made first and the ones that do not stop taking the room's attention.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">02</span>The people who disagree, inside the decision.</h4>
+          <p>How to bring the dissenting voice into the call instead of around it. The decision gets better, and the person who argued against it still backs it in the hallway.</p>
+        </div>
+        <div class="card">
+          <h4><span class="num">03</span>A review habit.</h4>
+          <p>A way to look at every outcome, good or bad, and turn it into the next better call. Decide, then watch for the ripple.</p>
+        </div>
+      </div>
+
+      <h3>What changes</h3>
+      <p class="pull">The decision that never got made gets made, and the room stands behind it afterward.</p>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap split">
+      <div>
+        <h2>Why Jack</h2>
+        <p class="lede" style="color:#E3D5BE">He has sat in the rooms where technology decisions get made, defended and paid for.</p>
+        <p>Across 25 years in risk and advisory, 15 of them at the Big 4, Jack noticed one pattern: the leaders who struggled most were not the least talented. They were the least equipped to make a call and stand behind it under pressure. Most of them were waiting for a control that did not exist, and fear filled the gap.</p>
+        <p>He served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and audit committee, and has spoken for HIMSS, the IIA, ISACA, AHIA, NCSBN and the Nursing World Conference.</p>
+      </div>
+      <div class="grid c2 stats">
+        <div class="card"><p class="stat"><strong>25</strong>Years in risk and advisory, inside the rooms where decisions carry the highest cost.</p></div>
+        <div class="card"><p class="stat"><strong>15</strong>Years at the Big 4, where he served as a director.</p></div>
+        <div class="card"><p class="stat"><strong>$10B</strong>Health system where Jack served as acting enterprise risk and audit leader, reporting to the C-suite and audit committee.</p></div>
+        <div class="card"><p class="stat"><strong>$2.5M</strong>Board-mandated cybersecurity program for a $4B health system. Urgent gaps closed within one year.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>How it is delivered</h2>
+      <p class="lede">Three formats. One standard.</p>
+      <p>Every format starts with a 30-minute discovery call, so the talk is built for the room and the decision in front of it.</p>
+      <div class="grid c3" style="margin-top:1.5rem">
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Keynote</h3>
+          <p>The full talk with live audience exercises. For conferences, leadership summits and association events.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">Keynote plus half day</p>
+          <h3>Keynote and workshop</h3>
+          <p>The keynote, then a working session where the team applies the method to a decision it is carrying now.</p>
+        </div>
+        <div class="card accent">
+          <p class="kicker">45 to 60 min</p>
+          <h3>Virtual keynote</h3>
+          <p>Live on Zoom or Teams with interactive Q&amp;A, rebuilt for the screen. For distributed leadership teams and association audiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <Faq items={faqs} heading="Questions event producers ask" />
+    </div>
+  </section>
+
+  <Assessment />
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>The next step</h2>
+        <p>The right talk, in the right room, to change what the audience does when they get back to work.</p>
+        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly} target="_blank" rel="noopener">Book a discovery call</a></div>
+        <p class="meta" style="margin-top:1.2rem">Jack replies within one business day and asks questions before he sends a proposal, starting with who is in the room and what decision they are facing.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* Anchor targets sit below the sticky nav. */
+  section[id], .reel[id] { scroll-margin-top: 5.5rem; }
+  .jump { background: var(--brown); }
+  .jump .wrap { display: flex; flex-wrap: wrap; gap: .25rem 1.6rem; padding-top: .8rem; padding-bottom: .8rem; }
+  .jump a { color: var(--latte); font-family: var(--font-head); font-weight: 700; text-decoration: none; font-size: .95rem; }
+  .jump a:hover { text-decoration: underline; }
+  .platform.alt { background: var(--linen); }
+  .platform.alt .card { background: var(--latte); }
+  .platform h3 { margin-top: 2.4rem; }
+  .platform .grid { margin-top: 1.2rem; }
+  .platform .card h4 { margin: 0 0 .5rem; font-size: 1.1rem; line-height: 1.3; }
+  .platform .card .num { margin-right: .5rem; }
+  .platform .split { margin-top: 1rem; }
+  .platform .reel { margin-top: 1.8rem; }
+  .platform .reel h4 { margin: 0 0 .4rem; }
+  .pull { max-width: 48rem; font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-family: var(--font-head); font-weight: 700; margin: .4rem 0 1rem; }
+  .stats .card { padding: 1.3rem; }
+  .stat { margin: 0; }
+  .stat strong { display: block; font-family: var(--font-head); font-size: 2.4rem; line-height: 1; color: var(--latte); margin-bottom: .5rem; }
+</style>
