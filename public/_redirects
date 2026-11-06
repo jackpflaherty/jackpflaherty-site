@@ -6,18 +6,23 @@
 # Hubs and the home page
 /home / 301
 /index.html / 301
-/keynote-speaker /platforms 301
-/keynote-speaker/ /platforms 301
+/keynote-speaker /keynotes 301
+/keynote-speaker/ /keynotes 301
 /industries / 301
 /industries/ / 301
 /book/the-decision-switch /books/the-decision-switch 301
 /book/the-decision-switch/ /books/the-decision-switch 301
 
-# Platforms page replaces the keynote hub and the two keynote pages (Nov 5 2026)
-/keynote-speaker/executive-decision-making-keynote /platforms 301
-/keynote-speaker/fear-is-not-a-control /platforms#fear-is-not-the-control 301
-/keynote-speaker/fear-is-not-the-control /platforms#fear-is-not-the-control 301
-/keynote-speaker/the-decision-switch /platforms#the-decision-switch 301
+# Keynote hub (/keynotes) replaces the old keynote hub and the two keynote pages (Nov 5 2026)
+/keynote-speaker/executive-decision-making-keynote /keynotes 301
+/keynote-speaker/fear-is-not-a-control /keynotes#fear-is-not-the-control 301
+/keynote-speaker/fear-is-not-the-control /keynotes#fear-is-not-the-control 301
+/keynote-speaker/the-decision-switch /keynotes#the-decision-switch 301
+
+# Keynote hub v1.3 (Nov 5 2026): /keynotes replaces /platforms. The two platform slugs open their block on the hub.
+/platforms /keynotes 301
+/keynotes/fear-is-not-the-control /keynotes#fear-is-not-the-control 301
+/keynotes/the-decision-switch /keynotes#the-decision-switch 301
 
 # Fear Is Not A Control renamed Fear Is Not The Control (Nov 5 2026)
 /keynote-speaker/fear-is-not-a-control-healthcare /keynote-speaker/fear-is-not-the-control-healthcare 301
@@ -25,17 +30,17 @@
 /blogs/fear-is-not-a-control /blogs/fear-is-not-the-control 301
 
 # AI and Emerging Technology audience page renamed Technology (Nov 5 2026)
-/industries/ai-emerging-technology /platforms 301
-/industries/technology /platforms 301
-/industries/entrepreneurs-and-owners /platforms 301
+/industries/ai-emerging-technology /keynotes 301
+/industries/technology /keynotes 301
+/industries/entrepreneurs-and-owners /keynotes 301
 
 # Advisory moved out of /keynote-speaker/ (Oct 27 2026)
 /keynote-speaker/board-advisor-ai-governance /advisory/board-and-leadership 301
 
 # Retired keynote and workshop pages
 /keynote-speaker/board-governance-workshop /advisory/board-and-leadership 301
-/keynote-speaker/team-alignment-strategy-workshop /platforms 301
-/keynote-speaker/cybersecurity-risk-governance-keynote /platforms#fear-is-not-the-control 301
+/keynote-speaker/team-alignment-strategy-workshop /keynotes 301
+/keynote-speaker/cybersecurity-risk-governance-keynote /keynotes#fear-is-not-the-control 301
 /keynote-speaker/crisis-due-diligence-turnaround /advisory/board-and-leadership 301
 
 # Retired industry pages
@@ -43,8 +48,8 @@
 /industries/medtech-diagnostics /keynote-speaker/fear-is-not-the-control-healthcare 301
 /industries/fintech-defi-speaker /advisory/board-and-leadership 301
 /industries/banking-finance /advisory/board-and-leadership 301
-/industries/energy-utilities /platforms 301
-/industries/manufacturing-supply-chain /platforms 301
+/industries/energy-utilities /keynotes 301
+/industries/manufacturing-supply-chain /keynotes 301
 
 # Retired pages that only the Oct 13 Bulk Redirect list covered
 /media-press /press-media 301

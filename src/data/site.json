@@ -27,20 +27,12 @@
           "label": "Platforms",
           "items": [
             {
-              "label": "AI Governance",
-              "href": "/platforms#ai-governance"
-            },
-            {
               "label": "Fear Is Not The Control",
-              "href": "/platforms#fear-is-not-the-control"
-            },
-            {
-              "label": "Spot The Ripple",
-              "href": "/platforms#spot-the-ripple"
+              "href": "/keynotes#fear-is-not-the-control"
             },
             {
               "label": "The Decision Switch",
-              "href": "/platforms#the-decision-switch"
+              "href": "/keynotes#the-decision-switch"
             }
           ]
         },

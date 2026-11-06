@@ -2,15 +2,13 @@
 
 > Jack P. Flaherty is a keynote speaker and executive advisor who helps health-system executives and professional services partners decide on new technology when the cost of getting it wrong lands on them.
 
-Based in Los Angeles, California. Former PwC Director. 25 years in risk and advisory, 15 of them at the Big 4. Author of The Decision Switch (Cinch & Stone Press).
+Based in Los Angeles, California. Former PwC Director. Two decades in digital risk and compliance, including Big Four director roles. Author of The Decision Switch (Cinch & Stone Press).
 
-## Platforms
+## Keynotes
 
-- [Platforms](https://www.jackpflaherty.com/platforms): four platforms, keynotes of 45 to 60 minutes, live or virtual.
-- [AI Governance](https://www.jackpflaherty.com/platforms#ai-governance): for the boards and executives who answer for the technology after it goes live.
-- [Fear Is Not The Control](https://www.jackpflaherty.com/platforms#fear-is-not-the-control): for leaders deciding on new technology.
-- [Spot The Ripple](https://www.jackpflaherty.com/platforms#spot-the-ripple): watch for the ripples of change, risk or opportunity, and act on them.
-- [The Decision Switch](https://www.jackpflaherty.com/platforms#the-decision-switch): the original keynote on getting a stalled decision made.
+- [Keynotes](https://www.jackpflaherty.com/keynotes): two keynotes on governing how your people use AI, for boards, partners and directors.
+- [Fear Is Not The Control](https://www.jackpflaherty.com/keynotes#fear-is-not-the-control): The Hard Questions, governing how your people use AI. Versions for boards and C-suite, professional services, and regulated industries.
+- [The Decision Switch](https://www.jackpflaherty.com/keynotes#the-decision-switch): set the direction and stay on it. Versions for healthcare and nursing, entrepreneurs, PE and VC, and associations.
 
 ## Advisory and workshops
 
