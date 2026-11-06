@@ -1,5 +1,5 @@
 ---
-// Proof band: three testimonials in the speaker's own words (frozen tier, verbatim). Sits directly under the hero
+// Proof band: testimonials in the speaker's own words (frozen tier, verbatim). Sits directly under the hero
 // on the pages that sell. The "Jack has spoken for" row was removed Nov 5 2026 (Jack); client names appear only as testimonial attributions.
 interface Quote { q: string; who: string; role: string; }
 interface Props { quotes: Quote[]; }
@@ -20,7 +20,7 @@ const { quotes } = Astro.props;
 
 <style>
   .proof{background:var(--linen);padding:clamp(1.75rem,3.5vw,2.75rem) 0}
-  .quotes{display:grid;gap:1.25rem;grid-template-columns:repeat(3,1fr)}
+  .quotes{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
   figure{margin:0;background:#fff;border:1px solid var(--sand);border-left:4px solid var(--sienna);border-radius:var(--r);padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.75rem}
   blockquote{margin:0;quotes:"\201C" "\201D"}
   blockquote p{margin:0;font-size:1.02rem;line-height:1.5;color:var(--ink)}
