@@ -19,6 +19,10 @@
 /keynote-speaker/fear-is-not-the-control /platforms#fear-is-not-the-control 301
 /keynote-speaker/the-decision-switch /platforms#the-decision-switch 301
 
+# Keynote hub v1.3 (Nov 5 2026): the two platform slugs open their platform block on the hub
+/keynotes/fear-is-not-the-control /keynotes#fear-is-not-the-control 301
+/keynotes/the-decision-switch /keynotes#the-decision-switch 301
+
 # Fear Is Not A Control renamed Fear Is Not The Control (Nov 5 2026)
 /keynote-speaker/fear-is-not-a-control-healthcare /keynote-speaker/fear-is-not-the-control-healthcare 301
 /keynote-speaker/fear-is-not-a-control-professional-services /keynote-speaker/fear-is-not-the-control-professional-services 301

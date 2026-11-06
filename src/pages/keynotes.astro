@@ -1,0 +1,236 @@
+---
+// Keynote hub, build prompt v1.3 (approved by Jack Nov 5 2026). One signature keynote per platform,
+// three versions as rows under it (Lillrud model). Copy is from the prompt, word for word. Only punctuation
+// is changed, per the site copy rules: a title's em dash becomes a title and subtitle line, the "·"
+// separators become separate items, "45–60" reads "45 to 60", and the em dash in three source lines is a colon.
+// Marks: ™ on the H1 and ® on the credential chip (first mentions), nowhere after.
+// /keynotes/fear-is-not-the-control and /keynotes/the-decision-switch 301 to the platform anchors here (public/_redirects).
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import site from '../data/site.json';
+
+type Version = { id: string; n: string; label: string; title: string; sub: string; body: string; source: { text: string; href: string }; leave: string };
+type Platform = {
+  id: string; heading: string; subtitle: string;
+  card: { title: string; sub: string; body: string; takeaways: { lead: string; text: string }[]; audience: string; format: string[] };
+  versions: Version[];
+};
+
+const tenure = 'two decades in digital risk and compliance, including Big Four director roles';
+
+const platforms: Platform[] = [
+  {
+    id: 'fear-is-not-the-control',
+    heading: 'Fear Is Not The Control',
+    subtitle: 'Progress Demands We Ask Hard Questions',
+    card: {
+      title: 'The Hard Questions',
+      sub: 'Governing How Your People Use AI',
+      body: `Your people already use AI at work. Some of that use was approved. Some was not. Fear will not govern it, and a policy no one reads will not either. Controls will: a plan, a named owner, and a way to see drift before it costs you. Jack P. Flaherty spent ${tenure}, implementing, managing and auditing every wave from ERP and cyber to electronic medical records and blockchain. He shows boards and leaders how to put controls around how their own people use AI, so the firm gets what it set out to get, and can stand behind every decision along the way.`,
+      takeaways: [
+        { lead: 'Go slow to go fast.', text: 'The preventive control: plan, name an accountable owner for each tool, and build the governance before the first use.' },
+        { lead: 'Mind the drift.', text: 'The monitoring control: notice when people, tools and results slide from what was approved, and know what to do next.' },
+        { lead: 'Spot the ripple.', text: 'The detective control, with the front line as the sensor: the people closest to the work see it first, and the signal has a fast path to the person who decides.' },
+        { lead: 'Gain', text: 'a one-page owner map of how your people use AI today, built on the NIST AI RMF and ISO/IEC 42001.' }
+      ],
+      audience: 'Boards, C-suite teams, managing partners, PE and VC sponsors, and leaders in healthcare and financial services.',
+      format: ['Keynote 45 to 60 min', 'Board briefing 90 min']
+    },
+    versions: [
+      {
+        id: 'boards-c-suite', n: 'Version 1', label: 'Boards & C-Suite',
+        title: 'The Hard Questions in the Boardroom', sub: 'Who Answers for How Your People Use AI',
+        body: 'Boards approve AI plans. Only 22.6% have audited where AI is used, NACD found. Jack, a former PwC Director who led C-suite risk executives’ discussions twice a year for five years, helps directors set clear owners, ask for reporting they can read, and plan their own AI education. The question is not whether to use AI. It is who answers.',
+        source: { text: 'NACD, 2025 Public Company Board Practices and Oversight Survey, July 2025.', href: 'https://www.nacdonline.org/all-governance/governance-resources/governance-surveys/surveys-benchmarking/bpo-tables/ai-oversight-activities-conducted-by-the-board' },
+        leave: 'A named owner for your workforce’s AI use, and three lines of board reporting to ask for.'
+      },
+      {
+        id: 'professional-services', n: 'Version 2', label: 'Professional Services',
+        title: 'The Hard Questions Every Partner Must Answer', sub: 'When Clients Want AI Both Ways',
+        body: 'Clients send firms mixed signals on AI. The Thomson Reuters Institute found 40% of firms have been told by different clients both to use AI and not to. For managing partners, and the PE and VC firms rolling up practices, Jack shows how to set one staff AI rule, name the partner who owns it, and lead the client conversation instead of waiting for it.',
+        source: { text: 'Thomson Reuters Institute, 2026 AI in Professional Services Report, February 2026.', href: 'https://www.thomsonreuters.com/en/institute/articles/ai-in-professional-services-report-2026' },
+        leave: 'A one-page staff AI rule, an owner by name, and a script for the client AI conversation.'
+      },
+      {
+        id: 'regulated-industries', n: 'Version 3', label: 'Regulated Industries: Healthcare & Financial Services',
+        title: 'The Hard Questions a Regulator Asks First', sub: 'Who Approved It, and Who Watches It',
+        body: 'In banking, capital markets, fintech and healthcare, a fair first question from any examiner is simple. Who approved this tool, and who watches it? Jack’s career runs through both fields, from Morgan Stanley’s derivatives trading desk to California’s first statewide Health Information Exchange, with Big Four director roles in between. He helps leaders answer with records, not reassurance.',
+        source: { text: 'IBM, Cost of a Data Breach Report 2026 (research by Ponemon Institute), July 2026: 92% of organizations that reported an AI-related breach lacked proper AI access controls.', href: 'https://www.ibm.com/think/x-force/2026-cost-of-a-data-breach-ai-adversaries-enterprise-risk' },
+        leave: 'A view of who approved each AI tool your people use, and who watches it, in a form an examiner can read.'
+      }
+    ]
+  },
+  {
+    id: 'the-decision-switch',
+    heading: 'The Decision Switch',
+    subtitle: 'How to make better decisions faster.',
+    card: {
+      title: 'The Decision Switch',
+      sub: 'Set the Direction. Stay on It.',
+      body: `The Decision Switch sets the direction. The controls keep you on it. Most decisions go wrong after they are made. No one owns them, the plan drifts, and the people who saw it coming stay quiet. The Decision Switch, Jack P. Flaherty’s 2023 book and framework, gives every level of an organization one way to decide and one way to stay on course. He built it over ${tenure}, and on his own failed projects. Leaders learn to set the direction with a named owner. Teams learn to notice drift. Everyone learns to speak up early, through a path that reaches the decision maker fast.`,
+      takeaways: [
+        { lead: 'Go slow to go fast.', text: 'Set the direction, name the owner, and build the control that keeps the decision on course after approval.' },
+        { lead: 'Mind the drift.', text: 'Spot when people, tools and results slide from what was agreed, before the gap grows.' },
+        { lead: 'Spot the ripple.', text: 'The front line sees it first. Build a fast, fair path that carries ideas up to the person who decides.' },
+        { lead: 'Gain', text: 'a one-page decision record your team can use Monday: the decision, the owner, the goal, and the signal that says check again.' }
+      ],
+      audience: 'Executive teams, nurse leaders, founders and owners, PE and VC sponsors, and association and conference general sessions.',
+      format: ['Keynote 45 to 60 min']
+    },
+    versions: [
+      {
+        id: 'healthcare-nursing', n: 'Version 1', label: 'Healthcare & Nursing',
+        title: 'The Decision Switch for Nurse Leaders', sub: 'Ask Who Manages the Tool',
+        body: 'Nurse leaders use AI tools every shift. Only 8% of nurses say their employer has set a clear AI strategy, Incredible Health found in 2026. This session gives nurse leaders three questions that protect patients and teams: who manages this tool, what was it approved to do, and where do I report it when results drift? Jack brings decades of healthcare risk and compliance work to the room.',
+        source: { text: 'Incredible Health, 2026 Annual State of Nursing Report, July 2026.', href: 'https://www.incrediblehealth.com/blog/employers/2026-state-of-nursing-report-ai-adoption-trends-and-future-implications-for-retention/' },
+        leave: 'Three questions to ask about any AI tool on your unit, and the name of the person to ask.'
+      },
+      {
+        id: 'entrepreneurs-pe-vc', n: 'Version 2', label: 'Entrepreneurs, PE & VC',
+        title: 'The Decision Switch for Founders and Sponsors', sub: 'Decide Fast. Keep the Controls.',
+        body: 'Founders decide fast by nature. Sponsors rolling up firms decide across many companies at once. AI makes both faster, and makes drift harder to see. Jack, an interim executive and advisor to fintech, blockchain and AI startups since 2021, shows owners and deal teams how to name owners early and catch drift across the portfolio.',
+        source: { text: 'Bain & Company and StepStone Group, Private Equity’s Reality Check: The GP Outlook for 2026, March 2026: 39% of buyout GPs do not expect AI to have a material financial impact on portfolio companies in 2026.', href: 'https://www.bain.com/insights/private-equitys-reality-check-gp-outlook-2026/' },
+        leave: 'A decision record for each portfolio company’s AI use, and a short list of drift signals to review each quarter.'
+      },
+      {
+        id: 'associations-conferences', n: 'Version 3', label: 'Associations & Conference Audiences',
+        title: 'The Decision Switch for Every Member', sub: 'Your Agency, From the Front Line Up',
+        body: 'Your members make decisions all day, at every level. AI is already part of that work. This general session puts agency back in their hands. Leaders learn to plan with owners. Staff learn to notice drift. The front line learns that what they see matters, and how to get it to the person who decides.',
+        source: { text: 'ASAE, State of Associations Report, March 2026: 87.5% of associations use AI for content and 44.3% for data. Most cite limited expertise and data-privacy concerns.', href: 'https://www.asaecenter.org/about-us/news_releases/2026/asae-releases-first-ever-state-of-associations-report-offering-data-driven-view-of-industry-present-and-future' },
+        leave: 'A shared language for decisions that every member, from board chair to front desk, can use the next day.'
+      }
+    ]
+  }
+];
+
+const isaca = 'https://www.isaca.org/-/media/files/isacadp/project/isaca/resources/infographics/2026-taking-the-pulse-of-ai.pdf';
+const chips = ['Former PwC Director', 'Digital risk and compliance', 'CISSP', 'CISA'];
+const contact = '/book-jack';
+// Speaker kit tile: the contact page until the one-sheet download exists (prompt v1.3, item 7).
+const kitHref = contact;
+
+const title = 'Keynotes | Jack P. Flaherty: AI Governance for Boards and Leaders';
+const description = 'Two keynotes on governing how your people use AI, from a former PwC Director: The Hard Questions and The Decision Switch. Boards, partners, regulated industries.';
+const page = {
+  '@context': 'https://schema.org', '@type': 'CollectionPage',
+  '@id': site.url + '/keynotes', url: site.url + '/keynotes',
+  name: title, description,
+  hasPart: platforms.flatMap(p => [
+    { '@type': 'WebPageElement', '@id': site.url + '/keynotes#' + p.id, name: p.card.title + ': ' + p.card.sub },
+    ...p.versions.map(v => ({ '@type': 'WebPageElement', '@id': site.url + '/keynotes#' + v.id, name: v.title + ': ' + v.sub }))
+  ]),
+  author: { '@id': site.url + '/#person' }
+};
+---
+<Base title={title} description={description}
+  keywords="AI governance, board AI oversight, accountability, acceptable use, shadow AI, AI risk, controls, policy, drift, NIST AI RMF, ISO/IEC 42001, director education"
+  path="/keynotes" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
+
+  <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty on stage speaking on AI governance and board AI oversight" pos="70% 50%" extra="kh-hero">
+    <h1><span class="lock">FEAR IS NOT THE CONTROL™</span><span class="tag">Progress Demands We Ask Hard Questions</span></h1>
+    <p class="position">Your people are already using AI. Fear is not the control. Jack P. Flaherty shows boards and leaders how to put controls around how their people use AI, backed by {tenure}.</p>
+    <p class="proofline">90% of professionals believe employees use AI at work. 38% of organizations have a full AI policy.<br /><span class="hsrc">Source: <a href={isaca}>ISACA, 2026 AI Pulse Poll, May 2026.</a></span></p>
+    <ul class="chips" aria-label="Credentials">
+      {chips.map(c => <li>{c}</li>)}
+      <li>Author, The Decision Switch®</li>
+    </ul>
+    <div class="btns tiles">
+      <a class="btn orange" href="#fear-is-not-the-control">Pick a keynote</a>
+      <a class="btn light" href={kitHref}>Speaker kit</a>
+    </div>
+  </Hero>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="lede intro">Every technology wave brings the same test. ERP, cyber, electronic medical records, blockchain, automation, and now AI. The tool is rarely the problem. The trouble starts when no one built the controls: no plan, no named owner, no way to see drift. Jack P. Flaherty spent {tenure}, implementing, managing and auditing those waves. His keynotes show leaders how to put controls around how their own people use AI, so the firm gets what it set out to get, and can stand behind every decision along the way.</p>
+    </div>
+  </section>
+
+  {platforms.map((p, i) => (
+    <section class={'platform' + (i % 2 ? ' alt' : '')} id={p.id}>
+      <div class="wrap">
+        <h2>{p.heading}</h2>
+        <p class="psub">{p.subtitle}</p>
+
+        <article class="card accent sig">
+          <h3><span>{p.card.title}</span><span class="sub">{p.card.sub}</span></h3>
+          <p>{p.card.body}</p>
+          <h4>Keynote Takeaways</h4>
+          <ul class="checks">
+            {p.card.takeaways.map(t => <li><strong>{t.lead}</strong> {t.text}</li>)}
+          </ul>
+          <p class="facts"><strong>Audience:</strong> {p.card.audience}</p>
+          <p class="facts"><strong>Format:</strong> <span class="fmt">{p.card.format.map(f => <span>{f}</span>)}</span></p>
+        </article>
+
+        <div class="versions">
+          {p.versions.map(v => (
+            <article class="version" id={v.id}>
+              <p class="vlabel"><span>{v.n}</span><span>{v.label}</span></p>
+              <h3><a href={'#' + v.id}><span>{v.title}</span><span class="sub">{v.sub}</span></a></h3>
+              <p>{v.body}</p>
+              <p class="src">Source: <a href={v.source.href}>{v.source.text}</a></p>
+              <p class="leave"><strong>Leave with:</strong> {v.leave}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="reel" id="reel">
+        <div class="vid"><div class="box"><iframe src={site.reelEmbed} loading="lazy" allow="encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Jack P. Flaherty speaker reel"></iframe></div></div>
+        <p><a href={site.youtube}>YouTube @jackpflaherty</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band organizer">
+        <p class="lede" style="margin-left:auto;margin-right:auto">Fees and formats on request. 30-minute discovery call before any proposal.</p>
+        <div class="btns" style="justify-content:center;margin-top:.6rem"><a class="btn" href={contact}>Book Jack</a></div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  :global(.kh-hero .txt){max-width:44rem}
+  h1{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+  h1 .lock{display:block;font-size:clamp(2.1rem,4.8vw,3.5rem);letter-spacing:.01em}
+  h1 .tag{display:block;font-size:clamp(1.2rem,2.4vw,1.7rem);color:#FF9447;letter-spacing:0;line-height:1.25}
+  .position{font-size:1.2rem !important;margin:0 0 .9rem}
+  .proofline{font-size:.98rem !important;line-height:1.45 !important;margin:0 0 .9rem}
+  .hsrc{font-size:.85rem;color:var(--latte);opacity:.85}
+  .proofline a{color:#C9D6FF}
+  .tiles{margin-top:1.3rem}
+  .chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.4rem}
+  .chips li{font-size:.82rem;line-height:1.2;color:var(--latte);border:1px solid rgba(255,249,239,.45);border-radius:999px;padding:.3rem .7rem}
+  .kh-hero .tiles{margin-top:1.3rem}
+  .intro{max-width:46rem}
+  .platform{padding:clamp(2.5rem,5vw,4rem) 0}
+  .platform.alt{background:var(--linen)}
+  .platform h2{margin-bottom:.2rem}
+  .psub{font-family:var(--font-head);font-weight:700;color:var(--sienna);font-size:1.2rem;margin:0 0 1.6rem}
+  .sig{max-width:52rem}
+  .sig h3,.version h3{display:flex;flex-direction:column;gap:.2rem}
+  .sig h3{font-size:clamp(1.5rem,2.6vw,1.9rem)}
+  h3 .sub{font-size:.68em;color:var(--brown);font-weight:700}
+  .sig h4{margin:1.4rem 0 .6rem;font-size:1.1rem}
+  .sig .facts{margin:.5rem 0 0;font-size:1rem}
+  .fmt span+span::before{content:"";display:inline-block;width:.35rem;height:.35rem;border-radius:50%;background:var(--sienna);margin:0 .6rem;vertical-align:middle}
+  .versions{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+  .version{background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:1.3rem 1.35rem;display:flex;flex-direction:column}
+  .version h3{font-size:1.2rem;margin-bottom:.7rem}
+  .version h3 a{color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:.2rem}
+  .version h3 a:hover span:first-child{text-decoration:underline}
+  .version p{font-size:1rem;margin:0 0 .8rem}
+  .vlabel{font-family:var(--font-head);font-weight:700;color:var(--sienna);font-size:.9rem !important;display:flex;flex-wrap:wrap;gap:.5rem}
+  .vlabel span+span{color:var(--brown)}
+  .src{font-size:.85rem !important;color:var(--brown)}
+  .version .leave{margin-top:auto;margin-bottom:0;padding-top:.6rem;border-top:1px solid var(--linen)}
+  @media (max-width:960px){.versions{grid-template-columns:1fr}}
+</style>
