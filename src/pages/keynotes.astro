@@ -4,7 +4,9 @@
 // is changed, per the site copy rules: a title's em dash becomes a title and subtitle line, the "·"
 // separators become separate items, "45–60" reads "45 to 60", and the em dash in three source lines is a colon.
 // Marks: ™ on the H1 and ® on the credential chip (first mentions), nowhere after.
-// /keynotes/fear-is-not-the-control and /keynotes/the-decision-switch 301 to the platform anchors here (public/_redirects).
+// Nov 6 2026 change note (Jack's ruling, 9:33 am): Spot the Ripple replaces the Platform 1 brand universally.
+// /keynotes/spot-the-ripple and /keynotes/the-decision-switch 301 to the platform anchors here (public/_redirects);
+// the old fear-is-not-the-control and fear-is-not-a-control slugs 301 straight to the Spot the Ripple anchor.
 // Nov 5 2026: /keynotes replaces /platforms as the speaking hub (Jack). /platforms 301s here.
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
@@ -21,9 +23,9 @@ const tenure = 'two decades in digital risk and compliance, including Big Four d
 
 const platforms: Platform[] = [
   {
-    id: 'fear-is-not-the-control',
-    heading: 'Fear Is Not The Control',
-    subtitle: 'Progress Demands We Ask Hard Questions',
+    id: 'spot-the-ripple',
+    heading: 'Spot the Ripple',
+    subtitle: 'How we build teams who ask the hard questions.',
     card: {
       title: 'The Hard Questions',
       sub: 'Governing How Your People Use AI',
@@ -105,13 +107,10 @@ const platforms: Platform[] = [
 ];
 
 const isaca = 'https://www.isaca.org/-/media/files/isacadp/project/isaca/resources/infographics/2026-taking-the-pulse-of-ai.pdf';
-const chips = ['Former PwC Director', 'Digital risk and compliance', 'CISSP', 'CISA'];
 const contact = '/book-jack';
-// Speaker kit tile: the contact page until the one-sheet download exists (prompt v1.3, item 7).
-const kitHref = contact;
 
 const title = 'Keynotes | Jack P. Flaherty: AI Governance for Boards and Leaders';
-const description = 'Two keynotes on governing how your people use AI, from a former PwC Director: The Hard Questions and The Decision Switch. Boards, partners, directors.';
+const description = 'Two keynotes on governing how your people use AI, from a former PwC Director: Spot the Ripple and The Decision Switch. Boards, partners, regulated industries.';
 const page = {
   '@context': 'https://schema.org', '@type': 'CollectionPage',
   '@id': site.url + '/keynotes', url: site.url + '/keynotes',
@@ -128,16 +127,19 @@ const page = {
   path="/keynotes" image="/images/jack-p-flaherty-keynote-stage-wide.jpg" schema={[page]} hero="/images/jack-p-flaherty-keynote-stage-wide.jpg">
 
   <Hero image="/images/jack-p-flaherty-keynote-stage-wide.jpg" alt="Jack P. Flaherty on stage speaking on AI governance and board AI oversight" pos="70% 50%" extra="kh-hero">
-    <h1><span class="lock">FEAR IS NOT THE CONTROL™</span><span class="tag">Progress Demands We Ask Hard Questions</span></h1>
-    <p class="position">Your people are already using AI. Fear is not the control. Jack P. Flaherty shows boards and leaders how to put controls around how their people use AI, backed by {tenure}.</p>
+    <p class="eyebrow">AI governance for boards and leaders</p>
+    <h1><span class="lock">SPOT THE RIPPLE™</span><span class="tag">How we build teams who ask the hard questions.</span></h1>
     <p class="proofline">90% of professionals believe employees use AI at work. 38% of organizations have a full AI policy.<br /><span class="hsrc">Source: <a href={isaca}>ISACA, 2026 AI Pulse Poll, May 2026.</a></span></p>
+    <p class="cred">Jack P. Flaherty · Former PwC Director · Digital Risk and Regulatory Leader</p>
     <ul class="chips" aria-label="Credentials">
-      {chips.map(c => <li>{c}</li>)}
       <li>Author, The Decision Switch®</li>
+      <li>Los Angeles, in person or virtual</li>
     </ul>
     <div class="btns tiles">
-      <a class="btn orange" href="#fear-is-not-the-control">Pick a keynote</a>
-      <a class="btn light" href={kitHref}>Speaker kit</a>
+      <a class="btn orange" href="#spot-the-ripple">Keynotes and advisory</a>
+      <a class="btn light" href="/#check-a-date">Check a date</a>
+      <a class="btn light" href="#reel">Watch Jack</a>
+      <a class="btn light" href="/kit">Speaker kit</a>
     </div>
   </Hero>
 
@@ -203,12 +205,14 @@ const page = {
   h1{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
   h1 .lock{display:block;font-size:clamp(2.1rem,4.8vw,3.5rem);letter-spacing:.01em}
   h1 .tag{display:block;font-size:clamp(1.2rem,2.4vw,1.7rem);color:#FF9447;letter-spacing:0;line-height:1.25}
-  .position{font-size:1.2rem !important;margin:0 0 .9rem}
+  .eyebrow{font-family:var(--font-head);font-weight:700;color:#FF9447 !important;font-size:1rem !important;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .5rem}
+  .cred{font-size:1rem !important;font-weight:700;margin:0 0 .6rem}
+  .tiles .btn{padding:.75rem 1.1rem;font-size:.95rem}
   .proofline{font-size:.98rem !important;line-height:1.45 !important;margin:0 0 .9rem}
   .hsrc{font-size:.85rem;color:var(--latte);opacity:.85}
   .proofline a{color:#C9D6FF}
   .tiles{margin-top:1.3rem}
-  .chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.4rem}
+  .chips{list-style:none;padding:0;margin:0 0 .4rem;display:flex;flex-wrap:wrap;gap:.4rem}
   .chips li{font-size:.82rem;line-height:1.2;color:var(--latte);border:1px solid rgba(255,249,239,.45);border-radius:999px;padding:.3rem .7rem}
   .kh-hero .tiles{margin-top:1.3rem}
   .intro{max-width:46rem}

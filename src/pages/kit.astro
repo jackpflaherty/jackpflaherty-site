@@ -49,11 +49,11 @@ const photos = [
       <div class="grid c2">
         <div class="card">
           <h3>Short, 50 words</h3>
-          <p>Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. A former Big 4 director with 25 years in risk and advisory, he delivers two keynotes, Fear Is Not The Control and The Decision Switch, and is the author of The Decision Switch.</p>
+          <p>Jack P. Flaherty is a keynote speaker and executive advisor who helps boards and leaders govern how their people use AI. A former PwC Director with 25 years in digital risk and regulatory advisory, he delivers two keynotes, Spot the Ripple and The Decision Switch, and wrote the book.</p>
         </div>
         <div class="card">
-          <h3>Full, 100 words</h3>
-          <p>Jack P. Flaherty is the trusted advisor who helps boards and executives make decisions with technology. For 25 years in risk and advisory, 15 of them at the Big 4, he sat in the rooms where technology decisions were made, defended and paid for. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system. He delivers two keynotes, Fear Is Not The Control, for health-system leaders and professional services partners, and The Decision Switch, the original. He wrote The Decision Switch and lives in Los Angeles.</p>
+          <h3>Full, 110 words</h3>
+          <p>Jack P. Flaherty is a keynote speaker and executive advisor who helps boards and leaders govern how their people use AI. A former PwC Director, he spent 25 years in digital risk and regulatory advisory, 15 of them at the Big 4, in the rooms where technology decisions were made, defended and paid for. He has implemented, managed or audited every wave of change from mainframe to blockchain. He served as acting enterprise risk and audit leader for a $10B health system and led a board-mandated cybersecurity program for a $4B health system. He delivers two keynotes, Spot the Ripple and The Decision Switch, wrote The Decision Switch, and lives in Los Angeles.</p>
         </div>
       </div>
       <p class="meta" style="margin-top:1rem">Name on every program and slide: Jack P. Flaherty. Title: Keynote speaker and trusted advisor.</p>
@@ -63,24 +63,25 @@ const photos = [
   <section class="dark" id="keynotes">
     <div class="wrap">
       <h2>Keynotes</h2>
-      {/* Keynotes copy is taken from the keynote hub, build prompt v1.3 (Nov 5 2026). */}
+      {/* Spot the Ripple card: room lines and "what the room leaves with" from About and Kit copy v1.1 (Oct 27 2026), renamed per build prompt T2 B5 (Nov 6 2026). The Decision Switch card: keynote hub v1.3. */}
       <p class="lede" style="color:#E3D5BE">Two keynotes on governing how your people use AI.</p>
       <div class="grid c2" style="margin-top:1.5rem">
         <div class="card">
           <p class="kicker">Boards, C-suite teams, managing partners, PE and VC sponsors, and leaders in healthcare and financial services.</p>
-          <h3>Fear Is Not The Control</h3>
-          <p><strong>The Hard Questions.</strong> Governing How Your People Use AI. Versions for Boards &amp; C-Suite, Professional Services, and Regulated Industries: Healthcare &amp; Financial Services.</p>
-          <p><strong>Gain</strong> a one-page owner map of how your people use AI today, built on the NIST AI RMF and ISO/IEC 42001.</p>
+          <h3 class="kt"><span>Spot the Ripple™</span><span class="sub">The Hard Questions About How Your People Use AI</span></h3>
+          <p><strong>Health systems:</strong> deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer.</p>
+          <p><strong>Professional services:</strong> approving AI tools their clients and their insurers will stand behind.</p>
+          <p><strong>What the room leaves with:</strong> Three questions to ask before any technology decision: who owns it, what was it for, how will the board know it was a success. One first move for the week they get back. Short enough to repeat without a slide.</p>
           <p>Keynote 45 to 60 min. Board briefing 90 min.</p>
-          <p><a href="/keynotes#fear-is-not-the-control">Full description</a></p>
+          <p><a href="/keynotes/spot-the-ripple">Full description</a></p>
         </div>
         <div class="card">
           <p class="kicker">Executive teams, nurse leaders, founders and owners, PE and VC sponsors, and association and conference general sessions.</p>
-          <h3>The Decision Switch</h3>
+          <h3>The Decision Switch®</h3>
           <p><strong>Set the Direction. Stay on It.</strong> Versions for Healthcare &amp; Nursing, Entrepreneurs, PE &amp; VC, and Associations &amp; Conference Audiences.</p>
           <p><strong>Gain</strong> a one-page decision record your team can use Monday: the decision, the owner, the goal, and the signal that says check again.</p>
           <p>Keynote 45 to 60 min.</p>
-          <p><a href="/keynotes#the-decision-switch">Full description</a></p>
+          <p><a href="/keynotes/the-decision-switch">Full description</a></p>
         </div>
       </div>
     </div>
@@ -91,7 +92,7 @@ const photos = [
       <h2>Stage intro</h2>
       <p class="meta">Written to be read aloud by a stranger. About 45 seconds.</p>
       <div class="card intro">
-        <p>Our next speaker has spent 25 years in the rooms where technology decisions get made, defended and paid for. Fifteen of those years were at the Big 4, where he served as a director. He has been the acting enterprise risk and audit leader for a ten-billion-dollar health system, and he led a board-mandated cybersecurity program for a four-billion-dollar health system that closed its urgent gaps within a year. He wrote the book The Decision Switch, and he is here today with one idea that will change how your organization makes its next call on new technology. His keynote is called Fear Is Not The Control. Please welcome Jack P. Flaherty.</p>
+        <p>Our next speaker has spent 25 years in the rooms where technology decisions get made, defended and paid for. Fifteen of those years were at the Big 4, most recently as a PwC Director. He has been the acting enterprise risk and audit leader for a ten-billion-dollar health system, and he led a board-mandated cybersecurity program for a four-billion-dollar health system that closed its urgent gaps within a year. He wrote the book The Decision Switch, and he is here today with one idea that will change how your organization makes its next call on new technology. His keynote is called Spot the Ripple. Please welcome Jack P. Flaherty.</p>
         <p class="meta">For The Decision Switch, swap the last two sentences: "...and he is here today to show you how a leadership team gets a stalled decision made and stands behind it. His keynote is called The Decision Switch. Please welcome Jack P. Flaherty."</p>
       </div>
     </div>
@@ -164,6 +165,8 @@ const photos = [
   .kit-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.4rem; }
   .kit-nav .btn { padding: .6rem 1rem; font-size: .95rem; background: transparent; color: var(--ink); border-color: var(--ink); }
   .kit-nav .btn:hover { background: var(--ink); color: var(--latte); }
+  .kt { display: flex; flex-direction: column; gap: .2rem; }
+  .kt .sub { font-size: .7em; }
   .intro p:first-child { font-size: 1.15rem; line-height: 1.6; }
   .photos .card { display: block; text-decoration: none; color: inherit; }
   .photos img { aspect-ratio: 4/3; object-fit: cover; width: 100%; border-radius: 6px; margin-bottom: .8rem; }

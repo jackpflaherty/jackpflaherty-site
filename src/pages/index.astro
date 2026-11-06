@@ -1,12 +1,13 @@
 ---
-// Home page. Copy is Home page copy v1.1, approved by Jack on Oct 27 2026 at 9:57 am after Mode C.
-// Twelve screens in the approved order. Every line is verbatim; components bend to the copy, not the reverse.
-// Trademark symbols on first appearance (H1, screen 10 card) wait for the A5 treatment spec and are not in this file.
+// Home page. Build prompt T2, Part A (approved by Jack in chat, Nov 6 2026, 9:55 am).
+// Six screens in this order: promise, scene, stakes, why, answer, proof. Copy is word for word.
+// Punctuation only, per the site copy rules: a keynote title's em dash becomes a title and subtitle line,
+// the page title's em dash becomes a colon, and the two chips are separate items.
+// Marks: ™ on the H1 and ® on the credential chip (first mentions), nowhere after in the page body.
 import Pic from '../components/Pic.astro';
 import Base from '../layouts/Base.astro';
 import Proof from '../components/Proof.astro';
 import Hero from '../components/Hero.astro';
-import Assessment from '../components/Assessment.astro';
 import site from '../data/site.json';
 const video = {
   '@context': 'https://schema.org', '@type': 'VideoObject',
@@ -16,168 +17,182 @@ const video = {
   uploadDate: '2026-10-14', duration: 'PT3M', embedUrl: site.reelEmbed, contentUrl: site.reelWatch,
   publisher: { '@type': 'Person', '@id': site.url + '/#person' }
 };
-// Screen 2, proof band: three testimonials, frozen tier, verbatim. Korn Ferry removed (Jack's ruling, Oct 27 2026).
+// Screen 6, proof band: five testimonials in the order of the build prompt, verbatim from the repo.
 const proof = [
-  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" },
   { q: "Jack converts the pain of making tough decisions into the pleasure of achieving your goals, through his proven framework.", who: "Jason Emmons", role: "Partner, Baker Tilly" },
-  { q: "Jack brings high energy and dedication, along with a great personality and a sense of humor, which is often helpful when dealing with formal processes and operational change!", who: "Bill Lazarus", role: "CTO, UCLA Health" }
+  { q: "Jack delivers a practical framework to keep you on track and lead you to the best outcomes.", who: "Charles Todd", role: "Principal, Deloitte" },
+  { q: "Jack's personable approach to coaching enables him to cultivate an open dialogue and honest relationships, which I appreciated, knowing I could always count on him for insightful life and personal development advice.", who: "Kierney Palazzo", role: "Internal Audit Manager, SCAN Health Plan" },
+  { q: "Jack has a unique combination of phenomenal people skills and an incredible work ethic. I was amazed by what he was able to accomplish, while still making time to connect and effectively mentor members of our team.", who: "Ray Sims", role: "Global Lead, Training and Education, IBM" }
 ];
 const nacd = 'https://www.nacdonline.org/all-governance/governance-resources/governance-surveys/surveys-benchmarking/bpo-tables/ai-oversight-activities-conducted-by-the-board';
+const isaca = 'https://www.isaca.org/-/media/files/isacadp/project/isaca/resources/infographics/2026-taking-the-pulse-of-ai.pdf';
+const description = 'Spot the Ripple: AI governance for boards and leaders, from a former PwC Director who has ridden every technology wave from mainframe to blockchain.';
 ---
-<Base title="Jack P. Flaherty | AI Governance & Decision Keynote Speaker"
-  description={site.entity}
-  personDescription={site.entity}
-  keywords="keynote speaker, technology decisions, board advisor, AI governance keynote, executive decision making, Jack P. Flaherty, Fear Is Not The Control"
+<Base title="Jack P. Flaherty: AI Governance for Boards and Leaders"
+  description={description}
+  personDescription={description}
+  keywords="AI governance, AI governance keynote speaker, board AI oversight, AI governance for boards and leaders, keynote speaker, executive advisor, Jack P. Flaherty"
   path="/" schema={[video]} hero="/images/jack-p-flaherty-keynote-speaker-hero.jpg" heroMobile="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg">
 
-  <!-- 1. Hero -->
-  <Hero extra="home" image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, keynote speaker, standing in a high-rise office at dusk" pos="68% 18%">
-    <h1>Fear Is Not The Control: AI and Technology Decisions for Health Systems and Professional Services</h1>
-    <p class="tag1">FEAR IS NOT THE CONTROL.</p>
-    <p class="tag2">How we build teams who ask the hard questions.</p>
-    <p class="problem">Someone sees a problem. Leadership does not. Fear keeps us from making the right decision in time. A preventable failure that at least one person saw coming.</p>
-    <p class="tag3">When failure is not an option, this former PwC Director develops leaders who challenge norms, overcome adversity, and deliver under pressure.</p>
-    <ul class="positions">
-      <li>Helping leaders build AI governance programs that enable teams to move faster, create more value, and give boards confidence in their investment.</li>
-      <li>Helping leaders develop teams that speak up under pressure, when time is short, and silence often causes the most damage.</li>
+  <!-- Screen 1. Promise -->
+  <Hero extra="promise" image="/images/jack-p-flaherty-keynote-speaker-hero.jpg" mobileImage="/images/jack-p-flaherty-keynote-speaker-hero-mobile.jpg" alt="Jack P. Flaherty, AI governance keynote speaker, waist up in a high-rise office at dusk" pos="68% 18%">
+    <p class="eyebrow">AI governance for boards and leaders</p>
+    <h1>SPOT THE RIPPLE™</h1>
+    <p class="line2">How we build teams who ask the hard questions.</p>
+    <p class="promise-copy">Every wave of new technology changes how our people work. Small ripples show up first as workarounds, each carrying new risks. Jack has ridden every wave from mainframe to blockchain. Now AI. Each time, building governance that fits the technology and the people using it. Your team leaves with a framework to confidently anticipate, recognize, and act upon new ripples.</p>
+    <p class="cred">Jack P. Flaherty · Former PwC Director · Digital Risk and Regulatory Leader</p>
+    <ul class="chips" aria-label="Credentials">
+      <li>Author, The Decision Switch®</li>
+      <li>Los Angeles, in person or virtual</li>
     </ul>
-    <div class="btns"><a class="btn" href="/book-jack">Book Jack</a><a class="btn light" href="#reel">Watch the reel</a></div>
+    <div class="tiles">
+      <a class="btn orange" href="/keynotes">Keynotes and advisory</a>
+      <a class="btn light" href="#check-a-date">Check a date</a>
+      <a class="btn light" href="#reel">Watch Jack</a>
+      <a class="btn light" href="/kit">Speaker kit</a>
+    </div>
   </Hero>
 
-  <!-- 2. Proof band -->
-  <Proof quotes={proof} />
-
-  <section class="tight" id="reel">
-    <div class="wrap reel">
-      <div class="vid"><div class="box"><iframe src={site.reelEmbed} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Jack P. Flaherty speaker reel"></iframe></div></div>
-      <div><h3>Three minutes of Jack on stage</h3><p>The speaker reel, from The Decision Switch keynote.</p></div>
+  <section class="date-form" id="check-a-date" aria-label="Check a date">
+    <div class="wrap">
+      <form class="form" action="/api/inquiry" method="post">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+        <input type="hidden" name="source" value="/#check-a-date" />
+        <div class="row4">
+          <div><label for="cd-date">Date</label><input id="cd-date" name="event_date" type="date" max="2080-12-31" required /></div>
+          <div><label for="cd-city">City</label><input id="cd-city" name="city" type="text" autocomplete="address-level2" /></div>
+          <div><label for="cd-audience">Audience</label><input id="cd-audience" name="audience" type="text" /></div>
+          <div><label for="cd-format">Format</label><select id="cd-format" name="format"><option>In person</option><option>Virtual</option></select></div>
+        </div>
+        <div class="row-send">
+          <div><label for="cd-email">Email address</label><input id="cd-email" name="email" type="email" autocomplete="email" required /></div>
+          <div><button class="btn" type="submit">Check a date</button></div>
+        </div>
+      </form>
     </div>
   </section>
 
-  <!-- 3. The problem -->
+  <section class="tight reel-link" id="reel">
+    <div class="wrap reel small">
+      <div class="vid"><div class="box"><iframe src={site.reelEmbed} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Jack P. Flaherty speaker reel"></iframe></div></div>
+      <p><a href={site.reelWatch} target="_blank" rel="noopener">Watch Jack: the three-minute speaker reel</a></p>
+    </div>
+  </section>
+
+  <!-- Screen 2. Scene -->
   <section>
+    <div class="wrap narrow-wide">
+      <h2>Someone sees a problem. Fear keeps them quiet.</h2>
+      <p>Most failures were preventable, and at least one person saw them coming. The sign was there. Fear kept them from speaking up, and no one acted in time.</p>
+      <p>When electronic medical records were mandated, physicians would not log out. The password took too long, so they left the screen open. That was a HIPAA violation in every hallway. The answer was not a memo. It was an access badge. Tap it, and the system knows you. The fix came from watching how people actually worked.</p>
+      <p>Your people are doing the same thing with AI right now. The question is who is watching how they actually work.</p>
+    </div>
+  </section>
+
+  <!-- Screen 3. Stakes -->
+  <section class="dark">
     <div class="wrap split rev">
       <div>
         <h2>The decision nobody owns.</h2>
-        <p>Your IT team, your risk function and your counsel each own a piece of a technology decision. The board owns the outcome. Jack works with the people who answer for it.</p>
+        <p>Your teams have already adopted AI, because it is easy to build. The easier a system is to configure, the more risk it carries: security flaws, processing errors, and lack of development standards. Risks like these require us to adjust how we approach technology governance, and the roles of your business, IT and risk teams. Each owns a piece of a technology decision. The board owns the outcome. Jack works with the people who answer for it.</p>
         <ul class="checks">
-          <li>AI is in use across your organization and nobody has been asked to decide what it may do.</li>
-          <li>A transformation has stalled because the leadership team will not commit.</li>
+          <li>AI is in use across your organization, and nobody has been asked to decide what it may do.</li>
+          <li>A transformation has stalled because no one will commit.</li>
           <li>A risk reaches the board after it has become a crisis.</li>
         </ul>
-        <p>In each case the decision was made. It was made by default, and fear made it. Fewer than one public-company board in five has a plan to educate its directors on AI (<a href={nacd} rel="noopener" target="_blank">NACD, 2025</a>). The gap is not awareness. It is a decision nobody has been asked to own.</p>
+        <p>In each case the decision was made. It was made by default, and fear made it. Fewer than one public-company board in five has a plan to educate its directors on AI. The gap is not awareness. It is a decision nobody has been asked to own.</p>
+        <p class="src">Source: <a href={nacd} rel="noopener" target="_blank">NACD, 2025 Public Company Board Practices and Oversight Survey, July 2025.</a></p>
       </div>
-      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles" />
+      <Pic src="jack-p-flaherty-whiteboard-objective-constraints-obstacles.jpg" alt="Jack P. Flaherty at a whiteboard listing objective, constraints and obstacles for an AI governance decision" />
     </div>
   </section>
 
-  <!-- 4. The stakes -->
-  <section class="dark">
-    <div class="wrap split">
-      <Pic src="jack-p-flaherty-board-advisory-sepia.jpg" alt="Jack P. Flaherty in conversation with an executive in an office" />
-      <div>
-        <h2>Who owns it?<br>What was it for?<br>How will the board know it was a success?</h2>
-        <p>A good platform. Nine years, millions spent, then switched off. The purchase was right. What failed came after it: nobody accountable for keeping the build true to the goal the board had funded, and no reporting the board could see. Jack helps you make sure that is not how it ends.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. The turn -->
+  <!-- Screen 4. Why -->
   <section>
     <div class="wrap narrow-wide">
-      <h2>The quiet is the tell.</h2>
-      <p>Someone in the room saw it coming. The analyst who read the vendor contract. The nurse manager who watched half her unit start using the tool by Friday. The senior manager who knew the client had already decided. They said nothing, because nobody had asked, and the cost of asking was theirs alone. Silence is the symptom. Fear is the cause.</p>
+      <h2>Let clarity decide.</h2>
+      <p>Fear has crept into the workplace, and it now hangs over people at every level. Leaders feel pressured to make quick decisions, often without weighing the downstream impact. Teams go quiet, or build workarounds when the new technology does not meet their needs. A knee-jerk decision is a fear decision. So is the one nobody made. This work takes fear out of the decision, so your people say what they see while it is still a ripple, and your leaders act in time.</p>
     </div>
   </section>
 
-  <!-- 6. The answer -->
-  <section class="dark">
-    <div class="wrap narrow-wide">
-      <h2>Governance is not the brake.</h2>
-      <p>Most people hear governance and hear a brake. Governance has a reputation for slowing things down, and sometimes it earns it. Fear is slower, and nobody can test it. A control is something you can test. Fear is not. In Jack's rooms, the leaders who moved fastest were the ones who could name the controls that let them. Clarity is the cure. Agency is the result. Good governance is not paperwork. It is what makes asking routine, so nobody has to be brave to raise a hand.</p>
-    </div>
-  </section>
-
-  <!-- 7. Three moves -->
-  <section>
-    <div class="wrap">
-      <h2>The teams that get it right make three moves.</h2>
-      <div class="grid c3 moves">
-        <div class="card accent">
-          <h3>Go slow to go fast.</h3>
-          <p>Plan it. Name the accountable owner. Build the governance that carries the rollout and the years of upkeep after it. Speed comes from the setup, not the sprint.</p>
-        </div>
-        <div class="card accent">
-          <h3>Mind the drift.</h3>
-          <p>Over months and years a build wanders from the goal that won the budget. Somebody stays accountable for keeping it true, and the board sees reporting on it.</p>
-        </div>
-        <div class="card accent">
-          <h3>Spot the ripple.</h3>
-          <p>Watch for the ripples of change, risk or opportunity. Act on what the teams, the instinct and the colleagues are telling you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Who Jack is -->
-  <section class="dark who">
-    <div class="wrap split rev">
-      <div class="fade"><Pic src="jack-p-flaherty-seated-advisor.jpg" alt="Jack P. Flaherty seated in a high-backed chair with a laptop, advisory setting" /></div>
-      <div>
-      <h2>Someone who has sat in those rooms.</h2>
-      <p>A former PwC Director, Jack has spent 25 years in risk and advisory, 15 of them at the Big 4. He has sat on both sides of the boardroom table.</p>
-      <p>He served as acting enterprise risk and audit leader for a $10B health system, reporting to the C-suite and audit committee.</p>
-      <p>He led a regulator-driven, board-mandated cybersecurity transformation for a $4B health system that closed its urgent gaps on a $1.5 million budget within one year.</p>
-      <a class="btn orange" href="/about-jack-flaherty">About Jack</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. What he sells -->
-  <section>
-    <div class="wrap">
-      <h2>Two keynotes. One method.</h2>
-      <p class="lede">Fear Is Not The Control. Built for two rooms.</p>
-      <div class="grid c2 sells">
-        <a class="card accent" href="/keynote-speaker/fear-is-not-the-control-professional-services">
-          <p><strong>For partners in accounting, advisory and law firms:</strong> approving AI tools your clients and your insurers will stand behind.</p>
-        </a>
-        <a class="card accent" href="/keynote-speaker/fear-is-not-the-control-healthcare">
-          <p><strong>For health-system executives and nurse leaders:</strong> deciding on new clinical technology when the board, the clinicians and the regulator each want a different answer.</p>
-        </a>
-      </div>
-      <a class="card accent sells-one" href="/keynotes#the-decision-switch">
-        <p><strong>The Decision Switch.</strong> The original. The method in the book and in the reel: how a leadership team gets a stalled decision made and stands behind it.</p>
-      </a>
-      <p class="formats">45 to 60 minutes, live or virtual. A half-day workshop can follow either keynote. Ask on the call.</p>
-      <a class="card accent sells-one" href="/advisory/board-and-leadership">
-        <p><strong>Board and leadership advisory.</strong> The same questions, asked one level up, where the silence costs most. Confidential counsel from someone who has reported to the audit committee and sat on the other side of the table. Delivered by Jack, not a team.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- 11. How it works, then the Assessment block -->
+  <!-- Screen 5. Answer -->
   <section class="dark">
     <div class="wrap">
-      <h2>How it works.</h2>
-      <ol>
-        <li>Book a 30-minute discovery call.</li>
-        <li>Jack builds the talk or the session for your room, your audience and the decision in front of them.</li>
-        <li>Your people leave with the three questions to ask before any technology decision, and one first move.</li>
-      </ol>
-    </div>
-  </section>
+      <h2>Three habits that take fear out of the decision.</h2>
+      <div class="grid c3 habits">
+        <div class="card accent"><p><strong>Go slow to go fast.</strong> Plan, name the owner, and build the governance before the first use.</p></div>
+        <div class="card accent"><p><strong>Mind the drift.</strong> Notice when people, controls and results slide from what was approved.</p></div>
+        <div class="card accent"><p><strong>Spot the ripple.</strong> Hear the front line first, and carry what they see to the person who decides.</p></div>
+      </div>
 
-  <Assessment />
+      <h3 class="offer-head">Two keynotes. Board and executive advisory.</h3>
+      <div class="grid c3 offers">
+        <a class="card accent" href="/keynotes/spot-the-ripple">
+          <h4><span>Spot the Ripple</span><span class="sub">The Hard Questions About How Your People Use AI</span></h4>
+          <p>For boards and C-suites, professional services, and regulated industries. AI governance programs that let teams move faster and give boards confidence in the investment.</p>
+        </a>
+        <a class="card accent" href="/keynotes/the-decision-switch">
+          <h4><span>The Decision Switch</span><span class="sub">Set the Direction. Stay on It.</span></h4>
+          <p>For nurse leaders, founders and sponsors, and association general sessions. Teams that speak up under pressure, when time is short and silence does the most damage.</p>
+        </a>
+        <a class="card accent" href="/advisory/board-and-leadership">
+          <h4><span>Board and executive advisory</span></h4>
+          <p>For the board or executive team with one decision to get right: the questions for management, a decision record, and a named owner with a reporting line.</p>
+        </a>
+      </div>
 
-  <!-- 12. The close -->
-  <section class="tight">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Decisions deferred do not wait.</h2>
-        <p>They get made by default, and the board finds out afterward. Who owns the next one?</p>
-        <div class="btns" style="justify-content:center;margin-top:.4rem"><a class="btn" href={site.calendly}>Book a discovery call</a><a class="btn alt" href="/book-jack">Send an inquiry</a></div>
+      <p class="proofline">90% of professionals believe employees use AI at work. 38% of organizations have a full AI policy.</p>
+      <p class="src">Source: <a href={isaca} rel="noopener" target="_blank">ISACA, 2026 AI Pulse Poll, May 2026.</a></p>
+
+      <div class="cta-row">
+        <a class="btn orange" href={site.calendly}>Book a 30-minute discovery call.</a>
+        <p>Fees and formats on request.</p>
       </div>
     </div>
   </section>
+
+  <!-- Screen 6. Proof -->
+  <Proof quotes={proof} />
 </Base>
+
+<style>
+  :global(.hero.promise){min-height:calc(100vh - 4rem)}
+  @media (max-width:767px){:global(.hero.promise){min-height:0}}
+  :global(.hero.promise .txt){max-width:46rem}
+  :global(.hero.promise:after){background:linear-gradient(90deg,rgba(42,26,14,.92) 0%,rgba(42,26,14,.8) 44%,rgba(42,26,14,.2) 72%,rgba(42,26,14,0) 88%)}
+  .eyebrow{font-family:var(--font-head);font-weight:700;color:#FF9447 !important;font-size:1rem !important;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .5rem}
+  h1{font-size:clamp(2.4rem,5vw,3.6rem) !important;letter-spacing:.03em;margin:0 0 .4rem}
+  .line2{font-family:var(--font-head);font-weight:700;font-size:1.35rem !important;line-height:1.35 !important;margin:0 0 .9rem}
+  .promise-copy{font-size:1.1rem !important;line-height:1.55 !important;margin:0 0 .9rem;max-width:42rem}
+  .cred{font-size:1rem !important;font-weight:700;margin:0 0 .6rem}
+  .chips{list-style:none;padding:0;margin:0 0 1.2rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  .chips li{font-size:.85rem;line-height:1.2;color:var(--latte);border:1px solid rgba(255,249,239,.45);border-radius:999px;padding:.3rem .7rem}
+  .tiles{display:grid;grid-template-columns:repeat(4,auto);gap:.6rem;justify-content:start}
+  .tiles .btn{padding:.75rem 1.1rem;font-size:.95rem;text-align:center}
+  @media (max-width:767px){.tiles{grid-template-columns:1fr 1fr}}
+
+  .date-form{scroll-margin-top:5rem;display:none;background:var(--linen);padding:1.5rem 0}
+  .date-form:target{display:block}
+  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+  .row-send{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:end;margin-top:.8rem}
+  .date-form label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.25rem}
+  .date-form input,.date-form select{width:100%;box-sizing:border-box;padding:.65rem .7rem;font:inherit;font-size:1rem;border:1px solid var(--sand);border-radius:6px;background:#fff}
+  @media (max-width:767px){.row4{grid-template-columns:1fr 1fr}.row-send{grid-template-columns:1fr}}
+
+  .reel.small p{font-size:1.05rem}
+
+  .narrow-wide{max-width:48rem}
+  .src{font-size:.85rem;color:var(--brown)}
+  .dark .src{color:var(--sand)}
+  .habits p{margin:0}
+  .offer-head{margin-top:2.4rem}
+  .offers{margin-top:1rem}
+  .offers .card{display:block;text-decoration:none;color:inherit}
+  .offers h4{display:flex;flex-direction:column;gap:.2rem;font-size:1.2rem;color:var(--latte);margin:0 0 .6rem}
+  .offers h4 .sub{font-size:.8em;color:#FF9447}
+  .proofline{margin-top:2rem;font-weight:700}
+  .proofline + .src{margin-top:-.6rem}
+  .cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}
+  .cta-row p{margin:0}
+</style>

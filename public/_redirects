@@ -15,19 +15,24 @@
 
 # Keynote hub (/keynotes) replaces the old keynote hub and the two keynote pages (Nov 5 2026)
 /keynote-speaker/executive-decision-making-keynote /keynotes 301
-/keynote-speaker/fear-is-not-a-control /keynotes#fear-is-not-the-control 301
-/keynote-speaker/fear-is-not-the-control /keynotes#fear-is-not-the-control 301
+/keynote-speaker/fear-is-not-a-control /keynotes#spot-the-ripple 301
+/keynote-speaker/fear-is-not-the-control /keynotes#spot-the-ripple 301
 /keynote-speaker/the-decision-switch /keynotes#the-decision-switch 301
 
 # Keynote hub v1.3 (Nov 5 2026): /keynotes replaces /platforms. The two platform slugs open their block on the hub.
 /platforms /keynotes 301
-/keynotes/fear-is-not-the-control /keynotes#fear-is-not-the-control 301
+/keynotes/spot-the-ripple /keynotes#spot-the-ripple 301
+/keynotes/fear-is-not-the-control /keynotes#spot-the-ripple 301
+/keynotes/fear-is-not-a-control /keynotes#spot-the-ripple 301
 /keynotes/the-decision-switch /keynotes#the-decision-switch 301
 
-# Fear Is Not A Control renamed Fear Is Not The Control (Nov 5 2026)
-/keynote-speaker/fear-is-not-a-control-healthcare /keynote-speaker/fear-is-not-the-control-healthcare 301
-/keynote-speaker/fear-is-not-a-control-professional-services /keynote-speaker/fear-is-not-the-control-professional-services 301
-/blogs/fear-is-not-a-control /blogs/fear-is-not-the-control 301
+# Platform 1 renamed twice: "a control" form (to Nov 5 2026), "the control" form (Nov 5 to Nov 6), Spot the Ripple (Nov 6 2026)
+/keynote-speaker/fear-is-not-a-control-healthcare /keynote-speaker/spot-the-ripple-healthcare 301
+/keynote-speaker/fear-is-not-a-control-professional-services /keynote-speaker/spot-the-ripple-professional-services 301
+/blogs/fear-is-not-a-control /blogs/fear-of-ai-at-work-is-not-a-control 301
+/blogs/fear-is-not-the-control /blogs/fear-of-ai-at-work-is-not-a-control 301
+/keynote-speaker/fear-is-not-the-control-healthcare /keynote-speaker/spot-the-ripple-healthcare 301
+/keynote-speaker/fear-is-not-the-control-professional-services /keynote-speaker/spot-the-ripple-professional-services 301
 
 # AI and Emerging Technology audience page renamed Technology (Nov 5 2026)
 /industries/ai-emerging-technology /keynotes 301
@@ -40,12 +45,12 @@
 # Retired keynote and workshop pages
 /keynote-speaker/board-governance-workshop /advisory/board-and-leadership 301
 /keynote-speaker/team-alignment-strategy-workshop /keynotes 301
-/keynote-speaker/cybersecurity-risk-governance-keynote /keynotes#fear-is-not-the-control 301
+/keynote-speaker/cybersecurity-risk-governance-keynote /keynotes#spot-the-ripple 301
 /keynote-speaker/crisis-due-diligence-turnaround /advisory/board-and-leadership 301
 
 # Retired industry pages
-/industries/pharma-biotech /keynote-speaker/fear-is-not-the-control-healthcare 301
-/industries/medtech-diagnostics /keynote-speaker/fear-is-not-the-control-healthcare 301
+/industries/pharma-biotech /keynote-speaker/spot-the-ripple-healthcare 301
+/industries/medtech-diagnostics /keynote-speaker/spot-the-ripple-healthcare 301
 /industries/fintech-defi-speaker /advisory/board-and-leadership 301
 /industries/banking-finance /advisory/board-and-leadership 301
 /industries/energy-utilities /keynotes 301
